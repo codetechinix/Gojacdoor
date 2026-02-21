@@ -58,3 +58,10 @@ Created several new, robust information pages to provide a complete e-commerce e
 
 - **Tailwind Linting Resolution:** Systematically resolved dozens of Tailwind CSS linting errors across the entire project. This included fixing deprecated flex properties (`flex-grow` to `grow`, `flex-shrink-0` to `shrink-0`), correcting gradient direction syntaxes (`bg-gradient-to-r` to `bg-linear-to-r`), and addressing conflicting utility classes (e.g., `flex hidden`).
 - **Dependency Cleanup:** Removed unnecessary external requests, including unused Google Fonts and the Material Symbols CDN links, improving page load performance.
+
+## Branching Strategy
+
+The project utilizes a two-branch workflow to ensure stability:
+
+- **`staging`**: The primary development branch. All new features, bug fixes, and updates are committed and pushed here first.
+- **`main`**: The production-ready branch. Changes from `staging` are merged into `main` only after final review and approval.
