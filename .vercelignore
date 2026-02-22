@@ -1,0 +1,9 @@
+node_modules
+/.git
+/.github
+/.npm_cache
+/package.json
+/package-lock.json
+/tailwind.config.js
+/assets/css/input.css
+*.md
