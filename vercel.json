@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "functions": {
+    "**/*.php": {
+      "runtime": "vercel-php@0.6.1"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/includes/.*",
+      "status": 403
+    },
+    {
+      "src": "^/errors/.*",
+      "status": 403
+    },
+    {
+      "src": "^/(.*)\\.php$",
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 301
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/$1.php"
+    },
+    {
+      "handle": "error"
+    },
+    {
+      "status": 404,
+      "src": "/(.*)",
+      "dest": "/errors/404.php"
+    },
+    {
+      "status": 403,
+      "src": "/(.*)",
+      "dest": "/errors/403.php"
+    },
+    {
+      "status": 500,
+      "src": "/(.*)",
+      "dest": "/errors/500.php"
+    }
+  ]
+}
