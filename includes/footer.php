@@ -1,43 +1,78 @@
 <!-- includes/footer.php -->
-<footer id="site-footer" class="bg-primary text-white pt-20 pb-8 mt-20">
-    <div class="container mx-auto px-4 md:px-8">
-        <!-- Benefits Bar (Pulled up to overlay footer border) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 -mt-32">
-            <div class="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg" data-aos="fade-up"
-                data-aos-delay="100">
-                <span
-                    class="material-symbols-outlined text-3xl text-primary dark:text-white mb-3 block">local_shipping</span>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Free Shipping</h4>
-                <p class="text-xs text-slate-500 mt-1">For orders above $150</p>
+
+<!-- Benefits Bar — full-width strip above footer -->
+<section class="border-t border-b border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!-- Free Shipping -->
+            <div class="flex items-center gap-7 px-8 py-8 sm:py-10">
+                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                </svg>
+                <div>
+                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Free Shipping</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Free Shipping for orders over $99</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg" data-aos="fade-up"
-                data-aos-delay="200">
-                <span
-                    class="material-symbols-outlined text-3xl text-primary dark:text-white mb-3 block">monetization_on</span>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Money Guarantee</h4>
-                <p class="text-xs text-slate-500 mt-1">Within 30 days exchange</p>
+
+            <!-- Money Guarantee -->
+            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
+                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <div>
+                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Money Guarantee</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Within 30 days for an exchange</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg" data-aos="fade-up"
-                data-aos-delay="300">
-                <span
-                    class="material-symbols-outlined text-3xl text-primary dark:text-white mb-3 block">headset_mic</span>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Online Support</h4>
-                <p class="text-xs text-slate-500 mt-1">24 hours a day, 7 days</p>
+
+            <!-- Online Support -->
+            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
+                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                </svg>
+                <div>
+                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Online Support</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">24 hours a day, 7 days a week</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg" data-aos="fade-up"
-                data-aos-delay="400">
-                <span
-                    class="material-symbols-outlined text-3xl text-primary dark:text-white mb-3 block">credit_card</span>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Flexible Payment</h4>
-                <p class="text-xs text-slate-500 mt-1">Multiple credit cards</p>
+
+            <!-- Flexible Payment -->
+            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
+                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25h-15a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+                <div>
+                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Flexible Payment
+                    </h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pay with Multiple Credit Cards</p>
+                </div>
             </div>
+
         </div>
-        <!-- Footer Content -->
+    </div>
+</section>
+
+<footer id="site-footer" class="bg-primary text-white pt-20 pb-8" style="margin-top:-1px">
+    <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-4 gap-12 mb-16">
             <div class="space-y-6">
                 <a href="index.php" class="flex items-center space-x-2">
                     <span class="text-3xl font-bold tracking-tighter flex items-center">
-                        <span class="material-symbols-outlined text-4xl mr-1">diamond</span>Krist
+                        <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>Krist
                     </span>
                 </a>
                 <div class="space-y-4 text-slate-400 text-sm">
@@ -128,5 +163,5 @@
 <!-- Shared Body Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="./src/components.js"></script>
-<script src="./src/main.js"></script>
+<script src="/assets/js/components.js?v=<?= time() ?>"></script>
+<script src="/assets/js/main.js"></script>

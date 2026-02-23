@@ -25,13 +25,17 @@ $activePage = 'shop';
                     <img id="mainProductImage" src="" alt="Product"
                         class="max-h-full object-contain mix-blend-multiply dark:mix-blend-normal hover:scale-105 transition-transform duration-500" />
                 </div>
+                <!-- Thumbnail Gallery -->
+                <div class="grid grid-cols-4 gap-4" id="imageGallery" data-aos="fade-up" data-aos-delay="100">
+                    <!-- thumbnails rendered via js -->
+                </div>
             </div>
 
             <!-- Product Info -->
             <div class="flex flex-col" data-aos="fade-left">
                 <div class="flex justify-between items-start mb-2">
                     <span id="productBrand" class="text-slate-500 font-bold uppercase tracking-wider text-xs"></span>
-                    <span
+                    <span id="productStockTag"
                         class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-2.5 py-1 rounded-full font-bold">In
                         Stock</span>
                 </div>
@@ -47,7 +51,7 @@ $activePage = 'shop';
 
                 <div class="flex items-baseline gap-4 mb-8">
                     <span id="productPrice"
-                        class="text-3xl font-bold bg-linear-to-r from-primary to-primary-light bg-clip-text text-transparent"></span>
+                        class="text-3xl font-bold bg-linear-to-r from-primary to-primary-light dark:from-white dark:to-slate-300 bg-clip-text text-transparent"></span>
                     <span id="productOldPrice" class="text-slate-400 line-through font-medium text-lg"></span>
                 </div>
 
@@ -165,7 +169,7 @@ $activePage = 'shop';
                     <div
                         class="flex items-center justify-between mb-8 border-b border-slate-200 dark:border-slate-700 pb-4">
                         <h3 class="text-xl font-bold dark:text-white">Customer Reviews</h3>
-                        <button
+                        <button onclick="toggleReviewModal()"
                             class="bg-primary text-white px-5 py-2 rounded-md font-semibold text-sm hover:bg-slate-800 transition-colors">Write
                             a Review</button>
                     </div>
@@ -218,6 +222,69 @@ $activePage = 'shop';
         </div>
     </main>
 
+    <!-- Review Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-100 hidden items-center justify-center">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleReviewModal()"></div>
+        <div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl shadow-2xl relative z-10 p-8 transform transition-transform scale-95 opacity-0 duration-300"
+            id="reviewModalContent">
+            <button onclick="toggleReviewModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-6">Write a Review</h3>
+            <form onsubmit="submitReview(event)">
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold mb-3">Rating</label>
+                    <div class="flex text-slate-300 space-x-2 interactive-stars cursor-pointer transition-colors">
+                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold mb-2">Your Name</label>
+                    <input type="text"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Review</label>
+                    <textarea
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 h-32 resize-none focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+                        required></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary text-white font-bold py-3 text-center rounded-lg hover:bg-slate-800 transition-all">Submit
+                    Review</button>
+            </form>
+        </div>
+    </div>
+
     <?php include 'includes/footer.php'; ?>
     <script>
         let currentProduct = null;
@@ -265,8 +332,67 @@ $activePage = 'shop';
                 wishIcon.setAttribute('fill', isWished ? 'currentColor' : 'none');
             }
 
+            // In Stock / Out of Stock logic
+            if (currentProduct.inStock === false) {
+                const tag = document.getElementById('productStockTag');
+                if (tag) {
+                    tag.textContent = 'Sold Out';
+                    tag.className = 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-full font-bold uppercase tracking-wider';
+                }
+                const btn = document.getElementById('addToCartBtn');
+                if (btn) {
+                    btn.textContent = 'Out of Stock';
+                    btn.disabled = true;
+                    btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    btn.classList.remove('hover:shadow-primary/50', 'hover:-translate-y-0.5');
+                }
+            }
+
+            // Render Thumbnails
+            const galleryHtml = [currentProduct.image, currentProduct.image, currentProduct.image, currentProduct.image].map((img, idx) => `
+                <button class="glass bg-white/50 dark:bg-slate-900/50 rounded-xl overflow-hidden aspect-square flex items-center justify-center p-2 shadow-sm border ${idx === 0 ? 'border-primary' : 'border-slate-200 dark:border-slate-700'} hover:border-primary transition-all gallery-thumb">
+                    <img src="${img}" class="max-h-full object-contain mix-blend-multiply dark:mix-blend-normal ${idx === 0 ? 'opacity-100' : 'opacity-70'} hover:opacity-100 transition-opacity" />
+                </button>
+            `).join('');
+            document.getElementById('imageGallery').innerHTML = galleryHtml;
+
+            // Thumbnail Click active state
+            document.getElementById('imageGallery').addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+
+                const mainImg = document.getElementById('mainProductImage');
+                const newSrc = btn.querySelector('img').src;
+
+                if (mainImg.src === newSrc) return;
+
+                // Animate out
+                mainImg.classList.add('opacity-0', 'scale-95');
+
+                setTimeout(() => {
+                    mainImg.src = newSrc;
+                    // Animate in
+                    mainImg.classList.remove('opacity-0', 'scale-95');
+                }, 300);
+
+                document.querySelectorAll('.gallery-thumb').forEach(b => {
+                    b.classList.remove('border-primary');
+                    b.classList.add('border-slate-200', 'dark:border-slate-700');
+                    b.querySelector('img').classList.remove('opacity-100');
+                    b.querySelector('img').classList.add('opacity-70');
+                });
+                btn.classList.add('border-primary');
+                btn.classList.remove('border-slate-200', 'dark:border-slate-700');
+                btn.querySelector('img').classList.add('opacity-100');
+                btn.querySelector('img').classList.remove('opacity-70');
+            });
+
+            // Initialize Interactive Stars
+            initStars();
+
             // Actions
-            document.getElementById('addToCartBtn').addEventListener('click', () => {
+            document.getElementById('addToCartBtn').addEventListener('click', (e) => {
+                if (currentProduct.inStock === false) return;
                 addToCart(currentProduct.id, currentQty);
                 toggleMiniCart(); // Open cart automatically
             });
@@ -309,6 +435,52 @@ $activePage = 'shop';
                     btn.classList.add('text-primary', 'border-primary');
                     btn.classList.remove('text-slate-400', 'border-transparent');
                 }
+            });
+        }
+
+        // Review Modal Logic
+        function toggleReviewModal() {
+            const modal = document.getElementById('reviewModal');
+            const content = document.getElementById('reviewModalContent');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 300);
+            }
+        }
+
+        function submitReview(e) {
+            e.preventDefault();
+            toggleReviewModal();
+            if (typeof showToast === 'function') showToast('Thank you! Your review has been submitted.', 'success');
+        }
+
+        // Interactive Stars
+        let selectedRating = 0;
+        function initStars() {
+            const stars = document.querySelectorAll('.interactive-stars .star');
+            if (!stars.length) return;
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => highlightStars(index));
+                star.addEventListener('mouseout', () => highlightStars(selectedRating - 1));
+                star.addEventListener('click', () => { selectedRating = index + 1; highlightStars(index); });
+            });
+        }
+        function highlightStars(index) {
+            const stars = document.querySelectorAll('.interactive-stars .star');
+            stars.forEach((star, i) => {
+                if (i <= index) { star.classList.add('text-yellow-400'); star.classList.remove('text-slate-300'); }
+                else { star.classList.add('text-slate-300'); star.classList.remove('text-yellow-400'); }
             });
         }
     </script>

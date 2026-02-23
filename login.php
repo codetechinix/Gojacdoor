@@ -96,8 +96,8 @@ $pageTitle = 'Krist - Login';
     <!-- Shared Body Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./src/components.js"></script>
-    <script src="./src/main.js"></script>
+    <script src="./assets/js/components.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const emailInput = document.getElementById('loginEmail');

@@ -60,16 +60,20 @@ $activePage = 'shop';
                                 checked>
                             <span class="font-medium mr-auto">Credit / Debit Card</span>
                             <div class="flex space-x-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
-                                    class="h-4 object-contain" alt="Visa">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg"
-                                    class="h-4 object-contain" alt="MC">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoZp53i66R8hWUliVGOmM7PP0RbCKCrJ6aMhixNxE8RKtwExCINuL-2Xrb3UEeYogRX4JW6lzy9D8amRO-hya4xemTXb3oVBm8s26tS3DjNQTqTimyuxl00ALf-3Wo0zNsD_X415eV_2rCXtv051WS0l36gM6aZWr7yrHylvJG0p_lLQSvnWhAeUv7lxL36twYPvYIHDL0gT4UQm5_WmHaByfCaR2ffCbT4oyCOyY2RNdtdBCkaOU3i2O97CGD6RIxRQd6WsQOwig"
+                                    class="h-4 object-contain opacity-60" alt="Visa">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0cFzRQApclEOeHBc1aQXH84GXk8zLwoH6BgKFa1R9CeRnVkHbPFJkMUQ6QUW8MARPVmXGKeYwmRzSASc5b4bFGZxFky_s-Y_-T62uqV7hBy5J7GBr3eD8qT9-T-zxqoxw4eF1Q6t4zA_1JCVirHjhAFAqhQBMNKpWekZB08ZJkvjKhP9BX8Tntr_gOIqm29_3n1RPVqPTQsw3E7afxCRfjxgQ8m-CTkwvHBerHS5rybrwTctcZ18T9K5388XFvt3QagB0MvHliKI"
+                                    class="h-4 object-contain opacity-60" alt="MC">
                             </div>
                         </label>
                         <label
                             class="flex items-center p-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl cursor-pointer transition-colors">
                             <input type="radio" name="payment" class="text-primary focus:ring-primary mr-4 w-5 h-5">
-                            <span class="font-medium">PayPal</span>
+                            <span class="font-medium mr-auto">PayPal</span>
+                            <div class="flex space-x-2">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrPpgMCfwVv79qKTdmXrGJNWPgmxK1EWZROlDNarbG7hi982--C56ffeeLFBoXiFFkgxhiHDVvYVrxAfaCObe3Fp3-HnQZ8XPHk-5X0rmsgISNjswPbSZ6wCBZYjADb2XVs_bBG1NoDiHVM0gBKhWjRo3YLuTguaQuKCRQDWm4e9Zr9kDgPehmsowK4P8-6Xl7-_dxTDmih0OHBZWuaKNR9XmVnUy5ztdItHAbatvmUkqSiSF0qGBV6p5Hk-8X160-DHaMXuPkCKc"
+                                    class="h-4 object-contain opacity-60" alt="PayPal">
+                            </div>
                         </label>
                         <label
                             class="flex items-center p-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl cursor-pointer transition-colors">
