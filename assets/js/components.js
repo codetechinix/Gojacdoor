@@ -8,7 +8,7 @@
 /* ── Product Data Store ───────────────────────────────── */
 const PRODUCTS = [
     { id: 1, name: 'Printed Cotton T-Shirt', brand: 'Allen Solly', price: 38.00, oldPrice: 48.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7MV9mBQiIPmdGVf9kGPylWM9nUbVmldo1qPJINe5aHFGJMEl0CEqwSTFTGkskDFxkX1_zXhmXAWe2zQyiqViArK1c1mOgTC1Or_bLbk99nTyUoX5rYRNYT-bBoLF3euQH6H1RzAf4YFhNGzy7bfu8slIi2VBNZtrfxSzzvbyzlH4ietFDE0LSPpD05UOeoe3AXsZyawwVp66roI8mKzBrZgFbycCRFAHtrJfTrDMwJCj0gB_PIXQSP8pL2HWcjNQcfBCSYdEIgH0', rating: 4.5, reviews: 56, category: 'men', size: ['S', 'M', 'L', 'XL'], color: 'black' },
-    { id: 2, name: 'Women Textured Handheld Bag', brand: 'Louis Philippe', price: 78.00, oldPrice: 98.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wC_Nn8VlP5LTjeJlFmiDQS298wwtD6G6BAhKdLzNMSUyQu9kgKdU8jB9PCsn1-tsFCzF0aBc5vtywRUt0f98MajcKbu5OuxcANF9MAFBdFL5Dzzd1YT1tDYj2UE6BPp6S326v0DHhrav-tQYw5LQZReDH-35lxzJtyMAi-P2CttH4f9rhnOGPOFlmkKBGHBaoe__IZZujINgwEH-k9zUDR21nXTtTXWDTK-Gv_6tn-KKVFW9dZdBoTea5ih5jmLNper2xDJ1yaQ', rating: 4.8, reviews: 120, category: 'women', size: ['One Size'], color: 'brown' },
+    { id: 2, name: 'Women Textured Handheld Bag', brand: 'Louis Philippe', price: 78.00, oldPrice: 98.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wC_Nn8VlP5LTjeJlFmiDQS298wwtD6G6BAhKdLzNMSUyQu9kgKdU8jB9PCsn1-tsFCzF0aBc5vtywRUt0f98MajcKbu5OuxcANF9MAFBdFL5Dzzd1YT1tDYj2UE6BPp6S326v0DHhrav-tQYw5LQZReDH-35lxzJtyMAi-P2CttH4f9rhnOGPOFlmkKBGHBaoe__IZZujINgwEH-k9zUDR21nXTtTXWDTK-Gv_6tn-KKVFW9dZdBoTea5ih5jmLNper2xDJ1yaQ', rating: 4.8, reviews: 120, category: 'women', size: ['One Size'], color: 'brown', inStock: false },
     { id: 3, name: 'Polo Collar T-Shirt', brand: 'Adidas', price: 42.00, oldPrice: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjII6dlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.2, reviews: 34, category: 'men', size: ['M', 'L', 'XL'], color: 'blue' },
     { id: 4, name: 'Men adi-dash Running Shoes', brand: 'Trendyol', price: 65.00, oldPrice: 80.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCm6dR6oF2uuYLGQFK4zjq2_oxErZ3IbPvvbbx0eKcLb0d_vZ4qAu3GuSHcVBFIjSLruwci0TDlEkzKk9HpFmO8X20FX1GLzwnnFYE4Qaw9KGIcSBSJG0j52U2LF5RuEfz-2_N3Ny9aeSuF1iIZUHNOO0vTrsPqg-qAaM_Ufx6rAW1Zjb7daNG-IQQ6MQ-EAYhod0ExJ0q4uPTGJxb7c6mBe0yWvUDmM-MmLgbWRC7LcqO0ESiYgp3DBFeo6M-7VrjrHJajaD1Zc4Q', rating: 4.6, reviews: 88, category: 'men', size: ['8', '9', '10', '11'], color: 'white' },
     { id: 5, name: 'Floral Embroidered Maxi Dress', brand: 'Zyla', price: 55.00, oldPrice: 70.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0XqfpSJY2aHwGAeV_Jr5RJWZ0dENi0m20KVUWvAUV14S3x0PPF_I983qcvFeNJDCWPa6I3IlQpXs0GxHj0oi3PJ1jjHpc3s83ZqX3JdRiyFVmMbKaOjJipcaOW8kHYGrcuDHhsbpbxByv_3u7IctEwQv_Y7A6pcKlylUctIQg9XwNPItE_dFiA70znSDSjDRxyjm_TZ4Q0aYbLNmlb_Ns0jWw12JNXA6NHI9YNSAGJ1ypYclrRRbaRK5PzU0jAycXdUh676vB8_o', rating: 4.9, reviews: 200, category: 'women', size: ['S', 'M', 'L'], color: 'red' },
@@ -22,7 +22,19 @@ let cart = JSON.parse(localStorage.getItem('krist_cart') || '[]');
 let wishlist = JSON.parse(localStorage.getItem('krist_wishlist') || '[]');
 
 function saveCart() { localStorage.setItem('krist_cart', JSON.stringify(cart)); updateCartBadge(); }
-function saveWishlist() { localStorage.setItem('krist_wishlist', JSON.stringify(wishlist)); }
+function saveWishlist() { localStorage.setItem('krist_wishlist', JSON.stringify(wishlist)); updateWishlistBadge(); }
+
+function updateWishlistBadge() {
+    const badge = document.getElementById('wishlistBadge');
+    if (badge) {
+        badge.textContent = wishlist.length;
+        if (wishlist.length > 0) {
+            badge.style.display = 'flex';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+}
 
 function addToCart(productId, qty = 1) {
     const existing = cart.find(i => i.id === productId);
@@ -54,6 +66,9 @@ function toggleWishlist(productId) {
     if (idx > -1) { wishlist.splice(idx, 1); showToast('Removed from wishlist', 'info'); }
     else { wishlist.push(productId); showToast('Added to wishlist!', 'success'); }
     saveWishlist();
+    if (typeof renderWishlistPage === 'function') {
+        renderWishlistPage();
+    }
 }
 
 function updateCartBadge() {
@@ -197,25 +212,33 @@ function renderFooter() {
     <div class="container mx-auto px-4 md:px-8">
         <!-- Benefits Bar -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 -mt-10">
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <svg class="w-8 h-8 mx-auto text-primary dark:text-white mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Free Shipping</h4>
-                <p class="text-xs text-slate-500 mt-1">For orders above $150</p>
+            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="100">
+                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Free Shipping</h4>
+                    <p class="text-xs text-slate-500 mt-1">For orders above $150</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <svg class="w-8 h-8 mx-auto text-primary dark:text-white mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Money Guarantee</h4>
-                <p class="text-xs text-slate-500 mt-1">Within 30 days exchange</p>
+            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="200">
+                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Money Guarantee</h4>
+                    <p class="text-xs text-slate-500 mt-1">Within 30 days exchange</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <svg class="w-8 h-8 mx-auto text-primary dark:text-white mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Online Support</h4>
-                <p class="text-xs text-slate-500 mt-1">24 hours a day, 7 days</p>
+            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="300">
+                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Online Support</h4>
+                    <p class="text-xs text-slate-500 mt-1">24 hours a day, 7 days</p>
+                </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                <svg class="w-8 h-8 mx-auto text-primary dark:text-white mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Flexible Payment</h4>
-                <p class="text-xs text-slate-500 mt-1">Multiple credit cards</p>
+            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="400">
+                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Flexible Payment</h4>
+                    <p class="text-xs text-slate-500 mt-1">Multiple credit cards</p>
+                </div>
             </div>
         </div>
         <!-- Footer Content -->
@@ -423,6 +446,53 @@ function toggleMobileMenu() {
     if (menu) menu.classList.toggle('hidden');
 }
 
+/* ── Search Overlay ───────────────────────────────────── */
+function toggleSearchOverlay() {
+    const overlay = document.getElementById('searchOverlay');
+    const backdrop = document.getElementById('searchBackdrop');
+    const panel = document.getElementById('searchPanel');
+    const input = document.getElementById('searchOverlayInput');
+    if (!overlay) return;
+
+    const isOpen = !overlay.classList.contains('hidden');
+
+    if (isOpen) {
+        // Close
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        panel.classList.add('-translate-y-full');
+        document.body.style.overflow = '';
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+    } else {
+        // Open
+        overlay.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            panel.classList.remove('-translate-y-full');
+            if (input) input.focus();
+        });
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close search overlay on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const overlay = document.getElementById('searchOverlay');
+        if (overlay && !overlay.classList.contains('hidden')) {
+            toggleSearchOverlay();
+        }
+    }
+});
+
+function toggleMobileShopMenu() {
+    const menu = document.getElementById('mobileShopMenu');
+    const chevron = document.getElementById('mobileShopChevron');
+    if (menu) menu.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+}
+
 function handleSubscribe(e) {
     e.preventDefault();
     const input = document.getElementById('footerEmail');
@@ -442,28 +512,37 @@ function handleLogout() {
 }
 
 /* ── Product Card Renderer ────────────────────────────── */
+
 function renderProductCard(product, delay = 0) {
     const isWished = wishlist.includes(product.id);
+    const isSoldOut = product.inStock === false;
     return `
     <div class="group bg-white dark:bg-slate-900 rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800" data-aos="fade-up" data-aos-delay="${delay}">
         <div class="relative overflow-hidden aspect-[3/4]">
             <a href="product-detail.php?id=${product.id}">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${isSoldOut ? 'opacity-50 grayscale' : ''}"/>
             </a>
-            ${product.oldPrice ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
+            ${product.oldPrice && !isSoldOut ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
+            ${isSoldOut ? `<span class="absolute top-3 left-3 bg-slate-800 dark:bg-slate-700 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wider uppercase shadow-sm">Sold Out</span>` : ''}
             <div class="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                <button onclick="toggleWishlist(${product.id}); this.closest('.group').querySelector('.wish-icon').innerHTML = wishlist.includes(${product.id}) ? '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>' : '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>'; this.closest('.group').querySelector('.wish-icon').setAttribute('fill', wishlist.includes(${product.id}) ? 'currentColor' : 'none');" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors">
+                <button onclick="toggleWishlist(${product.id}); this.closest('.group').querySelector('.wish-icon').innerHTML = wishlist.includes(${product.id}) ? '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>' : '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>'; this.closest('.group').querySelector('.wish-icon').setAttribute('fill', wishlist.includes(${product.id}) ? 'currentColor' : 'none');" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors" title="Wishlist">
                     <svg class="w-5 h-5 wish-icon" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                 </button>
-                <button onclick="addToCart(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors">
+                <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors" title="Quick View">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </button>
+            </div>
+            <div class="product-card-add-btn">
+                <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="w-full flex items-center justify-center gap-2 bg-white py-3 text-sm font-semibold tracking-wide hover:bg-primary hover:text-white text-slate-900 transition-all duration-300 rounded-sm shadow-md uppercase ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    ${isSoldOut ? 'Sold Out' : 'Add to Cart'}
                 </button>
             </div>
         </div>
         <div class="p-4">
             <a href="product-detail.php?id=${product.id}" class="block">
-                <p class="text-xs text-slate-500 mb-1">${product.brand}</p>
-                <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-2 line-clamp-1">${product.name}</h3>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 mb-1 font-medium tracking-wide uppercase">${product.brand} &bull; <span class="text-primary">${product.category}</span></p>
+                <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-2 line-clamp-1 group-hover:text-primary transition-colors">${product.name}</h3>
                 <div class="flex items-center space-x-1 mb-2">${renderStars(product.rating)}<span class="text-xs text-slate-500 ml-1">(${product.reviews})</span></div>
             </a>
             <div class="flex items-center space-x-2">
@@ -472,6 +551,152 @@ function renderProductCard(product, delay = 0) {
             </div>
         </div>
     </div>`;
+}
+
+function openQuickView(productId) {
+    if (typeof PRODUCTS === 'undefined') return;
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
+
+    let modal = document.getElementById('quickViewModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'quickViewModal';
+        modal.className = 'fixed inset-0 z-[150] hidden items-center justify-center p-4 sm:p-6';
+        document.body.appendChild(modal);
+    }
+    modal.innerHTML = renderQuickViewModal(product);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+
+    // Store current quick view product ID for quantity updates
+    modal.dataset.productId = productId;
+}
+
+function closeQuickView() {
+    const modal = document.getElementById('quickViewModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+}
+
+function changeQuickViewQty(delta) {
+    const input = document.getElementById('quickViewQty');
+    if (input) {
+        let val = parseInt(input.value) + delta;
+        if (val < 1) val = 1;
+        input.value = val;
+    }
+}
+
+function addToCartFromQuickView() {
+    const modal = document.getElementById('quickViewModal');
+    if (!modal) return;
+    const productId = parseInt(modal.dataset.productId);
+    const qtyInput = document.getElementById('quickViewQty');
+    const qty = qtyInput ? parseInt(qtyInput.value) : 1;
+
+    // Check if a size is selected if sizes are available
+    const sizeSelect = document.getElementById('quickViewSize');
+    if (sizeSelect && !sizeSelect.value) {
+        showToast('Please select a size', 'error');
+        return;
+    }
+
+    addToCart(productId, qty);
+    closeQuickView();
+}
+
+function renderQuickViewModal(product) {
+    const isSoldOut = product.inStock === false;
+    // Default sizes if none provided in the product object
+    const sizes = product.sizes || ['S', 'M', 'L', 'XL'];
+
+    return `
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeQuickView()"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden animate-fade-in-up flex flex-col md:flex-row max-h-[90vh]">
+        
+        <!-- Close Button -->
+        <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-slate-800 backdrop-blur-md rounded-full flex items-center justify-center text-slate-800 dark:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <!-- Image Seciton -->
+        <div class="w-full md:w-1/2 bg-[#F3F3F3] dark:bg-slate-800/50 relative">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover max-h-[40vh] md:max-h-none" />
+            ${isSoldOut ? `<span class="absolute top-6 left-6 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">Sold Out</span>` : ''}
+        </div>
+
+        <!-- Details Section -->
+        <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center overflow-y-auto">
+            <p class="text-sm text-slate-500 mb-2 tracking-widest uppercase font-medium outline-offset-4">${product.brand}</p>
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-4 line-clamp-2">${product.name}</h2>
+            
+            <div class="flex items-center space-x-4 mb-6">
+                <div class="flex items-center">
+                    ${renderStars(product.rating)}
+                </div>
+                <span class="text-sm text-slate-500">(${product.reviews} Reviews)</span>
+            </div>
+
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="text-2xl md:text-3xl font-bold text-primary dark:text-white">$${product.price.toFixed(2)}</span>
+                ${product.oldPrice ? `<span class="text-lg text-slate-400 line-through">$${product.oldPrice.toFixed(2)}</span>` : ''}
+            </div>
+
+            <!-- Options -->
+            <div class="space-y-6 mb-8">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="font-semibold text-slate-900 dark:text-white">Selected Size</label>
+                        <a href="#" class="text-sm text-slate-500 hover:text-primary dark:hover:text-white underline">Size Guide</a>
+                    </div>
+                    <!-- Hidden select to hold value, visualized by buttons below -->
+                    <select id="quickViewSize" class="hidden">
+                        <option value="">Select Size</option>
+                        ${sizes.map(s => `<option value="${s}">${s}</option>`).join('')}
+                    </select>
+                    <div class="flex flex-wrap gap-3">
+                        ${sizes.map(s => `
+                        <button type="button" onclick="document.getElementById('quickViewSize').value='${s}'; this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('ring-2', 'ring-primary', 'dark:ring-white', 'border-transparent')); this.classList.add('ring-2', 'ring-primary', 'dark:ring-white', 'border-transparent');" class="w-12 h-12 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center font-medium hover:border-primary dark:hover:border-white transition-colors dark:text-slate-300">
+                            ${s}
+                        </button>`).join('')}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4 mt-auto">
+                <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-md h-12 w-32">
+                    <button onclick="changeQuickViewQty(-1)" class="w-10 h-full flex items-center justify-center text-slate-500 hover:text-primary dark:hover:text-white transition-colors">−</button>
+                    <input type="number" id="quickViewQty" value="1" min="1" class="w-12 h-full text-center font-semibold bg-transparent border-none focus:ring-0 dark:text-white" readonly />
+                    <button onclick="changeQuickViewQty(1)" class="w-10 h-full flex items-center justify-center text-slate-500 hover:text-primary dark:hover:text-white transition-colors">+</button>
+                </div>
+                
+                <button onclick="${isSoldOut ? '' : 'addToCartFromQuickView()'}" class="flex-1 h-12 bg-primary text-white font-bold rounded-md hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2 ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span>${isSoldOut ? 'Sold Out' : 'Add to Cart'}</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <style>
+        .animate-fade-in-up {
+            animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>`;
 }
 
 function renderStars(rating) {
@@ -587,6 +812,8 @@ function initKrist() {
     renderMiniCart();
     renderDarkModeToggle();
     renderFloatingButtons();
+    updateCartBadge();
+    updateWishlistBadge();
     // Init AOS
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 50 });

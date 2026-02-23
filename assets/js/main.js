@@ -160,3 +160,18 @@ function searchProducts(query) {
         p.category.toLowerCase().includes(q)
     );
 }
+
+/* ── Mobile Shop Dropdown Toggle ─────────────────────────── */
+function toggleMobileShopMenu() {
+    const menu = document.getElementById('mobileShopMenu');
+    const chevron = document.getElementById('mobileShopChevron');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('block');
+        chevron.classList.add('rotate-180');
+    } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('block');
+        chevron.classList.remove('rotate-180');
+    }
+}

@@ -9,7 +9,34 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<link href="./src/output.css?v=<?= time() ?>" rel="stylesheet">
+<link href="/assets/css/output.css?v=<?= time() ?>" rel="stylesheet">
+
+<style>
+    /* Foolproof CSS for the product card Add to Cart button to bypass Tailwind compiler limitations */
+    .product-card-add-btn {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        width: 85%;
+        margin-left: -42.5%;
+        /* Centers the 85% width element without transform */
+        text-align: center;
+        z-index: 20;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+
+    .group:hover .product-card-add-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+</style>

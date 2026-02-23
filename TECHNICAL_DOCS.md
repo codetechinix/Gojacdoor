@@ -11,6 +11,16 @@ This document outlines the technical specifications and the comprehensive refact
   - Applied solid, opaque backgrounds to the header and mega menu for better readability against complex backgrounds.
   - Updated header icons (search, wishlist, cart, user) to Heroicons.
   - Refactored the mobile menu toggle logic and icons.
+  - Upgraded the "Shop" desktop navigation into an interactive CSS-only dropdown `.group/link` structure with animated hover elements and solved underlying layout shift bugs.
+- **Homepage UI Revamp:**
+  - Standardized background utility classes (e.g. `bg-gray-50`, `bg-[#F3F3F3]`) to replicate the Stitch-inspired flat, premium flat design tone.
+  - Restructured the 'Categories' grid to enforce a 400px fixed height array, featuring an internal CSS gradient sweep `bg-linear-to-t from-black/60 to-transparent` to ensure absolute-positioned UI contrast over variable product photos.
+  - Flattened 'Testimonials' cards, removing transparent glassmorphism borders in favor of opaque styling, Left-aligned avatar blocks for improved reading cadence.
+- **Product Card Architecture:**
+  - Extended `components.js` `renderProductCard` templates adding a dual Y-axis structural transformation system via `.group-hover:translate-y-0` for 'Add to Cart' overlays anchored to the bottom.
+  - Injected an X-axis structural transform via `.group-hover:translate-x-0` for auxiliary actions (Wishlist and Quick View) anchored to the top right.
+- **Quick View JS Modal System:**
+  - Engineered client-side Quick View Logic utilizing the DOM memory array `PRODUCTS`. `openQuickView` injects an animated full-screen z-150 backdrop modal displaying specific sizes, price logic, and an independent add-to-cart mechanism isolated from the primary grid array.
 - **Authentication Pages Refactor:** Rebuilt `login.php`, `signup.php`, `forgot-password.php`, and `enter-otp.php` to utilize the new component classes defined in `theme.css`. Removed inline styles and hardcoded gradients.
 - **Homepage (`index.php`) Polish:**
   - Updated the hero section CTA button styling.
