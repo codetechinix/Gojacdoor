@@ -4,6 +4,18 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### [2026-02-22T17:00:00+01:00] Render Docker Configuration
+
+#### Added
+
+- Created `Dockerfile` configuring `php:8.2-apache` with required `mod_rewrite`, `headers` support specifically tuned for precise `.htaccess` routing parity with XAMPP.
+- Created `.dockerignore` to streamline lightweight production image builds.
+- Created `render.yaml` infrastructure-as-code blueprint to instantly provision Render.com deployment.
+
+#### Removed
+
+- Deleted `vercel.json` and `.vercelignore` serverless configuration artifacts due to persistent PHP Edge Builder compatibility and static asset routing constraints.
+
 ### [2026-02-22T16:45:00+01:00] Vercel Deployment Configuration
 
 #### Added
