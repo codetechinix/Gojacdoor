@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: gojacdoors-store
+    env: docker
+    plan: free
+    region: ohio
