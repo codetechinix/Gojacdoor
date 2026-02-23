@@ -103,14 +103,14 @@ function renderHeader(activePage = '') {
     if (!headerEl) return;
     headerEl.innerHTML = `
     <div class="container mx-auto px-4 md:px-8 flex items-center justify-between h-20">
-        <a href="index.php" class="flex items-center space-x-2 group">
+        <a href="/index.php" class="flex items-center space-x-2 group">
             <span class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                 <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 Krist
             </span>
         </a>
         <nav class="hidden md:flex items-center space-x-8">
-            <a class="font-medium hover:text-primary/70 transition-colors ${activePage === 'home' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400'}" href="index.php">Home</a>
+            <a class="font-medium hover:text-primary/70 transition-colors ${activePage === 'home' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400'}" href="/index.php">Home</a>
             <div class="group relative">
                 <button class="flex items-center font-medium hover:text-primary/70 transition-colors py-8 ${activePage === 'shop' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400'}">
                     Shop
@@ -121,18 +121,18 @@ function renderHeader(activePage = '') {
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Men</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=men">T-Shirts</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=men">Casual Shirts</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=men">Formal Shirts</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=men">Jackets</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=men">Blazers & Coats</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=men">T-Shirts</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=men">Casual Shirts</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=men">Formal Shirts</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=men">Jackets</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=men">Blazers & Coats</a></li>
                             </ul>
                         </div>
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Indian & Festive Wear</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Kurtas & Kurta Sets</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Sherwanis</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Kurtas & Kurta Sets</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Sherwanis</a></li>
                             </ul>
                         </div>
                     </div>
@@ -141,17 +141,17 @@ function renderHeader(activePage = '') {
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Women</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Kurtas & Suits</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Sarees</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Ethnic Wear</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Lehenga Cholis</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Kurtas & Suits</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Sarees</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Ethnic Wear</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Lehenga Cholis</a></li>
                             </ul>
                         </div>
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Western Wear</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Dresses</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=women">Jumpsuits</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Dresses</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=women">Jumpsuits</a></li>
                             </ul>
                         </div>
                     </div>
@@ -160,46 +160,46 @@ function renderHeader(activePage = '') {
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Footwear</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Flats</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Casual Shoes</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Heels</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php">Boots</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Flats</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Casual Shoes</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Heels</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php">Boots</a></li>
                             </ul>
                         </div>
                         <div>
                             <h3 class="font-bold text-primary dark:text-white mb-4 uppercase text-sm tracking-wider">Kids</h3>
                             <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=kids">T-Shirts</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=kids">Shirts</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=kids">Jeans</a></li>
-                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="shop.php?cat=kids">Trousers</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=kids">T-Shirts</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=kids">Shirts</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=kids">Jeans</a></li>
+                                <li><a class="hover:text-primary dark:hover:text-white transition-colors" href="/shop.php?cat=kids">Trousers</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="our-story.php">Our Story</a>
-            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="blog.php">Blog</a>
-            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="contact.php">Contact Us</a>
+            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="/our-story.php">Our Story</a>
+            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="/blog.php">Blog</a>
+            <a class="font-medium hover:text-primary/70 transition-colors text-slate-600 dark:text-slate-400" href="/pages/contact.php">Contact Us</a>
         </nav>
         <div class="flex items-center space-x-6">
-            <a href="search-results.php" class="hover:text-primary/70 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
-            <a href="wishlist.php" class="hover:text-primary/70 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></a>
+            <a href="/search-results.php" class="hover:text-primary/70 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
+            <a href="/account/wishlist.php" class="hover:text-primary/70 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></a>
             <div class="relative">
                 <button onclick="toggleMiniCart()" class="hover:text-primary/70 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
                 <span class="cart-badge absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
             </div>
-            <a href="login.php" class="bg-primary text-white px-8 py-2.5 rounded-md font-medium hover:bg-slate-800 transition-colors hidden lg:block">Login</a>
+            <a href="/auth/login.php" class="bg-primary text-white px-8 py-2.5 rounded-md font-medium hover:bg-slate-800 transition-colors hidden lg:block">Login</a>
             <button onclick="toggleMobileMenu()" class="md:hidden"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
         </div>
     </div>
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-6 space-y-4">
-        <a href="index.php" class="block py-2 font-medium">Home</a>
-        <a href="shop.php" class="block py-2 font-medium">Shop</a>
-        <a href="search-results.php" class="block py-2 font-medium">Search</a>
-        <a href="personal-info.php" class="block py-2 font-medium">My Account</a>
-        <a href="login.php" class="block py-2 bg-primary text-white text-center rounded-md font-medium">Login</a>
+        <a href="/index.php" class="block py-2 font-medium">Home</a>
+        <a href="/shop.php" class="block py-2 font-medium">Shop</a>
+        <a href="/search-results.php" class="block py-2 font-medium">Search</a>
+        <a href="/account/personal-info.php" class="block py-2 font-medium">My Account</a>
+        <a href="/auth/login.php" class="block py-2 bg-primary text-white text-center rounded-md font-medium">Login</a>
     </div>`;
     updateCartBadge();
 }
@@ -244,7 +244,7 @@ function renderFooter() {
         <!-- Footer Content -->
         <div class="grid md:grid-cols-4 gap-12 mb-16 mt-8">
             <div class="space-y-6">
-                <a href="index.php" class="flex items-center space-x-2 group">
+                <a href="/index.php" class="flex items-center space-x-2 group">
                     <span class="text-3xl font-bold tracking-tighter flex items-center group-hover:opacity-80 transition-opacity">
                         <svg class="w-8 h-8 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         Krist
@@ -259,17 +259,17 @@ function renderFooter() {
             <div>
                 <h4 class="font-bold mb-6">Information</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="personal-info.php">My Account</a></li>
-                    <li><a class="hover:text-white transition-colors" href="login.php">Login</a></li>
-                    <li><a class="hover:text-white transition-colors" href="cart.php">My Cart</a></li>
-                    <li><a class="hover:text-white transition-colors" href="wishlist.php">My Wishlist</a></li>
-                    <li><a class="hover:text-white transition-colors" href="checkout.php">Checkout</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/account/personal-info.php">My Account</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/auth/login.php">Login</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/cart.php">My Cart</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/account/wishlist.php">My Wishlist</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/checkout.php">Checkout</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Service</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="our-story.php">About Us</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/our-story.php">About Us</a></li>
                     <li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
                     <li><a class="hover:text-white transition-colors" href="#">Delivery Information</a></li>
                     <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
@@ -307,14 +307,14 @@ function renderAccountSidebar(activePage = '') {
     const sidebarEl = document.getElementById('account-sidebar');
     if (!sidebarEl) return;
     const links = [
-        { href: 'personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>', label: 'My Profile', key: 'profile' },
-        { href: 'personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>', label: 'Personal Information', key: 'personal-info' },
-        { href: 'orders.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>', label: 'My Orders', key: 'orders' },
-        { href: 'wishlist.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>', label: 'My Wishlist', key: 'wishlist' },
-        { href: 'manage-addresses.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Manage Addresses', key: 'addresses' },
-        { href: 'saved-cards.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>', label: 'Saved Cards', key: 'saved-cards' },
-        { href: 'notifications.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>', label: 'Notifications', key: 'notifications' },
-        { href: 'settings.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Settings', key: 'settings' },
+        { href: '/account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>', label: 'My Profile', key: 'profile' },
+        { href: '/account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>', label: 'Personal Information', key: 'personal-info' },
+        { href: '/account/orders.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>', label: 'My Orders', key: 'orders' },
+        { href: '/account/wishlist.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>', label: 'My Wishlist', key: 'wishlist' },
+        { href: '/account/manage-addresses.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Manage Addresses', key: 'addresses' },
+        { href: '/account/saved-cards.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>', label: 'Saved Cards', key: 'saved-cards' },
+        { href: '/account/notifications.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>', label: 'Notifications', key: 'notifications' },
+        { href: '/account/settings.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Settings', key: 'settings' },
     ];
     sidebarEl.innerHTML = `
     <div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
@@ -329,7 +329,7 @@ function renderAccountSidebar(activePage = '') {
         </div>
         <nav class="p-2">
             ${links.map(l => `
-            <a href="${l.href}" class="flex items-center space-x-3 px-4 py-3 rounded-md text-sm font-medium transition-colors ${activePage === l.key ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}">
+            <a href="/${l.href}" class="flex items-center space-x-3 px-4 py-3 rounded-md text-sm font-medium transition-colors ${activePage === l.key ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}">
                 ${l.icon}
                 <span>${l.label}</span>
             </a>`).join('')}
@@ -358,8 +358,8 @@ function renderMiniCart() {
         <div id="miniCartItems" class="flex-1 overflow-y-auto p-6 space-y-6"></div>
         <div class="border-t border-slate-100 dark:border-slate-800 p-6">
             <div class="flex justify-between mb-4 font-bold text-lg"><span>Subtotal</span><span id="miniCartTotal">$0.00</span></div>
-            <a href="cart.php" class="block w-full text-center py-3 border-2 border-primary text-primary dark:text-white rounded-md font-medium hover:bg-primary hover:text-white transition-colors mb-3">View Cart</a>
-            <a href="checkout.php" class="block w-full text-center py-3 bg-primary text-white rounded-md font-medium hover:bg-slate-800 transition-colors">Checkout</a>
+            <a href="/cart.php" class="block w-full text-center py-3 border-2 border-primary text-primary dark:text-white rounded-md font-medium hover:bg-primary hover:text-white transition-colors mb-3">View Cart</a>
+            <a href="/checkout.php" class="block w-full text-center py-3 bg-primary text-white rounded-md font-medium hover:bg-slate-800 transition-colors">Checkout</a>
         </div>
     </div>`;
     document.body.appendChild(drawer);
@@ -508,7 +508,7 @@ function handleSubscribe(e) {
 
 function handleLogout() {
     showToast('Logged out successfully', 'info');
-    setTimeout(() => window.location.href = 'login.php', 1000);
+    setTimeout(() => window.location.href = '/auth/login.php', 1000);
 }
 
 /* ── Product Card Renderer ────────────────────────────── */
@@ -519,7 +519,7 @@ function renderProductCard(product, delay = 0) {
     return `
     <div class="group bg-white dark:bg-slate-900 rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800" data-aos="fade-up" data-aos-delay="${delay}">
         <div class="relative overflow-hidden aspect-[3/4]">
-            <a href="product-detail.php?id=${product.id}">
+            <a href="/product-detail.php?id=${product.id}">
                 <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${isSoldOut ? 'opacity-50 grayscale' : ''}"/>
             </a>
             ${product.oldPrice && !isSoldOut ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
@@ -540,7 +540,7 @@ function renderProductCard(product, delay = 0) {
             </div>
         </div>
         <div class="p-4">
-            <a href="product-detail.php?id=${product.id}" class="block">
+            <a href="/product-detail.php?id=${product.id}" class="block">
                 <p class="text-[11px] text-slate-400 dark:text-slate-500 mb-1 font-medium tracking-wide uppercase">${product.brand} &bull; <span class="text-primary">${product.category}</span></p>
                 <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-2 line-clamp-1 group-hover:text-primary transition-colors">${product.name}</h3>
                 <div class="flex items-center space-x-1 mb-2">${renderStars(product.rating)}<span class="text-xs text-slate-500 ml-1">(${product.reviews})</span></div>
@@ -733,8 +733,8 @@ function renderCheckoutStepper(currentStep = 1) {
 function renderBreadcrumb(items) {
     return `
     <nav class="flex items-center space-x-2 text-sm text-slate-500 mb-8" data-aos="fade-right">
-        <a href="index.php" class="hover:text-primary dark:hover:text-white transition-colors">Home</a>
-        ${items.map(item => `<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="${item.href || '#'}" class="hover:text-primary dark:hover:text-white transition-colors ${item.active ? 'text-primary dark:text-white font-medium' : ''}">${item.label}</a>`).join('')}
+        <a href="/index.php" class="hover:text-primary dark:hover:text-white transition-colors">Home</a>
+        ${items.map(item => `<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/${item.href || '#'}" class="hover:text-primary dark:hover:text-white transition-colors ${item.active ? 'text-primary dark:text-white font-medium' : ''}">${item.label}</a>`).join('')}
     </nav>`;
 }
 

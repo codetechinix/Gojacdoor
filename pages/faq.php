@@ -6,7 +6,7 @@ $activePage = '';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
     <style>
         /* Smooth accordion */
         .faq-answer {
@@ -74,7 +74,7 @@ $activePage = '';
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <?php include 'includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <main class="grow container mx-auto px-4 md:px-8 py-12 max-w-4xl">
         <div id="breadcrumb" class="mb-8"></div>
@@ -312,7 +312,7 @@ $activePage = '';
             <!-- Contact CTA -->
             <div class="mt-12 text-center">
                 <p class="text-slate-500 mb-4">Still have questions?</p>
-                <a href="contact.php"
+                <a href="/pages/contact.php"
                     class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -324,7 +324,7 @@ $activePage = '';
         </div>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Breadcrumb

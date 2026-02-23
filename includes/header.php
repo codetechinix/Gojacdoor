@@ -5,7 +5,7 @@ $activePage = isset($activePage) ? $activePage : '';
 <header id="site-header"
     class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
     <div class="container mx-auto px-4 md:px-8 flex items-center justify-between h-20">
-        <a href="index.php" class="flex items-center space-x-2">
+        <a href="/index.php" class="flex items-center space-x-2">
             <span
                 class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                 <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -18,7 +18,7 @@ $activePage = isset($activePage) ? $activePage : '';
         </a>
         <nav class="hidden md:flex items-center space-x-8 z-10">
             <a class="font-medium hover:text-primary/70 transition-colors <?= $activePage === 'home' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="index.php">Home</a>
+                href="/index.php">Home</a>
             <div class="group relative flex items-center h-full">
                 <button
                     class="font-medium hover:text-primary transition-colors flex items-center text-slate-600 dark:text-slate-400">
@@ -30,7 +30,7 @@ $activePage = isset($activePage) ? $activePage : '';
                 </button>
                 <div
                     class="absolute left-0 top-full w-56 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-xl hidden group-hover:block z-50 p-2 mt-1">
-                    <a href="shop.php?cat=men"
+                    <a href="/shop.php?cat=men"
                         class="group/link flex items-center justify-between px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300">
                         <span
                             class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Men</span>
@@ -40,7 +40,7 @@ $activePage = isset($activePage) ? $activePage : '';
                             </path>
                         </svg>
                     </a>
-                    <a href="shop.php?cat=women"
+                    <a href="/shop.php?cat=women"
                         class="group/link flex items-center justify-between px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300">
                         <span
                             class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Women</span>
@@ -50,7 +50,7 @@ $activePage = isset($activePage) ? $activePage : '';
                             </path>
                         </svg>
                     </a>
-                    <a href="shop.php?cat=kids"
+                    <a href="/shop.php?cat=kids"
                         class="group/link flex items-center justify-between px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300">
                         <span
                             class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Kids</span>
@@ -61,7 +61,7 @@ $activePage = isset($activePage) ? $activePage : '';
                         </svg>
                     </a>
                     <div class="h-px bg-slate-100 dark:bg-slate-800 my-1 mx-2"></div>
-                    <a href="shop.php?cat=footwear"
+                    <a href="/shop.php?cat=footwear"
                         class="group/link flex items-center justify-between px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300">
                         <span
                             class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Footwear</span>
@@ -71,7 +71,7 @@ $activePage = isset($activePage) ? $activePage : '';
                             </path>
                         </svg>
                     </a>
-                    <a href="shop.php?cat=accessories"
+                    <a href="/shop.php?cat=accessories"
                         class="group/link flex items-center justify-between px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300">
                         <span
                             class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Accessories</span>
@@ -84,11 +84,11 @@ $activePage = isset($activePage) ? $activePage : '';
                 </div>
             </div>
             <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'about' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="about-us.php">Our Story</a>
+                href="/pages/about-us.php">Our Story</a>
             <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'blog' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="blog.php">Blog</a>
+                href="/blog.php">Blog</a>
             <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'contact' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="contact.php">Contact Us</a>
+                href="/pages/contact.php">Contact Us</a>
         </nav>
         <div class="flex items-center space-x-4 md:space-x-5">
             <button id="themeToggle"
@@ -110,7 +110,7 @@ $activePage = isset($activePage) ? $activePage : '';
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </button>
-            <a href="wishlist.php"
+            <a href="/account/wishlist.php"
                 class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors relative hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +134,7 @@ $activePage = isset($activePage) ? $activePage : '';
                     class="cart-badge absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
                     style="display: none;">0</span>
             </div>
-            <a href="login.php"
+            <a href="/auth/login.php"
                 class="group bg-primary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-slate-800 transition-all duration-300 hidden lg:flex items-center space-x-2 shadow-sm hover:shadow-md border border-transparent">
                 <svg class="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -156,7 +156,7 @@ $activePage = isset($activePage) ? $activePage : '';
     <!-- Mobile Menu -->
     <div id="mobileMenu"
         class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-6 space-y-4 shadow-lg absolute w-full left-0 z-40 transform origin-top transition-all duration-300">
-        <a href="index.php" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+        <a href="/index.php" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
         <div class="relative">
             <button onclick="toggleMobileShopMenu()"
                 class="w-full flex items-center justify-between py-2 font-medium hover:text-primary transition-colors">
@@ -168,26 +168,26 @@ $activePage = isset($activePage) ? $activePage : '';
             </button>
             <div id="mobileShopMenu"
                 class="hidden pl-4 py-2 space-y-3 border-l-2 border-slate-100 dark:border-slate-800 mt-2">
-                <a href="shop.php?cat=men"
+                <a href="/shop.php?cat=men"
                     class="block text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Men</a>
-                <a href="shop.php?cat=women"
+                <a href="/shop.php?cat=women"
                     class="block text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Women</a>
-                <a href="shop.php?cat=kids"
+                <a href="/shop.php?cat=kids"
                     class="block text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Kids</a>
-                <a href="shop.php?cat=footwear"
+                <a href="/shop.php?cat=footwear"
                     class="block text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Footwear</a>
-                <a href="shop.php?cat=accessories"
+                <a href="/shop.php?cat=accessories"
                     class="block text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Accessories</a>
             </div>
         </div>
-        <a href="about-us.php" class="block py-2 font-medium hover:text-primary transition-colors">Our Story</a>
-        <a href="blog.php" class="block py-2 font-medium hover:text-primary transition-colors">Blog</a>
-        <a href="contact.php" class="block py-2 font-medium hover:text-primary transition-colors">Contact Us</a>
+        <a href="/pages/about-us.php" class="block py-2 font-medium hover:text-primary transition-colors">Our Story</a>
+        <a href="/blog.php" class="block py-2 font-medium hover:text-primary transition-colors">Blog</a>
+        <a href="/pages/contact.php" class="block py-2 font-medium hover:text-primary transition-colors">Contact Us</a>
         <div class="h-px w-full bg-slate-100 dark:bg-slate-800 my-4"></div>
-        <a href="personal-info.php"
+        <a href="/account/personal-info.php"
             class="block py-2 font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">My
             Account</a>
-        <a href="login.php"
+        <a href="/auth/login.php"
             class="block py-3 mt-4 bg-primary text-white text-center rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-sm">Login</a>
     </div>
 </header>

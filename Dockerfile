@@ -19,7 +19,8 @@ RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/a
 
 # Explicitly allow .htaccess overrides and set ServerName to suppress warnings
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+RUN printf "<Directory /var/www/html>\n\tAllowOverride All\n</Directory>\n" > /etc/apache2/conf-available/override.conf \
+    && a2enconf override
 
 # Copy all application files to the container (respects .dockerignore)
 COPY . /var/www/html/

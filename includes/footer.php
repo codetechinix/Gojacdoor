@@ -66,7 +66,7 @@
     <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-4 gap-12 mb-16">
             <div class="space-y-6">
-                <a href="index.php" class="flex items-center space-x-2">
+                <a href="/index.php" class="flex items-center space-x-2">
                     <span class="text-3xl font-bold tracking-tighter flex items-center">
                         <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -88,22 +88,24 @@
             <div>
                 <h4 class="font-bold mb-6">Information</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="personal-info.php">My Account</a></li>
-                    <li><a class="hover:text-white transition-colors" href="login.php">Login</a></li>
-                    <li><a class="hover:text-white transition-colors" href="cart.php">My Cart</a></li>
-                    <li><a class="hover:text-white transition-colors" href="wishlist.php">My Wishlist</a></li>
-                    <li><a class="hover:text-white transition-colors" href="checkout.php">Checkout</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/account/personal-info.php">My Account</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/auth/login.php">Login</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/cart.php">My Cart</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/account/wishlist.php">My Wishlist</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/checkout.php">Checkout</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Service</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="about-us.php">About Us</a></li>
-                    <li><a class="hover:text-white transition-colors" href="careers.php">Careers</a></li>
-                    <li><a class="hover:text-white transition-colors" href="delivery-information.php">Delivery
+                    <li><a class="hover:text-white transition-colors" href="/pages/about-us.php">About Us</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/pages/careers.php">Careers</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/pages/delivery-information.php">Delivery
                             Information</a></li>
-                    <li><a class="hover:text-white transition-colors" href="privacy-policy.php">Privacy Policy</a></li>
-                    <li><a class="hover:text-white transition-colors" href="terms-conditions.php">Terms & Conditions</a>
+                    <li><a class="hover:text-white transition-colors" href="/pages/privacy-policy.php">Privacy Policy</a>
+                    </li>
+                    <li><a class="hover:text-white transition-colors" href="/pages/terms-conditions.php">Terms &
+                            Conditions</a>
                     </li>
                 </ul>
             </div>

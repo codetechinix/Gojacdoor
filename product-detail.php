@@ -351,7 +351,7 @@ $activePage = 'shop';
             // Render Thumbnails
             const galleryHtml = [currentProduct.image, currentProduct.image, currentProduct.image, currentProduct.image].map((img, idx) => `
                 <button class="glass bg-white/50 dark:bg-slate-900/50 rounded-xl overflow-hidden aspect-square flex items-center justify-center p-2 shadow-sm border ${idx === 0 ? 'border-primary' : 'border-slate-200 dark:border-slate-700'} hover:border-primary transition-all gallery-thumb">
-                    <img src="${img}" class="max-h-full object-contain mix-blend-multiply dark:mix-blend-normal ${idx === 0 ? 'opacity-100' : 'opacity-70'} hover:opacity-100 transition-opacity" />
+                    <img src="/${img}" class="max-h-full object-contain mix-blend-multiply dark:mix-blend-normal ${idx === 0 ? 'opacity-100' : 'opacity-70'} hover:opacity-100 transition-opacity" />
                 </button>
             `).join('');
             document.getElementById('imageGallery').innerHTML = galleryHtml;

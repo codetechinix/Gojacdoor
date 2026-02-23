@@ -2,13 +2,13 @@
 <?php
 $activePage = isset($activePage) ? $activePage : '';
 $links = [
-    ['href' => 'personal-info.php', 'icon' => 'person', 'label' => 'My Profile', 'key' => 'profile'],
-    ['href' => 'manage-addresses.php', 'icon' => 'location_on', 'label' => 'Manage Addresses', 'key' => 'addresses'],
-    ['href' => 'wishlist.php', 'icon' => 'favorite', 'label' => 'My Wishlist', 'key' => 'wishlist'],
-    ['href' => 'saved-cards.php', 'icon' => 'credit_card', 'label' => 'Saved Cards', 'key' => 'saved-cards'],
-    ['href' => 'orders.php', 'icon' => 'shopping_bag', 'label' => 'My Orders', 'key' => 'orders'],
-    ['href' => 'notifications.php', 'icon' => 'notifications', 'label' => 'Notifications', 'key' => 'notifications'],
-    ['href' => 'settings.php', 'icon' => 'settings', 'label' => 'Settings', 'key' => 'settings'],
+    ['href' => '/account/personal-info.php', 'icon' => 'person', 'label' => 'My Profile', 'key' => 'profile'],
+    ['href' => '/account/manage-addresses.php', 'icon' => 'location_on', 'label' => 'Manage Addresses', 'key' => 'addresses'],
+    ['href' => '/account/wishlist.php', 'icon' => 'favorite', 'label' => 'My Wishlist', 'key' => 'wishlist'],
+    ['href' => '/account/saved-cards.php', 'icon' => 'credit_card', 'label' => 'Saved Cards', 'key' => 'saved-cards'],
+    ['href' => '/account/orders.php', 'icon' => 'shopping_bag', 'label' => 'My Orders', 'key' => 'orders'],
+    ['href' => '/account/notifications.php', 'icon' => 'notifications', 'label' => 'Notifications', 'key' => 'notifications'],
+    ['href' => '/account/settings.php', 'icon' => 'settings', 'label' => 'Settings', 'key' => 'settings'],
 ];
 ?>
 <div

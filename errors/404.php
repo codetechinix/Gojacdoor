@@ -225,7 +225,7 @@ http_response_code(404);
                     class="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-10 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-all duration-300 rounded-sm">
                     Back to Home
                 </a>
-                <a href="javascript:history.back()"
+                <a href="/javascript:history.back()"
                     class="inline-block px-10 py-4 text-sm font-semibold tracking-wider uppercase border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300 rounded-sm">
                     Go Back
                 </a>
