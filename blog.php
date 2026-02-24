@@ -24,27 +24,28 @@ $activePage = 'blog';
                 from the Krist team.</p>
         </div>
 
-        <!-- Filter Categories (Static for demo) -->
+        <!-- Filter Categories -->
         <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
-            <button
-                class="px-6 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium">All</button>
-            <button
-                class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Fashion</button>
-            <button
-                class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Lifestyle</button>
-            <button
-                class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Trends</button>
-            <button
-                class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">D.I.Y.</button>
+            <button data-filter="all"
+                class="filter-btn active px-6 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium transition-colors">All</button>
+            <button data-filter="fashion"
+                class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Fashion</button>
+            <button data-filter="lifestyle"
+                class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Lifestyle</button>
+            <button data-filter="trends"
+                class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Trends</button>
+            <button data-filter="diy"
+                class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">D.I.Y.</button>
         </div>
 
         <!-- CSS Grid Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200" id="blogGrid">
             <!-- Post 1 -->
-            <article
-                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
-                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/3">
-                    <img src="https://images.unsplash.com/photo-1485230895905-ef40ba366951?q=80&w=2670&auto=format&fit=crop"
+            <article data-category="fashion"
+                class="blog-post bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-16/10">
+                    <!-- Using a robust Unsplash premium fashion image -->
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80"
                         alt="10 Essential Wardrobe Staples Every Woman Needs"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
@@ -80,10 +81,11 @@ $activePage = 'blog';
             </article>
 
             <!-- Post 2 -->
-            <article
-                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
-                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-square">
-                    <img src="https://images.unsplash.com/photo-1434389678278-be4d41a6b8e6?q=80&w=2670&auto=format&fit=crop"
+            <article data-category="lifestyle"
+                class="blog-post bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-16/10">
+                    <!-- High quality lifestyle image -->
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80"
                         alt="The Rise of Sustainable Fashion"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
@@ -113,10 +115,11 @@ $activePage = 'blog';
             </article>
 
             <!-- Post 3 -->
-            <article
-                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
-                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-video">
-                    <img src="https://images.unsplash.com/photo-1550614000-4b95d4662247?q=80&w=2670&auto=format&fit=crop"
+            <article data-category="trends"
+                class="blog-post bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-16/10">
+                    <!-- High quality trendy image -->
+                    <img src="https://images.unsplash.com/photo-1528698827591-e19bdd7bc73d?w=800&q=80"
                         alt="Color Trends for the Upcoming Season"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
@@ -146,8 +149,8 @@ $activePage = 'blog';
             </article>
 
             <!-- Post 4 (Quote) -->
-            <article
-                class="bg-slate-900 text-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-800 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 h-full flex flex-col justify-center">
+            <article data-category="fashion"
+                class="blog-post bg-slate-900 text-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-800 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 h-full flex flex-col justify-center min-h-[400px]">
                 <!-- Subtle background pattern for quote card -->
                 <div
                     class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
@@ -173,9 +176,9 @@ $activePage = 'blog';
             </article>
 
             <!-- Post 5 (Image Only) -->
-            <article
-                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col">
-                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/5">
+            <article data-category="fashion"
+                class="blog-post bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-16/10 h-full">
                     <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop"
                         alt="Fashion Lookbook"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -191,8 +194,8 @@ $activePage = 'blog';
             </article>
 
             <!-- Post 6 (Image Overlay Text) -->
-            <article
-                class="rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group relative transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col min-h-[400px]">
+            <article data-category="diy"
+                class="blog-post rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group relative transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col min-h-[400px]">
                 <a href="/blog-detail.php" class="block block absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2520&auto=format&fit=crop"
                         alt="How to Upcycle Your Old Jeans"
@@ -261,6 +264,43 @@ $activePage = 'blog';
             document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
                 { label: 'Blog', active: true }
             ]);
+
+            // Blog Category Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active styling
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
+                        b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
+                    });
+                    
+                    btn.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
+                    btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter posts
+                    blogPosts.forEach(post => {
+                        // Apply fade out class
+                        post.classList.add('opacity-0', 'scale-95');
+                        
+                        setTimeout(() => {
+                            if (filterValue === 'all' || post.getAttribute('data-category') === filterValue) {
+                                post.style.display = 'flex';
+                                // Slight delay to allow display flex to apply before transitioning opacity back
+                                setTimeout(() => {
+                                    post.classList.remove('opacity-0', 'scale-95');
+                                }, 50);
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        }, 300); // Wait for fade out transition (300ms matches duration-300)
+                    });
+                });
+            });
         });
     </script>
 </body>
