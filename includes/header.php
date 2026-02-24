@@ -21,18 +21,18 @@ $activePage = isset($activePage) ? $activePage : '';
                 href="/index.php">
                 Home
                 <span
-                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'home' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+                    class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-1.5 w-1.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'home' ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100' ?>"></span>
             </a>
             <div class="group relative flex items-center h-full">
                 <button
-                    class="relative group/btn font-medium hover:text-primary dark:hover:text-white transition-colors flex items-center text-slate-600 dark:text-slate-400">
+                    class="relative group/btn font-medium hover:text-primary dark:hover:text-white transition-colors flex items-center <?= $activePage === 'shop' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>">
                     Shop
                     <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                     <span
-                        class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 w-0 group-hover/btn:w-full"></span>
+                        class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-1.5 w-1.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'shop' ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover/btn:opacity-100 group-hover/btn:scale-100' ?>"></span>
                 </button>
                 <div
                     class="absolute left-0 top-full w-56 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-xl hidden group-hover:block z-50 p-2 mt-1">
@@ -93,19 +93,19 @@ $activePage = isset($activePage) ? $activePage : '';
                 href="/pages/about-us.php">
                 Our Story
                 <span
-                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'about' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+                    class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-1.5 w-1.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'about' ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100' ?>"></span>
             </a>
             <a class="relative group font-medium transition-colors <?= $activePage === 'blog' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
                 href="/blog.php">
                 Blog
                 <span
-                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'blog' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+                    class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-1.5 w-1.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'blog' ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100' ?>"></span>
             </a>
             <a class="relative group font-medium transition-colors <?= $activePage === 'contact' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
                 href="/pages/contact.php">
                 Contact Us
                 <span
-                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'contact' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+                    class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-1.5 w-1.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'contact' ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100' ?>"></span>
             </a>
         </nav>
         <div class="flex items-center space-x-4 md:space-x-5">
