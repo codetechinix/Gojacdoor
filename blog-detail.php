@@ -145,11 +145,11 @@ $activePage = 'blog';
                 </div>
 
                 <!-- Comments Section -->
-                <section class="border-t border-slate-200 dark:border-slate-800 pt-12" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-8 font-display">3 Comments</h3>
+                <section class="border-t border-slate-200 dark:border-slate-800 pt-16" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold mb-10 font-display">3 Comments</h3>
 
                     <!-- Existing Comments -->
-                    <div class="space-y-8 mb-12">
+                    <div class="space-y-12 mb-16">
                         <!-- Comment 1 -->
                         <div class="flex gap-4">
                             <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random" alt="Sarah"
@@ -159,7 +159,8 @@ $activePage = 'blog';
                                     <h4 class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</h4>
                                     <span class="text-sm text-slate-500">Oct 25, 2023</span>
                                 </div>
-                                <p class="text-slate-600 dark:text-slate-400 mb-2">This is exactly what I needed! I've
+                                <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">This is exactly what
+                                    I needed! I've
                                     been trying to build a capsule wardrobe and the blazer tip is spot on. Do you have
                                     any recommendations for sustainable brands?</p>
                                 <button
@@ -178,7 +179,8 @@ $activePage = 'blog';
                                     </h4>
                                     <span class="text-sm text-slate-500">Oct 25, 2023</span>
                                 </div>
-                                <p class="text-slate-600 dark:text-slate-400 mb-2">Hi Sarah! We actually have a whole
+                                <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Hi Sarah! We actually
+                                    have a whole
                                     post coming up dedicated to our favorite sustainable brands. Stay tuned!</p>
                                 <button
                                     class="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Reply</button>
@@ -194,7 +196,8 @@ $activePage = 'blog';
                                     <h4 class="font-bold text-slate-900 dark:text-white">Michael Chen</h4>
                                     <span class="text-sm text-slate-500">Oct 26, 2023</span>
                                 </div>
-                                <p class="text-slate-600 dark:text-slate-400 mb-2">Great read. I think a good pair of
+                                <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Great read. I think a
+                                    good pair of
                                     leather boots should definitely be on this list as well!</p>
                                 <button
                                     class="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Reply</button>
@@ -204,8 +207,8 @@ $activePage = 'blog';
 
                     <!-- Leave a Comment Form -->
                     <div
-                        class="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <h3 class="text-2xl font-bold mb-6 font-display">Leave a Reply</h3>
+                        class="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm mt-12">
+                        <h3 class="text-2xl font-bold mb-4 font-display">Leave a Reply</h3>
                         <p class="text-slate-500 mb-6 text-sm">Your email address will not be published. Required fields
                             are marked *</p>
 
@@ -241,7 +244,7 @@ $activePage = 'blog';
                             </div>
 
                             <button type="submit"
-                                class="inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-primary rounded-xl hover:bg-primary-dark hover:shadow-lg hover:-translate-y-1">
+                                class="inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-primary rounded-xl hover:bg-primary-dark hover:shadow-lg hover:-translate-y-1 mt-4">
                                 Post Comment
                             </button>
                         </form>
@@ -250,12 +253,12 @@ $activePage = 'blog';
             </div>
 
             <!-- Right Column: Sidebar -->
-            <aside class="lg:col-span-1 space-y-10">
+            <aside class="lg:col-span-1 space-y-12">
 
                 <!-- Search Widget -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
                     data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-4 font-display">Search</h3>
+                    <h3 class="text-xl font-bold mb-6 font-display">Search</h3>
                     <div class="relative">
                         <input type="text" placeholder="Search articles..."
                             class="w-full pl-4 pr-12 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none">
@@ -270,10 +273,10 @@ $activePage = 'blog';
                 </div>
 
                 <!-- Categories Widget -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
                     data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-4 font-display">Categories</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-xl font-bold mb-6 font-display">Categories</h3>
+                    <ul class="space-y-4">
                         <li>
                             <a href="#"
                                 class="flex justify-between items-center group text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
@@ -306,10 +309,10 @@ $activePage = 'blog';
                 </div>
 
                 <!-- Recent Posts Widget -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
                     data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-6 font-display">Recent Posts</h3>
-                    <div class="space-y-6">
+                    <h3 class="text-xl font-bold mb-8 font-display">Recent Posts</h3>
+                    <div class="space-y-8">
                         <a href="#" class="flex items-center gap-4 group">
                             <img src="https://images.unsplash.com/photo-1434389678278-be4d41a6b8e6?w=200&q=80"
                                 alt="Recent"
@@ -347,10 +350,10 @@ $activePage = 'blog';
                 </div>
 
                 <!-- Popular Tags Widget -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm"
                     data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-4 font-display">Popular Tags</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <h3 class="text-xl font-bold mb-6 font-display">Popular Tags</h3>
+                    <div class="flex flex-wrap gap-3">
                         <a href="#"
                             class="px-3 py-1.5 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg text-sm border border-slate-200 dark:border-slate-700 hover:border-primary hover:text-primary transition-colors">Denim</a>
                         <a href="#"
