@@ -31,7 +31,7 @@ $activePage = 'cart';
                     </div>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <a href="shop.php" class="text-primary font-medium hover:underline flex items-center">
+                    <a href="/shop.php" class="text-primary font-medium hover:underline flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -61,7 +61,7 @@ $activePage = 'cart';
                             <span class="font-bold text-primary" id="orderTotal">$0.00</span>
                         </div>
                     </div>
-                    <a href="checkout.php"
+                    <a href="/checkout.php"
                         class="w-full block text-center py-4 bg-primary text-white rounded-xl font-bold hover:bg-slate-800 transition-colors">Proceed
                         to Checkout</a>
                 </div>
@@ -94,7 +94,7 @@ $activePage = 'cart';
                 return `
                 <div class="p-6 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
                     <div class="col-span-1 sm:col-span-6 flex items-center space-x-4">
-                        <img src="${p.image}" alt="${p.name}" class="w-20 h-24 object-cover rounded-lg"/>
+                        <img src="/${p.image}" alt="${p.name}" class="w-20 h-24 object-cover rounded-lg"/>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white line-clamp-1">${p.name}</h4>
                             <p class="text-sm text-slate-500 mb-2">${p.brand}</p>

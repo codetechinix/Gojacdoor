@@ -32,7 +32,7 @@ $activePage = 'home';
                                 class="text-base md:text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-md leading-relaxed hero-subtitle">
                                 Discover our curated selection of premium fashion pieces designed for the modern woman.
                             </p>
-                            <a href="shop.php"
+                            <a href="/shop.php"
                                 class="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-10 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-all duration-300 rounded-sm hero-cta">
                                 Shop now
                             </a>
@@ -58,7 +58,7 @@ $activePage = 'home';
                                 Elevate your everyday style with our handpicked men's essentials built for comfort and
                                 class.
                             </p>
-                            <a href="shop.php?cat=men"
+                            <a href="/shop.php?cat=men"
                                 class="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-10 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-all duration-300 rounded-sm hero-cta">
                                 Shop now
                             </a>
@@ -83,7 +83,7 @@ $activePage = 'home';
                                 class="text-base md:text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-md leading-relaxed hero-subtitle">
                                 Be the first to explore our latest drops — fresh styles updated every week.
                             </p>
-                            <a href="shop.php"
+                            <a href="/shop.php"
                                 class="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-10 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-all duration-300 rounded-sm hero-cta">
                                 Shop now
                             </a>
@@ -223,7 +223,7 @@ $activePage = 'home';
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12" id="bestsellersGrid"></div>
             <div class="text-center">
-                <a href="shop.php"
+                <a href="/shop.php"
                     class="inline-flex items-center justify-center border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary px-8 py-3 rounded-md font-semibold transition-all group">
                     View All Products
                     <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -265,7 +265,7 @@ $activePage = 'home';
                                         class="text-2xl font-bold block">45</span><span class="text-xs">Mins</span>
                                 </div>
                             </div>
-                            <a href="shop.php"
+                            <a href="/shop.php"
                                 class="bg-white text-primary px-8 py-3 rounded-md font-semibold text-sm hover:bg-slate-100 transition-colors inline-block focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary">Shop
                                 Now</a>
                         </div>
@@ -281,7 +281,7 @@ $activePage = 'home';
                                 ARRIVAL</span>
                             <h3 class="text-3xl font-bold mb-2">Winter Collection</h3>
                             <p class="text-white/80 mb-6">Exclusive new winter arrivals</p>
-                            <a href="shop.php"
+                            <a href="/shop.php"
                                 class="bg-white text-primary px-8 py-3 rounded-md font-semibold text-sm hover:bg-slate-100 transition-colors inline-block focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary">Explore</a>
                         </div>
                     </div>
@@ -619,12 +619,12 @@ $activePage = 'home';
             if (catGrid) {
                 catGrid.innerHTML = categoriesContent.map((cat, i) => `
                     <div class="group relative flex-none w-[280px] md:w-[320px] h-[400px] rounded-lg overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-gray-100 dark:bg-neutral-800 snap-center shrink-0 cursor-pointer" data-aos="fade-up" data-aos-delay="${i * 100}">
-                        <a href="shop.php?cat=${cat.id}" class="block w-full h-full">
+                        <a href="/shop.php?cat=${cat.id}" class="block w-full h-full">
                             <img src="${cat.image}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${cat.name}"/>
                         </a>
                         <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-4/5">
-                            <a href="shop.php?cat=${cat.id}" class="block w-full text-center bg-white py-3 text-sm font-semibold tracking-wide hover:bg-primary hover:text-white dark:text-slate-900 transition-all duration-300 rounded-sm shadow-md uppercase">
+                            <a href="/shop.php?cat=${cat.id}" class="block w-full text-center bg-white py-3 text-sm font-semibold tracking-wide hover:bg-primary hover:text-white dark:text-slate-900 transition-all duration-300 rounded-sm shadow-md uppercase">
                                 ${cat.name}
                             </a>
                         </div>

@@ -21,7 +21,7 @@ $pageTitle = 'Krist - Sign Up';
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md h-screen overflow-y-auto no-scrollbar py-12" data-aos="fade-left">
-            <a href="index.php" class="flex items-center space-x-2 mb-10 group">
+            <a href="/index.php" class="flex items-center space-x-2 mb-10 group">
                 <span
                     class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -115,15 +115,15 @@ $pageTitle = 'Krist - Sign Up';
                     class="w-full py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">Create
                     Account</button>
             </form>
-            <p class="mt-8 text-center text-sm text-slate-500">Already have an account? <a href="login.php"
+            <p class="mt-8 text-center text-sm text-slate-500">Already have an account? <a href="/auth/login.php"
                     class="font-semibold text-primary dark:text-white hover:underline">Log In</a></p>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/./assets/js/components.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const pass = document.getElementById('signupPass');

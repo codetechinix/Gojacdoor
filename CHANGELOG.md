@@ -8,7 +8,10 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 #### Added
 
-- Created `Dockerfile` configuring `php:8.2-apache` with required `mod_rewrite`, `headers` support specifically tuned for precise `.htaccess` routing parity with XAMPP.
+- Created `Dockerfile` configuring `php:8.2-apache`:
+  - Enabled required Apache modules (`rewrite`, `headers`, `expires`, `deflate`).
+  - Disabled `DirectorySlash` and removed directory match blockers to structurally allow clean URL rewrites against valid grouped directories like `/pages` and `/auth`.
+  - **Deprecated `.htaccess`**: Migrated all routing and security rules into `render-apache.conf` and explicitly set `AllowOverride None` in the `Dockerfile` to guarantee maximum performance and bypass Render virtual-host override restrictions.
 - Created `.dockerignore` to streamline lightweight production image builds.
 - Created `render.yaml` infrastructure-as-code blueprint to instantly provision Render.com deployment.
 

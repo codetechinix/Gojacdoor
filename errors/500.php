@@ -230,7 +230,7 @@ http_response_code(500);
             </p>
 
             <div class="flex gap-4 justify-center flex-wrap">
-                <a href="javascript:location.reload()"
+                <a href="/javascript:location.reload()"
                     class="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-10 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-all duration-300 rounded-sm">
                     Try Again
                 </a>

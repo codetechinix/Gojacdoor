@@ -21,7 +21,7 @@ $pageTitle = 'Krist - Forgot Password';
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md" data-aos="fade-left">
-            <a href="index.php" class="flex items-center space-x-2 mb-10 group">
+            <a href="/index.php" class="flex items-center space-x-2 mb-10 group">
                 <span
                     class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -54,21 +54,21 @@ $pageTitle = 'Krist - Forgot Password';
                     class="w-full py-3 bg-primary text-white rounded-md font-semibold hover:bg-slate-800 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">Send
                     Code</button>
             </form>
-            <p class="mt-8 text-center text-sm text-slate-500">Remember your password? <a href="login.php"
+            <p class="mt-8 text-center text-sm text-slate-500">Remember your password? <a href="/auth/login.php"
                     class="font-semibold text-primary dark:text-white hover:underline">Log in here</a></p>
         </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/./assets/js/components.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('forgotForm').addEventListener('submit', (e) => {
                 e.preventDefault();
                 const email = document.getElementById('forgotEmail');
                 if (!V.email(email.value.trim())) { showFieldError(email, 'Please enter a valid email address'); }
-                else { showToast('Verification code sent!', 'success'); setTimeout(() => window.location.href = 'enter-otp.php', 1500); }
+                else { showToast('Verification code sent!', 'success'); setTimeout(() => window.location.href = '/auth/enter-otp.php', 1500); }
             });
         });
     </script>

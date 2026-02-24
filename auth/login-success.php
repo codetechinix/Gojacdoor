@@ -27,15 +27,15 @@ $pageTitle = 'Krist - Login Successful';
             <h1 class="text-3xl font-bold mb-3 dark:text-white">Login Successful</h1>
             <p class="text-slate-500 mb-8">Your session has been restored successfully. You will be redirected shortly.
             </p>
-            <a href="index.php"
+            <a href="/index.php"
                 class="inline-block w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors text-center">Go
                 to Homepage</a>
             <p class="mt-4 text-sm text-slate-400">Redirecting in <span id="countdown">3</span>s...</p>
         </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/./assets/js/components.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let c = 3; const i = setInterval(() => { c--; document.getElementById('countdown').textContent = c; if (c <= 0) { clearInterval(i); window.location.href = 'index.php'; } }, 1000);

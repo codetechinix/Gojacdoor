@@ -6,12 +6,12 @@ $activePage = '';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <?php include 'includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <main class="grow container mx-auto px-4 md:px-8 py-12 max-w-4xl">
         <div id="breadcrumb" class="mb-8"></div>
@@ -83,7 +83,7 @@ $activePage = '';
         </div>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([

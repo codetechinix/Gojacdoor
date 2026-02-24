@@ -21,7 +21,7 @@ $pageTitle = 'Krist - Login';
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md" data-aos="fade-left">
-            <a href="index.php" class="flex items-center space-x-2 mb-10 group">
+            <a href="/index.php" class="flex items-center space-x-2 mb-10 group">
                 <span
                     class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -79,7 +79,7 @@ $pageTitle = 'Krist - Login';
                     <label class="flex items-center text-sm"><input type="checkbox"
                             class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2" /> Remember
                         me</label>
-                    <a href="forgot-password.php"
+                    <a href="/auth/forgot-password.php"
                         class="text-sm font-medium text-primary dark:text-slate-300 hover:underline">Forgot
                         Password?</a>
                 </div>
@@ -87,7 +87,7 @@ $pageTitle = 'Krist - Login';
                     class="w-full py-3 bg-primary text-white rounded-md font-semibold hover:bg-slate-800 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">Sign
                     In</button>
             </form>
-            <p class="mt-8 text-center text-sm text-slate-500">Don't have an account? <a href="signup.php"
+            <p class="mt-8 text-center text-sm text-slate-500">Don't have an account? <a href="/auth/signup.php"
                     class="font-semibold text-primary dark:text-white hover:underline">Sign up</a></p>
             <p class="mt-6 text-center text-xs text-slate-400">© 2024 Krist Inc. All rights reserved.</p>
         </div>
@@ -96,8 +96,8 @@ $pageTitle = 'Krist - Login';
     <!-- Shared Body Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/./assets/js/components.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const emailInput = document.getElementById('loginEmail');

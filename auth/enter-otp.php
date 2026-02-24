@@ -21,7 +21,7 @@ $pageTitle = 'Krist - Enter OTP';
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md text-center" data-aos="fade-left">
-            <a href="index.php" class="flex items-center justify-center space-x-2 mb-10 group">
+            <a href="/index.php" class="flex items-center justify-center space-x-2 mb-10 group">
                 <span
                     class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -62,8 +62,8 @@ $pageTitle = 'Krist - Enter OTP';
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/./assets/js/components.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             setupOTPInputs();
@@ -72,7 +72,7 @@ $pageTitle = 'Krist - Enter OTP';
                 e.preventDefault();
                 const vals = [...document.querySelectorAll('.otp-input')].map(i => i.value).join('');
                 if (vals.length < 5) { showToast('Please enter complete OTP', 'error'); }
-                else { showToast('Verified successfully!', 'success'); setTimeout(() => window.location.href = 'login-success.php', 1500); }
+                else { showToast('Verified successfully!', 'success'); setTimeout(() => window.location.href = '/auth/login-success.php', 1500); }
             });
         });
     </script>

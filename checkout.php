@@ -146,7 +146,7 @@ $activePage = 'shop';
                 if (!p) return '';
                 return `
         <div class="flex items-center space-x-4">
-            <img src="${p.image}" class="w-16 h-20 object-cover rounded-md bg-slate-50">
+            <img src="/${p.image}" class="w-16 h-20 object-cover rounded-md bg-slate-50">
             <div class="flex-1">
                 <h4 class="font-semibold text-sm line-clamp-1">${p.name}</h4>
                 <p class="text-xs text-slate-500">Qty: ${item.qty}</p>

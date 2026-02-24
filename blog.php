@@ -64,7 +64,7 @@ $activePage = 'blog';
             <!-- Post 1 -->
             <article
                 class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
-                <a href="blog-detail.php" class="block overflow-hidden relative aspect-4/3">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/3">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC6gS7i2l8oV17Q9T813xYZc1Yv0-p9C9lQ5hI7V1bO7OaCg5eU12QyqR0-I7x-W52HnC0qT4_rM9_t8W7D8_QY_B2aA_rN-J9x7iA12V2O4aX9dJdZ6x2QzLqA9T6eY-wE6m1Lw4Z2t_9F9IqQQkKq5VwWp6wH6C-I-L-9U1C9KqZ4K"
                         alt="Blog Image"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -87,11 +87,11 @@ $activePage = 'blog';
                             </svg> By Admin</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
-                            href="blog-detail.php">10 Essential Wardrobe Staples Every Woman Needs</a></h3>
+                            href="/blog-detail.php">10 Essential Wardrobe Staples Every Woman Needs</a></h3>
                     <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">Building a versatile wardrobe
                         doesn't require a closet full of clothes. Start with these ten timeless essentials that can be
                         mixed and matched for any occasion.</p>
-                    <a href="blog-detail.php"
+                    <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
                         More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -103,7 +103,7 @@ $activePage = 'blog';
             <!-- Post 2 -->
             <article
                 class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
-                <a href="blog-detail.php" class="block overflow-hidden relative aspect-square">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-square">
                     <img src="https://images.unsplash.com/photo-1434389678278-be4d41a6b8e6?q=80&w=2670&auto=format&fit=crop"
                         alt="Blog Image"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -121,10 +121,10 @@ $activePage = 'blog';
                             </svg> Oct 18, 2023</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
-                            href="blog-detail.php">The Rise of Sustainable Fashion</a></h3>
+                            href="/blog-detail.php">The Rise of Sustainable Fashion</a></h3>
                     <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">Discover how eco-friendly materials
                         and ethical manufacturing processes are reshaping the industry.</p>
-                    <a href="blog-detail.php"
+                    <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
                         More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -136,7 +136,7 @@ $activePage = 'blog';
             <!-- Post 3 -->
             <article
                 class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
-                <a href="blog-detail.php" class="block overflow-hidden relative aspect-video">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-video">
                     <img src="https://images.unsplash.com/photo-1550614000-4b95d4662247?q=80&w=2670&auto=format&fit=crop"
                         alt="Blog Image"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -154,10 +154,10 @@ $activePage = 'blog';
                             </svg> Oct 12, 2023</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
-                            href="blog-detail.php">Color Trends for the Upcoming Season</a></h3>
+                            href="/blog-detail.php">Color Trends for the Upcoming Season</a></h3>
                     <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">From earthy tones to vibrant neon
                         accents, explore the color palettes that will dominate upcoming collections.</p>
-                    <a href="blog-detail.php"
+                    <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
                         More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -177,10 +177,10 @@ $activePage = 'blog';
                             </path>
                         </svg> Oct 05, 2023</span>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 font-display"><a href="blog-detail.php"
+                <h3 class="text-2xl font-bold mb-4 font-display"><a href="/blog-detail.php"
                         class="hover:underline">"Style is a way to say who you are without having to speak."</a></h3>
                 <p class="text-white/80 italic mb-6">- Rachel Zoe</p>
-                <a href="blog-detail.php"
+                <a href="/blog-detail.php"
                     class="inline-flex items-center text-white font-bold hover:text-slate-200 transition-colors">Read
                     Discussion <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -191,7 +191,7 @@ $activePage = 'blog';
             <!-- Post 5 -->
             <article
                 class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
-                <a href="blog-detail.php" class="block overflow-hidden relative aspect-4/5">
+                <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/5">
                     <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop"
                         alt="Blog Image"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 hover:opacity-90">
@@ -215,10 +215,10 @@ $activePage = 'blog';
                             </svg> Sep 28, 2023</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
-                            href="blog-detail.php">How to Upcycle Your Old Jeans</a></h3>
+                            href="/blog-detail.php">How to Upcycle Your Old Jeans</a></h3>
                     <p class="text-slate-300 line-clamp-3 mb-4">Don't throw away those old jeans just yet! Here are 5
                         creative ways to turn them into something brand new.</p>
-                    <a href="blog-detail.php"
+                    <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">Read
                         More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
