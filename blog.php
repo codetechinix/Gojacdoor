@@ -63,13 +63,13 @@ $activePage = 'blog';
         <div class="masonry-grid" data-aos="fade-up" data-aos-delay="200">
             <!-- Post 1 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
+                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/3">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC6gS7i2l8oV17Q9T813xYZc1Yv0-p9C9lQ5hI7V1bO7OaCg5eU12QyqR0-I7x-W52HnC0qT4_rM9_t8W7D8_QY_B2aA_rN-J9x7iA12V2O4aX9dJdZ6x2QzLqA9T6eY-wE6m1Lw4Z2t_9F9IqQQkKq5VwWp6wH6C-I-L-9U1C9KqZ4K"
-                        alt="Blog Image"
+                    <img src="https://images.unsplash.com/photo-1485230895905-ef40ba366951?q=80&w=2670&auto=format&fit=crop"
+                        alt="10 Essential Wardrobe Staples Every Woman Needs"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
-                        class="absolute top-4 left-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
+                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm dark:bg-slate-900/90 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
                         Fashion</div>
                 </a>
                 <div class="p-6">
@@ -102,13 +102,13 @@ $activePage = 'blog';
 
             <!-- Post 2 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
+                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-square">
                     <img src="https://images.unsplash.com/photo-1434389678278-be4d41a6b8e6?q=80&w=2670&auto=format&fit=crop"
-                        alt="Blog Image"
+                        alt="The Rise of Sustainable Fashion"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
-                        class="absolute top-4 left-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
+                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm dark:bg-slate-900/90 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
                         Lifestyle</div>
                 </a>
                 <div class="p-6">
@@ -135,13 +135,13 @@ $activePage = 'blog';
 
             <!-- Post 3 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
+                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-video">
                     <img src="https://images.unsplash.com/photo-1550614000-4b95d4662247?q=80&w=2670&auto=format&fit=crop"
-                        alt="Blog Image"
+                        alt="Color Trends for the Upcoming Season"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div
-                        class="absolute top-4 left-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
+                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm dark:bg-slate-900/90 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
                         Trends</div>
                 </a>
                 <div class="p-6">
@@ -166,10 +166,15 @@ $activePage = 'blog';
                 </div>
             </article>
 
-            <!-- Post 4 -->
+            <!-- Post 4 (Quote) -->
             <article
-                class="masonry-item bg-primary text-white rounded-2xl p-8 shadow-modern dark:shadow-modern-dark group border border-primary-light">
-                <div class="flex items-center text-sm text-white/80 mb-4 space-x-4">
+                class="masonry-item bg-slate-900 text-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-800 relative overflow-hidden transition-all duration-300 hover:-translate-y-1">
+                <!-- Subtle background pattern for quote card -->
+                <div
+                    class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
+                </div>
+
+                <div class="relative z-10 flex items-center text-sm text-white/60 mb-6 space-x-4">
                     <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -188,23 +193,37 @@ $activePage = 'blog';
                     </svg></a>
             </article>
 
-            <!-- Post 5 -->
+            <!-- Post 5 (Image Only) -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800">
+                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/5">
                     <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop"
-                        alt="Blog Image"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 hover:opacity-90">
+                        alt="Fashion Lookbook"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+
+                    <!-- Overlay that appears on hover -->
+                    <div
+                        class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span
+                            class="bg-white/90 backdrop-blur-sm text-slate-900 text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View
+                            Lookbook</span>
+                    </div>
                 </a>
             </article>
 
-            <!-- Post 6 -->
+            <!-- Post 6 (Image Overlay Text) -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-modern dark:shadow-modern-dark group border border-slate-100 dark:border-slate-800 p-6 object-cover bg-center"
-                style="background-image: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.9)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2520&auto=format&fit=crop');">
-                <div class="relative z-10 text-white">
+                class="masonry-item rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group relative transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
+                <a href="/blog-detail.php" class="block block absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2520&auto=format&fit=crop"
+                        alt="How to Upcycle Your Old Jeans"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent">
+                    </div>
+                </a>
+                <div class="relative z-10 p-6 pt-32 text-white flex flex-col h-full justify-end pointer-events-none">
                     <div
-                        class="absolute top-0 right-0 bg-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
+                        class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white border border-white/30 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md shadow-sm">
                         D.I.Y.</div>
                     <div class="flex items-center text-sm text-slate-300 mb-3 space-x-4 mt-8">
                         <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
@@ -219,8 +238,9 @@ $activePage = 'blog';
                     <p class="text-slate-300 line-clamp-3 mb-4">Don't throw away those old jeans just yet! Here are 5
                         creative ways to turn them into something brand new.</p>
                     <a href="/blog-detail.php"
-                        class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">Read
-                        More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="inline-flex items-center text-white font-bold hover:text-slate-200 transition-colors pointer-events-auto">Read
+                        More <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg></a>
