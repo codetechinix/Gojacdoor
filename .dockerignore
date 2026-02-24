@@ -8,3 +8,5 @@ tailwind.config.js
 assets/css/input.css
 *.md
 render.yaml
+deploy.php
+diag.php

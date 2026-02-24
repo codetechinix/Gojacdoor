@@ -1,0 +1,213 @@
+# =========================================================================
+#   Gojackdoors E-Commerce — .htaccess Configuration
+#   Last updated: 2026-02-22
+# =========================================================================
+
+# ─── Enable Rewrite Engine ────────────────────────────────────────────────
+RewriteEngine On
+# For virtual host (gojacdoors.localhost): use /
+# For subdirectory (localhost/gojacdoors/): use /gojacdoors/
+RewriteBase /
+
+# ─── Force UTF-8 Encoding ────────────────────────────────────────────────
+AddDefaultCharset UTF-8
+
+# ─── Disable Directory Browsing ──────────────────────────────────────────
+Options -Indexes
+Options -MultiViews
+
+# ─── Custom Error Documents ──────────────────────────────────────────────
+# Virtual host setup (gojacdoors.localhost — document root is gojacdoors/)
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 500 /errors/500.php
+# If using subdirectory (localhost/gojacdoors/), use these instead:
+# ErrorDocument 404 /gojacdoors/errors/404.php
+# ErrorDocument 403 /gojacdoors/errors/403.php
+# ErrorDocument 500 /gojacdoors/errors/500.php
+
+# ═══════════════════════════════════════════════════════════════════════════
+#   SECURITY
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── Security Headers ────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Enable XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), payment=(self)"
+
+    # Strict Transport Security (enable when on HTTPS)
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# ─── Block Access to Sensitive Files ─────────────────────────────────────
+<FilesMatch "\.(git|gitignore|gitattributes|env|md|json|lock|yml|yaml|log|sql|bak|swp|dist)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to hidden files/directories (except .well-known)
+RewriteRule "(^|/)\." - [F,L]
+
+# ─── Protect Includes Directory ──────────────────────────────────────────
+RewriteRule ^includes/ - [F,L]
+
+# ─── Block Suspicious Query Strings ─────────────────────────────────────
+RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
+RewriteRule .* - [F,L]
+
+# ─── Block Bad User Agents ───────────────────────────────────────────────
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase User-Agent "^$" bad_bot
+    SetEnvIfNoCase User-Agent "libwww-perl" bad_bot
+    SetEnvIfNoCase User-Agent "wget" bad_bot
+    SetEnvIfNoCase User-Agent "nikto" bad_bot
+    SetEnvIfNoCase User-Agent "sf" bad_bot
+    SetEnvIfNoCase User-Agent "sqlmap" bad_bot
+    SetEnvIfNoCase User-Agent "fimap" bad_bot
+    SetEnvIfNoCase User-Agent "nessus" bad_bot
+    SetEnvIfNoCase User-Agent "whatweb" bad_bot
+    SetEnvIfNoCase User-Agent "openvas" bad_bot
+    SetEnvIfNoCase User-Agent "jbrofuzz" bad_bot
+    <IfModule mod_authz_core.c>
+        <RequireAll>
+            Require all granted
+            Require not env bad_bot
+        </RequireAll>
+    </IfModule>
+</IfModule>
+
+# ═══════════════════════════════════════════════════════════════════════════
+#   CLEAN URLS (Front Controller Pattern)
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Redirect .php URLs to clean URLs (external redirect)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/errors/ [NC]
+RewriteCond %{REQUEST_URI} !^/includes/ [NC]
+RewriteRule ^ %1 [R=301,L,NE]
+
+# Note: The actual internal routing (FallbackResource /router.php) 
+# is now securely managed at the Docker <VirtualHost> level to 
+# circumvent Render directory mapping bugs.
+
+# ═══════════════════════════════════════════════════════════════════════════
+#   PERFORMANCE
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── GZIP Compression ────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+
+    # Remove browser bugs with older browsers
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+# ─── Browser Caching ─────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML — short cache
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+    # Data
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+</IfModule>
+
+# ─── Cache-Control Headers ───────────────────────────────────────────────
+<IfModule mod_headers.c>
+    # Static assets — immutable
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML — no cache
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ─── ETag Configuration ─────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ═══════════════════════════════════════════════════════════════════════════
+#   MISC
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── Prevent Image Hotlinking ────────────────────────────────────────────
+# Uncomment to enable (replace gojacdoors.localhost with your domain)
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?gojacdoors\.localhost [NC]
+# RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,L]
+
+# ─── Force trailing slash on directories ─────────────────────────────────
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^ %{REQUEST_URI}/ [R=301,L]
