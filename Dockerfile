@@ -13,23 +13,15 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 # Set the working directory to the default Apache document root
 WORKDIR /var/www/html
 
-# Create a bulletproof VirtualHost configuration that listens on Render's dynamic ${PORT}
-# and formally enforces FallbackResource to our Front Controller, completely bypassing .htaccess flakiness.
-RUN echo "<VirtualHost *:\${PORT}>\n\
-    ServerAdmin webmaster@localhost\n\
-    DocumentRoot /var/www/html\n\
-    <Directory /var/www/html>\n\
-    Options -Indexes +FollowSymLinks\n\
-    AllowOverride All\n\
-    Require all granted\n\
-    FallbackResource /router.php\n\
-    </Directory>\n\
-    ErrorLog \${APACHE_LOG_DIR}/error.log\n\
-    CustomLog \${APACHE_LOG_DIR}/access.log combined\n\
-    </VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+# Render sets the PORT environment variable dynamically (default 10000). 
+# Configure Apache to listen on this dynamic port instead of the hardcoded 80.
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-# Ensure Apache listens on the Render dynamic port globally
-RUN echo "Listen \${PORT}" > /etc/apache2/ports.conf
+# Completely disable .htaccess and inject robust native routing via render-apache.conf
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+COPY render-apache.conf /etc/apache2/conf-available/render-apache.conf
+RUN printf "<Directory /var/www/html>\n\tAllowOverride None\n\tInclude conf-available/render-apache.conf\n</Directory>\n" > /etc/apache2/conf-available/override.conf \
+    && a2enconf override
 
 # Copy all application files to the container (respects .dockerignore)
 COPY . /var/www/html/

@@ -10,9 +10,8 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 - Created `Dockerfile` configuring `php:8.2-apache`:
   - Enabled required Apache modules (`rewrite`, `headers`, `expires`, `deflate`).
-  - Implemented immutable `<VirtualHost>` routing natively inside `000-default.conf` to securely enforce `FallbackResource /router.php` and `AllowOverride All`, structurally bypassing Render Apache directory mapping 404 bugs.
-  - Formally transitioned the application to a pure Front Controller pattern (`router.php`) to handle clean URL routing logic, deprecating fragile `.htaccess` regex pathing operations.
-  - Set `ServerName localhost` to gracefully suppress Apache warnings.
+  - Disabled `DirectorySlash` and removed directory match blockers to structurally allow clean URL rewrites against valid grouped directories like `/pages` and `/auth`.
+  - **Deprecated `.htaccess`**: Migrated all routing and security rules into `render-apache.conf` and explicitly set `AllowOverride None` in the `Dockerfile` to guarantee maximum performance and bypass Render virtual-host override restrictions.
 - Created `.dockerignore` to streamline lightweight production image builds.
 - Created `render.yaml` infrastructure-as-code blueprint to instantly provision Render.com deployment.
 
