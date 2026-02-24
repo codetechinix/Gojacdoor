@@ -4,6 +4,21 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### [2026-02-24T05:58:00+01:00] Render Deployment & Blog UI Enhancements
+
+#### Added
+
+- **Premium Blog Imagery (`blog.php`):** Replaced broken placeholder images with high-quality, permanent URLs from Unsplash, covering categories like Fashion, Lifestyle, Trends, and D.I.Y.
+
+#### Changed
+
+- **Blog UI Hover Effects (`blog.php`):** Enhanced the article masonry cards with premium hover interactions, including a `-translate-y-1` floating uplift, deeper/softer drop shadows, a glassy `backdrop-[blur-sm]` tag overlay, and animated "Read More" arrows.
+- **Docker Build Optimization (`Dockerfile`):** Sped up the Render deployment process drastically by switching from `RUN chown -R` to `COPY --chown` and replacing source-compiled PHP extensions with precompiled binaries via `install-php-extensions`.
+
+#### Fixed
+
+- **Apache Render Redirect Loop (Port 10000):** Fixed a critical deployment issue where Apache's `.php` extension stripping and directory trailing-slash redirects were incorrectly appending the internal Docker physical port (`:10000`) to the public URL. Moved the `ServerName` directive to the global `apache2.conf` context and explicitly forced `https://%{HTTP_HOST}` on external `RewriteRule` redirects in `render-apache.conf`.
+
 ### [2026-02-22T17:00:00+01:00] Render Docker Configuration
 
 #### Added

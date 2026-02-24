@@ -17,16 +17,22 @@ $activePage = isset($activePage) ? $activePage : '';
             </span>
         </a>
         <nav class="hidden md:flex items-center space-x-8 z-10">
-            <a class="font-medium hover:text-primary/70 transition-colors <?= $activePage === 'home' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="/index.php">Home</a>
+            <a class="relative group font-medium transition-colors <?= $activePage === 'home' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
+                href="/index.php">
+                Home
+                <span
+                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'home' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+            </a>
             <div class="group relative flex items-center h-full">
                 <button
-                    class="font-medium hover:text-primary transition-colors flex items-center text-slate-600 dark:text-slate-400">
+                    class="relative group/btn font-medium hover:text-primary dark:hover:text-white transition-colors flex items-center text-slate-600 dark:text-slate-400">
                     Shop
-                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none"
+                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 w-0 group-hover/btn:w-full"></span>
                 </button>
                 <div
                     class="absolute left-0 top-full w-56 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-xl hidden group-hover:block z-50 p-2 mt-1">
@@ -83,16 +89,28 @@ $activePage = isset($activePage) ? $activePage : '';
                     </a>
                 </div>
             </div>
-            <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'about' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="/pages/about-us.php">Our Story</a>
-            <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'blog' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="/blog.php">Blog</a>
-            <a class="font-medium hover:text-primary transition-colors <?= $activePage === 'contact' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400' ?>"
-                href="/pages/contact.php">Contact Us</a>
+            <a class="relative group font-medium transition-colors <?= $activePage === 'about' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
+                href="/pages/about-us.php">
+                Our Story
+                <span
+                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'about' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+            </a>
+            <a class="relative group font-medium transition-colors <?= $activePage === 'blog' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
+                href="/blog.php">
+                Blog
+                <span
+                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'blog' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+            </a>
+            <a class="relative group font-medium transition-colors <?= $activePage === 'contact' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white' ?>"
+                href="/pages/contact.php">
+                Contact Us
+                <span
+                    class="absolute -bottom-1.5 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 <?= $activePage === 'contact' ? 'w-full' : 'w-0 group-hover:w-full' ?>"></span>
+            </a>
         </nav>
         <div class="flex items-center space-x-4 md:space-x-5">
             <button id="themeToggle"
-                class="d-none text-slate-600 dark:text-slate-300 hover:text-primary transition-colors hover:scale-110">
+                class="d-none text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white transition-all duration-300 hover:scale-110">
                 <div class="h-6 w-6" id="themeIconContainer">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +121,7 @@ $activePage = isset($activePage) ? $activePage : '';
                 </div>
             </button>
             <button id="searchToggle" onclick="toggleSearchOverlay()"
-                class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors hover:scale-110">
+                class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -111,7 +129,7 @@ $activePage = isset($activePage) ? $activePage : '';
                 </svg>
             </button>
             <a href="/account/wishlist.php"
-                class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors relative hover:scale-110">
+                class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white transition-all duration-300 relative hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -122,8 +140,9 @@ $activePage = isset($activePage) ? $activePage : '';
                     class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
                     style="display: none;">0</span>
             </a>
-            <div class="relative cursor-pointer hover:scale-110 transition-transform" onclick="toggleMiniCart()">
-                <div class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+            <div class="relative cursor-pointer hover:scale-110 transition-all duration-300" onclick="toggleMiniCart()">
+                <div
+                    class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"

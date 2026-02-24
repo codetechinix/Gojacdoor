@@ -10,7 +10,7 @@ $activePage = 'blog';
     <style>
         .masonry-grid {
             column-count: 1;
-            column-gap: 2rem;
+            column-gap: 2.5rem;
         }
 
         @media (min-width: 768px) {
@@ -39,9 +39,10 @@ $activePage = 'blog';
     <main class="grow container mx-auto px-4 md:px-8 py-12">
         <div id="breadcrumb" class="mb-8"></div>
 
-        <div class="text-center mb-16" data-aos="fade-up">
+        <div class="text-center mb-16 relative" data-aos="fade-up">
+            <div class="absolute inset-0 -top-24 -z-10 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-slate-100 dark:from-slate-800/50 via-transparent to-transparent opacity-70 border-b border-transparent"></div>
             <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Our Blog</h1>
-            <p class="text-lg text-slate-500 max-w-2xl mx-auto">Latest news, fashion trends, styling tips, and updates
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">Latest news, fashion trends, styling tips, and updates
                 from the Krist team.</p>
         </div>
 
@@ -88,7 +89,7 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">10 Essential Wardrobe Staples Every Woman Needs</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">Building a versatile wardrobe
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Building a versatile wardrobe
                         doesn't require a closet full of clothes. Start with these ten timeless essentials that can be
                         mixed and matched for any occasion.</p>
                     <a href="/blog-detail.php"
@@ -122,7 +123,7 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">The Rise of Sustainable Fashion</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">Discover how eco-friendly materials
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Discover how eco-friendly materials
                         and ethical manufacturing processes are reshaping the industry.</p>
                     <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
@@ -155,7 +156,7 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">Color Trends for the Upcoming Season</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-4">From earthy tones to vibrant neon
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">From earthy tones to vibrant neon
                         accents, explore the color palettes that will dominate upcoming collections.</p>
                     <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
