@@ -8,3 +8,7 @@ tailwind.config.js
 assets/css/input.css
 *.md
 render.yaml
+.DS_Store
+.env
+Tests/
+tests/

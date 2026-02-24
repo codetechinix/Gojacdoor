@@ -24,10 +24,8 @@ RUN printf "<Directory /var/www/html>\n\tAllowOverride None\n\tInclude conf-avai
     && a2enconf override
 
 # Copy all application files to the container (respects .dockerignore)
-COPY . /var/www/html/
-
-# Ensure the web server user owns the files
-RUN chown -R www-data:www-data /var/www/html/
+# Using --chown speeds up the build process significantly by avoiding a separate layer for chown
+COPY --chown=www-data:www-data . /var/www/html/
 
 # Start the Apache service in the foreground
 CMD ["apache2-foreground"]
