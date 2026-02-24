@@ -7,29 +7,7 @@ $activePage = 'blog';
 
 <head>
     <?php include 'includes/head.php'; ?>
-    <style>
-        .masonry-grid {
-            column-count: 1;
-            column-gap: 2.5rem;
-        }
 
-        @media (min-width: 768px) {
-            .masonry-grid {
-                column-count: 2;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .masonry-grid {
-                column-count: 3;
-            }
-        }
-
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-        }
-    </style>
 </head>
 
 <body
@@ -60,11 +38,11 @@ $activePage = 'blog';
                 class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">D.I.Y.</button>
         </div>
 
-        <!-- Masonry Grid -->
-        <div class="masonry-grid" data-aos="fade-up" data-aos-delay="200">
+        <!-- CSS Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
             <!-- Post 1 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/3">
                     <img src="https://images.unsplash.com/photo-1485230895905-ef40ba366951?q=80&w=2670&auto=format&fit=crop"
                         alt="10 Essential Wardrobe Staples Every Woman Needs"
@@ -103,7 +81,7 @@ $activePage = 'blog';
 
             <!-- Post 2 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-square">
                     <img src="https://images.unsplash.com/photo-1434389678278-be4d41a6b8e6?q=80&w=2670&auto=format&fit=crop"
                         alt="The Rise of Sustainable Fashion"
@@ -136,7 +114,7 @@ $activePage = 'blog';
 
             <!-- Post 3 -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1">
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-video">
                     <img src="https://images.unsplash.com/photo-1550614000-4b95d4662247?q=80&w=2670&auto=format&fit=crop"
                         alt="Color Trends for the Upcoming Season"
@@ -169,7 +147,7 @@ $activePage = 'blog';
 
             <!-- Post 4 (Quote) -->
             <article
-                class="masonry-item bg-slate-900 text-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-800 relative overflow-hidden transition-all duration-300 hover:-translate-y-1">
+                class="bg-slate-900 text-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-800 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 h-full flex flex-col justify-center">
                 <!-- Subtle background pattern for quote card -->
                 <div
                     class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
@@ -196,7 +174,7 @@ $activePage = 'blog';
 
             <!-- Post 5 (Image Only) -->
             <article
-                class="masonry-item bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col">
                 <a href="/blog-detail.php" class="block overflow-hidden relative aspect-4/5">
                     <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop"
                         alt="Fashion Lookbook"
@@ -214,7 +192,7 @@ $activePage = 'blog';
 
             <!-- Post 6 (Image Overlay Text) -->
             <article
-                class="masonry-item rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group relative transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
+                class="rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group relative transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 h-full flex flex-col min-h-[400px]">
                 <a href="/blog-detail.php" class="block block absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2520&auto=format&fit=crop"
                         alt="How to Upcycle Your Old Jeans"
@@ -251,23 +229,23 @@ $activePage = 'blog';
 
         <!-- Pagination -->
         <div class="flex justify-center mt-12" data-aos="fade-up">
-            <nav class="flex items-center gap-2">
+            <nav class="flex items-center gap-3">
                 <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-primary hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                         </path>
                     </svg>
                 </a>
                 <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-medium shadow-md">1</a>
+                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-medium shadow-md cursor-default hover:shadow-lg hover:-translate-y-1 transition-all duration-300">1</a>
                 <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">2</a>
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:text-primary hover:border-primary hover:shadow-md hover:-translate-y-1 transition-all duration-300">2</a>
                 <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">3</a>
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:text-primary hover:border-primary hover:shadow-md hover:-translate-y-1 transition-all duration-300">3</a>
                 <span class="px-2 text-slate-500">...</span>
                 <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-primary hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
