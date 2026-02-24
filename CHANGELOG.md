@@ -12,6 +12,9 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 #### Changed
 
+- **Blog Detail Layout (`blog-detail.php`):** Transformed the single-column article view into a professional dual-column layout on desktop (`lg:grid-cols-3`). The main article now spans the left two columns while a new persistent right sidebar handles secondary navigation.
+- **Blog Detail Sidebar (`blog-detail.php`):** Introduced a new right-hand sidebar featuring a search widget, category aggregations, recent posts with cover thumbnails, and popular tags.
+- **Blog Detail Comments (`blog-detail.php`):** Appended a full interactive comments section below the article content. It features threaded replies with user avatars and a complete, styled form for leaving new replies.
 - **Blog Layout (`blog.php`):** Converted the masonry column flow into a structured CSS Grid (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`) to perfectly align articles into three distinct columns and rows. Built-in responsive breakpoints ensure a smooth mobile experience.
 - **Blog Pagination (`blog.php`):** Added premium interactive hover animations (`hover:-translate-y-1`, `hover:shadow-md`) to the page numbers and navigation arrows to clearly indicate active and hover states.
 - **Blog UI Hover Effects (`blog.php`):** Enhanced the article cards with premium interactions, including a `-translate-y-1` floating uplift, deeper/softer drop shadows, a glassy `backdrop-[blur-sm]` tag overlay, and animated "Read More" arrows.
