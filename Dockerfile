@@ -18,7 +18,9 @@ WORKDIR /var/www/html
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
 # Completely disable .htaccess and inject robust native routing via render-apache.conf
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN echo "ServerName gojacdoor.onrender.com" >> /etc/apache2/apache2.conf \
+    && echo "UseCanonicalName On" >> /etc/apache2/apache2.conf \
+    && echo "UseCanonicalPhysicalPort Off" >> /etc/apache2/apache2.conf
 COPY render-apache.conf /etc/apache2/conf-available/render-apache.conf
 RUN printf "<Directory /var/www/html>\n\tAllowOverride None\n\tInclude conf-available/render-apache.conf\n</Directory>\n" > /etc/apache2/conf-available/override.conf \
     && a2enconf override
