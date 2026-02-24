@@ -4,8 +4,9 @@ FROM php:8.2-apache
 # Enable Apache modules required for .htaccess routing and optimization
 RUN a2enmod rewrite headers expires deflate
 
-# Install useful PHP extensions (e.g., MySQL driver)
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Install useful PHP extensions using precompiled binaries for extremely fast builds
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && install-php-extensions mysqli pdo pdo_mysql
 
 # Use the production php.ini configuration for security and performance
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
