@@ -6,12 +6,12 @@ $activePage = 'profile';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <?php include 'includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <main class="grow max-w-7xl mx-auto w-full px-4 md:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -96,14 +96,7 @@ $activePage = 'profile';
         </div>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof renderAccountSidebar === 'function') {
-                renderAccountSidebar('saved-cards');
-            }
-        });
-    </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 
 </html>

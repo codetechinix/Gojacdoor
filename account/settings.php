@@ -6,12 +6,12 @@ $activePage = 'profile';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <?php include 'includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <main class="grow max-w-7xl mx-auto w-full px-4 md:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -31,17 +31,17 @@ $activePage = 'profile';
                         <div>
                             <label class="block text-sm font-medium mb-2">Current Password</label>
                             <input type="password"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50">
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">New Password</label>
                             <input type="password"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50">
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">Confirm New Password</label>
                             <input type="password"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50">
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50">
                         </div>
                         <button type="button"
                             class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-primary dark:hover:bg-primary transition-colors">
@@ -64,14 +64,7 @@ $activePage = 'profile';
         </div>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof renderAccountSidebar === 'function') {
-                renderAccountSidebar('settings');
-            }
-        });
-    </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 
 </html>
