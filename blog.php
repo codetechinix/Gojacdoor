@@ -18,9 +18,12 @@ $activePage = 'blog';
         <div id="breadcrumb" class="mb-8"></div>
 
         <div class="text-center mb-16 relative" data-aos="fade-up">
-            <div class="absolute inset-0 -top-24 -z-10 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-slate-100 dark:from-slate-800/50 via-transparent to-transparent opacity-70 border-b border-transparent"></div>
+            <div
+                class="absolute inset-0 -top-24 -z-10 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-slate-100 dark:from-slate-800/50 via-transparent to-transparent opacity-70 border-b border-transparent">
+            </div>
             <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Our Blog</h1>
-            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">Latest news, fashion trends, styling tips, and updates
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">Latest news, fashion trends, styling
+                tips, and updates
                 from the Krist team.</p>
         </div>
 
@@ -39,7 +42,8 @@ $activePage = 'blog';
         </div>
 
         <!-- CSS Grid Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200" id="blogGrid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200"
+            id="blogGrid">
             <!-- Post 1 -->
             <article data-category="fashion"
                 class="blog-post bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] group border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:-translate-y-1 h-full flex flex-col">
@@ -68,7 +72,8 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">10 Essential Wardrobe Staples Every Woman Needs</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Building a versatile wardrobe
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Building a versatile
+                        wardrobe
                         doesn't require a closet full of clothes. Start with these ten timeless essentials that can be
                         mixed and matched for any occasion.</p>
                     <a href="/blog-detail.php"
@@ -103,7 +108,8 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">The Rise of Sustainable Fashion</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Discover how eco-friendly materials
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">Discover how
+                        eco-friendly materials
                         and ethical manufacturing processes are reshaping the industry.</p>
                     <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
@@ -137,7 +143,8 @@ $activePage = 'blog';
                     </div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2"><a
                             href="/blog-detail.php">Color Trends for the Upcoming Season</a></h3>
-                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">From earthy tones to vibrant neon
+                    <p class="text-slate-600 dark:text-slate-400 line-clamp-3 mb-5 leading-relaxed">From earthy tones to
+                        vibrant neon
                         accents, explore the color palettes that will dominate upcoming collections.</p>
                     <a href="/blog-detail.php"
                         class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors">Read
@@ -259,50 +266,6 @@ $activePage = 'blog';
     </main>
 
     <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Blog', active: true }
-            ]);
-
-            // Blog Category Filtering Logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const blogPosts = document.querySelectorAll('.blog-post');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active styling
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
-                        b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
-                    });
-                    
-                    btn.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
-                    btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    // Filter posts
-                    blogPosts.forEach(post => {
-                        // Apply fade out class
-                        post.classList.add('opacity-0', 'scale-95');
-                        
-                        setTimeout(() => {
-                            if (filterValue === 'all' || post.getAttribute('data-category') === filterValue) {
-                                post.style.display = 'flex';
-                                // Slight delay to allow display flex to apply before transitioning opacity back
-                                setTimeout(() => {
-                                    post.classList.remove('opacity-0', 'scale-95');
-                                }, 50);
-                            } else {
-                                post.style.display = 'none';
-                            }
-                        }, 300); // Wait for fade out transition (300ms matches duration-300)
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
     <?php include 'includes/header.php'; ?>
 
-    <main class="grow container mx-auto px-4 md:px-8 py-8">
+    <main id="searchMain" data-query="<?= $searchQuery ?>" class="grow container mx-auto px-4 md:px-8 py-8">
         <div id="breadcrumb" class="mb-8"></div>
 
         <div class="mb-10" data-aos="fade-up">
@@ -108,8 +108,8 @@ $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
                                 data-size="XL">XL</button>
                         </div>
                     </div>
-                    <button onclick="applyFilters()"
-                        class="w-full py-3 bg-primary text-white rounded-md text-sm font-semibold hover:bg-slate-800 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 mt-4">Apply
+                    <button onclick="applySearchFilters()"
+                        class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-4 shadow-sm hover:shadow-md hover:-translate-y-0.5">Apply
                         Filters</button>
                 </div>
             </aside>
@@ -119,7 +119,7 @@ $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
                 <div class="flex justify-end items-center mb-6" data-aos="fade-up">
                     <select id="sortSelect"
                         class="border border-slate-200 dark:border-slate-700 rounded-md px-4 py-2 text-sm bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none text-slate-700 dark:text-slate-300 shadow-sm transition-shadow"
-                        onchange="applyFilters()">
+                        onchange="applySearchFilters()">
                         <option value="default">Sort by: Default</option>
                         <option value="price-asc">Price: Low to High</option>
                         <option value="price-desc">Price: High to Low</option>
@@ -136,81 +136,7 @@ $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
 
     <?php include 'includes/footer.php'; ?>
 
-    <script>
-        const searchQuery = "<?= $searchQuery ?>".toLowerCase();
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Breadcrumb
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Search Results', active: true }
-            ]);
-
-            const priceRange = document.getElementById('priceRange');
-            priceRange.addEventListener('input', () => document.getElementById('priceLabel').textContent = '$' + priceRange.value);
-
-            // Size button selection
-            document.querySelectorAll('.size-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    this.classList.toggle('bg-primary');
-                    this.classList.toggle('text-white');
-                    this.classList.toggle('border-primary');
-                });
-            });
-
-            applyFilters();
-        });
-
-        function toggleFilter(btn) {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('.filter-icon');
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-
-        function applyFilters() {
-            const cats = [...document.querySelectorAll('[data-filter="cat"]:checked')].map(c => c.value);
-            const maxPrice = parseInt(document.getElementById('priceRange').value);
-            const sort = document.getElementById('sortSelect').value;
-
-            const selectedSizes = [...document.querySelectorAll('.size-btn.bg-primary')].map(b => b.dataset.size);
-
-            let filtered = PRODUCTS.filter(p => {
-                // Must match search query
-                if (searchQuery && !p.name.toLowerCase().includes(searchQuery)) return false;
-                // Match categories
-                if (cats.length && !cats.includes(p.category)) return false;
-                // Match price
-                if (p.price > maxPrice) return false;
-                // Match sizes if any selected
-                if (selectedSizes.length > 0 && !p.size.some(s => selectedSizes.includes(s))) return false;
-
-                return true;
-            });
-
-            // Sorting
-            if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
-            else if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
-            else if (sort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
-
-            document.getElementById('productCount').textContent = filtered.length;
-
-            const grid = document.getElementById('productGrid');
-            if (filtered.length > 0) {
-                grid.innerHTML = filtered.map((p, i) => renderProductCard(p, i * 50)).join('');
-            } else {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-20 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm" data-aos="fade-up">
-                        <svg class="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <h3 class="text-xl font-bold dark:text-white mb-2">No Results Found</h3>
-                        <p class="text-slate-500 mb-6 max-w-md mx-auto">We couldn't find any products matching your search criteria. Try adjusting your filters or search terms.</p>
-                        <button onclick="document.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false); document.getElementById('priceRange').value=200; document.getElementById('priceLabel').textContent='$200'; document.querySelectorAll('.size-btn').forEach(b=>{b.classList.remove('bg-primary','text-white','border-primary')}); applyFilters();" class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-slate-800 transition-colors">Clear Filters</button>
-                    </div>
-                `;
-            }
-
-            if (typeof AOS !== 'undefined') AOS.refresh();
-        }
-    </script>
 </body>
 
 </html>

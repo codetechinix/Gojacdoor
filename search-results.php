@@ -27,7 +27,7 @@ $activePage = 'shop';
                     placeholder="Search for products, brands..." />
             </div>
             <button onclick="performSearch()"
-                class="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors">Search</button>
+                class="px-8 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Search</button>
         </div>
 
         <div class="flex justify-between items-center mb-6">
@@ -45,54 +45,6 @@ $activePage = 'shop';
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" id="searchGrid"></div>
     </div>
     <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const q = params.get('q') || 'Shirts';
-            document.getElementById('searchInput').value = q;
-            document.getElementById('searchTerm').textContent = q;
-            performSearch();
-
-            document.getElementById('searchInput').addEventListener('keypress', e => {
-                if (e.key === 'Enter') performSearch();
-            });
-        });
-
-        function performSearch() {
-            const q = document.getElementById('searchInput').value.toLowerCase();
-            document.getElementById('searchTerm').textContent = q;
-
-            window.history.replaceState({}, '', '?q=' + encodeURIComponent(q));
-
-            const sort = document.getElementById('sortSelect').value;
-
-            let results = PRODUCTS.filter(p =>
-                p.name.toLowerCase().includes(q) ||
-                p.brand.toLowerCase().includes(q) ||
-                p.category.toLowerCase().includes(q)
-            );
-
-            if (sort === 'price-asc') results.sort((a, b) => a.price - b.price);
-            else if (sort === 'price-desc') results.sort((a, b) => b.price - a.price);
-            else if (sort === 'rating') results.sort((a, b) => b.rating - a.rating);
-
-            document.getElementById('resultCount').textContent = results.length;
-
-            const grid = document.getElementById('searchGrid');
-            if (results.length > 0) {
-                grid.innerHTML = results.map((p, i) => renderProductCard(p, i * 50)).join('');
-            } else {
-                grid.innerHTML = `
-        <div class="col-span-full text-center py-20">
-            <span class="material-symbols-outlined text-6xl text-slate-300 block mb-4">search_off</span>
-            <h3 class="text-xl font-bold mb-2">No results found</h3>
-            <p class="text-slate-500">We couldn't find anything matching "${q}". Try different keywords.</p>
-        </div>`;
-            }
-
-            if (typeof AOS !== 'undefined') AOS.refresh();
-        }
-    </script>
 </body>
 
 </html>

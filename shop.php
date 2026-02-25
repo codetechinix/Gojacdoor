@@ -67,7 +67,7 @@ $activePage = 'shop';
                         </div>
                     </div>
                     <button onclick="applyFilters()"
-                        class="w-full py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors">Apply
+                        class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Apply
                         Filters</button>
                 </div>
             </aside>
@@ -89,41 +89,6 @@ $activePage = 'shop';
         </div>
     </div>
     <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([{ label: 'Shop', active: true }]);
-            const priceRange = document.getElementById('priceRange');
-            priceRange.addEventListener('input', () => document.getElementById('priceLabel').textContent = '$' + priceRange.value);
-
-            // Check URL params for category
-            const params = new URLSearchParams(window.location.search);
-            const cat = params.get('cat');
-            if (cat) document.querySelectorAll(`[data-filter="cat"][value="${cat}"]`).forEach(c => c.checked = true);
-
-            applyFilters();
-        });
-
-        function applyFilters() {
-            const cats = [...document.querySelectorAll('[data-filter="cat"]:checked')].map(c => c.value);
-            const maxPrice = parseInt(document.getElementById('priceRange').value);
-            const sort = document.getElementById('sortSelect').value;
-
-            let filtered = PRODUCTS.filter(p => {
-                if (cats.length && !cats.includes(p.category)) return false;
-                if (p.price > maxPrice) return false;
-                return true;
-            });
-
-            if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
-            else if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
-            else if (sort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
-
-            document.getElementById('productCount').textContent = filtered.length;
-            document.getElementById('productGrid').innerHTML = filtered.length ? filtered.map((p, i) => renderProductCard(p, i * 50)).join('') : '<div class="col-span-full text-center py-20"><span class="material-symbols-outlined text-6xl text-slate-300 block mb-4">inventory_2</span><p class="text-slate-500">No products found</p></div>';
-
-            if (typeof AOS !== 'undefined') AOS.refresh();
-        }
-    </script>
 </body>
 
 </html>
