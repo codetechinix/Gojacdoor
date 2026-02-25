@@ -1,6 +1,6 @@
 /**
  * ========================================================
- * Krist E-Commerce – Shared UI Components
+ * Gojacdoors – Shared UI Components
  * Dynamically renders header, footer, sidebar, mini-cart
  * ========================================================
  */
@@ -12,7 +12,7 @@ const PRODUCTS = [
     { id: 3, name: 'Polo Collar T-Shirt', brand: 'Adidas', price: 42.00, oldPrice: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjII6dlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.2, reviews: 34, category: 'men', size: ['M', 'L', 'XL'], color: 'blue' },
     { id: 4, name: 'Men adi-dash Running Shoes', brand: 'Trendyol', price: 65.00, oldPrice: 80.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCm6dR6oF2uuYLGQFK4zjq2_oxErZ3IbPvvbbx0eKcLb0d_vZ4qAu3GuSHcVBFIjSLruwci0TDlEkzKk9HpFmO8X20FX1GLzwnnFYE4Qaw9KGIcSBSJG0j52U2LF5RuEfz-2_N3Ny9aeSuF1iIZUHNOO0vTrsPqg-qAaM_Ufx6rAW1Zjb7daNG-IQQ6MQ-EAYhod0ExJ0q4uPTGJxb7c6mBe0yWvUDmM-MmLgbWRC7LcqO0ESiYgp3DBFeo6M-7VrjrHJajaD1Zc4Q', rating: 4.6, reviews: 88, category: 'men', size: ['8', '9', '10', '11'], color: 'white' },
     { id: 5, name: 'Floral Embroidered Maxi Dress', brand: 'Zyla', price: 55.00, oldPrice: 70.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0XqfpSJY2aHwGAeV_Jr5RJWZ0dENi0m20KVUWvAUV14S3x0PPF_I983qcvFeNJDCWPa6I3IlQpXs0GxHj0oi3PJ1jjHpc3s83ZqX3JdRiyFVmMbKaOjJipcaOW8kHYGrcuDHhsbpbxByv_3u7IctEwQv_Y7A6pcKlylUctIQg9XwNPItE_dFiA70znSDSjDRxyjm_TZ4Q0aYbLNmlb_Ns0jWw12JNXA6NHI9YNSAGJ1ypYclrRRbaRK5PzU0jAycXdUh676vB8_o', rating: 4.9, reviews: 200, category: 'women', size: ['S', 'M', 'L'], color: 'red' },
-    { id: 6, name: 'Girls Pink Moana Printed Dress', brand: 'YK Disney', price: 28.00, oldPrice: 35.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7MV9mBQiIPmdGVf9kGPylWM9nUbVmldo1qPJINe5aHFGJMEl0CEqwSTFTGkskDFxkX1_zXhmXAWe2zQyiqViArK1c1mOgTC1Or_bLbk99nTyUoX5rYRNYT-bBoLF3euQH6H1RzAf4YFhNGzy7bfu8slIi2VBNZtrfxSzzvbyzlH4ietFDE0LSPpD05UOeoe3AXsZyawwVp66roI8mKzBrZgFbycCRFAHtrJfTrDMwJCj0gB_PIXQSP8pL2HWcjNQcfBCSYdEIgH0', rating: 4.3, reviews: 45, category: 'kids', size: ['3-4Y', '5-6Y', '7-8Y'], color: 'pink' },
+    { id: 6, name: 'Girls Pink Moana Printed Dress', brand: 'YK Disney', price: 28.00, oldPrice: 35.00, image: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=600&auto=format&fit=crop', rating: 4.3, reviews: 45, category: 'kids', size: ['3-4Y', '5-6Y', '7-8Y'], color: 'pink' },
     { id: 7, name: 'Tailored Cotton Casual Shirt', brand: 'US Polo', price: 52.00, oldPrice: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wC_Nn8VlP5LTjeJlFmiDQS298wwtD6G6BAhKdLzNMSUyQu9kgKdU8jB9PCsn1-tsFCzF0aBc5vtywRUt0f98MajcKbu5OuxcANF9MAFBdFL5Dzzd1YT1tDYj2UE6BPp6S326v0DHhrav-tQYw5LQZReDH-35lxzJtyMAi-P2CttH4f9rhnOGPOFlmkKBGHBaoe__IZZujINgwEH-k9zUDR21nXTtTXWDTK-Gv_6tn-KKVFW9dZdBoTea5ih5jmLNper2xDJ1yaQ', rating: 4.1, reviews: 29, category: 'men', size: ['S', 'M', 'L', 'XL', 'XXL'], color: 'white' },
     { id: 8, name: 'Brown Leather Jacket', brand: 'Gucci', price: 149.00, oldPrice: 189.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjII6dlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.7, reviews: 156, category: 'men', size: ['M', 'L', 'XL'], color: 'brown' },
 ];
@@ -21,9 +21,18 @@ const PRODUCTS = [
 let cart = JSON.parse(localStorage.getItem('krist_cart') || '[]');
 let wishlist = JSON.parse(localStorage.getItem('krist_wishlist') || '[]');
 
+/**
+ * Syncs the local `cart` array strictly to localStorage and updates the UI cart badge.
+ */
 function saveCart() { localStorage.setItem('krist_cart', JSON.stringify(cart)); updateCartBadge(); }
+/**
+ * Syncs the local `wishlist` array strictly to localStorage and updates the UI wishlist badge.
+ */
 function saveWishlist() { localStorage.setItem('krist_wishlist', JSON.stringify(wishlist)); updateWishlistBadge(); }
 
+/**
+ * Updates the global DOM wishlist badge counter, hiding it if the list is empty.
+ */
 function updateWishlistBadge() {
     const badge = document.getElementById('wishlistBadge');
     if (badge) {
@@ -36,6 +45,11 @@ function updateWishlistBadge() {
     }
 }
 
+/**
+ * Adds an item to the shopping cart or increments its quantity if it already exists.
+ * @param {number|string} productId - The unique identifier of the product.
+ * @param {number} [qty=1] - The quantity to add.
+ */
 function addToCart(productId, qty = 1) {
     const existing = cart.find(i => i.id === productId);
     if (existing) { existing.qty += qty; }
@@ -44,16 +58,29 @@ function addToCart(productId, qty = 1) {
     showToast('Added to cart!', 'success');
 }
 
+/**
+ * Removes an item completely from the shopping cart.
+ * @param {number|string} productId - The unique identifier of the product.
+ */
 function removeFromCart(productId) {
     cart = cart.filter(i => i.id !== productId);
     saveCart();
 }
 
+/**
+ * Forces a specific quantity for a cart item, ensuring it doesn't fall beneath 1.
+ * @param {number|string} productId - The unique identifier of the product.
+ * @param {number} qty - The desired target quantity.
+ */
 function updateCartQty(productId, qty) {
     const item = cart.find(i => i.id === productId);
     if (item) { item.qty = Math.max(1, qty); saveCart(); }
 }
 
+/**
+ * Calculates the total monetary value of the current shopping cart against the product database.
+ * @returns {number} The sum total of the cart.
+ */
 function getCartTotal() {
     return cart.reduce((sum, item) => {
         const p = PRODUCTS.find(pr => pr.id === item.id);
@@ -61,6 +88,10 @@ function getCartTotal() {
     }, 0);
 }
 
+/**
+ * Toggles a product's presence in the global wishlist and displays a contextual toast.
+ * @param {number|string} productId - The unique identifier of the product.
+ */
 function toggleWishlist(productId) {
     const idx = wishlist.indexOf(productId);
     if (idx > -1) { wishlist.splice(idx, 1); showToast('Removed from wishlist', 'info'); }
@@ -71,6 +102,9 @@ function toggleWishlist(productId) {
     }
 }
 
+/**
+ * Calculates the total item count in the cart and updates all DOM badges accordingly.
+ */
 function updateCartBadge() {
     document.querySelectorAll('.cart-badge').forEach(el => {
         const count = cart.reduce((s, i) => s + i.qty, 0);
@@ -80,6 +114,11 @@ function updateCartBadge() {
 }
 
 /* ── Utility Functions ────────────────────────────────── */
+/**
+ * Invokes the Toastify.js library to flash a non-blocking notification on the screen.
+ * @param {string} message - The message string to render.
+ * @param {'success'|'error'|'info'} [type='success'] - The semantic category matching a CSS background utility.
+ */
 function showToast(message, type = 'success') {
     if (typeof Toastify === 'undefined') return alert(message);
     const colors = {
@@ -212,32 +251,32 @@ function renderFooter() {
     <div class="container mx-auto px-4 md:px-8">
         <!-- Benefits Bar -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 -mt-10">
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="100">
-                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+            <div class="bg-slate-900 dark:bg-black rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="100">
+                <svg class="w-10 h-10 text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                 <div>
-                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Free Shipping</h4>
-                    <p class="text-xs text-slate-500 mt-1">For orders above $150</p>
+                    <h4 class="font-bold text-sm text-white">Free Shipping</h4>
+                    <p class="text-xs text-slate-400 mt-1">For orders above $150</p>
                 </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="200">
-                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="bg-slate-900 dark:bg-black rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="200">
+                <svg class="w-10 h-10 text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <div>
-                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Money Guarantee</h4>
-                    <p class="text-xs text-slate-500 mt-1">Within 30 days exchange</p>
+                    <h4 class="font-bold text-sm text-white">Money Guarantee</h4>
+                    <p class="text-xs text-slate-400 mt-1">Within 30 days exchange</p>
                 </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="300">
-                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <div class="bg-slate-900 dark:bg-black rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="300">
+                <svg class="w-10 h-10 text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <div>
-                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Online Support</h4>
-                    <p class="text-xs text-slate-500 mt-1">24 hours a day, 7 days</p>
+                    <h4 class="font-bold text-sm text-white">Online Support</h4>
+                    <p class="text-xs text-slate-400 mt-1">24 hours a day, 7 days</p>
                 </div>
             </div>
-            <div class="bg-white dark:bg-slate-800 rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="400">
-                <svg class="w-10 h-10 text-primary dark:text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+            <div class="bg-slate-900 dark:bg-black rounded-md p-6 shadow-lg flex items-center gap-4 group" data-aos="fade-up" data-aos-delay="400">
+                <svg class="w-10 h-10 text-white shrink-0 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                 <div>
-                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Flexible Payment</h4>
-                    <p class="text-xs text-slate-500 mt-1">Multiple credit cards</p>
+                    <h4 class="font-bold text-sm text-white">Flexible Payment</h4>
+                    <p class="text-xs text-slate-400 mt-1">Multiple credit cards</p>
                 </div>
             </div>
         </div>
@@ -304,19 +343,17 @@ function renderFooter() {
 
 /* ── Account Sidebar ──────────────────────────────────── */
 function renderAccountSidebar(activePage = '') {
-    const sidebarEl = document.getElementById('account-sidebar');
-    if (!sidebarEl) return;
     const links = [
-        { href: '/account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>', label: 'My Profile', key: 'profile' },
-        { href: '/account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>', label: 'Personal Information', key: 'personal-info' },
-        { href: '/account/orders.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>', label: 'My Orders', key: 'orders' },
-        { href: '/account/wishlist.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>', label: 'My Wishlist', key: 'wishlist' },
-        { href: '/account/manage-addresses.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Manage Addresses', key: 'addresses' },
-        { href: '/account/saved-cards.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>', label: 'Saved Cards', key: 'saved-cards' },
-        { href: '/account/notifications.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>', label: 'Notifications', key: 'notifications' },
-        { href: '/account/settings.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Settings', key: 'settings' },
+        { href: 'account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>', label: 'My Profile', key: 'profile' },
+        { href: 'account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>', label: 'Personal Information', key: 'personal-info' },
+        { href: 'account/orders.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>', label: 'My Orders', key: 'orders' },
+        { href: 'account/wishlist.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>', label: 'My Wishlist', key: 'wishlist' },
+        { href: 'account/manage-addresses.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Manage Addresses', key: 'addresses' },
+        { href: 'account/saved-cards.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>', label: 'Saved Cards', key: 'saved-cards' },
+        { href: 'account/notifications.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>', label: 'Notifications', key: 'notifications' },
+        { href: 'account/settings.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Settings', key: 'settings' },
     ];
-    sidebarEl.innerHTML = `
+    return `
     <div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
         <div class="p-6 border-b border-slate-100 dark:border-slate-800">
             <div class="flex items-center space-x-4">
@@ -358,8 +395,8 @@ function renderMiniCart() {
         <div id="miniCartItems" class="flex-1 overflow-y-auto p-6 space-y-6"></div>
         <div class="border-t border-slate-100 dark:border-slate-800 p-6">
             <div class="flex justify-between mb-4 font-bold text-lg"><span>Subtotal</span><span id="miniCartTotal">$0.00</span></div>
-            <a href="/cart.php" class="block w-full text-center py-3 border-2 border-primary text-primary dark:text-white rounded-md font-medium hover:bg-primary hover:text-white transition-colors mb-3">View Cart</a>
-            <a href="/checkout.php" class="block w-full text-center py-3 bg-primary text-white rounded-md font-medium hover:bg-slate-800 transition-colors">Checkout</a>
+            <a href="/cart.php" class="block w-full text-center py-4 text-sm tracking-widest uppercase border-2 border-slate-900 text-slate-900 rounded-full font-bold hover:bg-slate-900 hover:text-white transition-all duration-300 mb-3 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-900">View Cart</a>
+            <a href="/checkout.php" class="block w-full text-center py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Checkout</a>
         </div>
     </div>`;
     document.body.appendChild(drawer);
@@ -443,7 +480,30 @@ function renderDarkModeToggle() {
 
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    if (menu) menu.classList.toggle('hidden');
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    if (!menu || !backdrop) return;
+
+    const isClosed = menu.classList.contains('-translate-x-full');
+
+    if (isClosed) {
+        // Open
+        backdrop.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            menu.classList.remove('-translate-x-full');
+            menu.classList.add('translate-x-0');
+        });
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Close
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        menu.classList.remove('translate-x-0');
+        menu.classList.add('-translate-x-full');
+        document.body.style.overflow = '';
+        setTimeout(() => backdrop.classList.add('hidden'), 300);
+    }
 }
 
 /* ── Search Overlay ───────────────────────────────────── */
@@ -518,7 +578,7 @@ function renderProductCard(product, delay = 0) {
     const isSoldOut = product.inStock === false;
     return `
     <div class="group bg-white dark:bg-slate-900 rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800" data-aos="fade-up" data-aos-delay="${delay}">
-        <div class="relative overflow-hidden aspect-[3/4]">
+        <div class="relative overflow-hidden aspect-3/4">
             <a href="/product-detail.php?id=${product.id}">
                 <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${isSoldOut ? 'opacity-50 grayscale' : ''}"/>
             </a>
@@ -532,8 +592,8 @@ function renderProductCard(product, delay = 0) {
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                 </button>
             </div>
-            <div class="product-card-add-btn">
-                <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="w-full flex items-center justify-center gap-2 bg-white py-3 text-sm font-semibold tracking-wide hover:bg-primary hover:text-white text-slate-900 transition-all duration-300 rounded-sm shadow-md uppercase ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
+            <div class="product-card-add-btn p-3">
+                <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="w-full flex items-center justify-center gap-2 py-3 text-xs md:text-sm font-bold tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-sm ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     ${isSoldOut ? 'Sold Out' : 'Add to Cart'}
                 </button>
@@ -548,6 +608,27 @@ function renderProductCard(product, delay = 0) {
             <div class="flex items-center space-x-2">
                 <span class="font-bold text-primary dark:text-white">$${product.price.toFixed(2)}</span>
                 ${product.oldPrice ? `<span class="text-sm text-slate-400 line-through">$${product.oldPrice.toFixed(2)}</span>` : ''}
+            </div>
+        </div>
+    </div>`;
+}
+
+function renderSkeletonCard(delay = 0) {
+    return `
+    <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-md overflow-hidden flex flex-col w-full shadow-sm" data-aos="fade-up" data-aos-delay="${delay}">
+        <div class="relative w-full aspect-3/4 bg-slate-200 dark:bg-slate-700 animate-pulse flex items-center justify-center">
+            <svg class="w-12 h-12 text-slate-300 dark:text-slate-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 9.5l3-3.003 2.5 2.5L16 12v3.5H8v-2.5z"></path></svg>
+        </div>
+        <div class="p-4 space-y-3 flex flex-col justify-end flex-1">
+            <div class="flex items-center space-x-2">
+                <div class="h-2.5 bg-slate-200 dark:bg-slate-700 rounded w-1/3 animate-pulse"></div>
+                <div class="h-2.5 bg-slate-200 dark:bg-slate-700 rounded w-1/4 animate-pulse"></div>
+            </div>
+            <div class="h-3.5 bg-slate-200 dark:bg-slate-700 rounded w-3/4 animate-pulse mt-2"></div>
+            <div class="w-20 h-3 bg-slate-200 dark:bg-slate-700 rounded animate-pulse mt-1"></div>
+            <div class="flex items-center space-x-2 pt-1 h-[24px]">
+                <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/4 animate-pulse"></div>
+                <div class="h-3 bg-slate-200 dark:bg-slate-700 rounded w-1/5 animate-pulse"></div>
             </div>
         </div>
     </div>`;
@@ -678,8 +759,7 @@ function renderQuickViewModal(product) {
                     <input type="number" id="quickViewQty" value="1" min="1" class="w-12 h-full text-center font-semibold bg-transparent border-none focus:ring-0 dark:text-white" readonly />
                     <button onclick="changeQuickViewQty(1)" class="w-10 h-full flex items-center justify-center text-slate-500 hover:text-primary dark:hover:text-white transition-colors">+</button>
                 </div>
-                
-                <button onclick="${isSoldOut ? '' : 'addToCartFromQuickView()'}" class="flex-1 h-12 bg-primary text-white font-bold rounded-md hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2 ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
+                <button onclick="${isSoldOut ? '' : 'addToCartFromQuickView()'}" class="flex-1 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white flex items-center justify-center space-x-2 ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     <span>${isSoldOut ? 'Sold Out' : 'Add to Cart'}</span>
                 </button>
@@ -741,7 +821,7 @@ function renderBreadcrumb(items) {
 /* ── Floating Buttons ─────────────────────────────────── */
 function renderFloatingButtons() {
     const container = document.createElement('div');
-    container.className = 'fixed bottom-6 right-6 z-50 flex flex-col space-y-3';
+    container.className = 'fixed bottom-24 right-6 z-50 flex flex-col space-y-3';
 
     // Theme Toggle
     const themeBtn = document.createElement('button');
@@ -775,7 +855,7 @@ function renderFloatingButtons() {
 
     // Scroll to Top
     const topBtn = document.createElement('button');
-    topBtn.className = 'w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-slate-800 transition-all duration-300 opacity-0 invisible translate-y-4';
+    topBtn.className = 'w-12 h-12 bg-primary text-white dark:bg-slate-800 dark:text-white rounded-full shadow-lg flex items-center justify-center hover:bg-slate-800 transition-all duration-300 opacity-0 invisible translate-y-4';
     topBtn.setAttribute('aria-label', 'Back to top');
     topBtn.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>`;
 
@@ -821,3 +901,828 @@ function initKrist() {
 }
 
 document.addEventListener('DOMContentLoaded', initKrist);
+
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('globalPreloader');
+    if (preloader) {
+        // Lock scroll immediately until preloader is done
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        // Add a tiny delay for smooth visual effect after all assets load
+        setTimeout(() => {
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            // Unlock scroll as the preloader fades
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 700);
+        }, 1500); // reduced from 2000 to 200 to disappear quickly
+    }
+});
+
+/* ── Homepage Specific Initializations ────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize Hero Swiper if present
+    const heroSwiperElement = document.querySelector(".heroSwiper");
+    if (heroSwiperElement && typeof Swiper !== 'undefined') {
+        const heroSwiper = new Swiper('.heroSwiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const categorySwiper = new Swiper('.categorySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '#catNext',
+                prevEl: '#catPrev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 24 },
+                1024: { slidesPerView: 4, spaceBetween: 30 },
+            }
+        });
+
+        const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            watchOverflow: false, // Ensure arrows stay visible even if slides <= view
+            loop: true,           // Allow wrapping around
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '#testNext',
+                prevEl: '#testPrev',
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 32 },
+            }
+        });
+
+        const benefitsSwiper = new Swiper('.benefitsSwiper', {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: {
+                    slidesPerView: 4,
+                    enabled: false,
+                },
+            }
+        });
+    }
+
+    // 2. Initialize Categories Auto-Scroll if present
+    const catGrid = document.getElementById('categoriesGrid');
+    if (catGrid) {
+        const categoriesContent = [
+            { id: 'men', name: 'Men', image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=600&auto=format&fit=crop', items: 124 },
+            { id: 'women', name: 'Women', image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=640&h=800&fit=crop&q=80', items: 86 },
+            { id: 'kids', name: 'Kids', image: 'https://images.unsplash.com/photo-1519238350819-21dc31845112?q=80&w=600&auto=format&fit=crop', items: 54 },
+            { id: 'accessories', name: 'Accessories', image: 'https://images.unsplash.com/photo-1509319117193-57bab727e09d?q=80&w=600&auto=format&fit=crop', items: 42 },
+            { id: 'footwear', name: 'Footwear', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop', items: 78 }
+        ];
+
+        catGrid.innerHTML = categoriesContent.map((cat, i) => `
+            <div class="group relative flex-none w-[400px] h-[400px] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-gray-100 dark:bg-neutral-800 snap-center shrink-0 cursor-pointer" data-aos="fade-up" data-aos-delay="${i * 100}">
+                <a href="/shop.php?cat=${cat.id}" class="block w-full h-full">
+                    <img src="${cat.image}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${cat.name}"/>
+                </a>
+                <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-4/5">
+                    <a href="/shop.php?cat=${cat.id}" class="block w-full text-center bg-white py-2 sm:py-3 text-xs sm:text-sm font-semibold tracking-wide hover:bg-primary hover:text-white dark:text-slate-900 transition-all duration-300 rounded-full shadow-md uppercase">
+                        ${cat.name}
+                    </a>
+                </div>
+            </div>
+        `).join('');
+
+        let catScrollInterval;
+        let scrollTimeout;
+
+        const getScrollAmount = () => 424; // 400px card + 24px gap
+
+        const startCatScroll = () => {
+            clearInterval(catScrollInterval);
+            catScrollInterval = setInterval(() => {
+                if (catGrid.scrollLeft + catGrid.clientWidth >= catGrid.scrollWidth - 10) {
+                    catGrid.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back to start
+                } else {
+                    catGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+            }, 3500); // Scroll every 3.5 seconds
+        };
+
+        const stopCatScroll = () => clearInterval(catScrollInterval);
+        const pauseTemporarily = () => {
+            stopCatScroll();
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(startCatScroll, 5000);
+        };
+
+        startCatScroll();
+
+        catGrid.addEventListener('mouseenter', stopCatScroll);
+        catGrid.addEventListener('mouseleave', startCatScroll);
+        catGrid.addEventListener('touchstart', stopCatScroll, { passive: true });
+        catGrid.addEventListener('touchend', pauseTemporarily, { passive: true });
+
+        document.getElementById('catPrev')?.addEventListener('click', () => {
+            catGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            pauseTemporarily();
+        });
+        document.getElementById('catNext')?.addEventListener('click', () => {
+            catGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            pauseTemporarily();
+        });
+    }
+
+    // 3. Initialize Bestsellers Loading if present
+    const bestGrid = document.getElementById('bestsellersGrid');
+    if (bestGrid && typeof PRODUCTS !== 'undefined') {
+        const skeletonCount = 4;
+        let skeletonHtml = '';
+        if (typeof renderSkeletonCard !== 'undefined') {
+            for (let i = 0; i < skeletonCount; i++) {
+                skeletonHtml += renderSkeletonCard(i * 100);
+            }
+            bestGrid.innerHTML = skeletonHtml;
+        }
+
+        if (typeof AOS !== 'undefined') AOS.refresh();
+
+        setTimeout(() => {
+            if (typeof renderProductCard !== 'undefined') {
+                bestGrid.innerHTML = PRODUCTS.slice(0, 4).map((p, i) => renderProductCard(p, i * 100)).join('');
+            }
+            if (typeof AOS !== 'undefined') AOS.refresh();
+        }, 600);
+    }
+
+    // 4. Initialize Testimonials Scrolling if present
+    const testContainer = document.getElementById('testimonialsContainer');
+    if (testContainer) {
+        document.getElementById('testPrev')?.addEventListener('click', () => testContainer.scrollBy({ left: -350, behavior: 'smooth' }));
+        document.getElementById('testNext')?.addEventListener('click', () => testContainer.scrollBy({ left: 350, behavior: 'smooth' }));
+    }
+
+    // 5. Initialize Shop Page logic if present
+    initShopPage();
+
+    // 6. Initialize Cart Page logic if present
+    initCartPage();
+
+    // 7. Initialize Checkout Page logic if present
+    initCheckoutPage();
+
+    // 8. Auto-breadcrumb, auto-sidebar, and auth scripts
+    initAutoBreadcrumbs();
+    initAutoSidebar();
+    if (window.location.pathname.includes('/auth/')) {
+        initAuthPages();
+    }
+
+    // 9. Initialize Search Page logic
+    initSearchPage();
+
+    // 10. Initialize Search Results page logic
+    initSearchResultsPage();
+
+    // 11. Initialize Blog Page logic
+    initBlogPage();
+
+    // 12. Initialize Wishlist Page logic
+    initWishlistPage();
+
+    // 13. Initialize Product Details Page
+    initProductDetailsPage();
+});
+
+/* ── Shop Page Logic ──────────────────────────────────── */
+function initShopPage() {
+    const breadcrumb = document.getElementById('breadcrumb');
+    if (!breadcrumb) return; // Exit if not on the shop page
+
+    breadcrumb.innerHTML = renderBreadcrumb([{ label: 'Shop', active: true }]);
+
+    const priceRange = document.getElementById('priceRange');
+    if (priceRange) {
+        priceRange.addEventListener('input', () => {
+            const label = document.getElementById('priceLabel');
+            if (label) label.textContent = '$' + priceRange.value;
+        });
+    }
+
+    // Check URL params for category
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat) {
+        document.querySelectorAll(`[data-filter="cat"][value="${cat}"]`).forEach(c => c.checked = true);
+    }
+
+    applyFilters();
+}
+
+// Make accessible to the global scope since it's referenced by inline triggers like onChange
+window.applyFilters = function () {
+    const filterNodes = document.querySelectorAll('[data-filter="cat"]:checked');
+    if (!filterNodes.length && !document.getElementById('priceRange')) return;
+
+    const cats = [...document.querySelectorAll('[data-filter="cat"]:checked')].map(c => c.value);
+    const maxPrice = parseInt(document.getElementById('priceRange')?.value || 1000);
+    const sort = document.getElementById('sortSelect')?.value || 'default';
+
+    let filtered = PRODUCTS.filter(p => {
+        if (cats.length && !cats.includes(p.category)) return false;
+        if (p.price > maxPrice) return false;
+        return true;
+    });
+
+    if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+    else if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+    else if (sort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+
+    const countEl = document.getElementById('productCount');
+    if (countEl) countEl.textContent = filtered.length;
+
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+
+    // Render skeleton loading state
+    const skeletonCount = filtered.length ? Math.min(filtered.length, 6) : 3;
+    let skeletonHtml = '';
+    if (typeof renderSkeletonCard !== 'undefined') {
+        for (let i = 0; i < skeletonCount; i++) {
+            skeletonHtml += renderSkeletonCard(i * 50);
+        }
+        grid.innerHTML = skeletonHtml;
+    }
+    if (typeof AOS !== 'undefined') AOS.refresh();
+
+    // Simulate network delay
+    setTimeout(() => {
+        if (typeof renderProductCard !== 'undefined') {
+            grid.innerHTML = filtered.length ? filtered.map((p, i) => renderProductCard(p, i * 50)).join('') : '<div class="col-span-full text-center py-20"><span class="material-symbols-outlined text-6xl text-slate-300 block mb-4">inventory_2</span><p class="text-slate-500">No products found</p></div>';
+        }
+        if (typeof AOS !== 'undefined') AOS.refresh();
+    }, 600);
+};
+
+/* ── Cart Page Logic ──────────────────────────────────── */
+function initCartPage() {
+    if (document.getElementById('cartItemsContainer')) {
+        renderCartPage();
+    }
+}
+
+// Make accessible to global scope
+window.renderCartPage = function () {
+    const container = document.getElementById('cartItemsContainer');
+    const subtotalEl = document.getElementById('orderSubtotal');
+    const totalEl = document.getElementById('orderTotal');
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = '<div class="p-12 text-center text-slate-500">Your cart is empty. Start shopping!</div>';
+        if (subtotalEl) subtotalEl.textContent = '$0.00';
+        if (totalEl) totalEl.textContent = '$0.00';
+        return;
+    }
+
+    container.innerHTML = cart.map(item => {
+        const p = PRODUCTS.find(pr => pr.id === item.id);
+        if (!p) return '';
+        return `
+        <div class="p-6 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+            <div class="col-span-1 sm:col-span-6 flex items-center space-x-4">
+                <img src="/${p.image}" alt="${p.name}" class="w-20 h-24 object-cover rounded-lg"/>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white line-clamp-1">${p.name}</h4>
+                    <p class="text-sm text-slate-500 mb-2">${p.brand}</p>
+                    <button onclick="removeFromCart(${p.id}); renderCartPage(); if(typeof renderMiniCartItems === 'function') renderMiniCartItems();" class="text-sm text-red-500 hover:text-red-700 font-medium flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-1 sm:col-span-2 sm:text-center font-bold">
+                <span class="sm:hidden text-sm text-slate-500 font-normal mr-2">Price:</span>$${p.price.toFixed(2)}
+            </div>
+            <div class="col-span-1 sm:col-span-2 flex sm:justify-center">
+                <div class="flex items-center space-x-3 bg-slate-50 dark:bg-slate-900 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
+                    <button onclick="updateCartQty(${p.id}, ${item.qty - 1}); renderCartPage(); if(typeof renderMiniCartItems === 'function') renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 rounded shadow-sm text-slate-600 dark:text-slate-300 font-bold">−</button>
+                    <span class="font-bold w-4 text-center">${item.qty}</span>
+                    <button onclick="updateCartQty(${p.id}, ${item.qty + 1}); renderCartPage(); if(typeof renderMiniCartItems === 'function') renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 rounded shadow-sm text-slate-600 dark:text-slate-300 font-bold">+</button>
+                </div>
+            </div>
+            <div class="col-span-1 sm:col-span-2 sm:text-right font-bold text-primary">
+                <span class="sm:hidden text-sm text-slate-500 font-normal mr-2">Subtotal:</span>$${(p.price * item.qty).toFixed(2)}
+            </div>
+        </div>`;
+    }).join('');
+
+    const total = getCartTotal().toFixed(2);
+    if (subtotalEl) subtotalEl.textContent = '$' + total;
+    if (totalEl) totalEl.textContent = '$' + total;
+};
+
+/* ── Checkout Page Logic ──────────────────────────────── */
+function initCheckoutPage() {
+    const stepperContainer = document.getElementById('checkout-stepper-container');
+    if (stepperContainer && typeof renderCheckoutStepper === 'function') {
+        stepperContainer.innerHTML = renderCheckoutStepper(2);
+        if (typeof renderCheckoutItems === 'function') renderCheckoutItems();
+    }
+}
+
+// Make accessible to global scope
+window.renderCheckoutItems = function () {
+    const container = document.getElementById('checkoutCartItems');
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = '<p class="text-slate-500 italic">Your cart is empty.</p>';
+        return;
+    }
+
+    container.innerHTML = cart.map(item => {
+        const p = PRODUCTS.find(pr => pr.id === item.id);
+        if (!p) return '';
+        return `
+        <div class="flex items-center space-x-4">
+            <img src="/${p.image}" class="w-16 h-20 object-cover rounded-md bg-slate-50">
+            <div class="flex-1">
+                <h4 class="font-semibold text-sm line-clamp-1">${p.name}</h4>
+                <p class="text-xs text-slate-500">Qty: ${item.qty}</p>
+            </div>
+            <div class="font-bold text-sm">$${(p.price * item.qty).toFixed(2)}</div>
+        </div>`;
+    }).join('');
+
+    const subtotalEl = document.getElementById('checkoutSubtotal');
+    const totalEl = document.getElementById('checkoutTotal');
+    const total = getCartTotal().toFixed(2);
+    if (subtotalEl) subtotalEl.textContent = '$' + total;
+    if (totalEl) totalEl.textContent = '$' + total;
+};
+
+/* ── Search Page Logic ────────────────────────────────── */
+function initSearchPage() {
+    const searchMain = document.getElementById('searchMain');
+    if (!searchMain) return;
+
+    window.searchQuery = searchMain.getAttribute('data-query') || '';
+
+    const priceRange = document.getElementById('priceRange');
+    if (priceRange) {
+        priceRange.addEventListener('input', () => {
+            const label = document.getElementById('priceLabel');
+            if (label) label.textContent = '$' + priceRange.value;
+        });
+    }
+
+    // Size button selection
+    document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            this.classList.toggle('bg-primary');
+            this.classList.toggle('text-white');
+            this.classList.toggle('border-primary');
+        });
+    });
+
+    if (typeof applySearchFilters === 'function') {
+        applySearchFilters();
+    }
+}
+
+// Make globally accessible since it's called from inline HTML elements like the sort select
+window.applySearchFilters = function () {
+    const cats = [...document.querySelectorAll('[data-filter="cat"]:checked')].map(c => c.value);
+    const priceRangeEl = document.getElementById('priceRange');
+    const maxPrice = priceRangeEl ? parseInt(priceRangeEl.value) : Number.MAX_SAFE_INTEGER;
+    const sortEl = document.getElementById('sortSelect');
+    const sort = sortEl ? sortEl.value : 'default';
+    const selectedSizes = [...document.querySelectorAll('.size-btn.bg-primary')].map(b => b.dataset.size);
+
+    let filtered = PRODUCTS.filter(p => {
+        if (window.searchQuery && !p.name.toLowerCase().includes(window.searchQuery.toLowerCase())) return false;
+        if (cats.length && !cats.includes(p.category)) return false;
+        if (p.price > maxPrice) return false;
+        if (selectedSizes.length > 0 && !p.size.some(s => selectedSizes.includes(s))) return false;
+        return true;
+    });
+
+    if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+    else if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+    else if (sort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+
+    const countEl = document.getElementById('productCount');
+    if (countEl) countEl.textContent = filtered.length;
+
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+
+    if (filtered.length > 0) {
+        grid.innerHTML = filtered.map((p, i) => renderProductCard(p, i * 50)).join('');
+    } else {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-20 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm" data-aos="fade-up">
+                <svg class="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <h3 class="text-xl font-bold dark:text-white mb-2">No Results Found</h3>
+                <p class="text-slate-500 mb-6 max-w-md mx-auto">We couldn't find any products matching your search criteria. Try adjusting your filters or search terms.</p>
+                <div class="flex justify-center">
+                    <button onclick="document.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false); if(document.getElementById('priceRange')){document.getElementById('priceRange').value=200; document.getElementById('priceLabel').textContent='$200';} document.querySelectorAll('.size-btn').forEach(b=>{b.classList.remove('bg-primary','text-white','border-primary')}); applySearchFilters();" class="py-4 px-12 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Clear Filters</button>
+                </div>
+            </div>
+        `;
+    }
+
+    if (typeof AOS !== 'undefined') AOS.refresh();
+};
+
+/* ── Search Results Page Logic ────────────────────────── */
+function initSearchResultsPage() {
+    const searchInput = document.getElementById('searchInput');
+    const resultCount = document.getElementById('resultCount');
+    if (!searchInput || !resultCount) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q') || 'Shirts';
+    searchInput.value = q;
+    const searchTermEl = document.getElementById('searchTerm');
+    if (searchTermEl) searchTermEl.textContent = q;
+
+    performSearchResults();
+
+    searchInput.addEventListener('keypress', e => {
+        if (e.key === 'Enter') performSearchResults();
+    });
+}
+
+window.performSearchResults = function () {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    const q = searchInput.value.toLowerCase();
+    const searchTermEl = document.getElementById('searchTerm');
+    if (searchTermEl) searchTermEl.textContent = q;
+
+    window.history.replaceState({}, '', '?q=' + encodeURIComponent(q));
+
+    const sortEl = document.getElementById('sortSelect');
+    const sort = sortEl ? sortEl.value : 'relevance';
+
+    let results = PRODUCTS.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        p.brand.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q)
+    );
+
+    if (sort === 'price-asc') results.sort((a, b) => a.price - b.price);
+    else if (sort === 'price-desc') results.sort((a, b) => b.price - a.price);
+    else if (sort === 'rating') results.sort((a, b) => b.rating - a.rating);
+
+    const countEl = document.getElementById('resultCount');
+    if (countEl) countEl.textContent = results.length;
+
+    const grid = document.getElementById('searchGrid');
+    if (!grid) return;
+
+    if (results.length > 0) {
+        grid.innerHTML = results.map((p, i) => renderProductCard(p, i * 50)).join('');
+    } else {
+        grid.innerHTML = `
+        <div class="col-span-full text-center py-20">
+            <span class="material-symbols-outlined text-6xl text-slate-300 block mb-4">search_off</span>
+            <h3 class="text-xl font-bold mb-2">No results found</h3>
+            <p class="text-slate-500">We couldn't find anything matching "${q}". Try different keywords.</p>
+        </div>`;
+    }
+
+    if (typeof AOS !== 'undefined') AOS.refresh();
+};
+
+/* ── Blog Page Logic ──────────────────────────────────── */
+function initBlogPage() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    if (filterBtns.length === 0 || blogPosts.length === 0) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active styling
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
+                b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
+            });
+
+            btn.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900');
+            btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300', 'border');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            // Filter posts
+            blogPosts.forEach(post => {
+                // Apply fade out class
+                post.classList.add('opacity-0', 'scale-95');
+
+                setTimeout(() => {
+                    if (filterValue === 'all' || post.getAttribute('data-category') === filterValue) {
+                        post.style.display = 'flex';
+                        // Slight delay to allow display flex to apply before transitioning opacity back
+                        setTimeout(() => {
+                            post.classList.remove('opacity-0', 'scale-95');
+                        }, 50);
+                    } else {
+                        post.style.display = 'none';
+                    }
+                }, 300); // Wait for fade out transition (300ms matches duration-300)
+            });
+        });
+    });
+}
+
+/* ── Global Auto-Initializers ────────────────────────── */
+function initAutoBreadcrumbs() {
+    const breadcrumbEl = document.getElementById('breadcrumb');
+    if (breadcrumbEl && !breadcrumbEl.innerHTML.trim() && typeof renderBreadcrumb === 'function') {
+        let pageName = document.title.replace('Krist - ', '').replace('My ', '');
+        if (pageName === 'Shopping Cart') pageName = 'Cart';
+
+        let items = [];
+        if (window.location.pathname.includes('/account/')) {
+            items.push({ label: 'Account', href: 'account/personal-info.php' });
+        }
+        items.push({ label: pageName, active: true });
+        breadcrumbEl.innerHTML = renderBreadcrumb(items);
+    }
+}
+
+function initAutoSidebar() {
+    const sidebarEl = document.getElementById('account-sidebar');
+    if (sidebarEl && typeof renderAccountSidebar === 'function') {
+        const path = window.location.pathname;
+        let active = 'personal-info';
+        if (path.includes('orders')) active = 'orders';
+        else if (path.includes('wishlist')) active = 'wishlist';
+        else if (path.includes('manage-addresses')) active = 'manage-addresses';
+        else if (path.includes('saved-cards')) active = 'saved-cards';
+        else if (path.includes('notifications')) active = 'notifications';
+        else if (path.includes('settings')) active = 'settings';
+
+        sidebarEl.innerHTML = renderAccountSidebar(active);
+    }
+}
+
+function initAuthPages() {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        if (!form.getAttribute('action') && form.querySelector('button[type="submit"]')) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    const next = form.getAttribute('data-next') || '/index.php';
+                    window.location.href = next;
+                }, 1500);
+            });
+        }
+    });
+
+    const toggleButtons = document.querySelectorAll('button[type="button"]');
+    toggleButtons.forEach(btn => {
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon && (icon.textContent === 'visibility' || icon.textContent === 'visibility_off')) {
+            btn.addEventListener('click', () => {
+                const input = btn.previousElementSibling;
+                if (input && input.tagName === 'INPUT') {
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.textContent = 'visibility_off';
+                    } else {
+                        input.type = 'password';
+                        icon.textContent = 'visibility';
+                    }
+                }
+            });
+        }
+    });
+}
+
+function initWishlistPage() {
+    if (!window.location.pathname.includes('/account/wishlist.php') && !window.location.pathname.includes('/account/wishlist')) return;
+    const grid = document.getElementById('wishlistGrid');
+    const countEl = document.getElementById('wishlistCount');
+    if (!grid) return;
+
+    // Dummy wishlist data
+    const wishlistItems = typeof PRODUCTS !== 'undefined' ? PRODUCTS.slice(0, 4) : [];
+
+    if (countEl) countEl.textContent = `${wishlistItems.length} Items`;
+
+    if (wishlistItems.length > 0) {
+        grid.innerHTML = wishlistItems.map((p, i) => renderProductCard(p, i * 50)).join('');
+    } else {
+        grid.innerHTML = `
+            <div class="col-span-full py-16 text-center">
+                <span class="material-symbols-outlined text-6xl text-slate-300 block mb-4">favorite_border</span>
+                <h3 class="text-xl font-bold mb-2">Your wishlist is empty</h3>
+                <p class="text-slate-500 mb-6">Explore more and shortlist some items.</p>
+                <a href="/shop.php" class="inline-block bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-slate-800 transition-colors">Go Shopping</a>
+            </div>
+        `;
+    }
+
+    if (typeof AOS !== 'undefined') AOS.refresh();
+}
+
+/* ── Product Details Page Logic ───────────────────────── */
+function initProductDetailsPage() {
+    const container = document.getElementById('productContainer');
+    if (!container) return; // Exit if not on product details page
+
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id')) || 1;
+    const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0];
+
+    // Populate Breadcrumbs
+    const breadcrumbEl = document.getElementById('productBreadcrumb');
+    if (breadcrumbEl && typeof renderBreadcrumb === 'function') {
+        breadcrumbEl.innerHTML = renderBreadcrumb([
+            { label: 'Shop', href: '/shop.php' },
+            { label: product.name, active: true }
+        ]);
+    }
+
+    // Populate Details
+    const nameEl = document.getElementById('productName');
+    if (nameEl) nameEl.textContent = product.name;
+
+    const brandEl = document.getElementById('productBrand');
+    if (brandEl) brandEl.textContent = product.brand;
+
+    const priceEl = document.getElementById('productPrice');
+    if (priceEl) priceEl.textContent = `$${product.price.toFixed(2)}`;
+
+    const oldPriceEl = document.getElementById('productOldPrice');
+    if (oldPriceEl) {
+        if (product.oldPrice) {
+            oldPriceEl.textContent = `$${product.oldPrice.toFixed(2)}`;
+            oldPriceEl.style.display = 'inline';
+        } else {
+            oldPriceEl.style.display = 'none';
+        }
+    }
+
+    const reviewCountEl = document.getElementById('productReviewCount');
+    if (reviewCountEl) reviewCountEl.textContent = `(${product.reviews} Reviews)`;
+
+    const stockTag = document.getElementById('productStockTag');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (stockTag) {
+        if (product.inStock !== false) {
+            stockTag.textContent = 'In Stock';
+            stockTag.className = 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-2.5 py-1 rounded-full font-bold';
+
+            if (addToCartBtn) {
+                addToCartBtn.textContent = 'Add to Cart';
+                addToCartBtn.className = 'flex-1 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-sm hover:shadow-md hover:-translate-y-0.5 h-14';
+                addToCartBtn.onclick = () => addToCart(product.id);
+            }
+        } else {
+            stockTag.textContent = 'Sold Out';
+            stockTag.className = 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-xs px-2.5 py-1 rounded-full font-bold';
+
+            if (addToCartBtn) {
+                addToCartBtn.textContent = 'Sold Out';
+                addToCartBtn.className = 'flex-1 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 shadow-sm h-14 opacity-50 cursor-not-allowed';
+                addToCartBtn.onclick = null; // Disable click
+            }
+        }
+    }
+
+    const categoryEl = document.getElementById('productCategory');
+    if (categoryEl) categoryEl.textContent = product.category;
+
+    const skuEl = document.getElementById('productSku');
+    if (skuEl) skuEl.textContent = `100${product.id}`;
+
+    // Main Image + Thumbnails
+    const mainImg = document.getElementById('mainProductImage');
+    if (mainImg) mainImg.src = product.image;
+
+    const gallery = document.getElementById('imageGallery');
+    if (gallery) {
+        gallery.innerHTML = '';
+        const mockThumbnails = [
+            product.image,
+            'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=200&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=200&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1506169894395-36397e4aa54a?q=80&w=200&auto=format&fit=crop'
+        ];
+
+        mockThumbnails.forEach((imgUrl, idx) => {
+            const isSelected = idx === 0;
+            const thumb = document.createElement('div');
+            thumb.className = `glass bg-white/50 dark:bg-slate-700/50 rounded-xl overflow-hidden aspect-square flex items-center justify-center p-2 cursor-pointer border ${isSelected ? 'border-primary ring-2 ring-primary/20' : 'border-white/40 dark:border-white/10 hover:border-primary/50'} transition-all hover:scale-105`;
+            thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail" class="max-h-full object-contain mix-blend-multiply dark:mix-blend-normal">`;
+            thumb.onclick = () => {
+                if (mainImg) mainImg.src = imgUrl;
+                [...gallery.children].forEach(c => {
+                    c.classList.remove('border-primary', 'ring-2', 'ring-primary/20');
+                    c.classList.add('border-white/40', 'dark:border-white/10');
+                });
+                thumb.classList.remove('border-white/40', 'dark:border-white/10');
+                thumb.classList.add('border-primary', 'ring-2', 'ring-primary/20');
+            };
+            gallery.appendChild(thumb);
+        });
+    }
+
+    // Sizes
+    const sizesContainer = document.getElementById('productSizes');
+    if (sizesContainer && product.size) {
+        sizesContainer.innerHTML = product.size.map((sz, i) => `
+            <button class="size-btn min-w-[3rem] h-10 px-4 rounded-md border ${i === 1 ? 'border-primary text-primary font-bold dark:text-white dark:border-white' : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary dark:hover:text-white'} transition-colors text-sm font-semibold uppercase">${sz}</button>
+        `).join('');
+    }
+
+    // Rating Stars
+    const ratingContainer = document.getElementById('productRating');
+    if (ratingContainer) {
+        let starsHtml = '';
+        for (let i = 0; i < 5; i++) {
+            starsHtml += `<svg class="w-5 h-5 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-slate-300 dark:text-slate-600'}" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>`;
+        }
+        ratingContainer.innerHTML = starsHtml;
+    }
+
+    // Related Products Swiper
+    const relatedContainer = document.getElementById('relatedProductsContainer');
+    if (relatedContainer && typeof renderProductCard === 'function') {
+        const relatedProducts = PRODUCTS.filter(p => p.id !== product.id && p.category === product.category).slice(0, 5);
+        // Fallback to top products if category lacks siblings
+        const toShow = relatedProducts.length > 0 ? relatedProducts : PRODUCTS.filter(p => p.id !== product.id).slice(0, 5);
+
+        relatedContainer.innerHTML = toShow.map((p) => `
+            <div class="swiper-slide h-auto">
+                ${renderProductCard(p, 0)}
+            </div>
+        `).join('');
+
+        if (typeof Swiper !== 'undefined') {
+            new Swiper('.relatedSwiper', {
+                slidesPerView: 2, // 2 on mobile
+                spaceBetween: 16,
+                loop: false,
+                navigation: {
+                    nextEl: '#relatedNext',
+                    prevEl: '#relatedPrev',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    768: { slidesPerView: 3, spaceBetween: 24 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 } // 3 on desktop
+                }
+            });
+        }
+    }
+
+    // Initialize Active Tab
+    const tabPanels = document.querySelectorAll('[data-tab-group="product-tabs"] .tab-panel');
+    if (tabPanels.length > 0) {
+        // Find if one is set to active already via pure HTML, else force the first.
+        let hasActive = Array.from(tabPanels).some(panel => panel.classList.contains('active'));
+        if (!hasActive && tabPanels[0]) {
+            tabPanels[0].classList.add('active', 'block');
+            tabPanels[0].classList.remove('hidden');
+        }
+    }
+}

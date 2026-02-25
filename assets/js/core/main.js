@@ -20,6 +20,11 @@ const V = {
     expiry: v => /^(0[1-9]|1[0-2])\/\d{2}$/.test(v),
 };
 
+/**
+ * Displays an error message below a form input field.
+ * @param {HTMLElement} input - The DOM input element to target.
+ * @param {string} msg - The text of the error message to display.
+ */
 function showFieldError(input, msg) {
     input.classList.add('!border-red-500', '!ring-red-500');
     input.classList.remove('border-slate-300', 'dark:border-slate-700');
@@ -32,6 +37,10 @@ function showFieldError(input, msg) {
     errEl.innerHTML = `<span class="material-symbols-outlined text-sm mr-1">error</span>${msg}`;
 }
 
+/**
+ * Clears any existing error messages and reset styles for a form input field.
+ * @param {HTMLElement} input - The DOM input element to clear.
+ */
 function clearFieldError(input) {
     input.classList.remove('!border-red-500', '!ring-red-500');
     input.classList.add('border-slate-300', 'dark:border-slate-700');
@@ -40,6 +49,11 @@ function clearFieldError(input) {
 }
 
 /* ── Capslock Detection ───────────────────────────────── */
+/**
+ * Initializes CapsLock detection on the provided array of input elements.
+ * Displays a warning message when CapsLock is engaged during typing.
+ * @param {NodeList|Array<HTMLElement>} inputs - A collection of password inputs.
+ */
 function setupCapsLockDetection(inputs) {
     inputs.forEach(input => {
         if (!input) return;
@@ -64,6 +78,11 @@ function setupCapsLockDetection(inputs) {
 }
 
 /* ── Password Toggle ──────────────────────────────────── */
+/**
+ * Toggles the visibility state of a password input between text and password.
+ * @param {HTMLElement} btn - The toggle button element.
+ * @param {HTMLElement} input - The target password input element.
+ */
 function setupPasswordToggle(btn, input) {
     if (!btn || !input) return;
     btn.addEventListener('click', () => {
@@ -79,6 +98,11 @@ function setupPasswordToggle(btn, input) {
 }
 
 /* ── Password Strength Indicator ──────────────────────── */
+/**
+ * Sets up a dynamic password strength indicator.
+ * @param {HTMLElement} input - The password input to monitor.
+ * @param {HTMLElement} container - The DOM container where the indicator will be rendered.
+ */
 function setupPasswordStrength(input, container) {
     if (!input || !container) return;
     input.addEventListener('input', () => {
@@ -97,6 +121,9 @@ function setupPasswordStrength(input, container) {
 }
 
 /* ── OTP Input Handler ────────────────────────────────── */
+/**
+ * Initializes OTP (One Time Password) input fields with auto-advance and paste behaviors.
+ */
 function setupOTPInputs() {
     const inputs = document.querySelectorAll('.otp-input');
     inputs.forEach((input, i) => {
@@ -118,6 +145,10 @@ function setupOTPInputs() {
 }
 
 /* ── Filter Toggle ────────────────────────────────────── */
+/**
+ * Toggles the visibility constraint (expand/collapse) of a sidebar filter accordion.
+ * @param {HTMLElement} btn - The accordion header button triggered.
+ */
 function toggleFilter(btn) {
     const content = btn.nextElementSibling;
     const icon = btn.querySelector('.filter-icon');
@@ -126,6 +157,11 @@ function toggleFilter(btn) {
 }
 
 /* ── Tab System ───────────────────────────────────────── */
+/**
+ * Handles the switching mechanism for tabbed interfaces.
+ * @param {string} tabGroup - The data-tab-group identifier managing these tabs.
+ * @param {string} tabKey - The specific data-tab identifier to activate.
+ */
 function switchTab(tabGroup, tabKey) {
     document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-btn`).forEach(b => b.classList.remove('active'));
     document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-panel`).forEach(p => p.classList.remove('active'));
@@ -152,6 +188,11 @@ function formatExpiry(input) {
 }
 
 /* ── Search System ────────────────────────────────────── */
+/**
+ * Quickly filters down the product array based on a combined attribute query search.
+ * @param {string} query - The search term to match against product properties.
+ * @returns {Array<Object>} Array of matching products.
+ */
 function searchProducts(query) {
     const q = query.toLowerCase();
     return PRODUCTS.filter(p =>
@@ -175,3 +216,31 @@ function toggleMobileShopMenu() {
         chevron.classList.remove('rotate-180');
     }
 }
+
+/* ── Promotional Countdown Clocks ────────────────────────── */
+/**
+ * Drives the promotional HTML banners automatically until 7 days expiry.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const countdownDays = document.querySelectorAll('.countdown-days');
+    if (countdownDays.length > 0) {
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 7);
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.querySelectorAll('.countdown-days').forEach(el => el.textContent = days.toString().padStart(2, '0'));
+            document.querySelectorAll('.countdown-hours').forEach(el => el.textContent = hours.toString().padStart(2, '0'));
+            document.querySelectorAll('.countdown-mins').forEach(el => el.textContent = minutes.toString().padStart(2, '0'));
+            document.querySelectorAll('.countdown-secs').forEach(el => el.textContent = seconds.toString().padStart(2, '0'));
+        }, 1000);
+    }
+});
