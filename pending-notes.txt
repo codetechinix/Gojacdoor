@@ -1,0 +1,3 @@
+I need to prompt it to inspect the product details page, identify any abnormalities, and fix them.
+
+It should then check the RevOne eCommerce demo URL and review the search pop-up design. Next, it should click the cart icon to inspect the cart popup, add an item to the cart, and click the cart icon again in the header to inspect the updated design. Finally, it should review the header banner design, the currency and language dropdowns, the social proof popup, and the promotion modal popup.

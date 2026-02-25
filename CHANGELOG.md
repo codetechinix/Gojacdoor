@@ -4,6 +4,43 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### [2026-02-25T07:20:00+01:00] Revone Theme UI Upgrades
+
+#### Added
+
+- **Mobile Sticky Navigation (`includes/header.php`):** Implemented a new sticky mobile bottom-bar navigation with Home, Menu, Search, Account, and Cart icons.
+- **Mobile Side Menu (`includes/header.php`, `assets/js/modules/components.js`):** Engineered a smooth slide-out sidebar menu for mobile featuring navigation links and an integrated Login/Register button.
+
+#### Changed
+
+- **Navbar Overhaul (`includes/header.php`):** Centered navigation links on desktop and added a bright red `SALE` badge to the 'Shop' link.
+- **Hero Slider Redesign (`index.php`):** Upgraded typography to bold, uppercase text matching the Revone aesthetic. Added an "EST. 2024" pre-title badge and transformed the primary call-to-action into a stark, interactive pill-shaped button.
+- **Benefits Footer (`includes/footer.php`):** Replaced the light-mode features strip with a high-contrast, dark-mode advantages grid (Free Shipping, Guarantee, Support, Payment) above the main footer block.
+
+### [2026-02-25T05:15:00+01:00] Global Script & Styles Extraction
+
+#### Changed
+
+- **Global JavaScript Extraction:** Completely stripped inline `<script>` tags across over 30 `.php` files (including `index.php`, `shop.php`, `cart.php`, `checkout.php`, and subdirectories). Extracted repetitive routing, filtering, rendering, and logic hooks into centralized, auto-initializing functions within `assets/js/modules/components.js`.
+- **Global CSS Extraction:** Moved inline preloader blurring constraints and `style="..."` overrides from HTML headers into Tailwind-driven classes inside `assets/css/input.css` globally.
+- **Improved Include Paths:** Repaired path anomalies wherein subdirectory roots (like `/account/` and `/pages/`) could not natively resolve global headers, linking them strictly via `../includes/`.### [2026-02-24T15:45:00+01:00] Architecture Docs & Component Refinements
+
+#### Added
+
+- **Architecture Documentation (`Frontend.md`, `Backend.md`):** Authored clear, structural documentation describing the current capabilities, stack, libraries (SwiperJS, AOS, Tailwind v4 hybrid), and core modules (Preloader, Slider) scaling rules. The `Backend.md` definitively analyzes Core PHP against WooCommerce for a WhatsApp catalog deployment, concluding WooCommerce logic coupled with the existing frontend is highly optimal for business owner utility.
+
+#### Changed
+
+- **Global Preloader Refinements (`includes/header.php`, `assets/js/modules/components.js`):**
+  - **Styles:** Replaced the semi-transparent frosted blur overlay with a completely opaque solid background (`bg-white dark:bg-slate-900`) solving page-bleed.
+  - **Animations:** Patched an upstream Tailwind glitch where the "walking" loading bar width compiled to 0px. Adding standard inline limits (`12rem`) resolved the visibility immediately.
+  - **Timing:** Extended the vanish exit animation to `1.5s` post-load. This allows the premium progression sequence to be smoothly apparent even on lightning-speed connections.
+- **Scroll-To-Top Component (`assets/js/modules/components.js`):** Patched dark mode text and edge contrasts (`dark:bg-slate-800 dark:text-white`).
+- **Footer Dark Mode Support (`includes/footer.php`):** Implemented `dark:bg-slate-800` onto the primary container preventing blinding white-bar artifacts when users toggle dark themes against the standard `bg-primary` base.
+- **JavaScript Modularization:** Restructured the raw `assets/js/` directory to professional standards. Moved the global initialization scripts into `assets/js/core/main.js` and isolated the UI/Shared components into `assets/js/modules/components.js`. Updated all HTML, PHP, and Markdown reference paths globally.
+- **JSDoc Implementations:** Authored comprehensive JSDoc block comments across all JavaScript functions in both `main.js` and `components.js` to enforce strict parameter and return type typing for easier maintenance.
+- **Tailwind Native Variables (`input.css`):** Extracted lingering hardcoded hex colors (`#1e293b`, `#e2e8f0`, `#1a1a1a`) mapped to `.otp-input`, `.tab-btn.active`, and `.skeleton` loaders, replacing them with dynamic, tokenized Tailwind v4 variables (`var(--color-slate-800)`, `var(--color-primary)`, etc.) to guarantee 100% theme fluidity.
+
 ### [2026-02-24T05:58:00+01:00] Render Deployment & Blog UI Enhancements
 
 #### Added
@@ -50,8 +87,8 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 #### Added
 
-- **Search Overlay (`includes/header.php`, `assets/js/components.js`):** Implemented a premium full-width search panel that slides down from the header with a blurred dark backdrop (`bg-black/50 backdrop-blur-sm`). Includes a large input field, magnifying glass submit button, and popular search tags (Shirts, Dresses, Jackets, Shoes, Accessories). Supports Escape key to close and locks body scroll while open. Form submits to `search.php?q=...`.
-- **`toggleSearchOverlay()` function (`assets/js/components.js`):** Added open/close animation logic using `translate-y` on the panel and `opacity` on the backdrop, with `requestAnimationFrame` for smooth transitions.
+- **Search Overlay (`includes/header.php`, `assets/js/modules/components.js`):** Implemented a premium full-width search panel that slides down from the header with a blurred dark backdrop (`bg-black/50 backdrop-blur-sm`). Includes a large input field, magnifying glass submit button, and popular search tags (Shirts, Dresses, Jackets, Shoes, Accessories). Supports Escape key to close and locks body scroll while open. Form submits to `search.php?q=...`.
+- **`toggleSearchOverlay()` function (`assets/js/modules/components.js`):** Added open/close animation logic using `translate-y` on the panel and `opacity` on the backdrop, with `requestAnimationFrame` for smooth transitions.
 
 #### Changed
 
