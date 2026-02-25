@@ -76,13 +76,6 @@ $activePage = '';
     </main>
 
     <?php include '../includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Terms & Conditions', active: true }
-            ]);
-        });
-    </script>
 </body>
 
 </html>
