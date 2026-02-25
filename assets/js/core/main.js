@@ -163,10 +163,26 @@ function toggleFilter(btn) {
  * @param {string} tabKey - The specific data-tab identifier to activate.
  */
 function switchTab(tabGroup, tabKey) {
-    document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-btn`).forEach(b => b.classList.remove('active'));
-    document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-panel`).forEach(p => p.classList.remove('active'));
-    document.querySelector(`[data-tab-group="${tabGroup}"] [data-tab="${tabKey}"]`)?.classList.add('active');
-    document.getElementById(`panel-${tabKey}`)?.classList.add('active');
+    document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-btn`).forEach(b => {
+        b.classList.remove('active', 'text-slate-900', 'border-slate-900', 'dark:text-white', 'dark:border-white');
+        b.classList.add('text-slate-400', 'border-transparent');
+    });
+    document.querySelectorAll(`[data-tab-group="${tabGroup}"] .tab-panel`).forEach(p => {
+        p.classList.remove('active', 'block');
+        p.classList.add('hidden');
+    });
+
+    const targetBtn = document.querySelector(`[data-tab-group="${tabGroup}"] [data-tab="${tabKey}"]`);
+    if (targetBtn) {
+        targetBtn.classList.add('active', 'text-slate-900', 'border-slate-900', 'dark:text-white', 'dark:border-white');
+        targetBtn.classList.remove('text-slate-400', 'border-transparent');
+    }
+
+    const targetPanel = document.getElementById(`panel-${tabKey}`);
+    if (targetPanel) {
+        targetPanel.classList.add('active', 'block');
+        targetPanel.classList.remove('hidden');
+    }
 }
 
 /* ── Card Number Formatting ───────────────────────────── */

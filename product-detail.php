@@ -11,11 +11,12 @@ $activePage = 'shop';
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <?php include 'includes/header.php'; ?>
 
-    <main class="flex-grow max-w-7xl mx-auto w-full px-4 md:px-8 py-8" id="productContainer">
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 md:px-8 pb-8 pt-2 md:pt-4" id="productContainer">
         <!-- Breadcrumb will be rendered here via JS -->
-        <div id="productBreadcrumb" class="mb-10"></div>
+        <div id="productBreadcrumb" class="mb-6"></div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             <!-- Image Gallery -->
@@ -114,9 +115,9 @@ $activePage = 'shop';
             </div>
         </div>
 
-        <!-- Accordion Details -->
-        <div class="mb-16" data-aos="fade-up">
-            <div
+        <!-- Accordion Details / Tabs -->
+        <div class="mb-16" data-aos="fade-up" data-tab-group="product-tabs">
+            <div>
                 <!-- Tabs Navigation -->
                 <div id="tabContainer"
                     class="flex gap-8 border-b border-slate-200 dark:border-slate-800 mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
@@ -129,7 +130,8 @@ $activePage = 'shop';
                         class="tab-btn pb-4 text-sm font-bold text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 uppercase tracking-wider transition-colors border-b-2 border-transparent">Reviews</button>
                 </div>
 
-                <div class="glass p-6 md:p-8 rounded-xl border border-white/40 dark:border-white/10 shadow-modern dark:shadow-modern-dark bg-white/50 dark:bg-slate-900/50" data-tab-group="product-tabs">
+                <div
+                    class="glass p-6 md:p-8 rounded-xl border border-white/40 dark:border-white/10 shadow-modern dark:shadow-modern-dark bg-white/50 dark:bg-slate-900/50">
                     <!-- Descriptions Tab -->
                     <div id="panel-descriptions" class="tab-panel active block animate-fade-in">
                         <div class="text-slate-600 dark:text-slate-400 space-y-4 text-sm leading-relaxed">
@@ -151,16 +153,22 @@ $activePage = 'shop';
                     <!-- Additional Info Tab -->
                     <div id="panel-additional" class="tab-panel hidden animate-fade-in">
                         <div class="space-y-4">
-                            <div class="grid grid-cols-[140px_1fr] text-sm items-center border-b border-slate-100 dark:border-slate-800 pb-3">
-                                <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">Category</span>
+                            <div
+                                class="grid grid-cols-[140px_1fr] text-sm items-center border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <span
+                                    class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">Category</span>
                                 <span id="productCategory" class="text-slate-600 dark:text-slate-400 capitalize"></span>
                             </div>
-                            <div class="grid grid-cols-[140px_1fr] text-sm items-center border-b border-slate-100 dark:border-slate-800 pb-3">
-                                <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">SKU</span>
-                                <span class="text-slate-600 dark:text-slate-400">KRIST-<span id="productSku"></span></span>
+                            <div
+                                class="grid grid-cols-[140px_1fr] text-sm items-center border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <span
+                                    class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">SKU</span>
+                                <span class="text-slate-600 dark:text-slate-400">KRIST-<span
+                                        id="productSku"></span></span>
                             </div>
                             <div class="grid grid-cols-[140px_1fr] text-sm items-center">
-                                <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">Material</span>
+                                <span
+                                    class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">Material</span>
                                 <span class="text-slate-600 dark:text-slate-400">100% Organic Cotton</span>
                             </div>
                         </div>
@@ -169,7 +177,8 @@ $activePage = 'shop';
                     <!-- Reviews Tab -->
                     <div id="panel-reviews" class="tab-panel hidden animate-fade-in">
                         <div class="space-y-8">
-                            <div class="flex flex-col sm:flex-row items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-4 gap-4">
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-4 gap-4">
                                 <h3 class="font-bold dark:text-white text-lg">Customer Reviews</h3>
                                 <button onclick="toggleReviewModal()"
                                     class="w-full sm:w-auto py-3 px-8 text-xs tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Write
@@ -178,7 +187,8 @@ $activePage = 'shop';
                             <div class="space-y-6">
                                 <!-- Review 1 -->
                                 <div class="flex gap-4">
-                                    <div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-slate-500 text-sm">
+                                    <div
+                                        class="w-10 h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-slate-500 text-sm">
                                         JD
                                     </div>
                                     <div>
@@ -188,19 +198,29 @@ $activePage = 'shop';
                                         </div>
                                         <div class="flex text-yellow-400 mb-2">
                                             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
                                             </svg>
                                             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
                                             </svg>
                                             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
                                             </svg>
                                             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
                                             </svg>
                                             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
                                             </svg>
                                         </div>
                                         <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Absolutely
@@ -238,7 +258,7 @@ $activePage = 'shop';
                 </div>
             </div>
 
-            <div class="swiper relatedSwiper !overflow-visible relative">
+            <div class="swiper relatedSwiper overflow-visible! relative">
                 <div class="swiper-wrapper" id="relatedProductsContainer">
                     <!-- Products injected via JS -->
                 </div>
@@ -309,6 +329,8 @@ $activePage = 'shop';
         </div>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <?php include 'includes/footer.php'; ?>
 </body>
 

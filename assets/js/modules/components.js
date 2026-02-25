@@ -394,6 +394,13 @@ function renderMiniCart() {
         </div>
         <div id="miniCartItems" class="flex-1 overflow-y-auto p-6 space-y-6"></div>
         <div class="border-t border-slate-100 dark:border-slate-800 p-6">
+            <div class="mb-5">
+                <label for="cartCoupon" class="sr-only">Coupon Code</label>
+                <div class="flex">
+                    <input type="text" id="cartCoupon" placeholder="Discount Code" class="w-full bg-slate-50 dark:bg-slate-800 border-y border-l border-slate-200 dark:border-slate-700 rounded-l-md px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-slate-800 dark:text-slate-200 transition-colors">
+                    <button class="bg-slate-900 border border-slate-900 dark:border-slate-700 dark:bg-slate-700 text-white px-5 py-3 text-sm font-bold tracking-widest uppercase rounded-r-md hover:bg-black dark:hover:bg-slate-600 transition-colors">Apply</button>
+                </div>
+            </div>
             <div class="flex justify-between mb-4 font-bold text-lg"><span>Subtotal</span><span id="miniCartTotal">$0.00</span></div>
             <a href="/cart.php" class="block w-full text-center py-4 text-sm tracking-widest uppercase border-2 border-slate-900 text-slate-900 rounded-full font-bold hover:bg-slate-900 hover:text-white transition-all duration-300 mb-3 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-900">View Cart</a>
             <a href="/checkout.php" class="block w-full text-center py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Checkout</a>
@@ -422,34 +429,87 @@ function toggleMiniCart() {
 function renderMiniCartItems() {
     const container = document.getElementById('miniCartItems');
     const totalEl = document.getElementById('miniCartTotal');
+    const totalContainer = totalEl ? totalEl.closest('.border-t') : null;
     if (!container) return;
+
     if (cart.length === 0) {
-        container.innerHTML = '<div class="text-center py-12"><svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg><p class="text-slate-500">Your cart is empty</p></div>';
-        totalEl.textContent = '$0.00';
+        container.innerHTML = `
+        <div class="h-full flex flex-col items-center justify-center py-16 px-4 text-center">
+            <div class="w-24 h-24 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                <svg class="w-12 h-12 text-slate-300 dark:text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Your Cart is Empty</h3>
+            <p class="text-sm text-slate-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
+            <button onclick="toggleMiniCart()" class="px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-800 transition-colors shadow-md">
+                Continue Shopping
+            </button>
+        </div>`;
+        if (totalEl) totalEl.textContent = '$0.00';
+        if (totalContainer) totalContainer.style.display = 'none';
         return;
     }
-    container.innerHTML = cart.map(item => {
+
+    if (totalContainer) totalContainer.style.display = 'block';
+
+    const subtotal = getCartTotal();
+    const threshold = 1000;
+    const progress = Math.min((subtotal / threshold) * 100, 100);
+    const amountLeft = Math.max(threshold - subtotal, 0);
+
+    let shippingHtml = '';
+    if (progress < 100) {
+        shippingHtml = `
+            <div class="mb-6 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-2 font-medium">You are <span class="text-primary font-bold">$${amountLeft.toFixed(2)}</span> away from <strong>FREE SHIPPING!</strong></p>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-primary h-1.5 rounded-full transition-all duration-700 ease-out flex justify-end" style="width: ${progress}%"></div>
+                </div>
+            </div>
+        `;
+    } else {
+        shippingHtml = `
+            <div class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-800/30">
+                <p class="text-sm text-green-700 dark:text-green-400 font-bold flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Congratulations! You've unlocked FREE SHIPPING!
+                </p>
+            </div>
+        `;
+    }
+
+    container.innerHTML = shippingHtml + '<div class="space-y-6">' + cart.map(item => {
         const p = PRODUCTS.find(pr => pr.id === item.id);
         if (!p) return '';
         return `
-        <div class="flex space-x-4">
-            <img src="${p.image}" alt="${p.name}" class="w-20 h-24 object-cover rounded-md"/>
-            <div class="flex-1">
-                <h4 class="font-semibold text-sm text-slate-900 dark:text-white">${p.name}</h4>
-                <p class="text-xs text-slate-500">${p.brand}</p>
-                <div class="flex items-center space-x-3 mt-2">
-                    <button onclick="updateCartQty(${p.id}, ${item.qty - 1}); renderMiniCartItems();" class="w-7 h-7 border border-slate-200 dark:border-slate-700 rounded flex items-center justify-center text-xs hover:bg-slate-100 dark:hover:bg-slate-800">−</button>
-                    <span class="text-sm font-medium">${item.qty}</span>
-                    <button onclick="updateCartQty(${p.id}, ${item.qty + 1}); renderMiniCartItems();" class="w-7 h-7 border border-slate-200 dark:border-slate-700 rounded flex items-center justify-center text-xs hover:bg-slate-100 dark:hover:bg-slate-800">+</button>
+        <div class="flex space-x-4 bg-white dark:bg-slate-900 group">
+            <div class="w-24 h-28 relative rounded-md overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0 border border-slate-100 dark:border-slate-800">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+            </div>
+            <div class="flex-1 py-1 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-sm text-slate-900 dark:text-white line-clamp-2 pr-4 hover:text-primary transition-colors cursor-pointer" onclick="window.location.href='/product-detail.php?id=${p.id}'">${p.name}</h4>
+                        <button onclick="removeFromCart(${p.id}); renderMiniCartItems();" class="text-slate-400 hover:text-red-500 transition-colors p-1 -mr-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-widest mt-1">${p.brand}</p>
+                </div>
+                <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-md">
+                        <button onclick="updateCartQty(${p.id}, ${item.qty - 1}); renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">−</button>
+                        <span class="w-8 text-center text-sm font-semibold text-slate-900 dark:text-white">${item.qty}</span>
+                        <button onclick="updateCartQty(${p.id}, ${item.qty + 1}); renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">+</button>
+                    </div>
+                    <p class="font-bold text-slate-900 dark:text-white">$${(p.price * item.qty).toFixed(2)}</p>
                 </div>
             </div>
-            <div class="text-right flex flex-col items-end justify-between">
-                <button onclick="removeFromCart(${p.id}); renderMiniCartItems();" class="text-red-500 hover:text-red-700 mt-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>
-                <p class="font-bold text-sm">$${(p.price * item.qty).toFixed(2)}</p>
-            </div>
         </div>`;
-    }).join('');
-    totalEl.textContent = '$' + getCartTotal().toFixed(2);
+    }).join('') + '</div>';
+
+    if (totalEl) totalEl.textContent = '$' + subtotal.toFixed(2);
 }
 
 /* ── Dark Mode Toggle ─────────────────────────────────── */
@@ -1643,7 +1703,7 @@ function initProductDetailsPage() {
         gallery.innerHTML = '';
         const mockThumbnails = [
             product.image,
-            'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=200&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=200&auto=format&fit=crop', // Fixed link
             'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=200&auto=format&fit=crop',
             'https://images.unsplash.com/photo-1506169894395-36397e4aa54a?q=80&w=200&auto=format&fit=crop'
         ];
@@ -1701,7 +1761,8 @@ function initProductDetailsPage() {
             new Swiper('.relatedSwiper', {
                 slidesPerView: 2, // 2 on mobile
                 spaceBetween: 16,
-                loop: false,
+                loop: true,
+                autoplay: { delay: 3000, disableOnInteraction: false },
                 navigation: {
                     nextEl: '#relatedNext',
                     prevEl: '#relatedPrev',
@@ -1726,3 +1787,48 @@ function initProductDetailsPage() {
         }
     }
 }
+
+// Global Modal Functions for Product Details
+window.toggleReviewModal = function () {
+    const modal = document.getElementById('reviewModal');
+    const content = document.getElementById('reviewModalContent');
+    if (!modal || !content) return;
+
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        // Trigger animation
+        setTimeout(() => {
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }, 10);
+    } else {
+        content.classList.remove('scale-100', 'opacity-100');
+        content.classList.add('scale-95', 'opacity-0');
+
+        // Wait for animation
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+};
+
+window.submitReview = function (e) {
+    if (e) e.preventDefault();
+    if (typeof Toastify !== 'undefined') {
+        Toastify({
+            text: "Review submitted successfully!",
+            duration: 3000,
+            gravity: "bottom",
+            position: "center",
+            style: {
+                background: "#10B981",
+                borderRadius: "8px"
+            }
+        }).showToast();
+    }
+    toggleReviewModal();
+    if (e && e.target) e.target.reset();
+};

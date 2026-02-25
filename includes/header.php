@@ -18,6 +18,35 @@ $activePage = isset($activePage) ? $activePage : '';
         </div>
     </div>
 </div>
+
+<style>
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 20s linear infinite;
+        white-space: nowrap;
+    }
+</style>
+
+<!-- Top Announcement Banner -->
+<div
+    class="bg-slate-950 text-slate-300 w-full py-2 overflow-hidden flex items-center justify-center relative z-60 border-b border-white/10">
+    <div class="w-full relative">
+        <p class="animate-marquee inline-block text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase">
+            3 DAYS FREE TRIAL - ENJOY YOUR SHOPPING <span class="mx-8">&bull;</span> SIGN UP FOR 10% OFF YOUR FIRST
+            ORDER <span class="mx-8">&bull;</span> FREE SHIPPING ON ORDERS OVER $1000
+        </p>
+    </div>
+</div>
+
 <header id="site-header"
     class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
     <div class="container mx-auto px-4 md:px-12 flex items-center justify-between h-[90px]">
@@ -32,7 +61,7 @@ $activePage = isset($activePage) ? $activePage : '';
         </button>
 
         <!-- Logo (Center on mobile, Left on desktop) -->
-        <div class="w-2/4 md:w-1/4 flex justify-center md:justify-start flex-shrink-0">
+        <div class="w-2/4 md:flex-1 flex justify-center md:justify-start flex-shrink-0">
             <a href="/index.php" class="flex items-center space-x-2">
                 <span
                     class="text-3xl font-extrabold tracking-tighter text-slate-900 dark:text-white flex items-center group-hover:opacity-80 transition-opacity uppercase">
@@ -42,7 +71,7 @@ $activePage = isset($activePage) ? $activePage : '';
         </div>
 
         <!-- Center Nav (Desktop Only) -->
-        <nav class="hidden md:flex items-center justify-center space-x-12 w-2/4 z-10">
+        <nav class="hidden md:flex items-center justify-center space-x-10 w-2/4 z-10">
             <a class="relative group font-medium transition-colors tracking-wide text-[15px] <?= $activePage === 'home' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white' ?>"
                 href="/index.php">
                 Home
@@ -50,7 +79,7 @@ $activePage = isset($activePage) ? $activePage : '';
                     class="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-full bg-slate-900 dark:bg-white transition-all duration-300 <?= $activePage === 'home' ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100' ?>"></span>
             </a>
 
-            <div class="group relative flex items-center h-full">
+            <div class="group relative flex items-center">
                 <button
                     class="relative group/btn font-medium hover:text-slate-900 dark:hover:text-white transition-colors flex items-center tracking-wide text-[15px] <?= $activePage === 'shop' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400' ?>">
                     Shop
@@ -135,7 +164,58 @@ $activePage = isset($activePage) ? $activePage : '';
         </nav>
 
         <!-- Right Icons (Right on desktop and mobile) -->
-        <div class="w-1/4 flex items-center justify-end space-x-6 flex-shrink-0 relative">
+        <div class="w-1/4 md:flex-1 flex items-center justify-end space-x-6 flex-shrink-0 relative">
+
+            <!-- Language Dropdown -->
+            <div
+                class="group/lang relative hidden md:flex items-center cursor-pointer text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold tracking-wide flex items-center">
+                    En
+                    <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/lang:rotate-180"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
+                <!-- Dropdown Menu -->
+                <div
+                    class="absolute right-0 top-[120%] w-32 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:top-full transition-all duration-300 z-50 p-2 transform">
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇬🇧</span> <span class="font-medium">English</span></a>
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇩🇪</span> <span class="font-medium">Deutsch</span></a>
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇪🇸</span> <span class="font-medium">Español</span></a>
+                </div>
+            </div>
+
+            <!-- Currency Dropdown -->
+            <div
+                class="group/curr relative hidden md:flex items-center cursor-pointer text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold tracking-wide flex items-center">
+                    USD $
+                    <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/curr:rotate-180"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
+                <!-- Dropdown Menu -->
+                <div
+                    class="absolute right-0 top-[120%] w-32 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover/curr:opacity-100 group-hover/curr:visible group-hover/curr:top-full transition-all duration-300 z-50 p-2 transform">
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇺🇸</span> <span class="font-medium">USD $</span></a>
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇪🇺</span> <span class="font-medium">EUR €</span></a>
+                    <a href="#"
+                        class="flex items-center space-x-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"><span
+                            class="text-lg">🇬🇧</span> <span class="font-medium">GBP £</span></a>
+                </div>
+            </div>
+
             <button id="themeToggle"
                 class="hidden text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300">
                 <div class="h-6 w-6 relative" id="themeIconContainer">
@@ -184,7 +264,7 @@ $activePage = isset($activePage) ? $activePage : '';
     </div>
     <!-- Mobile Slide-out Menu Backdrop -->
     <div id="mobileMenuBackdrop"
-        class="fixed inset-0 bg-black/60 z-[60] hidden md:hidden transition-opacity opacity-0 backdrop-blur-sm"
+        class="fixed inset-0 bg-black/60 z-60 hidden md:hidden transition-opacity opacity-0 backdrop-blur-sm"
         onclick="toggleMobileMenu()"></div>
 
     <!-- Mobile Slide-out Menu Panel -->

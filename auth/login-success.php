@@ -5,7 +5,7 @@ $pageTitle = 'Krist - Login Successful';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
@@ -28,7 +28,7 @@ $pageTitle = 'Krist - Login Successful';
             <p class="text-slate-500 mb-8">Your session has been restored successfully. You will be redirected shortly.
             </p>
             <a href="/index.php"
-                class="inline-block w-full py-3 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white text-center">Go
+                class="inline-block w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors text-center">Go
                 to Homepage</a>
             <p class="mt-4 text-sm text-slate-400">Redirecting in <span id="countdown">3</span>s...</p>
         </div>
