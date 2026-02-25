@@ -5,35 +5,36 @@ $pageTitle = 'Krist - Login';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex">
-    <div class="hidden lg:flex lg:w-1/2 auth-image relative items-end p-12">
-        <div class="relative z-10">
-            <h2 class="text-white text-4xl font-bold mb-2">Welcome to Krist</h2>
-            <p class="text-white/70 text-lg">Discover the latest fashion trends</p>
-        </div>
-        <div
-            class="fixed top-0 left-0 w-full h-[60vh] bg-linear-to-t from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800 -z-10">
+    <div class="hidden lg:flex lg:w-1/2 auth-image relative items-end p-12 overflow-hidden bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+            alt="Fashion Background">
+        <div class="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+        <div class="relative z-10 w-full max-w-lg mb-8">
+            <h2 class="text-white text-5xl font-black mb-4 uppercase tracking-tight">Premium<br />Elegance</h2>
+            <p class="text-white/80 text-lg font-medium">Step into a world of curated fashion and timeless design.</p>
         </div>
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md" data-aos="fade-left">
             <a href="/index.php" class="flex items-center space-x-2 mb-10 group">
                 <span
-                    class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
+                    class="text-3xl font-black tracking-tighter uppercase text-slate-900 dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
-                    Krist
+                    Gojacdoors
                 </span>
             </a>
-            <h1 class="text-3xl font-bold mb-2 dark:text-white">Welcome 👋</h1>
-            <p class="text-slate-500 mb-8">Please login here</p>
+            <h1 class="text-3xl font-bold mb-2 text-slate-900 dark:text-white">Welcome 👋</h1>
+            <p class="text-slate-500 mb-8 font-medium">Please login here</p>
             <form id="loginForm" class="space-y-5" novalidate>
                 <div>
                     <label class="block text-sm font-medium mb-1.5 text-slate-700 dark:text-slate-300">Email
@@ -77,50 +78,29 @@ $pageTitle = 'Krist - Login';
                 </div>
                 <div class="flex items-center justify-between">
                     <label class="flex items-center text-sm"><input type="checkbox"
-                            class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2" /> Remember
+                            class="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 mr-2" />
+                        Remember
                         me</label>
                     <a href="/auth/forgot-password.php"
-                        class="text-sm font-medium text-primary dark:text-slate-300 hover:underline">Forgot
+                        class="text-sm font-bold text-slate-900 dark:text-white hover:underline">Forgot
                         Password?</a>
                 </div>
                 <button type="submit"
-                    class="w-full py-3 bg-primary text-white rounded-md font-semibold hover:bg-slate-800 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">Sign
+                    class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Sign
                     In</button>
             </form>
             <p class="mt-8 text-center text-sm text-slate-500">Don't have an account? <a href="/auth/signup.php"
-                    class="font-semibold text-primary dark:text-white hover:underline">Sign up</a></p>
-            <p class="mt-6 text-center text-xs text-slate-400">© 2024 Krist Inc. All rights reserved.</p>
+                    class="font-extrabold uppercase tracking-wider text-xs text-slate-900 dark:text-white hover:underline">Sign
+                    up</a></p>
+            <p class="mt-6 text-center text-xs text-slate-400">© 2024 Gojacdoors Inc. All rights reserved.</p>
         </div>
     </div>
 
     <!-- Shared Body Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="/./assets/js/components.js"></script>
-    <script src="/./assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const emailInput = document.getElementById('loginEmail');
-            const passInput = document.getElementById('loginPass');
-
-            setupCapsLockDetection([emailInput, passInput]);
-            setupPasswordToggle(document.getElementById('togglePass'), passInput);
-
-            document.getElementById('loginForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                let valid = true;
-                if (!V.email(emailInput.value.trim())) { showFieldError(emailInput, 'Please enter a valid email address'); valid = false; }
-                if (!V.minLen(passInput.value, 8)) { showFieldError(passInput, 'Password must be at least 8 characters'); valid = false; }
-
-                if (valid) {
-                    showToast('Login successful!', 'success');
-                    setTimeout(() => window.location.href = 'index.php', 1500);
-                } else {
-                    showToast('Please fix the errors', 'error');
-                }
-            });
-        });
-    </script>
+    <script src="/assets/js/modules/components.js"></script>
+    <script src="/assets/js/core/main.js"></script>
 </body>
 
 </html>
