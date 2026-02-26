@@ -5,7 +5,7 @@ $pageTitle = 'Krist - Login Successful';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
@@ -34,13 +34,8 @@ $pageTitle = 'Krist - Login Successful';
         </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/./assets/js/components.js"></script>
-    <script src="/./assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let c = 3; const i = setInterval(() => { c--; document.getElementById('countdown').textContent = c; if (c <= 0) { clearInterval(i); window.location.href = 'index.php'; } }, 1000);
-        });
-    </script>
+    <script src="/assets/js/modules/components.js"></script>
+    <script src="/assets/js/core/main.js"></script>
 </body>
 
 </html>

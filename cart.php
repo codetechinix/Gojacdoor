@@ -62,7 +62,7 @@ $activePage = 'cart';
                         </div>
                     </div>
                     <a href="/checkout.php"
-                        class="w-full block text-center py-4 bg-primary text-white rounded-xl font-bold hover:bg-slate-800 transition-colors">Proceed
+                        class="w-full block text-center py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-4">Proceed
                         to Checkout</a>
                 </div>
             </div>
@@ -70,60 +70,6 @@ $activePage = 'cart';
     </main>
 
     <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCartPage();
-        });
-
-        function renderCartPage() {
-            const container = document.getElementById('cartItemsContainer');
-            const subtotalEl = document.getElementById('orderSubtotal');
-            const totalEl = document.getElementById('orderTotal');
-            if (!container) return;
-
-            if (cart.length === 0) {
-                container.innerHTML = '<div class="p-12 text-center text-slate-500">Your cart is empty. Start shopping!</div>';
-                subtotalEl.textContent = '$0.00';
-                totalEl.textContent = '$0.00';
-                return;
-            }
-
-            container.innerHTML = cart.map(item => {
-                const p = PRODUCTS.find(pr => pr.id === item.id);
-                if (!p) return '';
-                return `
-                <div class="p-6 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                    <div class="col-span-1 sm:col-span-6 flex items-center space-x-4">
-                        <img src="/${p.image}" alt="${p.name}" class="w-20 h-24 object-cover rounded-lg"/>
-                        <div>
-                            <h4 class="font-bold text-slate-900 dark:text-white line-clamp-1">${p.name}</h4>
-                            <p class="text-sm text-slate-500 mb-2">${p.brand}</p>
-                            <button onclick="removeFromCart(${p.id}); renderCartPage(); renderMiniCartItems();" class="text-sm text-red-500 hover:text-red-700 font-medium flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg> Remove
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-span-1 sm:col-span-2 sm:text-center font-bold">
-                        <span class="sm:hidden text-sm text-slate-500 font-normal mr-2">Price:</span>$${p.price.toFixed(2)}
-                    </div>
-                    <div class="col-span-1 sm:col-span-2 flex sm:justify-center">
-                        <div class="flex items-center space-x-3 bg-slate-50 dark:bg-slate-900 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
-                            <button onclick="updateCartQty(${p.id}, ${item.qty - 1}); renderCartPage(); renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 rounded shadow-sm text-slate-600 dark:text-slate-300 font-bold">−</button>
-                            <span class="font-bold w-4 text-center">${item.qty}</span>
-                            <button onclick="updateCartQty(${p.id}, ${item.qty + 1}); renderCartPage(); renderMiniCartItems();" class="w-8 h-8 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 rounded shadow-sm text-slate-600 dark:text-slate-300 font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-1 sm:col-span-2 sm:text-right font-bold text-primary">
-                        <span class="sm:hidden text-sm text-slate-500 font-normal mr-2">Subtotal:</span>$${(p.price * item.qty).toFixed(2)}
-                    </div>
-                </div>`;
-            }).join('');
-
-            const total = getCartTotal().toFixed(2);
-            subtotalEl.textContent = '$' + total;
-            totalEl.textContent = '$' + total;
-        }
-    </script>
 </body>
 
 </html>

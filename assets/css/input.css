@@ -5,19 +5,22 @@
 @source "../../includes";
 @source "../../";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #111111;
-  --color-primary-light: #333333;
-  --color-primary-dark: #000000;
-  --color-background-light: #ffffff;
-  --color-background-dark: #0f172a;
+  --color-primary: oklch(20.5% 0 0); /* neutral-900 */
+  --color-primary-light: oklch(98.5% 0 0); /* neutral-50 */
+  --color-primary-dark: oklch(20.5% 0 0); /* neutral-900 */
+  --color-background-light: oklch(98.5% 0 0); /* neutral-50 */
+  --color-background-dark: oklch(20.8% 0.042 265.755); /* slate-900 */
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-display: "Playfair Display", serif;
 
-  --shadow-modern: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
-  --shadow-modern-dark: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+  --shadow-modern: 0 10px 40px -10px
+    color-mix(in srgb, var(--color-background-dark) 8%, transparent);
+  --shadow-modern-dark: 0 10px 40px -10px
+    color-mix(in srgb, var(--color-background-dark) 30%, transparent);
 }
 
 /* ── Mega Menu ─────────────────────────────────────────── */
@@ -36,36 +39,42 @@
 }
 
 /* ── Auth Pages Split Layout ───────────────────────────── */
-.auth-image {
+@utility auth-image {
   background-size: cover;
   background-position: center;
-  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0XqfpSJY2aHwGAeV_Jr5RJWZ0dENi0m20KVUWvAUV14S3x0PPF_I983qcvFeNJDCWPa6I3IlQpXs0GxHj0oi3PJ1jjHpc3s83ZqX3JdRiyFVmMbKaOjJipcaOW8kHYGrcuDHhsbpbxByv_3u7IctEwQv_Y7A6pcKlylUctIQg9XwNPItE_dFiA70znSDSjDRxyjm_TZ4Q0aYbLNmlb_Ns0jWw12JNXA6NHI9YNSAGJ1ypYclrRRbaRK5PzU0jAycXdUh676vB8_o");
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0XqfpSJY2aHwGAeV_Jr5RJWvAUV14S3x0PPF_I983qcvFeNJDCWPa6I3IlQpXs0GxHj0oi3PJ1jjHpc3s83ZqX3JdRiyFVmMbKaOjJipcaOW8kHYGrcuDHhsbpbxByv_3u7IctEwQv_Y7A6pcKlylUctIQg9XwNPItE_dFiA70znSDSjDRxyjm_TZ4Q0aYbLNmlb_Ns0jWw12JNXA6NHI9YNSAGJ1ypYclrRRbaRK5PzU0jAycXdUh676vB8_o");
 }
 
 /* ── OTP Inputs ────────────────────────────────────────── */
-.otp-input {
+@utility otp-input {
   width: 56px;
   height: 56px;
   text-align: center;
   font-size: 1.25rem;
   font-weight: 700;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
+  border: 2px solid var(--color-slate-200);
+  border-radius: var(--radius-xl);
   outline: none;
   transition: all 0.2s;
-}
-.otp-input:focus {
-  border-color: #1a1a1a;
-  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
-}
-.dark .otp-input {
-  background: #1e293b;
-  border-color: #334155;
-  color: #fff;
-}
-.dark .otp-input:focus {
-  border-color: #fff;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+
+  /* Dark mode overrides */
+  @variant dark {
+    background: var(--color-slate-800);
+    border-color: var(--color-slate-700);
+    color: var(--color-white);
+
+    &:focus {
+      border-color: var(--color-white);
+      box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--color-white) 10%, transparent);
+    }
+  }
 }
 
 /* ── Star Rating ───────────────────────────────────────── */
@@ -82,11 +91,11 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
-  border-radius: 3px;
+  background: var(--color-slate-400);
+  border-radius: var(--radius-sm);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: var(--color-slate-500);
 }
 
 /* ── Filter Collapse ───────────────────────────────────── */
@@ -99,34 +108,26 @@
   max-height: 500px;
 }
 
-/* ── Line Clamp ────────────────────────────────────────── */
-.line-clamp-1 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
+/* (Line clamps removed as Tailwind v4 natively supports line-clamp-1, line-clamp-2, etc.) */
 
 /* ── Tab Active ────────────────────────────────────────── */
-.tab-btn.active {
-  color: #1a1a1a;
-  border-bottom: 2px solid #1a1a1a;
+@utility tab-btn {
+  &.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+
+    @variant dark {
+      color: var(--color-white);
+      border-bottom-color: var(--color-white);
+    }
+  }
 }
-.dark .tab-btn.active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-.tab-panel {
+
+@utility tab-panel {
   display: none;
-}
-.tab-panel.active {
-  display: block;
+  &.active {
+    display: block;
+  }
 }
 
 /* ── Skeleton Loader ───────────────────────────────────── */
@@ -138,8 +139,13 @@
     background-position: 200% 0;
   }
 }
-.skeleton {
-  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+@utility skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-slate-100) 25%,
+    var(--color-slate-200) 50%,
+    var(--color-slate-100) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 8px;
@@ -149,24 +155,189 @@
 .product-card:hover img {
   transform: scale(1.08);
 }
-.glass {
-  background: rgba(255, 255, 255, 0.7);
+@utility glass {
+  background: color-mix(in srgb, var(--color-white) 70%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.dark .glass {
-  background: rgba(15, 17, 21, 0.7);
-  border-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid color-mix(in srgb, var(--color-white) 20%, transparent);
+
+  @variant dark {
+    background: var(--color-slate-700/50) !important;
+    border-color: color-mix(
+      in srgb,
+      var(--color-white) 5%,
+      transparent
+    ) !important;
+  }
 }
 
 /* ── Toast overrides ───────────────────────────────────── */
 .toastify {
-  border-radius: 10px !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-2xl) !important;
 }
 
 /* ── Fallback for Dropdown Hover ───────────────────────── */
 .group:hover .group-hover\:block {
   display: block !important;
+}
+
+/* ── Hero Swiper Animations ────────────────────────────── */
+.heroSwiper .swiper-slide-active {
+  & .hero-title {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+  & .hero-subtitle {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  }
+  & .hero-cta {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+  }
+  & .hero-image {
+    animation: heroZoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+}
+
+.heroSwiper .swiper-slide:not(.swiper-slide-active) {
+  & .hero-title,
+  & .hero-subtitle,
+  & .hero-cta,
+  & .hero-image {
+    opacity: 0;
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Swiper Pagination Overrides ───────────────────────── */
+.heroSwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: var(--color-slate-400);
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.heroSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--color-background-dark);
+  width: 28px;
+  border-radius: 5px;
+}
+
+html.dark .heroSwiper .swiper-pagination-bullet {
+  background: #ffffff;
+}
+html.dark .heroSwiper .swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+
+/* ── Product Card Add to Cart Button ────────────────── */
+.product-card-add-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  width: 85%;
+  margin-left: -42.5%;
+  text-align: center;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.group:hover .product-card-add-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ── Global Preloader ──────────────────────────────────── */
+/* Prevent scrolling while preloader is active */
+html:has(#globalPreloader:not(.opacity-0)),
+body:has(#globalPreloader:not(.opacity-0)) {
+  overflow: hidden !important;
+}
+
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  100% {
+    width: 100%;
+    margin-left: 100%;
+  }
+}
+
+.premium-reveal {
+  background: linear-gradient(
+    to right,
+    currentColor 0%,
+    var(--color-slate-400) 50%,
+    currentColor 100%
+  );
+  background-size: 200% auto;
+  color: currentColor;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    lettersReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards,
+    textShimmer 2.5s linear infinite;
+}
+
+@keyframes lettersReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) scale(0.9);
+    letter-spacing: -0.1em;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: normal;
+    filter: blur(0);
+  }
+}
+
+@keyframes textShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ── UI Utilities ──────────────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

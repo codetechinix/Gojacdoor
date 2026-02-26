@@ -112,13 +112,6 @@ $activePage = '';
     </main>
 
     <?php include '../includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Careers', active: true }
-            ]);
-        });
-    </script>
 </body>
 
 </html>

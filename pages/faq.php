@@ -313,7 +313,7 @@ $activePage = '';
             <div class="mt-12 text-center">
                 <p class="text-slate-500 mb-4">Still have questions?</p>
                 <a href="/pages/contact.php"
-                    class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5">
+                    class="inline-flex items-center px-8 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-sm hover:shadow-md hover:-translate-y-0.5">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -325,72 +325,6 @@ $activePage = '';
     </main>
 
     <?php include '../includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Breadcrumb
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'FAQ', active: true }
-            ]);
-
-            // ── Smooth Accordion ──
-            document.querySelectorAll('.faq-toggle').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const answer = btn.nextElementSibling;
-                    const chevron = btn.querySelector('.faq-chevron');
-                    const isOpen = answer.classList.contains('open');
-
-                    // Close all others
-                    document.querySelectorAll('.faq-answer.open').forEach(a => {
-                        a.classList.remove('open');
-                        a.previousElementSibling.querySelector('.faq-chevron').classList.remove('rotated');
-                    });
-
-                    // Toggle current
-                    if (!isOpen) {
-                        answer.classList.add('open');
-                        chevron.classList.add('rotated');
-                    }
-                });
-            });
-
-            // ── Category Tabs ──
-            const tabs = document.querySelectorAll('.faq-tab');
-            const items = document.querySelectorAll('.faq-item');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-
-                    const cat = tab.dataset.category;
-                    items.forEach(item => {
-                        if (cat === 'all' || item.dataset.category === cat) {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // ── Search Filter ──
-            const searchInput = document.getElementById('faqSearch');
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.toLowerCase().trim();
-
-                // Reset tabs to "All" when searching
-                if (query) {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tabs[0].classList.add('active');
-                }
-
-                items.forEach(item => {
-                    const text = item.textContent.toLowerCase();
-                    item.style.display = text.includes(query) ? '' : 'none';
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

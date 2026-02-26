@@ -16,27 +16,3 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <link href="/assets/css/output.css?v=<?= time() ?>" rel="stylesheet">
-
-<style>
-    /* Foolproof CSS for the product card Add to Cart button to bypass Tailwind compiler limitations */
-    .product-card-add-btn {
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        width: 85%;
-        margin-left: -42.5%;
-        /* Centers the 85% width element without transform */
-        text-align: center;
-        z-index: 20;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-    }
-
-    .group:hover .product-card-add-btn {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-</style>

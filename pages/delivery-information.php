@@ -91,13 +91,6 @@ $activePage = '';
     </main>
 
     <?php include '../includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Delivery Information', active: true }
-            ]);
-        });
-    </script>
 </body>
 
 </html>

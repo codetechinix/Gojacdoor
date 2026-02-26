@@ -25,27 +25,27 @@ $activePage = 'shop';
                         <div>
                             <label class="block text-sm font-medium mb-2">First Name</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50" />
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">Last Name</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50" />
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50" />
                         </div>
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium mb-2">Address</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50" />
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">City</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50" />
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">Postal Code</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50" />
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50" />
                         </div>
                     </div>
                 </div>
@@ -128,38 +128,6 @@ $activePage = 'shop';
     </main>
 
     <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('checkout-stepper-container').innerHTML = renderCheckoutStepper(2);
-            renderCheckoutItems();
-        });
-
-        function renderCheckoutItems() {
-            const container = document.getElementById('checkoutCartItems');
-            if (!container) return;
-            if (cart.length === 0) {
-                container.innerHTML = '<p class="text-slate-500 italic">Your cart is empty.</p>';
-                return;
-            }
-            container.innerHTML = cart.map(item => {
-                const p = PRODUCTS.find(pr => pr.id === item.id);
-                if (!p) return '';
-                return `
-        <div class="flex items-center space-x-4">
-            <img src="/${p.image}" class="w-16 h-20 object-cover rounded-md bg-slate-50">
-            <div class="flex-1">
-                <h4 class="font-semibold text-sm line-clamp-1">${p.name}</h4>
-                <p class="text-xs text-slate-500">Qty: ${item.qty}</p>
-            </div>
-            <div class="font-bold text-sm">$${(p.price * item.qty).toFixed(2)}</div>
-        </div>`;
-            }).join('');
-
-            const total = getCartTotal().toFixed(2);
-            document.getElementById('checkoutSubtotal').textContent = '$' + total;
-            document.getElementById('checkoutTotal').textContent = '$' + total;
-        }
-    </script>
 </body>
 
 </html>

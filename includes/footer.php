@@ -1,68 +1,73 @@
 <!-- includes/footer.php -->
 
 <!-- Benefits Bar — full-width strip above footer -->
-<section class="border-t border-b border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900">
-    <div class="max-w-[1400px] mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+<section class="bg-[#1a1a1a] dark:bg-black text-white relative overflow-hidden">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="swiper benefitsSwiper">
+            <div class="swiper-wrapper lg:grid lg:grid-cols-4 lg:divide-x divide-slate-800 dark:divide-slate-800/50">
 
-            <!-- Free Shipping -->
-            <div class="flex items-center gap-7 px-8 py-8 sm:py-10">
-                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
-                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-                </svg>
-                <div>
-                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Free Shipping</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Free Shipping for orders over $99</p>
+                <!-- Free Shipping -->
+                <div
+                    class="swiper-slide h-auto flex items-center justify-start gap-5 px-8 sm:px-10 py-10 lg:py-12 group transition-colors hover:bg-slate-800/50 dark:hover:bg-slate-900/50 w-full">
+                    <svg class="text-white w-10 h-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1"
+                        fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                    </svg>
+                    <div class="text-left">
+                        <h4 class="font-bold text-[13px] tracking-widest uppercase mb-1">Free Shipping</h4>
+                        <p class="text-[13px] text-slate-400">On all orders over $99</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Money Guarantee -->
-            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
-                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
-                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                <div>
-                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Money Guarantee</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Within 30 days for an exchange</p>
+                <!-- Money Guarantee -->
+                <div
+                    class="swiper-slide h-auto flex items-center justify-start gap-5 px-8 sm:px-10 py-10 lg:py-12 group transition-colors hover:bg-slate-800/50 dark:hover:bg-slate-900/50 w-full">
+                    <svg class="text-white w-10 h-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1"
+                        fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <div class="text-left">
+                        <h4 class="font-bold text-[13px] tracking-widest uppercase mb-1">Guarantee</h4>
+                        <p class="text-[13px] text-slate-400">30 days for an exchange</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Online Support -->
-            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
-                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
-                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                </svg>
-                <div>
-                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Online Support</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">24 hours a day, 7 days a week</p>
+                <!-- Online Support -->
+                <div
+                    class="swiper-slide h-auto flex items-center justify-start gap-5 px-8 sm:px-10 py-10 lg:py-12 group transition-colors hover:bg-slate-800/50 dark:hover:bg-slate-900/50 w-full">
+                    <svg class="text-white w-10 h-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1"
+                        fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                    </svg>
+                    <div class="text-left">
+                        <h4 class="font-bold text-[13px] tracking-widest uppercase mb-1">Online Support</h4>
+                        <p class="text-[13px] text-slate-400">24 hours a day, 7 days</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Flexible Payment -->
-            <div class="flex items-center gap-7 px-8 py-8 sm:py-10" style="border-left: 1px solid #cbd5e1">
-                <svg class="text-slate-800 dark:text-white" width="44" height="44" fill="none" stroke="currentColor"
-                    stroke-width="1.5" viewBox="0 0 24 24" style="min-width:44px">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25h-15a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25Z" />
-                </svg>
-                <div>
-                    <h4 class="font-bold text-medium text-slate-900 dark:text-white leading-tight">Flexible Payment
-                    </h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pay with Multiple Credit Cards</p>
+                <!-- Flexible Payment -->
+                <div
+                    class="swiper-slide h-auto flex items-center justify-start gap-5 px-8 sm:px-10 py-10 lg:py-12 group transition-colors hover:bg-slate-800/50 dark:hover:bg-slate-900/50 w-full">
+                    <svg class="text-white w-10 h-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1"
+                        fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25h-15a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    <div class="text-left">
+                        <h4 class="font-bold text-[13px] tracking-widest uppercase mb-1">Flexible Payment</h4>
+                        <p class="text-[13px] text-slate-400">Pay with Multiple Cards</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </section>
 
-<footer id="site-footer" class="bg-primary text-white pt-20 pb-8" style="margin-top:-1px">
+<footer id="site-footer" class="bg-slate-800 text-white dark:bg-slate-900 pt-20 pb-8" style="margin-top:-1px">
     <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-4 gap-12 mb-16">
             <div class="space-y-6">
@@ -88,7 +93,8 @@
             <div>
                 <h4 class="font-bold mb-6">Information</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="/account/personal-info.php">My Account</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/account/personal-info.php">My Account</a>
+                    </li>
                     <li><a class="hover:text-white transition-colors" href="/auth/login.php">Login</a></li>
                     <li><a class="hover:text-white transition-colors" href="/cart.php">My Cart</a></li>
                     <li><a class="hover:text-white transition-colors" href="/account/wishlist.php">My Wishlist</a></li>
@@ -102,7 +108,8 @@
                     <li><a class="hover:text-white transition-colors" href="/pages/careers.php">Careers</a></li>
                     <li><a class="hover:text-white transition-colors" href="/pages/delivery-information.php">Delivery
                             Information</a></li>
-                    <li><a class="hover:text-white transition-colors" href="/pages/privacy-policy.php">Privacy Policy</a>
+                    <li><a class="hover:text-white transition-colors" href="/pages/privacy-policy.php">Privacy
+                            Policy</a>
                     </li>
                     <li><a class="hover:text-white transition-colors" href="/pages/terms-conditions.php">Terms &
                             Conditions</a>
@@ -124,7 +131,7 @@
             </div>
         </div>
         <div
-            class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-500">
+            class="pt-8 border-t border-slate-800 dark:border-slate-700 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-500">
             <div class="flex space-x-4">
                 <img alt="Visa" class="h-6 opacity-60 hover:opacity-100 grayscale transition-all"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoZp53i66R8hWUliVGOmM7PP0RbCKCrJ6aMhixNxE8RKtwExCINuL-2Xrb3UEeYogRX4JW6lzy9D8amRO-hya4xemTXb3oVBm8s26tS3DjNQTqTimyuxl00ALf-3Wo0zNsD_X415eV_2rCXtv051WS0l36gM6aZWr7yrHylvJG0p_lLQSvnWhAeUv7lxL36twYPvYIHDL0gT4UQm5_WmHaByfCaR2ffCbT4oyCOyY2RNdtdBCkaOU3i2O97CGD6RIxRQd6WsQOwig" />
@@ -165,5 +172,5 @@
 <!-- Shared Body Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="/assets/js/components.js?v=<?= time() ?>"></script>
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/modules/components.js?v=<?= time() ?>"></script>
+<script src="/assets/js/core/main.js"></script>

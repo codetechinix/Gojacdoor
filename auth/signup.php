@@ -5,35 +5,34 @@ $pageTitle = 'Krist - Sign Up';
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex">
-    <div class="hidden lg:flex lg:w-1/2 auth-image relative items-end p-12">
-        <div class="relative z-10">
-            <h2 class="text-white text-4xl font-bold mb-2">Join Krist Today</h2>
-            <p class="text-white/70 text-lg">Unlock exclusive fashion deals</p>
-        </div>
-        <div
-            class="fixed top-0 left-0 w-full h-[60vh] bg-linear-to-t from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800 -z-10">
+    <div class="hidden lg:flex lg:w-1/2 auth-image relative items-end p-12 overflow-hidden bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" alt="Fashion Background">
+        <div class="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+        <div class="relative z-10 w-full max-w-lg mb-8">
+            <h2 class="text-white text-5xl font-black mb-4 uppercase tracking-tight">Join The<br/>Movement</h2>
+            <p class="text-white/80 text-lg font-medium">Unlock exclusive access to premium collections and limited releases.</p>
         </div>
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
         <div class="w-full max-w-md h-screen overflow-y-auto no-scrollbar py-12" data-aos="fade-left">
             <a href="/index.php" class="flex items-center space-x-2 mb-10 group">
                 <span
-                    class="text-3xl font-bold tracking-tighter text-primary dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
+                    class="text-3xl font-black tracking-tighter uppercase text-slate-900 dark:text-white flex items-center group-hover:opacity-80 transition-opacity">
                     <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
-                    Krist
+                    Gojacdoors
                 </span>
             </a>
-            <h1 class="text-3xl font-bold mb-2 dark:text-white">Create Account</h1>
-            <p class="text-slate-500 mb-8">Please enter your details</p>
+            <h1 class="text-3xl font-bold mb-2 text-slate-900 dark:text-white">Create Account</h1>
+            <p class="text-slate-500 mb-8 font-medium">Please enter your details</p>
             <form id="signupForm" class="space-y-5" novalidate>
                 <div class="space-y-4">
                     <div class="relative">
@@ -106,64 +105,24 @@ $pageTitle = 'Krist - Sign Up';
                 </div>
                 <div class="flex items-start py-2">
                     <input id="terms" type="checkbox"
-                        class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mt-1 mr-3" required />
+                        class="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 mt-1 mr-3" required />
                     <label for="terms" class="text-sm text-slate-600 dark:text-slate-400">I agree to the <a href="#"
-                            class="text-primary hover:underline font-medium">Terms & Conditions</a> and <a href="#"
-                            class="text-primary hover:underline font-medium">Privacy Policy</a></label>
+                            class="text-slate-900 dark:text-white hover:underline font-bold">Terms & Conditions</a> and <a href="#"
+                            class="text-slate-900 dark:text-white hover:underline font-bold">Privacy Policy</a></label>
                 </div>
                 <button type="submit"
-                    class="w-full py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">Create
+                    class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Create
                     Account</button>
             </form>
             <p class="mt-8 text-center text-sm text-slate-500">Already have an account? <a href="/auth/login.php"
-                    class="font-semibold text-primary dark:text-white hover:underline">Log In</a></p>
+                    class="font-extrabold uppercase tracking-wider text-xs text-slate-900 dark:text-white hover:underline">Log In</a></p>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="/./assets/js/components.js"></script>
-    <script src="/./assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pass = document.getElementById('signupPass');
-            const email = document.getElementById('signupEmail');
-            const fname = document.getElementById('firstName');
-            const lname = document.getElementById('lastName');
-            const terms = document.getElementById('terms');
-
-            setupPasswordToggle(document.getElementById('toggleSignupPass'), pass);
-            setupCapsLockDetection([email, pass, fname, lname]);
-
-            // Password strength meter
-            pass.addEventListener('input', () => {
-                const v = pass.value;
-                const rLen = document.getElementById('req-len');
-                const rNum = document.getElementById('req-num');
-
-                if (v.length >= 8) { rLen.classList.replace('text-slate-500', 'text-green-500'); rLen.querySelector('span').textContent = 'check'; }
-                else { rLen.classList.replace('text-green-500', 'text-slate-500'); rLen.querySelector('span').textContent = 'close'; }
-
-                if (/\d/.test(v)) { rNum.classList.replace('text-slate-500', 'text-green-500'); rNum.querySelector('span').textContent = 'check'; }
-                else { rNum.classList.replace('text-green-500', 'text-slate-500'); rNum.querySelector('span').textContent = 'close'; }
-            });
-
-            document.getElementById('signupForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                let valid = true;
-                if (!fname.value.trim()) { showFieldError(fname, 'First name required'); valid = false; }
-                if (!lname.value.trim()) { showFieldError(lname, 'Last name required'); valid = false; }
-                if (!V.email(email.value.trim())) { showFieldError(email, 'Valid email required'); valid = false; }
-                if (pass.value.length < 8 || !/\d/.test(pass.value)) { showFieldError(pass, 'Password does not meet requirements'); valid = false; }
-                if (!terms.checked) { showToast('You must agree to the T&Cs', 'error'); valid = false; }
-
-                if (valid) {
-                    showToast('Account created successfully!', 'success');
-                    setTimeout(() => window.location.href = 'index.php', 1500);
-                }
-            });
-        });
-    </script>
+    <script src="/assets/js/modules/components.js"></script>
+    <script src="/assets/js/core/main.js"></script>
 </body>
 
 </html>

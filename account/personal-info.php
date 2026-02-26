@@ -6,12 +6,12 @@ $activePage = 'profile'; // Can be 'personal-info' or something
 <html class="light" lang="en">
 
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 
 <body
     class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <?php include 'includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <main class="grow max-w-7xl mx-auto w-full px-4 md:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -34,13 +34,13 @@ $activePage = 'profile'; // Can be 'personal-info' or something
                             <div>
                                 <label class="block text-sm font-medium mb-2">First Name</label>
                                 <input type="text"
-                                    class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50"
+                                    class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50"
                                     value="John" />
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Last Name</label>
                                 <input type="text"
-                                    class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50"
+                                    class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50"
                                     value="Doe" />
                             </div>
                         </div>
@@ -48,14 +48,14 @@ $activePage = 'profile'; // Can be 'personal-info' or something
                         <div>
                             <label class="block text-sm font-medium mb-2">Email Address</label>
                             <input type="email"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50"
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50"
                                 value="john.doe@example.com" />
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium mb-2">Phone Number</label>
                             <input type="tel"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50"
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50"
                                 value="+1 234 567 8900" />
                         </div>
 
@@ -71,14 +71,7 @@ $activePage = 'profile'; // Can be 'personal-info' or something
         </div>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof renderAccountSidebar === 'function') {
-                renderAccountSidebar('personal-info');
-            }
-        });
-    </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 
 </html>

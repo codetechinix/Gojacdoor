@@ -92,7 +92,7 @@ $activePage = '';
                                 class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300 pointer-events-none">First
                                 Name</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50 text-slate-900 dark:text-white"
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50 text-slate-900 dark:text-white"
                                 required placeholder="John" />
                         </div>
                         <div>
@@ -100,7 +100,7 @@ $activePage = '';
                                 class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300 pointer-events-none">Last
                                 Name</label>
                             <input type="text"
-                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50 text-slate-900 dark:text-white"
+                                class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50 text-slate-900 dark:text-white"
                                 required placeholder="Doe" />
                         </div>
                     </div>
@@ -110,7 +110,7 @@ $activePage = '';
                             class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300 pointer-events-none">Email
                             Address</label>
                         <input type="email"
-                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50 text-slate-900 dark:text-white"
+                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50 text-slate-900 dark:text-white"
                             required placeholder="john@example.com" />
                     </div>
 
@@ -118,7 +118,7 @@ $activePage = '';
                         <label
                             class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300 pointer-events-none">Subject</label>
                         <select
-                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50 text-slate-900 dark:text-white"
+                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50 text-slate-900 dark:text-white"
                             required>
                             <option value="">Select a topic...</option>
                             <option value="order">Order Inquiry</option>
@@ -133,12 +133,12 @@ $activePage = '';
                         <label
                             class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300 pointer-events-none">Message</label>
                         <textarea rows="5"
-                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl focus:ring-primary focus:border-primary p-3 bg-slate-50 text-slate-900 dark:text-white"
+                            class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-full focus:ring-slate-900 focus:border-slate-900 p-3 bg-slate-50 text-slate-900 dark:text-white"
                             required placeholder="Leave us a message..."></textarea>
                     </div>
 
                     <button type="submit"
-                        class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-4 rounded-md transition-colors shadow-lg shadow-primary/30">
+                        class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-4 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                         Send Message
                     </button>
                 </form>
@@ -155,21 +155,6 @@ $activePage = '';
     </div>
 
     <?php include '../includes/footer.php'; ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('breadcrumb').innerHTML = renderBreadcrumb([
-                { label: 'Contact Us', active: true }
-            ]);
-        });
-
-        function handleContact(e) {
-            e.preventDefault();
-            if (typeof showToast !== 'undefined') {
-                showToast('Thank you for contacting us! We will get back to you shortly.');
-                e.target.reset();
-            }
-        }
-    </script>
 </body>
 
 </html>
