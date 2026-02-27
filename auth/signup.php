@@ -11,11 +11,14 @@ $pageTitle = 'Krist - Sign Up';
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex">
     <div class="hidden lg:flex lg:w-1/2 auth-image relative items-end p-12 overflow-hidden bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" alt="Fashion Background">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+            alt="Fashion Background">
         <div class="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
         <div class="relative z-10 w-full max-w-lg mb-8">
-            <h2 class="text-white text-5xl font-black mb-4 uppercase tracking-tight">Join The<br/>Movement</h2>
-            <p class="text-white/80 text-lg font-medium">Unlock exclusive access to premium collections and limited releases.</p>
+            <h2 class="text-white text-5xl font-black mb-4 uppercase tracking-tight">Join The<br />Movement</h2>
+            <p class="text-white/80 text-lg font-medium">Unlock exclusive access to premium collections and limited
+                releases.</p>
         </div>
     </div>
     <div class="flex-1 flex items-center justify-center p-8">
@@ -105,22 +108,24 @@ $pageTitle = 'Krist - Sign Up';
                 </div>
                 <div class="flex items-start py-2">
                     <input id="terms" type="checkbox"
-                        class="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 mt-1 mr-3" required />
+                        class="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 mt-1 mr-3"
+                        required />
                     <label for="terms" class="text-sm text-slate-600 dark:text-slate-400">I agree to the <a href="#"
-                            class="text-slate-900 dark:text-white hover:underline font-bold">Terms & Conditions</a> and <a href="#"
-                            class="text-slate-900 dark:text-white hover:underline font-bold">Privacy Policy</a></label>
+                            class="text-slate-900 dark:text-white hover:underline font-bold">Terms & Conditions</a> and
+                        <a href="#" class="text-slate-900 dark:text-white hover:underline font-bold">Privacy
+                            Policy</a></label>
                 </div>
                 <button type="submit"
                     class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Create
                     Account</button>
             </form>
             <p class="mt-8 text-center text-sm text-slate-500">Already have an account? <a href="/auth/login.php"
-                    class="font-extrabold uppercase tracking-wider text-xs text-slate-900 dark:text-white hover:underline">Log In</a></p>
+                    class="font-extrabold uppercase tracking-wider text-xs text-slate-900 dark:text-white hover:underline">Log
+                    In</a></p>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/assets/js/modules/components.js"></script>
     <script src="/assets/js/core/main.js"></script>
 </body>

@@ -63,7 +63,6 @@ $pageTitle = 'Krist - Forgot Password';
         </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/assets/js/modules/components.js"></script>
     <script src="/assets/js/core/main.js"></script>
 </body>

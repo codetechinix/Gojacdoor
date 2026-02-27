@@ -115,25 +115,117 @@ function updateCartBadge() {
 
 /* ── Utility Functions ────────────────────────────────── */
 /**
- * Invokes the Toastify.js library to flash a non-blocking notification on the screen.
- * @param {string} message - The message string to render.
- * @param {'success'|'error'|'info'} [type='success'] - The semantic category matching a CSS background utility.
+ * ── Toast Notification System ────────────────────────────── 
+ * Zero-dependency native implementation powered by Tailwind CSS.
  */
-function showToast(message, type = 'success') {
-    if (typeof Toastify === 'undefined') return alert(message);
-    const colors = {
-        success: 'bg-green-500',
-        error: 'bg-red-500',
-        info: 'bg-primary'
-    };
-    Toastify({
-        text: message,
-        duration: 3000,
-        gravity: "bottom",
-        position: "center",
-        className: `${colors[type] || colors.info} text-white font-medium rounded-md px-6 py-3 shadow-xl flex items-center`,
-        stopOnFocus: true
-    }).showToast();
+const ToastSystem = {
+    notifications: [],
+    displayDuration: 5000,
+    containerId: 'global-toast-container',
+
+    getIcon(variant) {
+        switch (variant) {
+            case 'success': return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>`;
+            case 'danger':
+            case 'error': return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5Zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" /></svg>`;
+            case 'warning': return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5Zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" /></svg>`;
+            case 'info':
+            default: return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" /></svg>`;
+        }
+    },
+
+    getTheme(variant) {
+        switch (variant) {
+            case 'success': return { border: 'border-success', bgLight: 'bg-success/10', bgIcon: 'bg-success/15', text: 'text-success' };
+            case 'danger': return { border: 'border-danger', bgLight: 'bg-danger/10', bgIcon: 'bg-danger/15', text: 'text-danger' };
+            case 'warning': return { border: 'border-warning', bgLight: 'bg-warning/10', bgIcon: 'bg-warning/15', text: 'text-warning' };
+            case 'info':
+            default: return { border: 'border-info', bgLight: 'bg-info/10', bgIcon: 'bg-info/15', text: 'text-info' };
+        }
+    },
+
+    add(message, type = 'success', title = null) {
+        const container = document.getElementById(this.containerId);
+        if (!container) return; // Silent abort if DOM setup isn't complete
+
+        const id = Date.now();
+        const variant = type === 'error' ? 'danger' : type;
+        const actualTitle = title || variant.charAt(0).toUpperCase() + variant.slice(1);
+        const theme = this.getTheme(variant);
+
+        const el = document.createElement('div');
+        // Structure matches the Alpine snippet utilizing standard Tailwind transitions
+        el.className = `pointer-events-auto relative rounded-radius border ${theme.border} bg-surface text-on-surface dark:bg-surface-dark dark:text-on-surface-dark shadow-xl overflow-hidden transition-all duration-300 ease-out translate-y-8 opacity-0`;
+        el.id = `toast-${id}`;
+        el.setAttribute('role', 'alert');
+
+        // Dynamic arbitrary HTML injection
+        el.innerHTML = `
+            <div class="flex w-full items-center gap-2.5 ${theme.bgLight} rounded-radius p-4">
+                <div class="rounded-full ${theme.bgIcon} p-0.5 ${theme.text} shrink-0">
+                    ${this.getIcon(variant)}
+                </div>
+                <div class="flex flex-col gap-1 w-full">
+                    <h3 class="text-sm font-semibold ${theme.text}">${actualTitle}</h3>
+                    <p class="text-pretty text-sm">${message}</p>
+                </div>
+                <button type="button" class="ml-auto shrink-0 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors cursor-pointer" onclick="ToastSystem.remove(${id})">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        `;
+
+        // Stack constraint
+        if (this.notifications.length >= 5) {
+            const oldestId = this.notifications.shift().id;
+            this.remove(oldestId);
+        }
+
+        container.appendChild(el);
+
+        // Timer logic with hover-to-pause
+        let timeout;
+        const startTimer = () => {
+            timeout = setTimeout(() => this.remove(id), this.displayDuration);
+        };
+        const pauseTimer = () => clearTimeout(timeout);
+
+        el.addEventListener('mouseenter', pauseTimer);
+        el.addEventListener('mouseleave', startTimer);
+
+        this.notifications.push({ id, el });
+
+        // Trigger CSS animate in
+        requestAnimationFrame(() => {
+            el.classList.remove('translate-y-8', 'opacity-0');
+            el.classList.add('translate-y-0', 'opacity-100');
+        });
+
+        startTimer();
+    },
+
+    remove(id) {
+        const index = this.notifications.findIndex(n => n.id === id);
+        if (index > -1) {
+            const el = this.notifications[index].el;
+            this.notifications.splice(index, 1);
+
+            // Trigger CSS animate out
+            el.classList.remove('translate-y-0', 'opacity-100');
+            el.classList.add('translate-x-24', 'opacity-0');
+            setTimeout(() => el.remove(), 300);
+        }
+    }
+};
+
+/**
+ * Flash a non-blocking notification on the screen via the native ToastSystem.
+ * @param {string} message - The message string to render.
+ * @param {'success'|'error'|'danger'|'info'|'warning'} [type='success'] - The semantic category.
+ * @param {string} [title=null] - Optional bold title mapped automatically if omitted.
+ */
+function showToast(message, type = 'success', title = null) {
+    ToastSystem.add(message, type, title);
 }
 
 /* ── Render Header ────────────────────────────────────── */
@@ -233,7 +325,7 @@ function renderHeader(activePage = '') {
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-6 space-y-4">
+    <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-6 space-y-4 z-[100] relative">
         <a href="/index.php" class="block py-2 font-medium">Home</a>
         <a href="/shop.php" class="block py-2 font-medium">Shop</a>
         <a href="/search-results.php" class="block py-2 font-medium">Search</a>
@@ -645,14 +737,17 @@ function renderProductCard(product, delay = 0) {
             ${product.oldPrice && !isSoldOut ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
             ${isSoldOut ? `<span class="absolute top-3 left-3 bg-slate-800 dark:bg-slate-700 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wider uppercase shadow-sm">Sold Out</span>` : ''}
             <div class="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                <button onclick="toggleWishlist(${product.id}); this.closest('.group').querySelector('.wish-icon').innerHTML = wishlist.includes(${product.id}) ? '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>' : '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>'; this.closest('.group').querySelector('.wish-icon').setAttribute('fill', wishlist.includes(${product.id}) ? 'currentColor' : 'none');" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors" title="Wishlist">
+                <button onclick="toggleWishlist(${product.id}); this.closest('.group').querySelector('.wish-icon').innerHTML = wishlist.includes(${product.id}) ? '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>' : '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>'; this.closest('.group').querySelector('.wish-icon').setAttribute('fill', wishlist.includes(${product.id}) ? 'currentColor' : 'none');" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Wishlist">
                     <svg class="w-5 h-5 wish-icon" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                 </button>
-                <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors" title="Quick View">
+                <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Quick View">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                 </button>
+                <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="md:hidden w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}" title="Add to Cart">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                </button>
             </div>
-            <div class="product-card-add-btn p-3">
+            <div class="product-card-add-btn p-3 hidden md:block">
                 <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="w-full flex items-center justify-center gap-2 py-3 text-xs md:text-sm font-bold tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-sm ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     ${isSoldOut ? 'Sold Out' : 'Add to Cart'}
@@ -978,10 +1073,39 @@ window.addEventListener('load', () => {
 
             setTimeout(() => {
                 preloader.style.display = 'none';
+
+                // Trigger Promotional Popup natively after preloader (if exists and hasn't been seen)
+                const promoPopup = document.getElementById('promoPopup');
+                if (promoPopup && !sessionStorage.getItem('krist_promo_seen')) {
+                    setTimeout(() => {
+                        promoPopup.classList.remove('opacity-0', 'pointer-events-none');
+                        const innerBox = promoPopup.querySelector('div.scale-95');
+                        if (innerBox) {
+                            innerBox.classList.remove('scale-95');
+                            innerBox.classList.add('scale-100');
+                        }
+                    }, 500); // 0.5s delay after preloader vanishes
+                }
+
             }, 700);
         }, 1500); // reduced from 2000 to 200 to disappear quickly
     }
 });
+
+// Global Promotional Popup Controller
+window.closePromoPopup = function() {
+    const promoPopup = document.getElementById('promoPopup');
+    if (promoPopup) {
+        promoPopup.classList.add('opacity-0', 'pointer-events-none');
+        const innerBox = promoPopup.querySelector('div.scale-100');
+        if (innerBox) {
+            innerBox.classList.remove('scale-100');
+            innerBox.classList.add('scale-95');
+        }
+        // Save to session storage so it doesn't annoy the user on every navigation
+        sessionStorage.setItem('krist_promo_seen', 'true');
+    }
+};
 
 /* ── Homepage Specific Initializations ────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1040,6 +1164,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+    }
+
+    // Initialize Benefits Swiper Globally
+    if (document.querySelector(".benefitsSwiper") && typeof Swiper !== 'undefined') {
         const benefitsSwiper = new Swiper('.benefitsSwiper', {
             slidesPerView: 1,
             loop: true,
@@ -1051,7 +1179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 640: { slidesPerView: 2 },
                 1024: {
                     slidesPerView: 4,
-                    enabled: false,
+                    enabled: false, /* Disables swipe on desktop strictly mapping to native grid */
                 },
             }
         });

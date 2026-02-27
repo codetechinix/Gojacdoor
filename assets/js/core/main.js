@@ -259,4 +259,49 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.countdown-secs').forEach(el => el.textContent = seconds.toString().padStart(2, '0'));
         }, 1000);
     }
+
+    // Initialize Animated Counters
+    initCounters();
 });
+
+/* ── Counter Up Animation Handler ─────────────────────── */
+/**
+ * Initializes count-up animations for statistic elements containing data-target attributes.
+ * Triggers sequentially when elements enter the viewport via IntersectionObserver.
+ */
+function initCounters() {
+    const counters = document.querySelectorAll('.counter-value');
+    if (!counters.length) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'), 10);
+                const duration = 2000; // Animation duration in ms
+                const stepTime = Math.abs(Math.floor(duration / target));
+
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += 1;
+                    counter.innerText = current;
+                    if (current === target) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+
+                observer.unobserve(counter); // Only run once
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}

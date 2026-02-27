@@ -4,6 +4,34 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### Added
+
+- **Counter-Up Statistics Section:** Implemented a new scroll-animated section on the homepage (`index.php`) featuring 4 key metrics that count up to their targets (`main.js`) using an `IntersectionObserver`. Designed with elevated, overlapping SVG cards for premium aesthetic depth.
+
+### Changed
+
+- **Hero Slider Height & Positioning (`index.php`, `input.css`):** Adjusted the desktop hero slider height to dynamically fit the initial viewport using `calc(100vh - 130px)`. Updated background image object positions (`object-top`, `object-[center_30%]`) to ensure subjects remain visibly framed. Changed Swiper pagination dots to white for improved contrast against the dark overlay.
+
+### [2026-02-26T11:00:00+01:00] Custom Toasts & UI Refinements
+
+#### Added
+
+- **Custom Toast Engine (`components.js`, `input.css`):** Engineered a zero-dependency, highly-performant Vanilla JS `ToastSystem` to replace external `Toastify.js` libraries. The new system supports queuing, Tailwind transitions, and dynamic SVG variants.
+- **Top Announcement Dropdowns (`includes/header.php`):** Extracted the Language and Currency dropdowns from the main header and elegantly embedded them into the top sliding marquee banner.
+- **Cart Drawer Coupon Field (`components.js`):** Injected a sleek `Discount Code` input field directly above the subtotal within the mini-cart drawer.
+
+#### Changed
+
+- **Responsive Product Cards (`components.js`):** Modified the "Add to Cart" product grid logic. On mobile viewports, the bulky text button translates into a seamless floating icon button appended to the top-right overlay stack, resolving overflow issues.
+- **Header Alignment (`includes/header.php`):** Re-engineered the global desktop header flexbox ratios to strictly `w-1/4`, `w-2/4`, `w-1/4` ensuring pixel-perfect centering of primary navigation links.
+- **Related Products Autoplay (`components.js`):** Configured the Swiper layout to precisely allow 3 cards horizontally on desktop without blowing up their aspect ratio, while enabling continuous `autoplay`.
+- **Global Pill Buttons:** Transformed standard box-radius buttons (Add to Cart, Quick View, Pagination, Auth, Sidebar) into the premium `rounded-full` pill aesthetic globally.
+
+#### Fixed
+
+- **Mobile Menu Z-Index Conflict (`includes/header.php`, `input.css`):** Increased the z-index of the slide-out mobile menu backdrop and panel to `z-[100]` and `z-[110]` respectively, preventing the fixed top announcement banner from visually dissecting the menu interface.
+- **Account Sidebar Preloader Hang (`components.js`):** Patched an `undefined` insertion bug inside `renderAccountSidebar` by correctly returning an HTML block instead of injecting raw queries, fixing infinite-spin preloaders across all `/account/` routes.
+
 ### [2026-02-25T07:20:00+01:00] Revone Theme UI Upgrades
 
 #### Added

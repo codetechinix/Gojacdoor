@@ -21,6 +21,28 @@
     color-mix(in srgb, var(--color-background-dark) 8%, transparent);
   --shadow-modern-dark: 0 10px 40px -10px
     color-mix(in srgb, var(--color-background-dark) 30%, transparent);
+
+  /* Toast Notification Theme Variables */
+  --color-surface: var(--color-white);
+  --color-surface-alt: var(--color-slate-50);
+  --color-on-surface: var(--color-slate-600);
+  --color-on-surface-strong: var(--color-slate-900);
+
+  --color-surface-dark: var(--color-slate-950);
+  --color-surface-dark-alt: var(--color-slate-900);
+  --color-on-surface-dark: var(--color-slate-300);
+  --color-on-surface-dark-strong: var(--color-white);
+
+  --color-info: var(--color-sky-500);
+  --color-on-info: var(--color-white);
+  --color-success: var(--color-green-500);
+  --color-on-success: var(--color-white);
+  --color-warning: var(--color-amber-500);
+  --color-on-warning: var(--color-white);
+  --color-danger: var(--color-red-500);
+  --color-on-danger: var(--color-white);
+
+  --radius-radius: var(--radius-xl);
 }
 
 /* ── Mega Menu ─────────────────────────────────────────── */
@@ -171,12 +193,6 @@
   }
 }
 
-/* ── Toast overrides ───────────────────────────────────── */
-.toastify {
-  border-radius: var(--radius-lg) !important;
-  box-shadow: var(--shadow-2xl) !important;
-}
-
 /* ── Fallback for Dropdown Hover ───────────────────────── */
 .group:hover .group-hover\:block {
   display: block !important;
@@ -233,23 +249,16 @@
 .heroSwiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: var(--color-slate-400);
-  opacity: 0.4;
+  background: #ffffff;
+  opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .heroSwiper .swiper-pagination-bullet-active {
   opacity: 1;
-  background: var(--color-background-dark);
+  background: #ffffff;
   width: 28px;
   border-radius: 5px;
-}
-
-html.dark .heroSwiper .swiper-pagination-bullet {
-  background: #ffffff;
-}
-html.dark .heroSwiper .swiper-pagination-bullet-active {
-  background: #ffffff;
 }
 
 /* ── Product Card Add to Cart Button ────────────────── */
