@@ -235,3 +235,15 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 ### Removed
 
 - **Material Symbols:** Removed the Google Fonts CSS link for Material Symbols (`<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined..." />`) as it is no longer used, improving performance.
+
+### [2026-02-27T23:30:00+01:00] Homepage Layout Refinements
+
+#### Changed
+
+- **Mobile Header Overflow (`includes/header.php`):** Implemented `max-w-full overflow-x-hidden` on the main sticky header wrapper to resolve horizontal layout breaks on small (375px) viewports caused by expansive grid containers.
+- **Promotional Banner Formatting (`index.php`):** Expanded internal padding (`p-6` to `p-8` / `p-16`) on the "Autumn Collection" banner to provide cleaner breathing room for typography and prevent text from feeling boxed in on mobile screens.
+- **Counter Up Spacing (`index.php`):** Scaled down the top padding (`pt-12` to `pt-10`) and horizontal margins on the "Happy Customers / Premium Quality" counter cards for mobile viewports, resolving disjointed card stretching.
+
+#### Fixed
+
+- **Broken Category Images (`assets/js/modules/components.js`):** Repaired an unresolving Unsplash URL driving the "Kids" category card natively in the JS product mapping, restoring visual parity to the scroll grid.
