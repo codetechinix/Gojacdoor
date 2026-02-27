@@ -265,17 +265,18 @@ $activePage = 'home';
     </section>
 
     <!-- ═══════════════════════════ COUNTER UP ═════════════════════════════ -->
-    <section class="py-12 md:py-16 mt-4 md:mt-8 bg-gray-100/8 dark:bg-slate-900 border-y border-transparent dark:border-slate-800">
+    <section
+        class="py-12 md:py-16 mt-4 md:mt-8 bg-gray-100/8 dark:bg-slate-900 border-y border-transparent dark:border-slate-800">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pl-2 pr-2">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                 <!-- Counter 1 -->
-                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
                     data-aos="fade-up" data-aos-delay="0">
                     <div
-                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
-                            <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
@@ -292,13 +293,13 @@ $activePage = 'home';
                     </p>
                 </div>
                 <!-- Counter 2 -->
-                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
-                            <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -314,10 +315,10 @@ $activePage = 'home';
                     </p>
                 </div>
                 <!-- Counter 3 -->
-                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
