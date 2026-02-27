@@ -194,7 +194,7 @@ $activePage = 'home';
     </section>
 
     <!-- ═══════════════════════════ DEALS ══════════════════════════════════ -->
-    <section class="py-16 md:py-24 bg-white dark:bg-background-dark d-none">
+    <section class="py-16 md:py-24 bg-white dark:bg-background-dark">
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold dark:text-white mb-3">Deals of the Month</h2>
@@ -205,37 +205,40 @@ $activePage = 'home';
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop"
                         alt="Deal"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent flex items-center">
-                        <div class="p-12 md:p-16 text-white w-full">
+                    <div
+                        class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
+                        <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
                             <span
-                                class="bg-red-500 text-xs px-4 py-1.5 rounded-full font-bold mb-5 inline-block tracking-widest">HOT
+                                class="bg-red-500 text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest">HOT
                                 DEAL</span>
-                            <h3 class="text-4xl md:text-5xl font-black mb-3">Summer Sale</h3>
-                            <p class="text-white/90 font-medium mb-8 text-lg">Up to 50% off on summer collection</p>
-                            <div class="flex space-x-3 mb-8">
+                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-3">Summer Sale</h3>
+                            <p
+                                class="text-white/90 font-medium mb-6 md:mb-8 text-sm md:text-lg max-w-[80%] md:max-w-full">
+                                Up to 50% off on summer collection</p>
+                            <div class="flex space-x-2 md:space-x-3 mb-6 md:mb-8">
                                 <div
-                                    class="bg-white/20 backdrop-blur-md rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
-                                    <span class="text-3xl font-bold block countdown-days">00</span><span
-                                        class="text-[10px] uppercase font-bold tracking-wider mt-1 block">Days</span>
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-days">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Days</span>
                                 </div>
                                 <div
-                                    class="bg-white/20 backdrop-blur-md rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
-                                    <span class="text-3xl font-bold block countdown-hours">00</span><span
-                                        class="text-[10px] uppercase font-bold tracking-wider mt-1 block">Hours</span>
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-hours">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Hours</span>
                                 </div>
                                 <div
-                                    class="bg-white/20 backdrop-blur-md rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
-                                    <span class="text-3xl font-bold block countdown-mins">00</span><span
-                                        class="text-[10px] uppercase font-bold tracking-wider mt-1 block">Mins</span>
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-mins">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Mins</span>
                                 </div>
                                 <div
-                                    class="bg-white/20 backdrop-blur-md rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
-                                    <span class="text-3xl font-bold block countdown-secs">00</span><span
-                                        class="text-[10px] uppercase font-bold tracking-wider mt-1 block">Secs</span>
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-secs">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Secs</span>
                                 </div>
                             </div>
                             <a href="/shop.php"
-                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-sm transition-colors inline-block shadow-lg">Shop
+                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-6 md:px-8 py-2.5 md:py-3.5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-colors inline-block shadow-lg">Shop
                                 Now</a>
                         </div>
                     </div>
@@ -244,10 +247,11 @@ $activePage = 'home';
                     <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=600&auto=format&fit=crop"
                         alt="New Arrivals"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent flex items-center">
-                        <div class="p-12 md:p-16 text-white">
+                    <div
+                        class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
+                        <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
                             <span
-                                class="bg-primary text-xs px-4 py-1.5 rounded-full font-bold mb-5 inline-block tracking-widest">NEW
+                                class="bg-primary text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest">NEW
                                 ARRIVAL</span>
                             <h3 class="text-4xl md:text-5xl font-black mb-3">Winter Collection</h3>
                             <p class="text-white/90 font-medium mb-8 text-lg">Exclusive new winter arrivals</p>
@@ -261,17 +265,17 @@ $activePage = 'home';
     </section>
 
     <!-- ═══════════════════════════ COUNTER UP ═════════════════════════════ -->
-    <section class="py-16 mt-8 bg-gray-100/8 dark:bg-slate-900 border-y border-transparent dark:border-slate-800">
+    <section class="py-12 md:py-16 mt-4 md:mt-8 bg-gray-100/8 dark:bg-slate-900 border-y border-transparent dark:border-slate-800">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pl-2 pr-2">
                 <!-- Counter 1 -->
-                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
                     data-aos="fade-up" data-aos-delay="0">
                     <div
-                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
@@ -288,13 +292,13 @@ $activePage = 'home';
                     </p>
                 </div>
                 <!-- Counter 2 -->
-                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -310,10 +314,10 @@ $activePage = 'home';
                     </p>
                 </div>
                 <!-- Counter 3 -->
-                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                <div class="text-center p-6 pt-10 md:pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-8 md:mt-6 mx-2 md:mx-0"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        class="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-7 md:-top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
                         <div
                             class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -767,36 +771,60 @@ $activePage = 'home';
     </section>
 
     <!-- Promotional Pop-up -->
-    <div id="promoPopup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500">
-        <div class="relative w-full max-w-4xl bg-white dark:bg-slate-900 mx-4 rounded-2xl shadow-2xl scale-95 transition-transform duration-500 flex flex-col md:flex-row overflow-hidden">
+    <div id="promoPopup"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
+        <div
+            class="relative w-[95%] max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] translate-y-12 scale-95 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-row overflow-hidden border border-slate-100/50 dark:border-slate-800">
             <!-- Close Button -->
-            <button onclick="closePromoPopup()" class="absolute top-4 right-4 z-10 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-full p-2.5 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Close">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 2 2 13M2 2l11 11" stroke="currentColor" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <button onclick="closePromoPopup()"
+                class="absolute top-4 right-4 z-20 bg-white/50 backdrop-blur-md dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 rounded-full p-2.5 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 shadow-sm"
+                aria-label="Close">
+                <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
                 </svg>
             </button>
 
-            <!-- Image -->
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Promotional fashion sale" class="hidden md:block w-1/2 object-cover">
-            
+            <!-- Image Header/Sidebar -->
+            <div class="w-2/5 md:w-5/12 relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=800&auto=format&fit=crop"
+                    alt="Promotional fashion sale"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-2000">
+                <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 md:bottom-6 md:left-8">
+                    <span
+                        class="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-white/20 backdrop-blur-md text-white border border-white/30 text-[8px] md:text-[10px] font-bold tracking-widest uppercase rounded-full mb-2 md:mb-3">Limited
+                        Offer</span>
+                    <h3 class="text-white text-lg md:text-2xl font-bold tracking-tight leading-tight hidden sm:block">
+                        Autumn Collection</h3>
+                </div>
+            </div>
+
             <!-- Content -->
-            <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center items-center text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
-                    <span class="text-primary">Don’t miss out</span><br>on our exclusive deals.
+            <div
+                class="w-3/5 md:w-7/12 p-8 md:p-16 flex flex-col justify-center align-start relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-slate-50 dark:bg-slate-900">
+                <h2
+                    class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-[1.15] tracking-tight">
+                    <span class="bg-clip-text text-transparent bg-linear-to-r from-primary to-orange-500">Don’t miss
+                        out</span><br><span class="hidden sm:inline">on our exclusive deals.</span>
                 </h2>
-                <p class="mt-4 text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">
-                    Unlock premium fashion at unbeatable prices. Shop the collection now before they're gone!
+                <p
+                    class="mt-3 md:mt-5 text-slate-500 dark:text-slate-400 leading-relaxed text-xs sm:text-sm md:text-lg max-w-md font-medium">
+                    Unlock premium fashion at unbeatable prices. Shop the collection now before inventory runs out.
                 </p>
-                <a href="/shop.php" onclick="closePromoPopup()" class="w-full md:w-auto inline-flex items-center justify-center bg-primary text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 rounded-full px-10 py-4 mt-8 text-sm font-bold tracking-widest uppercase transition-colors duration-300">
-                    Check out the products
-                </a>
-                <button onclick="closePromoPopup()" class="px-8 py-3 mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                    No thanks, I don’t want the discounts.
-                </button>
+                <div class="mt-6 md:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
+                    <a href="/shop.php" onclick="closePromoPopup()"
+                        class="w-full sm:w-auto inline-flex items-center justify-center bg-primary text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 rounded-full px-6 py-3 md:px-12 md:py-4 text-[10px] md:text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        Claim 20% Off
+                    </a>
+                    <button onclick="closePromoPopup()"
+                        class="text-slate-400 hover:text-slate-800 dark:hover:text-white text-[10px] md:text-sm font-medium tracking-wide transition-colors py-1.5 md:py-2 px-2 md:px-4 underline underline-offset-4 hidden sm:block">
+                        No thanks
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-
     <?php include 'includes/footer.php'; ?>
 </body>
 

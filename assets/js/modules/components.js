@@ -12,14 +12,15 @@ const PRODUCTS = [
     { id: 3, name: 'Polo Collar T-Shirt', brand: 'Adidas', price: 42.00, oldPrice: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjII6dlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.2, reviews: 34, category: 'men', size: ['M', 'L', 'XL'], color: 'blue' },
     { id: 4, name: 'Men adi-dash Running Shoes', brand: 'Trendyol', price: 65.00, oldPrice: 80.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCm6dR6oF2uuYLGQFK4zjq2_oxErZ3IbPvvbbx0eKcLb0d_vZ4qAu3GuSHcVBFIjSLruwci0TDlEkzKk9HpFmO8X20FX1GLzwnnFYE4Qaw9KGIcSBSJG0j52U2LF5RuEfz-2_N3Ny9aeSuF1iIZUHNOO0vTrsPqg-qAaM_Ufx6rAW1Zjb7daNG-IQQ6MQ-EAYhod0ExJ0q4uPTGJxb7c6mBe0yWvUDmM-MmLgbWRC7LcqO0ESiYgp3DBFeo6M-7VrjrHJajaD1Zc4Q', rating: 4.6, reviews: 88, category: 'men', size: ['8', '9', '10', '11'], color: 'white' },
     { id: 5, name: 'Floral Embroidered Maxi Dress', brand: 'Zyla', price: 55.00, oldPrice: 70.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0XqfpSJY2aHwGAeV_Jr5RJWZ0dENi0m20KVUWvAUV14S3x0PPF_I983qcvFeNJDCWPa6I3IlQpXs0GxHj0oi3PJ1jjHpc3s83ZqX3JdRiyFVmMbKaOjJipcaOW8kHYGrcuDHhsbpbxByv_3u7IctEwQv_Y7A6pcKlylUctIQg9XwNPItE_dFiA70znSDSjDRxyjm_TZ4Q0aYbLNmlb_Ns0jWw12JNXA6NHI9YNSAGJ1ypYclrRRbaRK5PzU0jAycXdUh676vB8_o', rating: 4.9, reviews: 200, category: 'women', size: ['S', 'M', 'L'], color: 'red' },
-    { id: 6, name: 'Girls Pink Moana Printed Dress', brand: 'YK Disney', price: 28.00, oldPrice: 35.00, image: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=600&auto=format&fit=crop', rating: 4.3, reviews: 45, category: 'kids', size: ['3-4Y', '5-6Y', '7-8Y'], color: 'pink' },
+    { id: 6, name: 'Girls Pink Moana Printed Dress', brand: 'YK Disney', price: 28.00, oldPrice: 35.00, image: 'https://images.unsplash.com/photo-1519238350819-21dc31845112?q=80&w=600&auto=format&fit=crop', rating: 4.3, reviews: 45, category: 'kids', size: ['3-4Y', '5-6Y', '7-8Y'], color: 'pink' },
     { id: 7, name: 'Tailored Cotton Casual Shirt', brand: 'US Polo', price: 52.00, oldPrice: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wC_Nn8VlP5LTjeJlFmiDQS298wwtD6G6BAhKdLzNMSUyQu9kgKdU8jB9PCsn1-tsFCzF0aBc5vtywRUt0f98MajcKbu5OuxcANF9MAFBdFL5Dzzd1YT1tDYj2UE6BPp6S326v0DHhrav-tQYw5LQZReDH-35lxzJtyMAi-P2CttH4f9rhnOGPOFlmkKBGHBaoe__IZZujINgwEH-k9zUDR21nXTtTXWDTK-Gv_6tn-KKVFW9dZdBoTea5ih5jmLNper2xDJ1yaQ', rating: 4.1, reviews: 29, category: 'men', size: ['S', 'M', 'L', 'XL', 'XXL'], color: 'white' },
-    { id: 8, name: 'Brown Leather Jacket', brand: 'Gucci', price: 149.00, oldPrice: 189.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjII6dlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.7, reviews: 156, category: 'men', size: ['M', 'L', 'XL'], color: 'brown' },
+    { id: 8, name: 'Brown Leather Jacket', brand: 'Gucci', price: 149.00, oldPrice: 189.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4V_sF4mFDjtJz_OhG5JHN-qRZKi1Jm5ii5VpYG-1SO99PhCtd2cdn3IXct5q9VD38NZcOnREnkL7M5aZ1ufa3rHg8Td_E5ocjAiMf5p6dAbXHGZCdsxfeY_XU2nTX-t2VjIRZsYi7hjIIdlvsEiDPIyW-FYRqljYgu1S7UY6aBXuP5uMigEOscbkQt4jTHeJPENfW2lOBB6PIyy8pG6XjyfhrB3AQD-JIDHnDcQ05ZjQ4V2CJClAIFM809duJrRYn8JozQ3OQQc', rating: 4.7, reviews: 156, category: 'men', size: ['M', 'L', 'XL'], color: 'brown' },
 ];
 
 /* ── Cart State ───────────────────────────────────────── */
-let cart = JSON.parse(localStorage.getItem('krist_cart') || '[]');
-let wishlist = JSON.parse(localStorage.getItem('krist_wishlist') || '[]');
+let cart = JSON.parse(localStorage.getItem('krist_cart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('krist_wishlist')) || [];
+let compareList = JSON.parse(localStorage.getItem('krist_compare')) || [];
 
 /**
  * Syncs the local `cart` array strictly to localStorage and updates the UI cart badge.
@@ -99,6 +100,156 @@ function toggleWishlist(productId) {
     saveWishlist();
     if (typeof renderWishlistPage === 'function') {
         renderWishlistPage();
+    }
+}
+/**
+ * Toggles a product's presence in the global compare list (max 3) and updates the UI.
+ * @param {number|string} productId - The unique identifier of the product.
+ */
+function toggleCompare(productId) {
+    const idx = compareList.indexOf(productId);
+    if (idx > -1) {
+        compareList.splice(idx, 1);
+        showToast('Removed from compare', 'info');
+    } else {
+        if (compareList.length >= 3) {
+            showToast('You can only compare up to 3 products', 'warning');
+            return;
+        }
+        compareList.push(productId);
+        showToast('Added to compare list', 'success');
+    }
+    localStorage.setItem('krist_compare', JSON.stringify(compareList));
+    updateCompareUI();
+}
+
+/**
+ * Updates the floating Compare trigger button when items are selected.
+ */
+function updateCompareUI() {
+    let floater = document.getElementById('compare-floater');
+    if (compareList.length > 0) {
+        if (!floater) {
+            floater = document.createElement('div');
+            floater.id = 'compare-floater';
+            floater.className = 'fixed bottom-6 left-6 z-[90] transition-all duration-300 translate-y-8 opacity-0';
+            document.body.appendChild(floater);
+            // Trigger animation
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                floater.classList.remove('translate-y-8', 'opacity-0');
+            }));
+        }
+        floater.innerHTML = `
+            <button onclick="openCompareModal()" class="bg-primary text-white shadow-2xl px-6 py-3.5 rounded-full font-bold tracking-widest uppercase text-[11px] md:text-xs hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 duration-300 flex items-center justify-center gap-2 group border-2 border-transparent">
+                <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v4h14l-4-4m4 4l-4 4M21 17v-4H7l4 4m-4-4l4-4"></path></svg>
+                Compare (${compareList.length})
+            </button>
+        `;
+    } else if (floater) {
+        floater.classList.add('translate-y-8', 'opacity-0');
+        setTimeout(() => floater.remove(), 300);
+    }
+}
+
+/**
+ * Renders and opens the graphical Product Comparison Modal.
+ */
+function openCompareModal() {
+    if (compareList.length < 2) {
+        showToast('Please select at least 2 products to compare.', 'warning');
+        return;
+    }
+
+    let modal = document.getElementById('compareModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'compareModal';
+        modal.className = 'fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-8';
+        modal.innerHTML = `
+            <div class="relative w-full max-w-6xl bg-white dark:bg-slate-900 rounded-xl shadow-2xl scale-95 transition-transform duration-300 max-h-full flex flex-col overflow-hidden border border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Product Comparison</h3>
+                    <button onclick="closeCompareModal()" class="bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 rounded-full p-2 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="p-6 overflow-x-auto overflow-y-auto" id="compareModalBody"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    const productsToCompare = typeof PRODUCTS !== 'undefined' ? PRODUCTS.filter(p => compareList.includes(p.id)) : [];
+    const tbody = document.getElementById('compareModalBody');
+
+    if (productsToCompare.length === 0) {
+        tbody.innerHTML = '<p class="text-center text-slate-500 py-10">No products found to compare.</p>';
+    } else {
+        // Responsive Compare Cards structure replacing the old table layout
+        let gridCols = productsToCompare.length;
+        let html = `<div class="grid grid-cols-1 gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">`;
+        productsToCompare.forEach(p => {
+            html += `
+            <div class="relative group bg-slate-50 dark:bg-slate-800/20 p-4 md:p-6 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col h-full shadow-sm hover:shadow-xl transition-shadow duration-300">
+                <button onclick="toggleCompare(${p.id}); closeCompareModal(); setTimeout(openCompareModal, 400);" class="absolute top-3 right-3 bg-white/90 dark:bg-slate-800/90 text-slate-400 hover:text-red-500 dark:text-slate-300 dark:hover:text-red-500 rounded-full p-2 shadow-sm border border-slate-200 dark:border-slate-700 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all z-10" title="Remove">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl mb-5 overflow-hidden border border-slate-100 dark:border-slate-700/50 shrink-0">
+                    <img src="${p.image}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${p.name}">
+                </div>
+                <h4 class="font-extrabold text-slate-900 dark:text-white text-lg mb-2 leading-tight text-center">${p.name}</h4>
+                <p class="text-primary font-bold mb-5 text-center text-xl">$${p.price.toFixed(2)}</p>
+                
+                <button onclick="addToCart(${p.id})" class="bg-primary text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 w-full py-3.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors mb-8 shadow-md border-2 border-transparent">Add to Cart</button>
+                
+                <div class="space-y-0 mt-auto flex-1">
+                    <div class="flex justify-between items-center py-3 border-t border-slate-200 dark:border-slate-700/50">
+                        <span class="text-[11px] font-bold text-slate-500 tracking-wider text-left uppercase w-1/3">Brand</span>
+                        <span class="text-sm font-bold text-slate-900 dark:text-white text-right w-2/3 truncate" title="${p.brand}">${p.brand || '-'}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-t border-slate-200 dark:border-slate-700/50">
+                        <span class="text-[11px] font-bold text-slate-500 tracking-wider text-left uppercase w-1/3">Category</span>
+                        <span class="text-sm font-semibold text-slate-900 dark:text-white capitalize text-right w-2/3 truncate" title="${p.category}">${p.category || '-'}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-t border-slate-200 dark:border-slate-700/50">
+                        <span class="text-[11px] font-bold text-slate-500 tracking-wider text-left uppercase w-1/3">Color</span>
+                        <span class="text-sm font-semibold text-slate-900 dark:text-white capitalize text-right w-2/3 truncate" title="${p.color}">${p.color || '-'}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-t border-slate-200 dark:border-slate-700/50">
+                        <span class="text-[11px] font-bold text-slate-500 tracking-wider text-left uppercase w-1/3">Sizes</span>
+                        <span class="text-[13px] font-semibold text-slate-900 dark:text-white text-right w-2/3 truncate" title="${Array.isArray(p.size) ? p.size.join(', ') : 'Standard'}">${Array.isArray(p.size) ? p.size.join(', ') : 'Standard'}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-t border-slate-200 dark:border-slate-700/50">
+                        <span class="text-[11px] font-bold text-slate-500 tracking-wider text-left uppercase w-1/3">Rating</span>
+                        <div class="flex items-center gap-1.5 flex-row justify-end w-2/3 text-yellow-400">
+                            ${renderStars(p.rating || 0)}
+                            <span class="text-xs text-slate-500 font-bold ml-1">(${p.rating || 0})</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        });
+        html += `</div>`;
+        tbody.innerHTML = html;
+    }
+
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    const innerBox = modal.querySelector('div.scale-95');
+    if (innerBox) {
+        innerBox.classList.remove('scale-95');
+        innerBox.classList.add('scale-100');
+    }
+}
+
+function closeCompareModal() {
+    const modal = document.getElementById('compareModal');
+    if (modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        const innerBox = modal.querySelector('div.scale-100');
+        if (innerBox) {
+            innerBox.classList.remove('scale-100');
+            innerBox.classList.add('scale-95');
+        }
     }
 }
 
@@ -534,7 +685,7 @@ function renderMiniCartItems() {
             </div>
             <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Your Cart is Empty</h3>
             <p class="text-sm text-slate-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
-            <button onclick="toggleMiniCart()" class="px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-800 transition-colors shadow-md">
+            <button onclick="toggleMiniCart()" class="px-8 py-3.5 bg-primary dark:bg-white text-white dark:text-slate-900 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-900 duration-300 transition-colors shadow-md border-2 border-transparent">
                 Continue Shopping
             </button>
         </div>`;
@@ -662,29 +813,39 @@ function toggleMobileMenu() {
 function toggleSearchOverlay() {
     const overlay = document.getElementById('searchOverlay');
     const backdrop = document.getElementById('searchBackdrop');
-    const panel = document.getElementById('searchPanel');
     const input = document.getElementById('searchOverlayInput');
     if (!overlay) return;
 
-    const isOpen = !overlay.classList.contains('hidden');
+    const isOpen = !overlay.classList.contains('invisible');
 
     if (isOpen) {
         // Close
-        backdrop.classList.remove('opacity-100');
-        backdrop.classList.add('opacity-0');
-        panel.classList.add('-translate-y-full');
+        if (backdrop) {
+            backdrop.classList.remove('opacity-100', 'visible');
+            backdrop.classList.add('opacity-0', 'invisible');
+        }
+
+        overlay.classList.remove('opacity-100', 'scale-y-100', 'visible');
+        overlay.classList.add('opacity-0', 'scale-y-0', 'invisible');
+        overlay.style.pointerEvents = 'none';
+
         document.body.style.overflow = '';
-        setTimeout(() => overlay.classList.add('hidden'), 300);
     } else {
         // Open
-        overlay.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            backdrop.classList.remove('opacity-0');
-            backdrop.classList.add('opacity-100');
-            panel.classList.remove('-translate-y-full');
-            if (input) input.focus();
-        });
+        if (backdrop) {
+            backdrop.classList.remove('opacity-0', 'invisible');
+            backdrop.classList.add('opacity-100', 'visible');
+        }
+
+        overlay.classList.remove('opacity-0', 'scale-y-0', 'invisible');
+        overlay.classList.add('opacity-100', 'scale-y-100', 'visible');
+        overlay.style.pointerEvents = 'auto';
+
         document.body.style.overflow = 'hidden';
+
+        if (input) {
+            setTimeout(() => input.focus(), 300);
+        }
     }
 }
 
@@ -737,8 +898,8 @@ function renderProductCard(product, delay = 0) {
             ${product.oldPrice && !isSoldOut ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
             ${isSoldOut ? `<span class="absolute top-3 left-3 bg-slate-800 dark:bg-slate-700 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wider uppercase shadow-sm">Sold Out</span>` : ''}
             <div class="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                <button onclick="toggleWishlist(${product.id}); this.closest('.group').querySelector('.wish-icon').innerHTML = wishlist.includes(${product.id}) ? '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>' : '<path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\\'></path>'; this.closest('.group').querySelector('.wish-icon').setAttribute('fill', wishlist.includes(${product.id}) ? 'currentColor' : 'none');" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Wishlist">
-                    <svg class="w-5 h-5 wish-icon" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                <button onclick="toggleCompare(${product.id});" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Compare">
+                    <svg class="w-4 h-4 compare-icon ${compareList.includes(product.id) ? 'text-primary dark:text-primary' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v4h14l-4-4m4 4l-4 4M21 17v-4H7l4 4m-4-4l4-4"></path></svg>
                 </button>
                 <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Quick View">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
@@ -1049,6 +1210,7 @@ function initKrist() {
     renderFloatingButtons();
     updateCartBadge();
     updateWishlistBadge();
+    updateCompareUI();
     // Init AOS
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 50 });
@@ -1076,7 +1238,7 @@ window.addEventListener('load', () => {
 
                 // Trigger Promotional Popup natively after preloader (if exists and hasn't been seen)
                 const promoPopup = document.getElementById('promoPopup');
-                if (promoPopup && !sessionStorage.getItem('krist_promo_seen')) {
+                if (promoPopup && !sessionStorage.getItem('krist_promo_seen_v2')) {
                     setTimeout(() => {
                         promoPopup.classList.remove('opacity-0', 'pointer-events-none');
                         const innerBox = promoPopup.querySelector('div.scale-95');
@@ -1084,7 +1246,7 @@ window.addEventListener('load', () => {
                             innerBox.classList.remove('scale-95');
                             innerBox.classList.add('scale-100');
                         }
-                    }, 500); // 0.5s delay after preloader vanishes
+                    }, 5000); // 5s delay after preloader vanishes
                 }
 
             }, 700);
@@ -1093,7 +1255,7 @@ window.addEventListener('load', () => {
 });
 
 // Global Promotional Popup Controller
-window.closePromoPopup = function() {
+window.closePromoPopup = function () {
     const promoPopup = document.getElementById('promoPopup');
     if (promoPopup) {
         promoPopup.classList.add('opacity-0', 'pointer-events-none');
@@ -1103,7 +1265,7 @@ window.closePromoPopup = function() {
             innerBox.classList.add('scale-95');
         }
         // Save to session storage so it doesn't annoy the user on every navigation
-        sessionStorage.setItem('krist_promo_seen', 'true');
+        sessionStorage.setItem('krist_promo_seen_v2', 'true');
     }
 };
 
