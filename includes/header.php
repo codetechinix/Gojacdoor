@@ -38,76 +38,18 @@ $activePage = isset($activePage) ? $activePage : '';
 
 <!-- Top Announcement Banner -->
 <div
-    class="bg-slate-950 dark:bg-black text-[11px] font-bold tracking-widest uppercase py-2.5 px-4 max-w-full overflow-hidden relative z-60 text-slate-300 md:flex md:justify-between grid grid-cols-1 items-center gap-y-2">
+    class="bg-slate-950 dark:bg-black text-[11px] font-bold tracking-widest uppercase py-2.5 px-4 max-w-full relative z-[10] text-slate-300 grid grid-cols-1 items-center gap-y-2 text-center">
     <div class="flex-1 overflow-hidden pr-4 lg:pr-12">
         <p
             class="animate-marquee inline-block text-[10px] font-bold tracking-[0.2em] uppercase text-left w-full text-white">
             3 DAYS FREE TRIAL - ENJOY YOUR SHOPPING <span class="mx-8 text-slate-500">&bull;</span> SIGN UP FOR 10% OFF
             YOUR FIRST ORDER <span class="mx-8 text-slate-500">&bull;</span> FREE SHIPPING ON ORDERS OVER $1000
         </p>
-    </div>
-
-    <div class="hidden md:flex items-center space-x-6 shrink-0 z-50">
-        <!-- Language Dropdown -->
-        <div
-            class="group/lang relative flex items-center cursor-pointer text-slate-400 hover:text-white transition-colors duration-300 h-full py-1">
-            <span class="text-[10px] font-bold tracking-widest flex items-center uppercase">
-                En
-                <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/lang:rotate-180" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </span>
-            <!-- Dropdown Menu -->
-            <div
-                class="absolute right-0 top-full mt-1 w-36 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 z-[100] p-1.5 transform origin-top translate-y-2 group-hover/lang:translate-y-0">
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇬🇧</span> <span class="font-medium">English</span>
-                </a>
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇩🇪</span> <span class="font-medium">Deutsch</span>
-                </a>
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇪🇸</span> <span class="font-medium">Español</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Currency Dropdown -->
-        <div
-            class="group/curr relative flex items-center cursor-pointer text-slate-400 hover:text-white transition-colors duration-300 h-full py-1">
-            <span class="text-[10px] font-bold tracking-widest flex items-center uppercase">
-                USD $
-                <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/curr:rotate-180" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </span>
-            <!-- Dropdown Menu -->
-            <div
-                class="absolute right-0 top-full mt-1 w-36 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] opacity-0 invisible group-hover/curr:opacity-100 group-hover/curr:visible transition-all duration-300 z-[100] p-1.5 transform origin-top translate-y-2 group-hover/curr:translate-y-0">
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇺🇸</span> <span class="font-medium">USD</span>
-                </a>
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇪🇺</span> <span class="font-medium">EUR</span>
-                </a>
-                <a href="#"
-                    class="flex items-center space-x-3 px-3 py-2.5 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white rounded-lg transition-all duration-200">
-                    <span class="text-base leading-none">🇬🇧</span> <span class="font-medium">GBP</span>
-                </a>
-            </div>
-        </div>
-    </div>
+    </div> <!-- Language and Currency dropdown removed per request -->
 </div>
 
 <header id="mainHeader"
-    class="bg-white dark:bg-slate-950 border-b-2 border-slate-100 dark:border-slate-800 transition-all duration-500 sticky top-0 z-100 shadow-sm w-full max-w-full overflow-x-hidden">
+    class="bg-white dark:bg-slate-900 border-b-2 border-slate-100 dark:border-slate-800 transition-colors duration-500 sticky top-0 z-40 shadow-sm w-full max-w-full">
     <div class="container mx-auto px-4 md:px-12 flex items-center justify-between h-[90px]">
 
         <!-- Mobile Menu Toggle (Left on mobile, hidden on desktop) -->
@@ -120,11 +62,11 @@ $activePage = isset($activePage) ? $activePage : '';
         </button>
 
         <!-- Logo (Center on mobile, Left on desktop) -->
-        <div class="w-2/4 md:flex-1 md:w-1/4 flex justify-center md:justify-start flex-shrink-0">
+        <div class="w-2/4 md:flex-1 md:w-1/4 flex justify-center md:justify-start shrink-0 md:pr-4">
             <a href="/index.php" class="flex items-center space-x-2">
                 <span
                     class="text-3xl font-extrabold tracking-tighter text-slate-900 dark:text-white flex items-center group-hover:opacity-80 transition-opacity uppercase">
-                    Krist
+                    Gojacdoors
                 </span>
             </a>
         </div>
@@ -223,20 +165,8 @@ $activePage = isset($activePage) ? $activePage : '';
         </nav>
 
         <!-- Right Icons (Right on desktop and mobile) -->
-        <div class="w-1/4 md:flex-1 md:w-1/4 flex items-center justify-end space-x-6 shrink-0 relative">
+        <div class="w-1/4 md:flex-1 md:w-1/4 flex items-center justify-end space-x-4 shrink-0 relative">
 
-
-
-            <button id="themeToggle"
-                class="hidden text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300">
-                <div class="h-6 w-6 relative" id="themeIconContainer">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                        </path>
-                    </svg>
-                </div>
-            </button>
             <button id="searchToggle" type="button" onclick="toggleSearchOverlay()"
                 class="block text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,17 +174,6 @@ $activePage = isset($activePage) ? $activePage : '';
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </button>
-            <a href="/account/wishlist.php"
-                class="hidden md:block text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white transition-colors duration-300 relative">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                    </path>
-                </svg>
-                <span id="wishlistBadge"
-                    class="absolute -top-1.5 -right-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
-                    style="display: none;">0</span>
-            </a>
             <div class="relative cursor-pointer transition-colors duration-300 text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-white flex items-center gap-2"
                 onclick="toggleMiniCart()">
                 <div class="relative">
@@ -278,115 +197,142 @@ $activePage = isset($activePage) ? $activePage : '';
         </div>
     </div>
 
-    <!-- Immersive Full-Screen Search Modal (Redesigned) -->
+    <!-- Command Palette Search Modal (Iteration 2) -->
     <div id="searchOverlay"
-        class="fixed inset-0 w-full h-full bg-white dark:bg-slate-900 backdrop-blur-3xl transition-all duration-500 opacity-0 scale-95 invisible z-100"
-        style="pointer-events: none;">
+        class="fixed inset-0 w-full h-full bg-black/60 backdrop-blur-md transition-all duration-500 opacity-0 scale-95 invisible flex justify-center items-start pt-12 md:pt-24 px-4 sm:px-6 z-[100] pointer-events-none"
+        onclick="toggleSearchOverlay()">
 
-        <div class="absolute inset-0 overflow-y-auto w-full h-full">
-            <div class="container mx-auto px-4 py-8 md:py-20 max-w-5xl relative min-h-full flex flex-col">
-
-                <!-- Close icon top right matching RevOne premium -->
-                <button onclick="toggleSearchOverlay()"
-                    class="absolute top-6 right-6 md:top-10 md:right-10 text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white hover:rotate-90 transition-all duration-300 p-2 z-10 bg-slate-100 dark:bg-slate-800 rounded-full cursor-pointer shadow-sm">
+        <div class="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-slate-200 dark:border-slate-800"
+            onclick="event.stopPropagation()">
+            <!-- Search Input Header -->
+            <form action="/search.php" method="GET"
+                class="relative w-full border-b border-slate-100 dark:border-slate-800/60 bg-white dark:bg-slate-900 flex items-center px-4 md:px-8 py-5 md:py-6 group">
+                <svg class="w-6 h-6 md:w-8 md:h-8 text-slate-400 dark:text-slate-500 mr-4 shrink-0 transition-colors group-focus-within:text-primary dark:group-focus-within:text-white"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input id="searchOverlayInput" name="q" type="text" placeholder="Search products, categories..."
+                    class="w-full text-xl md:text-2xl lg:text-3xl font-medium bg-transparent text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 outline-none focus:ring-0 leading-none"
+                    autocomplete="off" />
+                <button type="button" onclick="toggleSearchOverlay()"
+                    class="ml-4 p-2 text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg transition-colors shrink-0 text-xs font-bold uppercase tracking-wider hidden md:block">
+                    ESC
+                </button>
+                <button type="button" onclick="toggleSearchOverlay()"
+                    class="ml-2 p-2 text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white shrink-0 md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
                 </button>
+            </form>
 
-                <!-- Monumental Search Field -->
-                <form action="/search.php" method="GET" class="relative w-full mt-10 md:mt-16">
-                    <label for="searchOverlayInput"
-                        class="block text-xs md:text-sm font-bold tracking-widest uppercase text-primary dark:text-white mb-4 pl-2 opacity-80">Find
-                        what you're looking for</label>
-                    <div
-                        class="relative flex items-center border-b-2 border-slate-200 dark:border-slate-800 focus-within:border-primary dark:focus-within:border-white transition-colors duration-500 group">
-                        <input id="searchOverlayInput" name="q" type="text" placeholder="Type here..."
-                            class="w-full text-4xl md:text-7xl font-light tracking-tight bg-transparent text-slate-900 dark:text-white placeholder-slate-300 dark:placeholder-slate-700 outline-none pb-4 focus:ring-0 px-2"
-                            autocomplete="off" />
-                        <button type="submit"
-                            class="absolute right-0 bottom-4 text-slate-300 dark:text-slate-700 group-focus-within:text-primary dark:group-focus-within:text-white transition-colors p-2 hover:scale-110 duration-300">
-                            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </form>
+            <!-- Suggestions Grid Layout -->
+            <div
+                class="p-4 md:p-8 bg-slate-50 dark:bg-slate-900/50 flex flex-col md:flex-row gap-8 max-h-[70vh] overflow-y-auto w-full">
 
-                <!-- Popular Searches -->
-                <div class="mt-8 md:mt-12 transition-all duration-700 delay-200" id="searchSuggestions">
-                    <div class="flex flex-wrap items-center gap-2">
-                        <span
-                            class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mr-2 mb-2 md:mb-0">Trending:</span>
+                <!-- Discover Left Column -->
+                <div class="w-full md:flex-1 shrink-0">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4">
+                        Discover</h4>
+                    <div class="flex flex-wrap gap-2">
                         <a href="/search.php?q=minimalist"
-                            class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 hover:bg-primary hover:border-primary hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-slate-900 transition-colors mb-2 md:mb-0">Minimalist</a>
+                            class="text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/50 rounded-lg px-4 py-2 hover:border-slate-900 hover:text-slate-900 dark:hover:border-white dark:hover:text-white transition-colors shadow-sm">Minimalist</a>
                         <a href="/search.php?q=summer+sale"
-                            class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 hover:bg-primary hover:border-primary hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-slate-900 transition-colors mb-2 md:mb-0">Summer
+                            class="text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/50 rounded-lg px-4 py-2 hover:border-slate-900 hover:text-slate-900 dark:hover:border-white dark:hover:text-white transition-colors shadow-sm">Summer
                             Sale</a>
                         <a href="/search.php?q=oversized+tee"
-                            class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 hover:bg-primary hover:border-primary hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-slate-900 transition-colors mb-2 md:mb-0">Oversized
+                            class="text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/50 rounded-lg px-4 py-2 hover:border-slate-900 hover:text-slate-900 dark:hover:border-white dark:hover:text-white transition-colors shadow-sm">Oversized
                             Tee</a>
+                        <a href="/search.php?q=new+arrivals"
+                            class="text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/50 rounded-lg px-4 py-2 hover:border-slate-900 hover:text-slate-900 dark:hover:border-white dark:hover:text-white transition-colors shadow-sm">New
+                            Arrivals</a>
                     </div>
                 </div>
 
-                <!-- Trending / Suggested Products Area (Only visible on larger screens for immersion) -->
-                <div class="mt-auto hidden md:block pt-16">
-                    <div class="grid grid-cols-4 gap-6">
-                        <!-- Card 1 -->
-                        <div class="group cursor-pointer">
+                <!-- Products Right Column -->
+                <div class="w-full md:flex-[2]">
+                    <h4
+                        class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-between">
+                        Suggested For You
+                        <a href="/shop.php"
+                            class="text-primary dark:text-white hover:underline lowercase tracking-normal font-medium flex items-center">View
+                            all <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7-7">
+                                </path>
+                            </svg></a>
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Product 1 -->
+                        <a href="/product-detail.php?id=1"
+                            class="group flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+                            <div class="w-16 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-900">
+                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=150&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Product">
+                            </div>
+                            <div>
+                                <h5
+                                    class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">
+                                    Deep Neck Ribbon Sweater</h5>
+                                <p class="text-primary font-bold text-sm">$90.00</p>
+                            </div>
+                        </a>
+                        <!-- Product 2 -->
+                        <a href="/product-detail.php?id=2"
+                            class="group flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                             <div
-                                class="bg-slate-100 dark:bg-slate-800/50 rounded-2xl aspect-4/5 overflow-hidden mb-4 relative shadow-sm border border-slate-100 dark:border-slate-800">
+                                class="w-16 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-900 relative">
                                 <span
-                                    class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1.5 rounded-full z-10">Trending</span>
-                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=300&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    class="absolute top-1 left-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[8px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded-sm z-10">New</span>
+                                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=150&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Product">
                             </div>
-                            <h5 class="font-bold text-[13px] text-center text-slate-900 dark:text-white leading-snug">
-                                Deep Neck Ribbon Sweater</h5>
-                            <p class="text-primary font-bold text-center mt-1.5">$90.00</p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="group cursor-pointer">
+                            <div>
+                                <h5
+                                    class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">
+                                    Long sleeve oversized sweater</h5>
+                                <p class="text-primary font-bold text-sm">$50.00</p>
+                            </div>
+                        </a>
+                        <!-- Product 3 -->
+                        <a href="/product-detail.php?id=3"
+                            class="group flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+                            <div class="w-16 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-900">
+                                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=150&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Product">
+                            </div>
+                            <div>
+                                <h5
+                                    class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">
+                                    Leather bucket tote bag</h5>
+                                <p class="text-primary font-bold text-sm">$350.29</p>
+                            </div>
+                        </a>
+                        <!-- Product 4 -->
+                        <a href="/product-detail.php?id=4"
+                            class="group flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                             <div
-                                class="bg-slate-100 dark:bg-slate-800/50 rounded-2xl aspect-4/5 overflow-hidden mb-4 shadow-sm border border-slate-100 dark:border-slate-800 relative">
+                                class="w-16 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-900 relative">
                                 <span
-                                    class="absolute top-3 left-3 bg-slate-900/90 dark:bg-white/90 dark:text-slate-900 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1.5 rounded-full z-10">New</span>
-                                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=300&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[85%] text-center bg-white/95 text-red-500 text-[8px] uppercase tracking-wider font-bold px-1 py-0.5 rounded-sm z-10 shadow-sm truncate">Sale</span>
+                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=150&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Product">
                             </div>
-                            <h5 class="font-bold text-[13px] text-center text-slate-900 dark:text-white leading-snug">
-                                Long sleeve oversized sweater</h5>
-                            <p class="text-primary font-bold text-center mt-1.5">$50.00</p>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="group cursor-pointer">
-                            <div
-                                class="bg-slate-100 dark:bg-slate-800/50 rounded-2xl aspect-4/5 overflow-hidden mb-4 shadow-sm border border-slate-100 dark:border-slate-800">
-                                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=300&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div>
+                                <h5
+                                    class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">
+                                    Rib knitted jumper</h5>
+                                <p class="text-primary font-bold text-sm">$50.00</p>
                             </div>
-                            <h5 class="font-bold text-[13px] text-center text-slate-900 dark:text-white leading-snug">
-                                Leather bucket tote bag</h5>
-                            <p class="text-primary font-bold text-center mt-1.5">$350.29</p>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="group cursor-pointer">
-                            <div
-                                class="bg-slate-100 dark:bg-slate-800/50 rounded-2xl aspect-4/5 overflow-hidden mb-4 relative shadow-sm border border-slate-100 dark:border-slate-800">
-                                <div
-                                    class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md text-red-500 text-[10px] uppercase tracking-wider font-bold px-4 py-1.5 rounded-full z-10 whitespace-nowrap shadow-sm">
-                                    Deal: 21H Left</div>
-                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            </div>
-                            <h5 class="font-bold text-[13px] text-center text-slate-900 dark:text-white leading-snug">
-                                Rib knitted jumper</h5>
-                            <p class="text-primary font-bold text-center mt-1.5">$50.00</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -486,50 +432,7 @@ $activePage = isset($activePage) ? $activePage : '';
             </a>
         </div>
 
-        <div class="flex items-center space-x-6">
-            <div class="relative group/mobilelang cursor-pointer text-slate-600 dark:text-slate-300">
-                <span class="text-[12px] font-bold tracking-widest flex items-center uppercase">
-                    English
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover/mobilelang:rotate-180"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </span>
-                <div
-                    class="absolute bottom-full left-0 mb-2 w-36 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover/mobilelang:opacity-100 group-hover/mobilelang:visible transition-all duration-300 p-2 z-100">
-                    <a href="#"
-                        class="flex items-center space-x-3 px-3 py-2 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
-                        <span class="text-base">🇬🇧</span> <span class="font-medium">English</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center space-x-3 px-3 py-2 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
-                        <span class="text-base">🇩🇪</span> <span class="font-medium">Deutsch</span>
-                    </a>
-                </div>
-            </div>
-            <div class="relative group/mobilecurr cursor-pointer text-slate-600 dark:text-slate-300">
-                <span class="text-[12px] font-bold tracking-widest flex items-center uppercase">
-                    USD $
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover/mobilecurr:rotate-180"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </span>
-                <div
-                    class="absolute bottom-full left-0 mb-2 w-36 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover/mobilecurr:opacity-100 group-hover/mobilecurr:visible transition-all duration-300 p-2 z-100">
-                    <a href="#"
-                        class="flex items-center space-x-3 px-3 py-2 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
-                        <span class="text-base">🇺🇸</span> <span class="font-medium">USD</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center space-x-3 px-3 py-2 text-[13px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
-                        <span class="text-base">🇪🇺</span> <span class="font-medium">EUR</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+
     </div>
 
 </div>
