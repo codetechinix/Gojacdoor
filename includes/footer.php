@@ -81,7 +81,7 @@
 
 <footer id="site-footer" class="bg-slate-800 text-white dark:bg-slate-900 pt-20 pb-8" style="margin-top:-1px">
     <div class="container mx-auto px-4 md:px-8">
-        <div class="grid md:grid-cols-4 gap-12 mb-16">
+        <div class="grid md:grid-cols-3 gap-12 mb-16">
             <div class="space-y-6">
                 <a href="/index.php" class="flex items-center space-x-2">
                     <span class="text-3xl font-bold tracking-tighter flex items-center">
@@ -89,14 +89,14 @@
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>Krist
+                        </svg>Gojacdoors
                     </span>
                 </a>
                 <div class="space-y-4 text-slate-400 text-sm">
                     <p class="flex items-center"><span class="material-symbols-outlined text-sm mr-2">call</span>(704)
                         555-0127</p>
                     <p class="flex items-center"><span
-                            class="material-symbols-outlined text-sm mr-2">mail</span>krist@example.com</p>
+                            class="material-symbols-outlined text-sm mr-2">mail</span>gojacdoors@example.com</p>
                     <p class="flex items-start"><span
                             class="material-symbols-outlined text-sm mr-2 mt-1">location_on</span>3891 Ranchview Dr.
                         Richardson,<br />California 62639</p>
@@ -104,17 +104,6 @@
             </div>
             <div>
                 <h4 class="font-bold mb-6">Information</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a class="hover:text-white transition-colors" href="/account/personal-info.php">My Account</a>
-                    </li>
-                    <li><a class="hover:text-white transition-colors" href="/auth/login.php">Login</a></li>
-                    <li><a class="hover:text-white transition-colors" href="/cart.php">My Cart</a></li>
-                    <li><a class="hover:text-white transition-colors" href="/account/wishlist.php">My Wishlist</a></li>
-                    <li><a class="hover:text-white transition-colors" href="/checkout.php">Checkout</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-6">Service</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
                     <li><a class="hover:text-white transition-colors" href="/pages/about-us.php">About Us</a></li>
                     <li><a class="hover:text-white transition-colors" href="/pages/careers.php">Careers</a></li>
@@ -154,7 +143,7 @@
                 <img alt="Paypal" class="h-6 opacity-60 hover:opacity-100 grayscale transition-all"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrPpgMCfwVv79qKTdmXrGJNWPgmxK1EWZROlDNarbG7hi982--C56ffeeLFBoXiFFkgxhiHDVvYVrxAfaCObe3Fp3-HnQZ8XPHk-5X0rmsgISNjswPbSZ6wCBZYjADb2XVs_bBG1NoDiHVM0gBKhWjRo3YLuTguaQuKCRQDWm4e9Zr9kDgPehmsowK4P8-6Xl7-_dxTDmih0OHBZWuaKNR9XmVnUy5ztdItHAbatvmUkqSiSF0qGBV6p5Hk-8X160-DHaMXuPkCKc" />
             </div>
-            <p>©2024 Krist All Rights reserved</p>
+            <p>©2024 Gojacdoors All Rights reserved</p>
             <div class="flex space-x-6">
                 <!-- Using basic SVG paths for social icons to avoid external dependencies -->
                 <a class="text-slate-400 hover:text-white transition-colors" href="#">
