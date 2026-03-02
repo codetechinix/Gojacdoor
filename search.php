@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Search Results';
+$pageTitle = 'Gojacdoors - Search Results';
 $activePage = 'shop';
 
 $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
@@ -127,9 +127,11 @@ $searchQuery = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
                     </select>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGrid">
                     <!-- Products rendered via JS -->
                 </div>
+                <!-- Pagination Container -->
+                <div id="paginationContainer" class="flex justify-center mt-12 mb-12" data-aos="fade-up"></div>
             </div>
         </div>
     </main>
