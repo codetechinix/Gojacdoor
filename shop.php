@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Shop';
+$pageTitle = 'Gojacdoors - Shop';
 $activePage = 'shop';
 ?>
 <!DOCTYPE html>
@@ -85,6 +85,8 @@ $activePage = 'shop';
                     </select>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGrid"></div>
+                <!-- Pagination Container -->
+                <div id="paginationContainer" class="flex justify-center mt-12 mb-12" data-aos="fade-up"></div>
             </main>
         </div>
     </div>
