@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Search Results';
+$pageTitle = 'Gojacdoors - Search Results';
 $activePage = 'shop';
 ?>
 <!DOCTYPE html>
