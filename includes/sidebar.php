@@ -1,15 +1,7 @@
 <!-- includes/sidebar.php -->
 <?php
 $activePage = isset($activePage) ? $activePage : '';
-$links = [
-    ['href' => '/account/personal-info.php', 'icon' => 'person', 'label' => 'My Profile', 'key' => 'profile'],
-    ['href' => '/account/manage-addresses.php', 'icon' => 'location_on', 'label' => 'Manage Addresses', 'key' => 'addresses'],
-    ['href' => '/account/wishlist.php', 'icon' => 'favorite', 'label' => 'My Wishlist', 'key' => 'wishlist'],
-    ['href' => '/account/saved-cards.php', 'icon' => 'credit_card', 'label' => 'Saved Cards', 'key' => 'saved-cards'],
-    ['href' => '/account/orders.php', 'icon' => 'shopping_bag', 'label' => 'My Orders', 'key' => 'orders'],
-    ['href' => '/account/notifications.php', 'icon' => 'notifications', 'label' => 'Notifications', 'key' => 'notifications'],
-    ['href' => '/account/settings.php', 'icon' => 'settings', 'label' => 'Settings', 'key' => 'settings'],
-];
+$links = [];
 ?>
 <div
     class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
@@ -36,10 +28,6 @@ $links = [
                 </span>
             </a>
         <?php endforeach; ?>
-        <button onclick="handleLogout()"
-            class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors mt-2">
-            <span class="material-symbols-outlined text-xl">logout</span>
-            <span>Logout</span>
-        </button>
+
     </nav>
 </div>
