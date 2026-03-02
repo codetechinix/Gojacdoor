@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Premium Fashion E-Commerce';
+$pageTitle = 'Gojacdoors - Premium Fashion E-Commerce';
 $activePage = 'home';
 ?>
 <!DOCTYPE html>
@@ -165,8 +165,9 @@ $activePage = 'home';
                     </button>
                 </div>
             </div>
-            <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scrollbar-hide pb-4" id="categoriesGrid"></div>
-
+            <div class="swiper categoriesSwiper overflow-hidden">
+                <div class="swiper-wrapper" id="categoriesGrid"></div>
+            </div>
         </div>
     </section>
 
@@ -466,7 +467,7 @@ $activePage = 'home';
                             <p
                                 class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
                                 "Fast shipping and excellent customer service. The items arrived beautifully packaged.
-                                Highly recommend Krist to everyone."
+                                Highly recommend Gojacdoors to everyone."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
@@ -632,7 +633,7 @@ $activePage = 'home';
                             <p
                                 class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
                                 "Fast shipping and excellent customer service. The items arrived beautifully packaged.
-                                Highly recommend Krist to everyone."
+                                Highly recommend Gojacdoors to everyone."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
@@ -712,7 +713,7 @@ $activePage = 'home';
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold dark:text-white mb-3">Our Instagram Stories</h2>
-                <p class="text-slate-500">Follow us @kristfashion</p>
+                <p class="text-slate-500">Follow us @Gojacdoors</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="aspect-square rounded-xl overflow-hidden group relative" data-aos="zoom-in"
@@ -772,8 +773,8 @@ $activePage = 'home';
     </section>
 
     <!-- Promotional Pop-up -->
-    <div id="promoPopup"
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
+    <div id="promoPopup" style="z-index: 120;"
+        class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
         <div
             class="relative w-[95%] max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] translate-y-12 scale-95 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-row overflow-hidden border border-slate-100/50 dark:border-slate-800">
             <!-- Close Button -->
