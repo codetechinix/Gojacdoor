@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Server Error';
+$pageTitle = 'Gojacdoors - Server Error';
 $activePage = '';
 http_response_code(500);
 ?>
