@@ -1,9 +1,9 @@
 <!-- includes/head.php -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?= isset($pageTitle) ? $pageTitle : 'Krist - Premium Fashion E-Commerce' ?></title>
+<title><?= isset($pageTitle) ? $pageTitle : 'Gojacdoors - Premium Fashion E-Commerce' ?></title>
 <meta name="description"
-    content="<?= isset($pageDesc) ? $pageDesc : 'Discover the latest fashion trends at Krist. Shop premium clothing, shoes, and accessories for men, women, and kids.' ?>" />
+    content="<?= isset($pageDesc) ? $pageDesc : 'Discover the latest fashion trends at Gojacdoors. Shop premium clothing, shoes, and accessories for men, women, and kids.' ?>" />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link
