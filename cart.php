@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Shopping Cart';
+$pageTitle = 'Gojacdoors - Shopping Cart';
 $activePage = 'cart';
 ?>
 <!DOCTYPE html>
@@ -51,9 +51,9 @@ $activePage = 'cart';
                             <span class="text-slate-500">Subtotal</span>
                             <span class="font-bold" id="orderSubtotal">$0.00</span>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-slate-500">Shipping</span>
-                            <span class="font-bold">Calculated at next step</span>
+                        <div id="cartDiscountRow" class="justify-between text-green-600 font-medium hidden">
+                            <span class="flex items-center gap-1">Discount (<span id="cartDiscountLabel"></span>)</span>
+                            <span id="cartDiscountAmount">-$0.00</span>
                         </div>
                         <div class="h-px w-full bg-slate-100 dark:bg-slate-700 my-4"></div>
                         <div class="flex justify-between text-lg">
@@ -61,9 +61,9 @@ $activePage = 'cart';
                             <span class="font-bold text-primary" id="orderTotal">$0.00</span>
                         </div>
                     </div>
-                    <a href="/checkout.php"
-                        class="w-full block text-center py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-4">Proceed
-                        to Checkout</a>
+                    <button onclick="checkoutToWhatsApp()"
+                        class="w-full block text-center py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-4">Checkout
+                        On Whatsapp</button>
                 </div>
             </div>
         </div>
