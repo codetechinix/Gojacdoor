@@ -95,30 +95,33 @@ $activePage = isset($activePage) ? $activePage : '';
                 </button>
                 <div
                     class="absolute left-0 top-full w-56 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-b-xl shadow-xl hidden group-hover:block z-50 p-3 mt-0 transform origin-top transition-all antialiased">
-                    <a href="/shop.php?cat=men"
+                    <a href="/shop.php?cat=Entry"
                         class="group/link flex items-center justify-between px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300">
                         <span
-                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Men</span>
+                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Entry
+                            Doors</span>
                         <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </a>
-                    <a href="/shop.php?cat=women"
+                    <a href="/shop.php?cat=Interior"
                         class="group/link flex items-center justify-between px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300">
                         <span
-                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Women</span>
+                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Interior
+                            Doors</span>
                         <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </a>
-                    <a href="/shop.php?cat=kids"
+                    <a href="/shop.php?cat=Security"
                         class="group/link flex items-center justify-between px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300">
                         <span
-                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Kids</span>
+                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Security
+                            Doors</span>
                         <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
@@ -126,20 +129,22 @@ $activePage = isset($activePage) ? $activePage : '';
                         </svg>
                     </a>
                     <div class="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4"></div>
-                    <a href="/shop.php?cat=footwear"
+                    <a href="/shop.php?cat=Sliding"
                         class="group/link flex items-center justify-between px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300">
                         <span
-                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Footwear</span>
+                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Sliding
+                            Doors</span>
                         <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </a>
-                    <a href="/shop.php?cat=accessories"
+                    <a href="/shop.php?cat=Pivot"
                         class="group/link flex items-center justify-between px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300">
                         <span
-                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Accessories</span>
+                            class="font-medium transform transition-transform duration-300 group-hover/link:translate-x-1">Pivot
+                            Doors</span>
                         <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
@@ -154,6 +159,13 @@ $activePage = isset($activePage) ? $activePage : '';
                 Our Story
                 <span
                     class="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-full bg-slate-900 dark:bg-white transition-all duration-300 <?= $activePage === 'about' ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100' ?>"></span>
+            </a>
+
+            <a class="relative group font-medium transition-colors tracking-wide text-[15px] <?= $activePage === 'projects' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white' ?>"
+                href="/pages/projects.php">
+                Projects
+                <span
+                    class="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-full bg-slate-900 dark:bg-white transition-all duration-300 <?= $activePage === 'projects' ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100' ?>"></span>
             </a>
 
             <a class="relative group font-medium transition-colors tracking-wide text-[15px] <?= $activePage === 'blog' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white' ?>"
@@ -374,21 +386,28 @@ $activePage = isset($activePage) ? $activePage : '';
                 </button>
                 <div id="mobileShopMenu"
                     class="hidden pl-4 py-3 space-y-4 border-l-2 border-slate-100 dark:border-slate-800 mt-3">
-                    <a href="/shop.php?cat=men"
-                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Men</a>
-                    <a href="/shop.php?cat=women"
-                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Women</a>
-                    <a href="/shop.php?cat=kids"
-                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Kids</a>
-                    <a href="/shop.php?cat=footwear"
-                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Footwear</a>
-                    <a href="/shop.php?cat=accessories"
-                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Accessories</a>
+                    <a href="/shop.php?cat=Entry"
+                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Entry
+                        Doors</a>
+                    <a href="/shop.php?cat=Interior"
+                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Interior
+                        Doors</a>
+                    <a href="/shop.php?cat=Security"
+                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Security
+                        Doors</a>
+                    <a href="/shop.php?cat=Sliding"
+                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Sliding
+                        Doors</a>
+                    <a href="/shop.php?cat=Pivot"
+                        class="block text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all">Pivot
+                        Doors</a>
                 </div>
             </div>
             <a href="/pages/about-us.php"
                 class="block text-lg font-medium text-slate-900 dark:text-white hover:text-slate-500 transition-colors">Our
                 Story</a>
+            <a href="/pages/projects.php"
+                class="block text-lg font-medium text-slate-900 dark:text-white hover:text-slate-500 transition-colors">Projects</a>
             <a href="/blog.php"
                 class="block text-lg font-medium text-slate-900 dark:text-white hover:text-slate-500 transition-colors">Blog</a>
             <a href="/pages/contact.php"

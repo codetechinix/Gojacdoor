@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Gojacdoors - Premium Fashion E-Commerce';
+$pageTitle = 'Gojacdoors - Premium Door Solutions';
 $activePage = 'home';
 ?>
 <!DOCTYPE html>
@@ -22,8 +22,8 @@ $activePage = 'home';
                 <!-- Slide 1 -->
                 <div class="swiper-slide relative">
                     <div class="absolute inset-0 w-full h-full z-0">
-                        <img alt="Women's fashion collection" class="object-cover object-top w-full h-full"
-                            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=90" />
+                        <img alt="Luxury Entrance Doors" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920&auto=format&fit=crop" />
                         <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
                         </div>
                     </div>
@@ -33,17 +33,17 @@ $activePage = 'home';
                             <p
                                 class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
                                 <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
-                                EST. 2024 • Premium Quality
+                                EST. 1998 • Premium Quality
                             </p>
                             <h1
                                 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                Women's <br />Collection
+                                Entry<br />Masterpieces
                             </h1>
                             <p
                                 class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Discover our curated selection of premium fashion pieces designed for the modern woman.
+                                Make a lasting first impression with our bespoke mahogany and steel entrance systems.
                             </p>
-                            <a href="/shop.php"
+                            <a href="/shop.php?cat=Entry"
                                 class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
                                 Explore Now
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
@@ -58,8 +58,8 @@ $activePage = 'home';
                 <!-- Slide 2 -->
                 <div class="swiper-slide relative">
                     <div class="absolute inset-0 w-full h-full z-0">
-                        <img alt="Men's fashion essentials" class="object-cover object-[center_30%] w-full h-full"
-                            src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=90&w=800" />
+                        <img alt="Security Doors" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=1920&auto=format&fit=crop" />
                         <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
                         </div>
                     </div>
@@ -69,20 +69,20 @@ $activePage = 'home';
                             <p
                                 class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
                                 <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
-                                Timeless Comfort
+                                Uncompromising Safety
                             </p>
                             <h1
                                 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                Men's <br />Essentials
+                                Advanced<br />Security
                             </h1>
                             <p
                                 class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Elevate your everyday style with our handpicked men's essentials built for comfort and
-                                class.
+                                Reinforced steel doors engineered for ultimate protection without compromising elegant
+                                design.
                             </p>
-                            <a href="/shop.php?cat=men"
+                            <a href="/shop.php?cat=Security"
                                 class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
-                                Shop Collection
+                                View Security
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -95,8 +95,8 @@ $activePage = 'home';
                 <!-- Slide 3 -->
                 <div class="swiper-slide relative">
                     <div class="absolute inset-0 w-full h-full z-0">
-                        <img alt="New arrivals collection" class="object-cover object-[center_30%] w-full h-full"
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=90&w=800" />
+                        <img alt="Interior Designs" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1920&auto=format&fit=crop" />
                         <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
                         </div>
                     </div>
@@ -106,19 +106,20 @@ $activePage = 'home';
                             <p
                                 class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
                                 <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
-                                Fresh Drops
+                                Interior Elegance
                             </p>
                             <h1
                                 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                New <br />Arrivals
+                                Designer<br />Interiors
                             </h1>
                             <p
                                 class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Be the first to explore our latest drops — fresh styles updated every week.
+                                Elegant internal doors crafted from premium woods to complement your home's unique
+                                interior style.
                             </p>
-                            <a href="/shop.php"
+                            <a href="/shop.php?cat=Interior"
                                 class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
-                                Discover More
+                                Shop Interiors
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -210,12 +211,13 @@ $activePage = 'home';
                         class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
                         <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
                             <span
-                                class="bg-red-500 text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest">HOT
-                                DEAL</span>
-                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-3">Summer Sale</h3>
+                                class="bg-red-500 text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest uppercase">Limited
+                                Offer</span>
+                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-3 uppercase italic">
+                                Premium Installation</h3>
                             <p
                                 class="text-white/90 font-medium mb-6 md:mb-8 text-sm md:text-lg max-w-[80%] md:max-w-full">
-                                Up to 50% off on summer collection</p>
+                                Book your security door installation today and get 20% off onsite measurement.</p>
                             <div class="flex space-x-2 md:space-x-3 mb-6 md:mb-8">
                                 <div
                                     class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
@@ -252,11 +254,12 @@ $activePage = 'home';
                         class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
                         <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
                             <span
-                                class="bg-primary text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest">NEW
-                                ARRIVAL</span>
-                            <h3 class="text-4xl md:text-5xl font-black mb-3">Winter Collection</h3>
-                            <p class="text-white/90 font-medium mb-8 text-lg">Exclusive new winter arrivals</p>
-                            <a href="/shop.php"
+                                class="bg-primary text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest uppercase">New
+                                Arrival</span>
+                            <h3 class="text-4xl md:text-5xl font-black mb-3 uppercase italic">Smart Entry</h3>
+                            <p class="text-white/90 font-medium mb-8 text-lg">Biometric integrated smart doors now in
+                                stock.</p>
+                            <a href="/shop.php?cat=Entry"
                                 class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-sm transition-colors inline-block shadow-lg">Explore</a>
                         </div>
                     </div>
@@ -420,7 +423,9 @@ $activePage = 'home';
                                     alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -475,7 +480,9 @@ $activePage = 'home';
                                     alt="Marcus King" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Marcus King</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -521,18 +528,19 @@ $activePage = 'home';
                                 </svg>
                             </div>
                             <p
-                                class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
-                                "Great selection of trendy items. The website is easy to navigate and I found exactly
-                                what I was looking for. Will shop here again."
+                                class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow font-medium italic">
+                                "The security door we purchased from Gojacdoors exceeded all expectations. The
+                                installation was seamless, and the level of craftsmanship is truly world-class."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
-                                <img src="https://ui-avatars.com/api/?name=Elena+Rodriguez&background=2563EB&color=fff"
-                                    alt="Elena Rodriguez" class="w-14 h-14 rounded-full object-cover">
+                                <img src="https://ui-avatars.com/api/?name=David+Chen&background=0F172A&color=fff"
+                                    alt="David Chen" class="w-14 h-14 rounded-full object-cover">
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-base">Elena Rodriguez</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
-                                        Buyer</p>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-base">David Chen</h4>
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Architectural Consultant</p>
                                 </div>
                             </div>
                         </div>
@@ -586,7 +594,9 @@ $activePage = 'home';
                                     alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -641,7 +651,9 @@ $activePage = 'home';
                                     alt="Marcus King" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Marcus King</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -697,7 +709,9 @@ $activePage = 'home';
                                     alt="Elena Rodriguez" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Elena Rodriguez</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>

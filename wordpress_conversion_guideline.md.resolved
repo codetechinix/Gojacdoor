@@ -1,0 +1,101 @@
+# Gojacdoors: WordPress & WooCommerce Theme Conversion Guideline
+
+This document outlines the industry-standard, end-to-end process for converting the existing static HTML/Tailwind frontend into a fully functional, custom WordPress WooCommerce theme based on the Underscores (`_s`) starter theme.
+
+> [!IMPORTANT]
+> **Key Project Requirement:** All content currently rendered statically or via JavaScript on the frontend will be dynamically managed and generated from the WordPress dashboard.  
+> This includes, but is not limited to:
+> - Hero sections and background images.
+> - Search functional logic.
+> - Products (including those on countdown timers) and Categories.
+> - Current page content (About Us, Policies, etc.).
+> - Contact information (WhatsApp links, checkout WhatsApp numbers, emails).
+> 
+> **Currency:** All pricing and commerce functions must use the Nigerian Naira (₦) exclusively. USD ($) must not be used.
+
+---
+
+## Phase 1: Environment & Asset Preparation
+
+### 1. Structure Theme Assets
+- **CSS / Scripts:** Move compiled Tailwind CSS, custom JS modules ([main.js](file:///Applications/XAMPP/xamppfiles/htdocs/gojacdoors/assets/js/core/main.js), [components.js](file:///Applications/XAMPP/xamppfiles/htdocs/gojacdoors/assets/js/modules/components.js), [faq.js](file:///Applications/XAMPP/xamppfiles/htdocs/gojacdoors/assets/js/modules/faq.js), etc.), and third-party libraries (AOS, Swiper) into the theme's `assets/` directory (e.g., `assets/css/`, `assets/js/`).
+- **Images / Icons:** Move static baseline images and SVG icons into `assets/images/`.
+
+### 2. Enqueue Scripts and Styles
+- Remove hardcoded `<link>` and `<script>` tags from the HTML.
+- Use `wp_enqueue_scripts` in `functions.php` to properly load stylesheets and JavaScript files.
+- **Dynamic JS Data:** Use `wp_localize_script` to pass dynamic data (like WhatsApp numbers, WooCommerce endpoints, or API nonces) from PHP directly into the JavaScript files.
+
+---
+
+## Phase 2: Core Template Conversion
+
+### 1. `header.php` and `footer.php`
+- **Dynamic Content:** Replace static contact info, logos, and links with WordPress customizer or option page fields (see Phase 5).
+- **Navigation:** Replace static navigation with `wp_nav_menu()`. Register menu locations in `functions.php`.
+- **Search:** Replace the static search bar with a WordPress-native search form, ensuring it hooks into WooCommerce product search if needed.
+
+### 2. The Loop and Index Pages
+- **`index.php` / `front-page.php`:** Set up the custom homepage using Advanced Custom Fields (ACF) to manage hero sliders, countdown timers, and featured product blocks from the WP Admin dashboard.
+- **`page.php`:** Create the default template for static pages (About Us, Contact, Privacy Policy, etc.) using `the_content()`.
+
+---
+
+## Phase 3: WooCommerce Integration (The Core)
+
+### 1. Declare WooCommerce Support & Configuration
+- In `functions.php`, use `add_theme_support( 'woocommerce' )`.
+- Configure WooCommerce general settings to use Nigerian Naira (₦) as the default and only currency.
+
+### 2. Dynamic Product & Category Rendering
+- **Shop Page & Categories:** Modify hooks in `archive-product.php` to match the exact grid layout, filters, and product cards from the static design, ensuring all data (images, prices, titles) comes from the WP database.
+- **Single Product (`single-product.php`):** Implement the custom layout for product images, title, price, add to cart (using AJAX), tabs, and related products.
+- **Countdown Timers:** For products on sale with countdowns, use post meta (custom fields) to set the expiry date in the backend, and output this data into the DOM for the frontend JS to process.
+
+### 3. Cart & Checkout (WhatsApp Integration)
+- Connect the existing off-canvas mini-cart JS to the WooCommerce AJAX cart fragments API.
+- Since the current flow relies on WhatsApp for checkout, modify the standard checkout behavior to dynamically pull the admin-configured WhatsApp number and generate the order message with WooCommerce cart items and Naira pricing.
+
+---
+
+## Phase 4: Custom Post Types and Functionality
+
+### 1. Projects / Portfolio
+- The static "Projects" page requires a Custom Post Type (`project`). Register it in `functions.php` (or an `inc/cpt.php` file).
+- Register a custom taxonomy (`project_category`) for the filtering functionality.
+- Create `archive-project.php` and map the static project grid to a dynamic `WP_Query`.
+
+### 2. FAQ Section
+- Build the FAQs using a Custom Post Type (`faq`) or ACF Repeater fields on the FAQ page template.
+- Output the dynamic data into the existing accordion HTML structure handled by `components.js`.
+
+---
+
+## Phase 5: Dynamic Global Content Management
+
+### Advanced Custom Fields (ACF) PRO & Theme Options
+- **Global Options Page:** Create an ACF Options page to manage site-wide dynamic elements previously hardcoded in JS/HTML:
+  - Header/Footer promotional text.
+  - Social media and contact links (e.g., global WhatsApp number).
+  - Fallback background images.
+- **Page-Specific Content:** Use ACF on individual pages to manage complex layouts (e.g., Hero image, headline text, specific blocks). This ensures *no* user-facing text or critical image is hardcoded.
+
+---
+
+## Phase 6: Optimization, Security, and Polish
+
+### 1. Security & WP Standards
+- Ensure all custom fields rendered to the frontend are properly sanitized and escaped (`esc_html()`, `esc_url()`, `esc_attr()`).
+
+### 2. Performance
+- Configure custom image sizes using `add_image_size()` so WordPress generates exact cropped images for dynamic product grids and blogs.
+- Minimize heavy dependencies; utilize the vanilla JS (`components.js`, `main.js`) from the static files over installing excessive plugins.
+
+---
+
+## Next Steps for Execution
+1. Initialize the `assets` pipeline (Tailwind CSS generation) inside the `themes/gojacdoors` folder.
+2. Port `header.php` and `footer.php`, replacing static settings with custom options fields.
+3. Build the dynamic homepage (`front-page.php`) using ACF.
+4. Activate WooCommerce, set currency to Naira, and implement shop loops and WhatsApp checkout integration.
+5. Create custom post types (Projects, FAQs).

@@ -4,6 +4,12 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### [2026-03-04T11:45:00+01:00] Development Credits & Footer Update
+
+#### Changed
+- **Footer Development Credits (`includes/footer.php`):** Added development credits for `Codetechinix.com` and `thegoaldigitalagency.com` in the sub-footer. The links are styled with subtle underlines and hover effects, opening in new tabs to maintain user session.
+
+
 ### [2026-03-02T20:10:00+01:00] Blog Pagination, Dynamic Filtering & Breadcrumbs
 
 #### Added
@@ -76,6 +82,18 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 #### Changed
 
 - **Hero Slider Height & Positioning (`index.php`, `input.css`):** Adjusted the desktop hero slider height to dynamically fit the initial viewport using `calc(100vh - 130px)`. Updated background image object positions (`object-top`, `object-[center_30%]`) to ensure subjects remain visibly framed. Changed Swiper pagination dots to white for improved contrast against the dark overlay.
+
+### [2026-02-27T23:30:00+01:00] Homepage Layout Refinements
+
+#### Changed
+
+- **Mobile Header Overflow (`includes/header.php`):** Implemented `max-w-full overflow-x-hidden` on the main sticky header wrapper to resolve horizontal layout breaks on small (375px) viewports caused by expansive grid containers.
+- **Promotional Banner Formatting (`index.php`):** Expanded internal padding (`p-6` to `p-8` / `p-16`) on the "Autumn Collection" banner to provide cleaner breathing room for typography and prevent text from feeling boxed in on mobile screens.
+- **Counter Up Spacing (`index.php`):** Scaled down the top padding (`pt-12` to `pt-10`) and horizontal margins on the "Happy Customers / Premium Quality" counter cards for mobile viewports, resolving disjointed card stretching.
+
+#### Fixed
+
+- **Broken Category Images (`assets/js/modules/components.js`):** Repaired an unresolving Unsplash URL driving the "Kids" category card natively in the JS product mapping, restoring visual parity to the scroll grid.
 
 ### [2026-02-26T11:00:00+01:00] Custom Toasts & UI Refinements
 
@@ -195,6 +213,19 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 - **Search Overlay Z-Index (`includes/header.php`):** Set inline `style="z-index:9999"` to guarantee the overlay renders above the hero slider and all other page elements. Tailwind's `z-9999` class was not in the compiled output.
 
+### [2026-02-12T05:30:00+01:00] Security Hardening & Server Configuration
+
+#### Added
+- **Apache Security Configuration (`render-apache.conf`):** Implemented a robust security layer including:
+  - **Security Headers:** Added `X-Frame-Options`, `X-Content-Type-Options`, `X-XSS-Protection`, and `Referrer-Policy`.
+  - **Access Controls:** Restricted access to sensitive file types (`.env`, `.git`, `.log`, `.sql`, etc.) and the `includes/` directory.
+  - **Bot Protection:** Blocked common malicious user agents and suspicious query strings.
+- **Custom Error Handling:** Configured branded `404`, `403`, and `500` error pages.
+
+#### Changed
+- **Clean URLs:** Optimized URL structure by stripping `.php` extensions and forcing HTTPS/trailing slashes.
+- **Performance Optimization:** Enabled GZIP compression and configured browser caching for static assets.
+
 ### [2026-02-22T10:50:00+01:00] Error Pages, Benefits Bar & Footer Refinements
 
 #### Added
@@ -243,6 +274,13 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 - **Product Detail (`product-detail.php`):** Added a thumbnail image gallery, a review modal with interactive stars, and dynamic "Sold Out" badge logic layout.
 - **Checkout & Contact (`checkout.php`, `contact.php`, `footer.php`):** Added embedded Google Map to the contact page, and premium vector payment provider logos to the checkout and footer sections.
 - **Tailwind Refactoring:** Fixed multiple IDE syntax lints including `shrink-0` and `z-100`.
+
+### [2026-02-01T15:00:00+01:00] Homepage Refactoring & Precision Capital LLC Alignment
+
+#### Changed
+- **Hero Section (`index.php`):** Updated the primary background image and refined the call-to-action text. Commented out the video play button for a cleaner visual focus.
+- **About Us Section (`index.php`):** Updated the narrative content to align specifically with Precision Capital LLC branding.
+- **Section Cleanup:** Removed the "benefits" section to reduce homepage clutter and focus on core services.
 
 ### [2026-01-31T00:00:00+00:00] Base Template Changes
 
@@ -300,15 +338,3 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 ### Removed
 
 - **Material Symbols:** Removed the Google Fonts CSS link for Material Symbols (`<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined..." />`) as it is no longer used, improving performance.
-
-### [2026-02-27T23:30:00+01:00] Homepage Layout Refinements
-
-#### Changed
-
-- **Mobile Header Overflow (`includes/header.php`):** Implemented `max-w-full overflow-x-hidden` on the main sticky header wrapper to resolve horizontal layout breaks on small (375px) viewports caused by expansive grid containers.
-- **Promotional Banner Formatting (`index.php`):** Expanded internal padding (`p-6` to `p-8` / `p-16`) on the "Autumn Collection" banner to provide cleaner breathing room for typography and prevent text from feeling boxed in on mobile screens.
-- **Counter Up Spacing (`index.php`):** Scaled down the top padding (`pt-12` to `pt-10`) and horizontal margins on the "Happy Customers / Premium Quality" counter cards for mobile viewports, resolving disjointed card stretching.
-
-#### Fixed
-
-- **Broken Category Images (`assets/js/modules/components.js`):** Repaired an unresolving Unsplash URL driving the "Kids" category card natively in the JS product mapping, restoring visual parity to the scroll grid.

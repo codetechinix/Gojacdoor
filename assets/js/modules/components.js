@@ -7,11 +7,11 @@
 
 /* ── Product Data Store ───────────────────────────────── */
 const PRODUCTS = [
-    { id: 1, name: 'Luxury Mahogany Entrance Door', brand: 'Gojac Premium', price: 450.00, oldPrice: 520.00, image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop', rating: 4.8, reviews: 124, category: 'Entrance', size: ['2.6FT x 7FT', '3FT x 7FT', '3.6FT x 7FT', '4FT x 7FT'] },
+    { id: 1, name: 'Luxury Mahogany Entrance Door', brand: 'Gojac Premium', price: 450.00, oldPrice: 520.00, image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop', rating: 4.8, reviews: 124, category: 'Entry', size: ['2.6FT x 7FT', '3FT x 7FT', '3.6FT x 7FT', '4FT x 7FT'] },
     { id: 2, name: 'Modern Steel Security Door', brand: 'Gojac Protect', price: 680.00, oldPrice: 750.00, image: 'https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=600&auto=format&fit=crop', rating: 4.9, reviews: 89, category: 'Security', size: ['3FT x 7FT', '3.6FT x 7FT'] },
     { id: 3, name: 'Internal White Primed Door', brand: 'Gojac Interior', price: 120.00, oldPrice: 150.00, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop', rating: 4.5, reviews: 210, category: 'Interior', size: ['2.6FT x 7FT', '3FT x 7FT'], inStock: false },
-    { id: 4, name: 'Classic Walnut Pivot Door', brand: 'Gojac Premium', price: 890.00, oldPrice: null, image: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&auto=format&fit=crop', rating: 5.0, reviews: 56, category: 'Entrance', size: ['3.6FT x 7FT', '4FT x 7FT'] },
-    { id: 5, name: 'Aluminum Sliding Patio Door', brand: 'Gojac Outdoor', price: 1200.00, oldPrice: 1400.00, image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=600&auto=format&fit=crop', rating: 4.6, reviews: 34, category: 'Outdoor', size: ['6FT x 7FT', '8FT x 7FT'] },
+    { id: 4, name: 'Classic Walnut Pivot Door', brand: 'Gojac Premium', price: 890.00, oldPrice: null, image: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&auto=format&fit=crop', rating: 5.0, reviews: 56, category: 'Pivot', size: ['3.6FT x 7FT', '4FT x 7FT'] },
+    { id: 5, name: 'Aluminum Sliding Patio Door', brand: 'Gojac Outdoor', price: 1200.00, oldPrice: 1400.00, image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=600&auto=format&fit=crop', rating: 4.6, reviews: 34, category: 'Sliding', size: ['6FT x 7FT', '8FT x 7FT'] },
     { id: 6, name: 'Glass Panel French Doors', brand: 'Gojac Interior', price: 550.00, oldPrice: 600.00, image: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=600&auto=format&fit=crop', rating: 4.3, reviews: 45, category: 'Interior', size: ['4FT x 7FT', '5FT x 7FT'] },
     { id: 7, name: 'Rustic Oak Interior Door', brand: 'Gojac Interior', price: 320.00, oldPrice: null, image: 'https://images.unsplash.com/photo-1517814332644-b91ad3c0592b?q=80&w=600&auto=format&fit=crop', rating: 4.1, reviews: 29, category: 'Interior', size: ['2.6FT x 7FT', '3FT x 7FT'], inStock: false },
     { id: 8, name: 'Industrial Black Metal Door', brand: 'Gojac Protect', price: 750.00, oldPrice: 850.00, image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=600&auto=format&fit=crop', rating: 4.7, reviews: 156, category: 'Security', size: ['3FT x 7FT', '3.6FT x 7FT'] },
@@ -40,7 +40,15 @@ const BLOGS = [
 
 /* ── Cart State ───────────────────────────────────────── */
 let cart = JSON.parse(localStorage.getItem('gojacdoors_cart')) || [];
-let compareList = JSON.parse(localStorage.getItem('gojacdoors_compare')) || [];
+let compareList = [];
+try {
+    const storedCompare = localStorage.getItem('gojacdoors_compare');
+    compareList = storedCompare ? JSON.parse(storedCompare) : [];
+    if (!Array.isArray(compareList)) compareList = [];
+} catch (e) {
+    console.warn('[Debug] Error parsing compareList from localStorage:', e);
+    compareList = [];
+}
 let appliedDiscount = JSON.parse(localStorage.getItem('gojacdoors_discount')) || null;
 
 /**
@@ -239,7 +247,7 @@ function updateCompareUI() {
             }));
         }
         floater.innerHTML = `
-        <button onclick="openCompareModal()" class="bg-primary dark:bg-white text-white shadow-2xl px-6 py-3.5 rounded-full font-bold tracking-widest uppercase text-[11px] md:text-xs hover:bg-slate-900 dark:hover:bg-slate-400 dark:hover:text-slate-900 duration-300 flex items-center justify-center gap-2 group border-2 border-transparent">
+        <button onclick="openCompareModal()" class="bg-primary text-white shadow-2xl px-6 py-3.5 rounded-full font-bold tracking-widest uppercase text-[11px] md:text-xs hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-400 dark:hover:text-white duration-300 flex items-center justify-center gap-2 group border-2 border-transparent">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 group-hover:scale-110 transition-transform">
                 <path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H7.5a.75.75 0 0 1 0-1.5h11.69l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-7.94 9a.75.75 0 0 1 0 1.06l-3.22 3.22H16.5a.75.75 0 0 1 0 1.5H4.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
             </svg>
@@ -685,43 +693,6 @@ function renderFooter() {
     </div>`;
 }
 
-/* ── Account Sidebar ──────────────────────────────────── */
-function renderAccountSidebar(activePage = '') {
-    const links = [
-        { href: 'account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>', label: 'My Profile', key: 'profile' },
-        { href: 'account/personal-info.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>', label: 'Personal Information', key: 'personal-info' },
-        { href: 'account/orders.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>', label: 'My Orders', key: 'orders' },
-        { href: 'account/wishlist.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>', label: 'My Wishlist', key: 'wishlist' },
-        { href: 'account/manage-addresses.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Manage Addresses', key: 'addresses' },
-        { href: 'account/saved-cards.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>', label: 'Saved Cards', key: 'saved-cards' },
-        { href: 'account/notifications.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>', label: 'Notifications', key: 'notifications' },
-        { href: 'account/settings.php', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>', label: 'Settings', key: 'settings' },
-    ];
-    return `
-        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
-        <div class="p-6 border-b border-slate-100 dark:border-slate-800">
-            <div class="flex items-center space-x-4">
-                <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">JD</div>
-                <div>
-                    <h3 class="font-bold text-slate-900 dark:text-white">John Doe</h3>
-                    <p class="text-sm text-slate-500">john.doe@example.com</p>
-                </div>
-            </div>
-        </div>
-        <nav class="p-2">
-            ${links.map(l => `
-            <a href="/${l.href}" class="flex items-center space-x-3 px-4 py-3 rounded-md text-sm font-medium transition-colors ${activePage === l.key ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}">
-                ${l.icon}
-                <span>${l.label}</span>
-            </a>`).join('')}
-            <button onclick="handleLogout()" class="w-full flex items-center space-x-3 px-4 py-3 rounded-md text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors mt-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                <span>Logout</span>
-            </button>
-        </nav>
-    </div> `;
-}
-
 /* ── Mini Cart Drawer ─────────────────────────────────── */
 function renderMiniCart() {
     const existing = document.getElementById('miniCartDrawer');
@@ -1025,30 +996,24 @@ function handleSubscribe(e) {
     input.value = '';
 }
 
-function handleLogout() {
-    showToast('Logged out successfully', 'info');
-    setTimeout(() => window.location.href = '/auth/login.php', 1000);
-}
-
 /* ── Product Card Renderer ────────────────────────────── */
 
-function renderProductCard(product, delay = 0) {
+function renderProductCard(product, delay = 0, noAos = false) {
     const isSoldOut = product.inStock === false;
+    const aosAttr = noAos ? '' : `data-aos="fade-up" data-aos-delay="${delay}"`;
     return `
-        <div class="group bg-white dark:bg-slate-900 rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800" data-aos="fade-up" data-aos-delay="${delay}">
-        <div class="relative overflow-hidden aspect-3/4">
-            <a href="/product-detail.php?id=${product.id}">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${isSoldOut ? 'opacity-50 grayscale' : ''}"/>
-            </a>
+        <div class="group bg-white dark:bg-slate-900 rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800 ${noAos ? 'opacity-100 visible' : ''}" ${aosAttr}>
+        <div class="relative w-full overflow-hidden" style="height: 0; padding-bottom: 133.33%;">
+            <img src="${product.image}" alt="${product.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${isSoldOut ? 'opacity-50 grayscale' : ''}"/>
             ${product.oldPrice && !isSoldOut ? `<span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
             ${isSoldOut ? `<span class="absolute top-3 left-3 bg-slate-800 dark:bg-slate-700 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wider uppercase shadow-sm">Sold Out</span>` : ''}
             <div class="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                <button onclick="toggleCompare(${product.id});" data-product-id="${product.id}" class="compare-btn-card w-9 h-9 ${compareList.includes(product.id) ? 'bg-primary text-white scale-110 shadow-lg' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300'} rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all duration-300" title="Compare">
+                <button onclick="toggleCompare(${product.id});" data-product-id="${product.id}" class="compare-btn-card w-9 h-9 ${compareList.includes(product.id) ? 'bg-primary text-white dark:bg-white dark:text-primary scale-110 shadow-lg' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-slate-900'} rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all duration-300" title="Compare">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                         <path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H7.5a.75.75 0 0 1 0-1.5h11.69l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-7.94 9a.75.75 0 0 1 0 1.06l-3.22 3.22H16.5a.75.75 0 0 1 0 1.5H4.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                     </svg>
                 </button>
-                <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" title="Quick View">
+                <button onclick="openQuickView(${product.id})" class="w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors" title="Quick View">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                 </button>
                 <button onclick="${isSoldOut ? '' : `addToCart(${product.id})`}" class="md:hidden w-9 h-9 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors ${isSoldOut ? 'opacity-50 cursor-not-allowed' : ''}" title="Add to Cart">
@@ -1065,7 +1030,7 @@ function renderProductCard(product, delay = 0) {
         <div class="p-4">
             <a href="/product-detail.php?id=${product.id}" class="block">
                 <p class="text-[11px] text-slate-400 dark:text-slate-500 mb-1 font-medium tracking-wide uppercase">${product.brand} &bull; <span class="text-primary">${product.category}</span></p>
-                <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-2 line-clamp-1 group-hover:text-primary transition-colors">${product.name}</h3>
+                <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-2 line-clamp-1 hover:text-slate-400 ">${product.name}</h3>
                 <div class="flex items-center space-x-1 mb-2">${renderStars(product.rating)}<span class="text-xs text-slate-500 ml-1">(${product.reviews})</span></div>
             </a>
             <div class="flex items-center space-x-2">
@@ -1256,23 +1221,6 @@ function renderStars(rating) {
     return html;
 }
 
-/* ── Checkout Stepper ─────────────────────────────────── */
-function renderCheckoutStepper(currentStep = 1) {
-    const steps = ['Shopping Cart', 'Checkout', 'Payment', 'Confirmation'];
-    return `
-        <div class="flex items-center justify-center space-x-2 md:space-x-4 mb-12" data-aos="fade-down">
-            ${steps.map((s, i) => `
-        <div class="flex items-center">
-            <div class="flex items-center space-x-2">
-                <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${i + 1 <= currentStep ? 'bg-primary text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-500'}">${i + 1}</span>
-                <span class="hidden sm:inline text-sm font-medium ${i + 1 <= currentStep ? 'text-primary dark:text-white' : 'text-slate-400'}">${s}</span>
-            </div>
-            ${i < steps.length - 1 ? `<div class="w-8 md:w-16 h-0.5 mx-2 ${i + 1 < currentStep ? 'bg-primary' : 'bg-slate-200 dark:bg-slate-700'}"></div>` : ''}
-        </div>`).join('')
-        }
-    </div> `;
-}
-
 /* ── Breadcrumb ───────────────────────────────────────── */
 function renderBreadcrumb(items) {
     return `
@@ -1290,7 +1238,7 @@ function renderFloatingButtons() {
 
     // Theme Toggle
     const themeBtn = document.createElement('button');
-    themeBtn.className = 'w-12 h-12 bg-white dark:bg-slate-800 text-slate-700 dark:text-white rounded-full shadow-lg flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700';
+    themeBtn.className = 'w-12 h-12 bg-white dark:bg-slate-800 text-slate-700 dark:text-white rounded-full shadow-lg flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-primary transition-colors border border-slate-200 dark:border-slate-700';
     themeBtn.setAttribute('aria-label', 'Toggle Dark Mode');
     themeBtn.id = 'floatingThemeToggle';
 
@@ -1358,7 +1306,6 @@ function initgojacdoors() {
     renderDarkModeToggle();
     renderFloatingButtons();
     updateCartBadge();
-    // updateWishlistBadge();
     updateCompareUI();
     // Init AOS
     if (typeof AOS !== 'undefined') {
@@ -1506,11 +1453,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const catGrid = document.getElementById('categoriesGrid');
     if (catGrid) {
         const categoriesContent = [
-            { id: 'men', name: 'Men', image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=600&auto=format&fit=crop', items: 124 },
-            { id: 'women', name: 'Women', image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=640&h=800&fit=crop&q=80', items: 86 },
-            { id: 'kids', name: 'Kids', image: 'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?q=80&w=600&auto=format&fit=crop', items: 54 },
-            { id: 'accessories', name: 'Accessories', image: 'https://images.unsplash.com/photo-1509319117193-57bab727e09d?q=80&w=600&auto=format&fit=crop', items: 42 },
-            { id: 'footwear', name: 'Footwear', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop', items: 78 }
+            { id: 'Entry', name: 'Entry Doors', image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop', items: 45 },
+            { id: 'Interior', name: 'Interior Doors', image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop', items: 120 },
+            { id: 'Security', name: 'Security Doors', image: 'https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=600&auto=format&fit=crop', items: 32 },
+            { id: 'Sliding', name: 'Sliding Doors', image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=600&auto=format&fit=crop', items: 28 },
+            { id: 'Pivot', name: 'Pivot Doors', image: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&auto=format&fit=crop', items: 15 }
         ];
 
         catGrid.innerHTML = categoriesContent.map((cat, i) => `
@@ -2307,40 +2254,88 @@ function initProductDetailsPage() {
         ratingContainer.innerHTML = renderStars(product.rating || 5);
     }
 
-    // Related Products Swiper
+    // Related Products Section
     const relatedContainer = document.getElementById('relatedProductsContainer');
     if (relatedContainer && typeof renderProductCard === 'function') {
-        const relatedProducts = PRODUCTS.filter(p => p.id !== product.id && p.category === product.category).slice(0, 8);
-        const toShow = relatedProducts.length >= 3 ? relatedProducts : PRODUCTS.filter(p => p.id !== product.id).slice(0, 8);
+        try {
+            const currentCat = product.category || 'Interior';
+            const relatedProducts = PRODUCTS.filter(p => p.id !== product.id && p.category === currentCat).slice(0, 8);
+            const toShow = relatedProducts.length >= 4 ? relatedProducts : PRODUCTS.filter(p => p.id !== product.id).slice(0, 8);
 
-        relatedContainer.innerHTML = toShow.map((p) => `
-            <div class="swiper-slide h-auto">
-                ${renderProductCard(p, 0)}
-            </div>
-        `).join('');
+            console.log('[Debug] Product Detail Page: Initializing Related Products. Count:', toShow.length);
 
-        if (typeof Swiper !== 'undefined') {
-            // Destroy existing swiper if any
-            if (window.relatedSwiperInstance) window.relatedSwiperInstance.destroy();
+            if (toShow.length > 0) {
+                relatedContainer.innerHTML = toShow.map((p, i) => `
+                    <div class="swiper-slide h-auto">
+                        ${renderProductCard(p, i * 50, true)}
+                    </div>
+                `).join('');
 
-            window.relatedSwiperInstance = new Swiper('.relatedSwiper', {
-                slidesPerView: 1.2,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: { delay: 4000, disableOnInteraction: false },
-                grabCursor: true,
-                navigation: {
-                    nextEl: '#relatedNext',
-                    prevEl: '#relatedPrev',
-                },
-                breakpoints: {
-                    640: { slidesPerView: 2, spaceBetween: 24 },
-                    1024: { slidesPerView: 3, spaceBetween: 30 }
+                if (typeof Swiper !== 'undefined') {
+                    if (window.relatedSwiperInstance) {
+                        window.relatedSwiperInstance.destroy(true, true);
+                    }
+
+                    window.relatedSwiperInstance = new Swiper('.relatedSwiper', {
+                        slidesPerView: 2,
+                        spaceBetween: 16,
+                        loop: false,
+                        autoplay: { delay: 4000, disableOnInteraction: false },
+                        grabCursor: true,
+                        observer: true,
+                        observeParents: true,
+                        watchSlidesProgress: false,
+                        centeredSlides: false,
+                        touchMoveStopPropagation: true,
+                        navigation: {
+                            nextEl: '#relatedNext',
+                            prevEl: '#relatedPrev',
+                        },
+                        breakpoints: {
+                            768: { slidesPerView: 2, spaceBetween: 24 },
+                            1024: { slidesPerView: 3, spaceBetween: 30 }
+                        }
+                    });
                 }
-            });
+
+                // Refresh AOS instance to handle newly injected elements (for other page parts if any)
+                if (typeof AOS !== 'undefined') {
+                    setTimeout(() => {
+                        AOS.refresh();
+                        // Fallback: If still invisible after 1s, force reveal the whole section
+                        setTimeout(() => {
+                            const section = document.getElementById('relatedProductsSection');
+                            const cards = relatedContainer.querySelectorAll('.swiper-slide > div, [data-aos]');
+
+                            if (section) {
+                                section.classList.remove('opacity-0', 'invisible');
+                                section.style.opacity = '1';
+                                section.style.visibility = 'visible';
+                            }
+
+                            if (cards.length > 0) {
+                                console.log('[Debug] Forced reveal of related product cards (refined)');
+                                cards.forEach(el => {
+                                    el.classList.remove('opacity-0', 'invisible', 'fade-up');
+                                    el.classList.add('aos-animate');
+                                    el.style.opacity = '1';
+                                    el.style.visibility = 'visible';
+                                    el.style.setProperty('opacity', '1', 'important');
+                                    el.style.setProperty('visibility', 'visible', 'important');
+                                });
+                            }
+                        }, 500);
+                    }, 100);
+                }
+            } else {
+                // If no products to show, hide the section
+                const section = document.getElementById('relatedProductsSection');
+                if (section) section.style.display = 'none';
+            }
+        } catch (err) {
+            console.error('[Error] Failed to init Related Products:', err);
         }
     }
-
     // Initialize Reviews
     if (typeof initProductReviews === 'function') initProductReviews(product.id);
 
@@ -2353,7 +2348,7 @@ function initProductDetailsPage() {
             tabPanels[0].classList.remove('hidden');
         }
     }
-}
+};
 
 // Qty Counter Logic
 window.changeQty = function (delta) {
@@ -2374,6 +2369,9 @@ window.toggleReviewModal = function () {
         modal.classList.remove('hidden');
         modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
+
+        // Force reflow
+        void modal.offsetWidth;
 
         setTimeout(() => {
             content.classList.remove('scale-95', 'opacity-0');
@@ -3112,5 +3110,171 @@ window.initSharing = function () {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }
         };
+    });
+};
+
+/* ── FAQ System ────────────────────────────────────────── */
+window.initFAQ = function () {
+    const faqSearch = document.getElementById('faqSearch');
+    const faqTabs = document.querySelectorAll('.faq-tab');
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    if (faqToggles.length === 0) return;
+
+    // Accordion Logic
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const item = toggle.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const chevron = toggle.querySelector('.faq-chevron');
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherChevron = otherItem.querySelector('.faq-chevron');
+                    if (otherAnswer && otherAnswer.classList.contains('open')) {
+                        otherAnswer.classList.remove('open');
+                        otherChevron.classList.remove('rotated');
+                    }
+                }
+            });
+
+            if (answer) {
+                const isOpen = answer.classList.contains('open');
+                answer.classList.toggle('open', !isOpen);
+                if (chevron) chevron.classList.toggle('rotated', !isOpen);
+            }
+        });
+    });
+
+    // Category Filtering
+    faqTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.getAttribute('data-category');
+            faqTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            faqItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                item.style.display = (category === 'all' || itemCategory === category) ? 'block' : 'none';
+            });
+            if (faqSearch) faqSearch.value = '';
+        });
+    });
+
+    // Search Logic
+    if (faqSearch) {
+        faqSearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            faqItems.forEach(item => {
+                const toggleSpan = item.querySelector('.faq-toggle span');
+                const answerP = item.querySelector('.faq-answer p');
+                const question = toggleSpan ? toggleSpan.textContent.toLowerCase() : '';
+                const answer = answerP ? answerP.textContent.toLowerCase() : '';
+
+                if (question.includes(query) || answer.includes(query)) {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden-by-search');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('hidden-by-search');
+                }
+            });
+
+            if (query.length > 0) {
+                faqTabs.forEach(t => {
+                    t.classList.toggle('active', t.getAttribute('data-category') === 'all');
+                });
+            }
+        });
+    }
+};
+
+/* ── Projects Module ───────────────────────────────────── */
+window.initProjects = function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (filterBtns.length === 0 && projectItems.length === 0) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.classList.remove('hidden');
+                    if (typeof AOS !== 'undefined') item.setAttribute('data-aos', 'fade-up');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            if (typeof AOS !== 'undefined') AOS.refresh();
+        });
+    });
+
+    const modal = document.getElementById('projectModal');
+    if (!modal) return;
+
+    const modalContent = document.getElementById('modalContent');
+    const closeBtns = document.querySelectorAll('.modal-close');
+    const viewBtns = document.querySelectorAll('.view-project-btn');
+
+    const mTitle = document.getElementById('modalTitle');
+    const mLocation = document.getElementById('modalLocation');
+    const mClient = document.getElementById('modalClient');
+    const mMaterial = document.getElementById('modalMaterial');
+    const mHardware = document.getElementById('modalHardware');
+    const mDesc = document.getElementById('modalDesc');
+    const mImg = document.getElementById('modalMainImg');
+    const mThumbs = document.getElementById('modalThumbnails');
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            try {
+                const data = JSON.parse(btn.getAttribute('data-project'));
+                mTitle.textContent = data.title;
+                mLocation.textContent = data.location;
+                mClient.textContent = data.client;
+                mMaterial.textContent = data.material;
+                mHardware.textContent = data.hardware;
+                mDesc.textContent = data.description;
+                mImg.src = data.images[0];
+
+                mThumbs.innerHTML = '';
+                if (data.images.length > 1) {
+                    data.images.forEach((imgSrc, idx) => {
+                        const thumb = document.createElement('div');
+                        thumb.className = `w-16 h-16 rounded-xl overflow-hidden border-2 cursor-pointer transition-all ${idx === 0 ? 'border-primary' : 'border-transparent'}`;
+                        thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
+                        thumb.addEventListener('click', () => {
+                            mImg.src = imgSrc;
+                            document.querySelectorAll('#modalThumbnails div').forEach(d => d.classList.remove('border-primary'));
+                            thumb.classList.add('border-primary');
+                        });
+                        mThumbs.appendChild(thumb);
+                    });
+                }
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('translate-y-20');
+                document.body.style.overflow = 'hidden';
+            } catch (e) {
+                console.error("Error parsing project data:", e);
+            }
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modalContent.classList.add('translate-y-20');
+        document.body.style.overflow = '';
+    };
+
+    closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
     });
 };

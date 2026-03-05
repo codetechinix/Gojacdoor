@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Gojacdoors - FAQ';
-$activePage = '';
+$activePage = 'faq';
 ?>
 <!DOCTYPE html>
 <html class="light" lang="en">
@@ -382,6 +382,11 @@ $activePage = '';
     </main>
 
     <?php include '../includes/footer.php'; ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initFAQ === 'function') initFAQ();
+        });
+    </script>
 </body>
 
 </html>

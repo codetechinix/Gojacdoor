@@ -26,13 +26,19 @@ $activePage = 'shop';
                         <div class="filter-content open space-y-2 mt-2">
                             <label class="flex items-center text-sm"><input type="checkbox"
                                     class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2"
-                                    data-filter="cat" value="men" /> Men</label>
+                                    data-filter="cat" value="Entry" /> Entry Doors</label>
                             <label class="flex items-center text-sm"><input type="checkbox"
                                     class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2"
-                                    data-filter="cat" value="women" /> Women</label>
+                                    data-filter="cat" value="Interior" /> Interior Doors</label>
                             <label class="flex items-center text-sm"><input type="checkbox"
                                     class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2"
-                                    data-filter="cat" value="kids" /> Kids</label>
+                                    data-filter="cat" value="Security" /> Security Doors</label>
+                            <label class="flex items-center text-sm"><input type="checkbox"
+                                    class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2"
+                                    data-filter="cat" value="Sliding" /> Sliding Doors</label>
+                            <label class="flex items-center text-sm"><input type="checkbox"
+                                    class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mr-2"
+                                    data-filter="cat" value="Pivot" /> Pivot Doors</label>
                         </div>
                     </div>
                     <!-- Price Filter -->
