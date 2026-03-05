@@ -69,3 +69,9 @@ phpunit.xml
 /dist/
 /public/build/
 .cache/
+
+# Wordpress Local Development
+wordpress/
+
+#Backup
+DO_NOT_EDIT/

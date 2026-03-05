@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Premium Fashion E-Commerce';
+$pageTitle = 'Gojacdoors - Premium Door Solutions';
 $activePage = 'home';
 ?>
 <!DOCTYPE html>
@@ -13,32 +13,38 @@ $activePage = 'home';
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden">
 
     <?php include 'includes/header.php'; ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-    <main class="relative bg-[#f8f6f0] dark:bg-slate-900 h-[650px] md:h-[700px] lg:h-[800px] overflow-hidden group">
+    <main
+        class="relative bg-[#f8f6f0] dark:bg-slate-900 h-[650px] md:h-[700px] lg:h-[calc(100vh-130px)] overflow-hidden group">
         <div class="swiper heroSwiper w-full h-full">
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
-                <div class="swiper-slide">
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 w-full h-full z-0">
+                        <img alt="Luxury Entrance Doors" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920&auto=format&fit=crop" />
+                        <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
+                        </div>
+                    </div>
                     <div
-                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative">
-                        <div class="relative z-20 hero-text-content mt-12 md:mt-0">
+                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative z-10">
+                        <div class="relative hero-text-content mt-12 md:mt-0">
                             <p
-                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-slate-800 dark:text-slate-300 flex items-center gap-3">
-                                <span class="w-8 h-[2px] bg-slate-800 dark:bg-slate-300 inline-block"></span>
-                                EST. 2024 • Premium Quality
+                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
+                                <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
+                                EST. 1998 • Premium Quality
                             </p>
                             <h1
-                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 dark:text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                Women's <br />Collection
+                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
+                                Entry<br />Masterpieces
                             </h1>
                             <p
-                                class="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Discover our curated selection of premium fashion pieces designed for the modern woman.
+                                class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
+                                Make a lasting first impression with our bespoke mahogany and steel entrance systems.
                             </p>
-                            <a href="/shop.php"
-                                class="inline-flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-2 border-slate-900 dark:border-white hover:bg-transparent hover:text-slate-900 dark:hover:bg-transparent dark:hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
+                            <a href="/shop.php?cat=Entry"
+                                class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
                                 Explore Now
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,84 +53,79 @@ $activePage = 'home';
                                 </svg>
                             </a>
                         </div>
-                        <div
-                            class="absolute lg:relative right-0 bottom-0 h-full w-full lg:w-auto flex justify-end items-end hero-image-wrap opacity-20 lg:opacity-100 mix-blend-multiply dark:mix-blend-normal z-10 pointer-events-none lg:pointer-events-auto">
-                            <img alt="Women's fashion collection"
-                                class="object-cover object-top h-full lg:h-[95%] w-auto max-w-none lg:max-w-[600px] hero-image"
-                                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=640&h=800&fit=crop&q=80" />
-                        </div>
                     </div>
                 </div>
                 <!-- Slide 2 -->
-                <div class="swiper-slide">
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 w-full h-full z-0">
+                        <img alt="Security Doors" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=1920&auto=format&fit=crop" />
+                        <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
+                        </div>
+                    </div>
                     <div
-                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative">
-                        <div class="relative z-20 hero-text-content mt-12 md:mt-0">
+                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative z-10">
+                        <div class="relative hero-text-content mt-12 md:mt-0">
                             <p
-                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-slate-800 dark:text-slate-300 flex items-center gap-3">
-                                <span class="w-8 h-[2px] bg-slate-800 dark:bg-slate-300 inline-block"></span>
-                                Timeless Comfort
+                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
+                                <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
+                                Uncompromising Safety
                             </p>
                             <h1
-                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 dark:text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                Men's <br />Essentials
+                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
+                                Advanced<br />Security
                             </h1>
                             <p
-                                class="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Elevate your everyday style with our handpicked men's essentials built for comfort and
-                                class.
+                                class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
+                                Reinforced steel doors engineered for ultimate protection without compromising elegant
+                                design.
                             </p>
-                            <a href="/shop.php?cat=men"
-                                class="inline-flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-2 border-slate-900 dark:border-white hover:bg-transparent hover:text-slate-900 dark:hover:bg-transparent dark:hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
-                                Shop Collection
+                            <a href="/shop.php?cat=Security"
+                                class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
+                                View Security
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </a>
-                        </div>
-                        <div
-                            class="absolute lg:relative right-0 bottom-0 h-full w-full lg:w-auto flex justify-end items-end hero-image-wrap opacity-20 lg:opacity-100 mix-blend-multiply dark:mix-blend-normal z-10 pointer-events-none lg:pointer-events-auto">
-                            <img alt="Men's fashion essentials"
-                                class="object-cover object-top h-full lg:h-[95%] w-auto max-w-none lg:max-w-[600px] hero-image"
-                                src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=600&auto=format&fit=crop" />
                         </div>
                     </div>
                 </div>
                 <!-- Slide 3 -->
-                <div class="swiper-slide">
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 w-full h-full z-0">
+                        <img alt="Interior Designs" class="object-cover object-center w-full h-full"
+                            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1920&auto=format&fit=crop" />
+                        <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent pointer-events-none">
+                        </div>
+                    </div>
                     <div
-                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative">
-                        <div class="relative z-20 hero-text-content mt-12 md:mt-0">
+                        class="container mx-auto px-6 md:px-12 lg:px-16 h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative z-10">
+                        <div class="relative hero-text-content mt-12 md:mt-0">
                             <p
-                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-slate-800 dark:text-slate-300 flex items-center gap-3">
-                                <span class="w-8 h-[2px] bg-slate-800 dark:bg-slate-300 inline-block"></span>
-                                Fresh Drops
+                                class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase mb-5 text-white/80 flex items-center gap-3">
+                                <span class="w-8 h-[2px] bg-white/80 inline-block"></span>
+                                Interior Elegance
                             </p>
                             <h1
-                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 dark:text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
-                                New <br />Arrivals
+                                class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 uppercase tracking-tight hero-title">
+                                Designer<br />Interiors
                             </h1>
                             <p
-                                class="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
-                                Be the first to explore our latest drops — fresh styles updated every week.
+                                class="text-base md:text-lg text-white/80 mb-10 max-w-lg leading-relaxed font-medium hero-subtitle">
+                                Elegant internal doors crafted from premium woods to complement your home's unique
+                                interior style.
                             </p>
-                            <a href="/shop.php"
-                                class="inline-flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-2 border-slate-900 dark:border-white hover:bg-transparent hover:text-slate-900 dark:hover:bg-transparent dark:hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
-                                Discover More
+                            <a href="/shop.php?cat=Interior"
+                                class="inline-flex items-center justify-center bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-10 md:px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 group/cta hero-cta">
+                                Shop Interiors
                                 <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/cta:translate-x-1"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </a>
-                        </div>
-                        <div
-                            class="absolute lg:relative right-0 bottom-0 h-full w-full lg:w-auto flex justify-end items-end hero-image-wrap opacity-20 lg:opacity-100 mix-blend-multiply dark:mix-blend-normal z-10 pointer-events-none lg:pointer-events-auto">
-                            <img alt="New arrivals collection"
-                                class="object-cover object-top h-full lg:h-[95%] w-auto max-w-none lg:max-w-[600px] hero-image"
-                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" />
                         </div>
                     </div>
                 </div>
@@ -165,8 +166,9 @@ $activePage = 'home';
                     </button>
                 </div>
             </div>
-            <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scrollbar-hide pb-4" id="categoriesGrid"></div>
-
+            <div class="swiper categoriesSwiper overflow-hidden">
+                <div class="swiper-wrapper" id="categoriesGrid"></div>
+            </div>
         </div>
     </section>
 
@@ -201,54 +203,143 @@ $activePage = 'home';
                 <p class="text-slate-500">Limited time offers on premium collections</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="relative rounded-2xl overflow-hidden aspect-4/3 group" data-aos="fade-right">
+                <div class="relative rounded-2xl overflow-hidden aspect-4/3 group" data-aos="fade-up">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop"
                         alt="Deal"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent flex items-center">
-                        <div class="p-10 text-white">
-                            <span class="bg-red-500 text-xs px-3 py-1 rounded-full font-bold mb-4 inline-block">HOT
-                                DEAL</span>
-                            <h3 class="text-3xl font-bold mb-2">Summer Sale</h3>
-                            <p class="text-white/80 mb-6">Up to 50% off on summer collection</p>
-                            <div class="flex space-x-3 mb-6">
-                                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-center"><span
-                                        class="text-2xl font-bold block countdown-days">00</span><span
-                                        class="text-xs">Days</span>
+                    <div
+                        class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
+                        <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
+                            <span
+                                class="bg-red-500 text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest uppercase">Limited
+                                Offer</span>
+                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-3 uppercase italic">
+                                Premium Installation</h3>
+                            <p
+                                class="text-white/90 font-medium mb-6 md:mb-8 text-sm md:text-lg max-w-[80%] md:max-w-full">
+                                Book your security door installation today and get 20% off onsite measurement.</p>
+                            <div class="flex space-x-2 md:space-x-3 mb-6 md:mb-8">
+                                <div
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-days">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Days</span>
                                 </div>
-                                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-center"><span
-                                        class="text-2xl font-bold block countdown-hours">00</span><span
-                                        class="text-xs">Hours</span>
+                                <div
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-hours">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Hours</span>
                                 </div>
-                                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-center"><span
-                                        class="text-2xl font-bold block countdown-mins">00</span><span
-                                        class="text-xs">Mins</span>
+                                <div
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-mins">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Mins</span>
                                 </div>
-                                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-center"><span
-                                        class="text-2xl font-bold block countdown-secs">00</span><span
-                                        class="text-xs">Secs</span>
+                                <div
+                                    class="bg-white/20 backdrop-blur-md rounded-xl px-2.5 py-2 md:px-4 md:py-3 text-center border border-white/20 shadow-lg min-w-[50px] md:min-w-[70px]">
+                                    <span class="text-xl md:text-3xl font-bold block countdown-secs">00</span><span
+                                        class="text-[9px] md:text-[10px] uppercase font-bold tracking-wider mt-1 block">Secs</span>
                                 </div>
                             </div>
                             <a href="/shop.php"
-                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm transition-colors inline-block focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900">Shop
+                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-6 md:px-8 py-2.5 md:py-3.5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-colors inline-block shadow-lg">Shop
                                 Now</a>
                         </div>
                     </div>
                 </div>
-                <div class="relative rounded-2xl overflow-hidden aspect-4/3 group" data-aos="fade-left">
+                <div class="relative rounded-2xl overflow-hidden aspect-4/3 group shadow-xl" data-aos="fade-up">
                     <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=600&auto=format&fit=crop"
                         alt="New Arrivals"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-linear-to-r from-black/70 to-transparent flex items-center">
-                        <div class="p-10 text-white">
-                            <span class="bg-primary text-xs px-3 py-1 rounded-full font-bold mb-4 inline-block">NEW
-                                ARRIVAL</span>
-                            <h3 class="text-3xl font-bold mb-2">Winter Collection</h3>
-                            <p class="text-white/80 mb-6">Exclusive new winter arrivals</p>
-                            <a href="/shop.php"
-                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm transition-colors inline-block focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900">Explore</a>
+                    <div
+                        class="absolute inset-0 bg-linear-to-r from-black/80 md:from-black/70 to-transparent flex items-center">
+                        <div class="p-6 sm:p-8 md:p-12 lg:p-16 text-white w-full">
+                            <span
+                                class="bg-primary text-xs px-4 py-1.5 rounded-full font-bold mb-3 md:mb-5 inline-block tracking-widest uppercase">New
+                                Arrival</span>
+                            <h3 class="text-4xl md:text-5xl font-black mb-3 uppercase italic">Smart Entry</h3>
+                            <p class="text-white/90 font-medium mb-8 text-lg">Biometric integrated smart doors now in
+                                stock.</p>
+                            <a href="/shop.php?cat=Entry"
+                                class="bg-white text-slate-900 border-2 border-transparent hover:border-white hover:bg-transparent hover:text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-sm transition-colors inline-block shadow-lg">Explore</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ COUNTER UP ═════════════════════════════ -->
+    <section
+        class="py-12 md:py-16 mt-4 md:mt-8 bg-gray-100/8 dark:bg-slate-900 border-y border-transparent dark:border-slate-800">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Counter 1 -->
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        <div
+                            class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-1 mb-2">
+                        <span class="counter-value font-black text-5xl text-slate-900 dark:text-white tracking-tight"
+                            data-target="50">0</span>
+                        <span class="font-black text-4xl text-slate-900 dark:text-white">K+</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-500 font-bold uppercase tracking-widest">Happy Customers
+                    </p>
+                </div>
+                <!-- Counter 2 -->
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        <div
+                            class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-1 mb-2">
+                        <span class="counter-value font-black text-5xl text-slate-900 dark:text-white tracking-tight"
+                            data-target="100">0</span>
+                        <span class="font-black text-4xl text-slate-900 dark:text-white">%</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-500 font-bold uppercase tracking-widest">Premium Quality
+                    </p>
+                </div>
+                <!-- Counter 3 -->
+                <div class="text-center p-6 pt-12 rounded-3xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 relative mt-6"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 border-[6px] border-white dark:border-slate-900">
+                        <div
+                            class="w-full h-full bg-primary/10 dark:bg-slate-700 rounded-full flex items-center justify-center text-primary dark:text-white">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-1 mb-2">
+                        <span class="counter-value font-black text-5xl text-slate-900 dark:text-white tracking-tight"
+                            data-target="15">0</span>
+                        <span class="font-black text-4xl text-slate-900 dark:text-white">+</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-500 font-bold uppercase tracking-widest">Retail Stores
+                    </p>
                 </div>
             </div>
         </div>
@@ -332,7 +423,9 @@ $activePage = 'home';
                                     alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -379,7 +472,7 @@ $activePage = 'home';
                             <p
                                 class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
                                 "Fast shipping and excellent customer service. The items arrived beautifully packaged.
-                                Highly recommend Krist to everyone."
+                                Highly recommend Gojacdoors to everyone."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
@@ -387,7 +480,9 @@ $activePage = 'home';
                                     alt="Marcus King" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Marcus King</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -433,18 +528,19 @@ $activePage = 'home';
                                 </svg>
                             </div>
                             <p
-                                class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
-                                "Great selection of trendy items. The website is easy to navigate and I found exactly
-                                what I was looking for. Will shop here again."
+                                class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow font-medium italic">
+                                "The security door we purchased from Gojacdoors exceeded all expectations. The
+                                installation was seamless, and the level of craftsmanship is truly world-class."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
-                                <img src="https://ui-avatars.com/api/?name=Elena+Rodriguez&background=2563EB&color=fff"
-                                    alt="Elena Rodriguez" class="w-14 h-14 rounded-full object-cover">
+                                <img src="https://ui-avatars.com/api/?name=David+Chen&background=0F172A&color=fff"
+                                    alt="David Chen" class="w-14 h-14 rounded-full object-cover">
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-base">Elena Rodriguez</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
-                                        Buyer</p>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-base">David Chen</h4>
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Architectural Consultant</p>
                                 </div>
                             </div>
                         </div>
@@ -498,7 +594,9 @@ $activePage = 'home';
                                     alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -545,7 +643,7 @@ $activePage = 'home';
                             <p
                                 class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-8 relative z-10 grow">
                                 "Fast shipping and excellent customer service. The items arrived beautifully packaged.
-                                Highly recommend Krist to everyone."
+                                Highly recommend Gojacdoors to everyone."
                             </p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-700 relative z-10">
@@ -553,7 +651,9 @@ $activePage = 'home';
                                     alt="Marcus King" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Marcus King</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -609,7 +709,9 @@ $activePage = 'home';
                                     alt="Elena Rodriguez" class="w-14 h-14 rounded-full object-cover">
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-base">Elena Rodriguez</h4>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Verified
+                                    <p
+                                        class="text-xs font-semibold text-primary dark:text-slate-300 uppercase tracking-wider mt-1">
+                                        Verified
                                         Buyer</p>
                                 </div>
                             </div>
@@ -625,7 +727,7 @@ $activePage = 'home';
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold dark:text-white mb-3">Our Instagram Stories</h2>
-                <p class="text-slate-500">Follow us @kristfashion</p>
+                <p class="text-slate-500">Follow us @Gojacdoors</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="aspect-square rounded-xl overflow-hidden group relative" data-aos="zoom-in"
@@ -684,8 +786,62 @@ $activePage = 'home';
         </div>
     </section>
 
+    <!-- Promotional Pop-up -->
+    <div id="promoPopup" style="z-index: 120;"
+        class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
+        <div
+            class="relative w-[95%] max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] translate-y-12 scale-95 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-row overflow-hidden border border-slate-100/50 dark:border-slate-800">
+            <!-- Close Button -->
+            <button onclick="closePromoPopup()"
+                class="absolute top-4 right-4 z-20 bg-white/50 backdrop-blur-md dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 rounded-full p-2.5 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 shadow-sm"
+                aria-label="Close">
+                <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Image Header/Sidebar -->
+            <div class="w-2/5 md:w-5/12 relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=800&auto=format&fit=crop"
+                    alt="Promotional fashion sale"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-2000">
+                <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 md:bottom-6 md:left-8">
+                    <span
+                        class="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-white/20 backdrop-blur-md text-white border border-white/30 text-[8px] md:text-[10px] font-bold tracking-widest uppercase rounded-full mb-2 md:mb-3">Limited
+                        Offer</span>
+                    <h3 class="text-white text-lg md:text-2xl font-bold tracking-tight leading-tight hidden sm:block">
+                        Autumn Collection</h3>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div
+                class="w-3/5 md:w-7/12 p-8 md:p-16 flex flex-col justify-center align-start relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-slate-50 dark:bg-slate-900">
+                <h2
+                    class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-[1.15] tracking-tight">
+                    <span class="bg-clip-text text-transparent bg-linear-to-r from-primary to-orange-500">Don’t miss
+                        out</span><br><span class="hidden sm:inline">on our exclusive deals.</span>
+                </h2>
+                <p
+                    class="mt-3 md:mt-5 text-slate-500 dark:text-slate-400 leading-relaxed text-xs sm:text-sm md:text-lg max-w-md font-medium">
+                    Unlock premium fashion at unbeatable prices. Shop the collection now before inventory runs out.
+                </p>
+                <div class="mt-6 md:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
+                    <a href="/shop.php" onclick="closePromoPopup()"
+                        class="w-full sm:w-auto inline-flex items-center justify-center bg-primary text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 rounded-full px-6 py-3 md:px-12 md:py-4 text-[10px] md:text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        Claim 20% Off
+                    </a>
+                    <button onclick="closePromoPopup()"
+                        class="text-slate-400 hover:text-slate-800 dark:hover:text-white text-[10px] md:text-sm font-medium tracking-wide transition-colors py-1.5 md:py-2 px-2 md:px-4 underline underline-offset-4 hidden sm:block">
+                        No thanks
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php include 'includes/footer.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>

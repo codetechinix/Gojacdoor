@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Access Forbidden';
+$pageTitle = 'Gojacdoors - Access Forbidden';
 $activePage = '';
 http_response_code(403);
 ?>

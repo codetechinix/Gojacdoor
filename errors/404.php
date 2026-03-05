@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Page Not Found';
+$pageTitle = 'Gojacdoors - Page Not Found';
 $activePage = '';
 http_response_code(404);
 ?>

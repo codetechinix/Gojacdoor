@@ -1,9 +1,9 @@
 <!-- includes/head.php -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?= isset($pageTitle) ? $pageTitle : 'Krist - Premium Fashion E-Commerce' ?></title>
+<title><?= isset($pageTitle) ? $pageTitle : 'Gojacdoors - Premium Fashion E-Commerce' ?></title>
 <meta name="description"
-    content="<?= isset($pageDesc) ? $pageDesc : 'Discover the latest fashion trends at Krist. Shop premium clothing, shoes, and accessories for men, women, and kids.' ?>" />
+    content="<?= isset($pageDesc) ? $pageDesc : 'Discover the latest fashion trends at Gojacdoors. Shop premium clothing, shoes, and accessories for men, women, and kids.' ?>" />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link
@@ -15,4 +15,5 @@
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link href="/assets/css/output.css?v=<?= time() ?>" rel="stylesheet">

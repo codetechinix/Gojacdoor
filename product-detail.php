@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Krist - Product Details';
+$pageTitle = 'Gojacdoors - Product Details';
 $activePage = 'shop';
 ?>
 <!DOCTYPE html>
@@ -10,15 +10,13 @@ $activePage = 'shop';
 </head>
 
 <body
-    class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden">
     <?php include 'includes/header.php'; ?>
-
-    <main class="flex-grow max-w-7xl mx-auto w-full px-4 md:px-8 pb-8 pt-2 md:pt-4" id="productContainer">
+    <main class="grow max-w-7xl mx-auto w-full px-4 md:px-8 pt-2 md:pt-4 pb-24 md:pb-12" id="productContainer">
         <!-- Breadcrumb will be rendered here via JS -->
         <div id="productBreadcrumb" class="mb-6"></div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-20 items-start">
             <!-- Image Gallery -->
             <div class="space-y-4">
                 <div class="glass bg-white/50 dark:bg-slate-700/50 rounded-2xl overflow-hidden aspect-4/5 flex items-center justify-center p-8 shadow-modern dark:shadow-modern-dark border border-white/40 dark:border-white/10"
@@ -47,12 +45,11 @@ $activePage = 'shop';
                     <div id="productRating" class="flex text-yellow-400">
                         <!-- Rating stars -->
                     </div>
-                    <span id="productReviewCount" class="text-slate-500 text-sm"></span>
+                    <span id="productReviewCount" class="text-slate-500 dark:text-slate-400 text-sm"></span>
                 </div>
 
                 <div class="flex items-baseline gap-4 mb-8">
-                    <span id="productPrice"
-                        class="text-3xl font-bold dark:text-white bg-linear-to-r from-primary to-primary-light dark:from-white dark:to-slate-300 bg-clip-text text-transparent"></span>
+                    <span id="productPrice" class="text-3xl font-bold text-primary dark:text-white"></span>
                     <span id="productOldPrice" class="text-slate-400 line-through font-medium text-lg"></span>
                 </div>
 
@@ -61,17 +58,6 @@ $activePage = 'shop';
                     everyday style, ensuring both comfort and durability seamlessly.
                 </p>
 
-                <div class="mb-6">
-                    <span class="block text-sm font-semibold mb-3 tracking-wide uppercase text-slate-500">Color</span>
-                    <div class="flex gap-3">
-                        <button
-                            class="w-8 h-8 rounded-full bg-slate-900 dark:bg-slate-100 ring-2 ring-offset-2 ring-primary dark:ring-offset-background-dark transition-all hover:scale-110"></button>
-                        <button
-                            class="w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-700 transition-all hover:scale-110"></button>
-                        <button class="w-8 h-8 rounded-full bg-blue-900 transition-all hover:scale-110"></button>
-                    </div>
-                </div>
-
                 <div class="mb-10">
                     <span class="block text-sm font-semibold mb-3 tracking-wide uppercase text-slate-500">Size</span>
                     <div id="productSizes" class="flex flex-wrap gap-3">
@@ -79,38 +65,43 @@ $activePage = 'shop';
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4">
+                <!-- Actions -->
+                <div class="flex items-center gap-2 sm:gap-4 mt-8">
                     <div
-                        class="flex items-center border border-slate-200 dark:border-slate-700 rounded-md h-14 bg-white dark:bg-slate-900 shadow-sm">
+                        class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg h-14 bg-white dark:bg-slate-900 shadow-sm w-28 md:w-32 shrink-0 overflow-hidden">
                         <button
-                            class="px-5 text-slate-500 hover:text-primary transition-colors h-full flex items-center justify-center transform hover:scale-110"
-                            onclick="changeQty(-1)"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                            class="px-3 md:px-4 text-slate-500 hover:text-primary transition-colors h-full flex items-center justify-center transform active:scale-95"
+                            onclick="changeQty(-1)"><svg class="w-4 h-4" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4">
                                 </path>
                             </svg></button>
-                        <span id="productQty" class="w-8 text-center font-bold text-lg">1</span>
+                        <span id="productQty"
+                            class="flex-1 text-center font-bold text-base md:text-lg dark:text-white">1</span>
                         <button
-                            class="px-5 text-slate-500 hover:text-primary transition-colors h-full flex items-center justify-center transform hover:scale-110"
-                            onclick="changeQty(1)"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                            class="px-3 md:px-4 text-slate-500 hover:text-primary transition-colors h-full flex items-center justify-center transform active:scale-95"
+                            onclick="changeQty(1)"><svg class="w-4 h-4" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
+                                    d="M12 4v16m8-8H4">
+                                </path>
                             </svg></button>
                     </div>
-                    <button id="addToCartBtn"
-                        class="flex-1 py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-sm hover:shadow-md hover:-translate-y-0.5 h-14">
-                        Add to Cart
-                    </button>
-                    <button id="wishlistBtn"
-                        class="w-14 h-14 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-md hover:border-primary hover:text-primary transition-colors bg-white dark:bg-slate-900 shadow-sm group">
-                        <svg class="w-6 h-6 wish-icon group-hover:scale-110 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                    </button>
+                    <div class="flex items-center gap-2 sm:gap-4 flex-1">
+                        <button id="addToCartBtn"
+                            class="flex-1 py-4 text-[10px] md:text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 shadow-sm h-14 opacity-50 cursor-not-allowed">Sold
+                            Out</button>
+                        <button id="compareBtn"
+                            class="w-14 h-14 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-full hover:border-primary hover:text-primary transition-all bg-white dark:bg-slate-900 shadow-sm group active:scale-95 shrink-0"
+                            title="Add to Compare">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6 group-hover:scale-110 transition-transform">
+                                <path fill-rule="evenodd"
+                                    d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H7.5a.75.75 0 0 1 0-1.5h11.69l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-7.94 9a.75.75 0 0 1 0 1.06l-3.22 3.22H16.5a.75.75 0 0 1 0 1.5H4.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,61 +175,25 @@ $activePage = 'shop';
                                     class="w-full sm:w-auto py-3 px-8 text-xs tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white">Write
                                     a Review</button>
                             </div>
-                            <div class="space-y-6">
-                                <!-- Review 1 -->
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-10 h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-slate-500 text-sm">
-                                        JD
-                                    </div>
-                                    <div>
-                                        <div class="flex items-center gap-2 mb-1">
-                                            <h4 class="font-bold dark:text-white text-sm">John Doe</h4>
-                                            <span class="text-xs text-slate-400">2 days ago</span>
-                                        </div>
-                                        <div class="flex text-yellow-400 mb-2">
-                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                                </path>
-                                            </svg>
-                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                                </path>
-                                            </svg>
-                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                                </path>
-                                            </svg>
-                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                                </path>
-                                            </svg>
-                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Absolutely
-                                            love the quality. Fits perfectly and looks exactly like the pictures.
-                                            Shipping was also incredibly fast.</p>
-                                    </div>
-                                </div>
+                            <!-- Review List -->
+                            <div id="productReviewsList" class="space-y-6">
+                                <!-- reviews injected via js -->
                             </div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
 
         <!-- Related Products (New) -->
-        <div class="mb-24" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+        <div id="relatedProductsSection" class="mb-24">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                 <h2 class="text-3xl font-bold dark:text-white">Related Products</h2>
                 <div class="hidden md:flex space-x-2">
                     <button id="relatedPrev"
@@ -258,7 +213,7 @@ $activePage = 'shop';
                 </div>
             </div>
 
-            <div class="swiper relatedSwiper overflow-visible! relative">
+            <div class="swiper relatedSwiper overflow-hidden relative">
                 <div class="swiper-wrapper" id="relatedProductsContainer">
                     <!-- Products injected via JS -->
                 </div>
@@ -266,72 +221,91 @@ $activePage = 'shop';
         </div>
     </main>
 
-    <!-- Review Modal -->
-    <div id="reviewModal" class="fixed inset-0 z-100 hidden items-center justify-center">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleReviewModal()"></div>
-        <div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl shadow-2xl relative z-10 p-8 transform transition-transform scale-95 opacity-0 duration-300"
-            id="reviewModalContent">
-            <button onclick="toggleReviewModal()"
-                class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:hover:text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
-            <h3 class="text-2xl font-bold mb-6">Write a Review</h3>
-            <form onsubmit="submitReview(event)">
-                <div class="mb-5">
-                    <label class="block text-sm font-semibold mb-3">Rating</label>
-                    <div class="flex text-slate-300 space-x-2 interactive-stars cursor-pointer transition-colors">
-                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                            </path>
-                        </svg>
-                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                            </path>
-                        </svg>
-                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                            </path>
-                        </svg>
-                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                            </path>
-                        </svg>
-                        <svg class="w-8 h-8 star transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                            </path>
-                        </svg>
+
+    <?php include 'includes/footer.php'; ?>
+
+    <!-- Review Modal (Moved for full-screen overlay) -->
+    <div id="reviewModal"
+        class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-4 py-8">
+        <div id="reviewModalContent"
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden scale-95 opacity-0 transition-all duration-300 transform">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <h3 class="text-xl font-bold dark:text-white">Write a Review</h3>
+                <button onclick="toggleReviewModal()" class="text-slate-400 hover:text-slate-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <form id="productReviewForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-slate-500 uppercase tracking-wider">Your
+                                Name</label>
+                            <input type="text" id="reviewAuthor" required
+                                class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                                placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-sm font-semibold mb-2 text-slate-500 uppercase tracking-wider">Rating</label>
+                            <div class="flex text-slate-300 gap-1 interactive-rating py-2">
+                                <button type="button" data-rating="1"
+                                    class="star-btn transition-colors hover:text-yellow-400 group"><svg
+                                        class="w-8 h-8 pointer-events-none" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg></button>
+                                <button type="button" data-rating="2"
+                                    class="star-btn transition-colors hover:text-yellow-400 group"><svg
+                                        class="w-8 h-8 pointer-events-none" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg></button>
+                                <button type="button" data-rating="3"
+                                    class="star-btn transition-colors hover:text-yellow-400 group"><svg
+                                        class="w-8 h-8 pointer-events-none" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg></button>
+                                <button type="button" data-rating="4"
+                                    class="star-btn transition-colors hover:text-yellow-400 group"><svg
+                                        class="w-8 h-8 pointer-events-none" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg></button>
+                                <button type="button" data-rating="5"
+                                    class="star-btn transition-colors hover:text-yellow-400 group"><svg
+                                        class="w-8 h-8 pointer-events-none" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                            <input type="hidden" id="reviewRating" value="5">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold mb-2">Your Name</label>
-                    <input type="text"
-                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-1 focus:ring-primary focus:border-primary outline-none"
-                        required />
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2">Review</label>
-                    <textarea
-                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 h-32 resize-none focus:ring-1 focus:ring-primary focus:border-primary outline-none"
-                        required></textarea>
-                </div>
-                <button type="submit"
-                    class="w-full py-4 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white mt-2">Submit
-                    Review</button>
-            </form>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-500 uppercase tracking-wider">Your
+                            Review</label>
+                        <textarea id="reviewText" required
+                            class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 h-40 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white resize-none"
+                            placeholder="Tell us what you think about this product..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 px-10 text-sm tracking-widest uppercase bg-slate-900 border-2 border-slate-900 text-white rounded-full font-bold hover:bg-transparent hover:text-slate-900 transition-all duration-300 dark:bg-white dark:border-white dark:text-slate-900 dark:hover:bg-transparent dark:hover:text-white shadow-lg">
+                        Post Review
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>

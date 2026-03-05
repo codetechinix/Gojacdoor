@@ -4,6 +4,117 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 ## [Unreleased]
 
+### [2026-03-04T11:45:00+01:00] Development Credits & Footer Update
+
+#### Changed
+- **Footer Development Credits (`includes/footer.php`):** Added development credits for `Codetechinix.com` and `thegoaldigitalagency.com` in the sub-footer. The links are styled with subtle underlines and hover effects, opening in new tabs to maintain user session.
+
+
+### [2026-03-02T20:10:00+01:00] Blog Pagination, Dynamic Filtering & Breadcrumbs
+
+#### Added
+
+- **Blog Grid Pagination (`blog.php`, `components.js`):** Implemented functional client-side pagination for the blog page. Added a dynamic `BLOGS` array with 18 high-quality items, split into 3 pages (6 per page) with interactive navigation.
+- **Dynamic Category Filtering (`blog.php`, `components.js`):** Engineered a real-time filtering system for blog categories (Fashion, Lifestyle, Trends, DIY). It updates the grid layout and pagination count instantly without page reloads.
+- **Breadcrumb Utility (`components.js`):** Created a universal `renderBreadcrumb` function to handle site-wide navigation paths, providing consistent Home > [Section] > [Detail] link structures.
+- **Social Sharing Integration (`blog-detail.php`, `components.js`):** Fully integrated functional sharing buttons for WhatsApp, X (Twitter), Facebook, Instagram, TikTok, and a direct "Copy Link" clipboard utility.
+
+#### Changed
+
+- **Blog Detail Comments Refinement (`blog-detail.php`, `components.js`):** Finalized the threaded reply system logic, ensuring deep nesting for replies and persistent user data via `localStorage`. Corrected comment counts to include all sub-replies.
+- **Blog UI Parity:** Updated blog cards to use a structured CSS grid for perfect alignment across all viewports, ensuring it matches the premium Shop page layout.
+
+### [2026-03-02T03:45:00+01:00] Blog Comments, Sticky Sidebar & Footer Cleanup
+
+#### Added
+
+- **Blog Comment System (`blog-detail.php`, `components.js`):** Implemented a fully functional, interactive client-side comment system. Features include threaded replies, Initials-based avatars via UI-Avatars, smooth scroll-to-reply-form animations, and user "Remember Me" persistent info via `localStorage`.
+- **Threaded Replies UI (`blog-detail.php`):** Added a "Replying to [Name]" indicator and "Cancel Reply" functionality with clear UI feedback to manage the comment threading state.
+
+#### Changed
+
+- **Sticky Blog Sidebar (`blog-detail.php`):** Applied `sticky top-28` and `items-start` to the blog detail sidebar, ensuring it remains visible while reading long articles.
+- **Footer Refactoring (`footer.php`):** Consolidated the "Services" column into the "Information" column and removed the redundant "My Cart" link. Adjusted the grid to a cleaner 3-column layout (`grid-cols-3`) for better visual balance on desktop.
+- **Compare UI Update (`components.js`, `input.css`):** Replaced the comparison icon with a premium Heroicons SVG. Fixed the mobile floating compare button's `bottom-24` positioning to avoid overlaps with the bottom navigation bar.
+- **Reverted Comparison Modal:** Reverted the product comparison card layouts to their original state per user request while maintaining functional logic.
+
+#### Fixed
+
+- **Comment List Initialization:** Patched a dynamic container bug ensuring comments correctly filter by page and render instantly without requiring a full reload.
+
+### [2026-03-01T10:30:00+01:00] Auth/Wishlist Removal, WhatsApp Checkout & Rebranding
+
+#### Removed
+
+- **Authentication System:** Deleted the `auth` directory entirely including `login.php` and `register.php`. Stripped out user account dropdown menus and login/signup buttons from the navigational headers and sidebars.
+- **Wishlist Feature:** Deleted `wishlist.php` and removed all associated global Javascript localstorage state arrays. Stripped wishlist buttons from the product detail pages and item cards.
+- **Checkout Page:** Deleted `checkout.php` in order to transition to an external checkout flow.
+
+#### Changed
+
+- **WhatsApp Checkout:** Re-engineered the checkout flow by redirecting the users to a custom WhatsApp link. The `components.js` now dynamically builds an order receipt string specifying product names, quantities, and subtotal straight from the frontend storage to initiate the WhatsApp conversation.
+- **Global Rebranding:** Renamed all user-facing content strings matching "Krist" to "Gojacdoors". This rebranding spans across `.php` page metadata titles, footer copy text, `about-us.php` story sections, and layout menus.
+
+### [2026-03-01T09:58:00+01:00] Search Redesign, Categories Integration & Pagination
+
+#### Added
+
+- **Search Command Palette (`includes/header.php`, `assets/js/modules/components.js`, `input.css`):** Redesigned the search overlay into a sleek, centered Command Palette style floating modal. It features refined typography, a premium dark blur backdrop (`bg-black/60`), and a two-column grid displaying "Discover" tags alongside rich product suggestions.
+- **Shop & Search Pagination (`shop.php`, `search.php`, `components.js`):** Implemented client-side pagination for product grids. Products are now sliced into chunks of 6 (3 columns by 2 rows). Added interactive page navigation controls that auto-scroll users to the top of the grid upon page switches.
+
+#### Changed
+
+- **Shop by Categories Carousels (`index.php`, `components.js`):** Architecturally redesigned the "Shop by Categories" section using Swiper.js to behave identically to the Testimonials block. Configured it to display exactly 3 full cards at a time on desktop and 1 card per swipe on mobile.
+- **Category Card Sizing (`index.php`, `components.js`):** Enforced a strict `aspect-[4/5]` ratio lock on all category cards to guarantee perfect uniformity dynamically as the cards flex in width, ensuring they look consistent, premium, and aesthetically pleasing.
+- **Search Grid Layout (`search.php`):** Updated the search results page to display three product cards per row instead of four to match the shop page layout.
+
+#### Fixed
+
+- **Promotional Modal Z-Index (`includes/header.php`):** Resolved z-index conflicts ensuring the promotional modal cleanly obscures the `z-[110]` headers.
+- **Header Dark Mode Consistency (`includes/header.php`):** Fixed the header dark mode styling that was previously stuck in light mode.
+
+### [2026-02-28T12:00:00+01:00] Hero & Counter UI Adjustments
+
+#### Added
+
+- **Counter-Up Statistics Section:** Implemented a new scroll-animated section on the homepage (`index.php`) featuring 4 key metrics that count up to their targets (`main.js`) using an `IntersectionObserver`. Designed with elevated, overlapping SVG cards for premium aesthetic depth.
+
+#### Changed
+
+- **Hero Slider Height & Positioning (`index.php`, `input.css`):** Adjusted the desktop hero slider height to dynamically fit the initial viewport using `calc(100vh - 130px)`. Updated background image object positions (`object-top`, `object-[center_30%]`) to ensure subjects remain visibly framed. Changed Swiper pagination dots to white for improved contrast against the dark overlay.
+
+### [2026-02-27T23:30:00+01:00] Homepage Layout Refinements
+
+#### Changed
+
+- **Mobile Header Overflow (`includes/header.php`):** Implemented `max-w-full overflow-x-hidden` on the main sticky header wrapper to resolve horizontal layout breaks on small (375px) viewports caused by expansive grid containers.
+- **Promotional Banner Formatting (`index.php`):** Expanded internal padding (`p-6` to `p-8` / `p-16`) on the "Autumn Collection" banner to provide cleaner breathing room for typography and prevent text from feeling boxed in on mobile screens.
+- **Counter Up Spacing (`index.php`):** Scaled down the top padding (`pt-12` to `pt-10`) and horizontal margins on the "Happy Customers / Premium Quality" counter cards for mobile viewports, resolving disjointed card stretching.
+
+#### Fixed
+
+- **Broken Category Images (`assets/js/modules/components.js`):** Repaired an unresolving Unsplash URL driving the "Kids" category card natively in the JS product mapping, restoring visual parity to the scroll grid.
+
+### [2026-02-26T11:00:00+01:00] Custom Toasts & UI Refinements
+
+#### Added
+
+- **Custom Toast Engine (`components.js`, `input.css`):** Engineered a zero-dependency, highly-performant Vanilla JS `ToastSystem` to replace external `Toastify.js` libraries. The new system supports queuing, Tailwind transitions, and dynamic SVG variants.
+- **Top Announcement Dropdowns (`includes/header.php`):** Extracted the Language and Currency dropdowns from the main header and elegantly embedded them into the top sliding marquee banner.
+- **Cart Drawer Coupon Field (`components.js`):** Injected a sleek `Discount Code` input field directly above the subtotal within the mini-cart drawer.
+
+#### Changed
+
+- **Responsive Product Cards (`components.js`):** Modified the "Add to Cart" product grid logic. On mobile viewports, the bulky text button translates into a seamless floating icon button appended to the top-right overlay stack, resolving overflow issues.
+- **Header Alignment (`includes/header.php`):** Re-engineered the global desktop header flexbox ratios to strictly `w-1/4`, `w-2/4`, `w-1/4` ensuring pixel-perfect centering of primary navigation links.
+- **Related Products Autoplay (`components.js`):** Configured the Swiper layout to precisely allow 3 cards horizontally on desktop without blowing up their aspect ratio, while enabling continuous `autoplay`.
+- **Global Pill Buttons:** Transformed standard box-radius buttons (Add to Cart, Quick View, Pagination, Auth, Sidebar) into the premium `rounded-full` pill aesthetic globally.
+
+#### Fixed
+
+- **Mobile Menu Z-Index Conflict (`includes/header.php`, `input.css`):** Increased the z-index of the slide-out mobile menu backdrop and panel to `z-[100]` and `z-[110]` respectively, preventing the fixed top announcement banner from visually dissecting the menu interface.
+- **Account Sidebar Preloader Hang (`components.js`):** Patched an `undefined` insertion bug inside `renderAccountSidebar` by correctly returning an HTML block instead of injecting raw queries, fixing infinite-spin preloaders across all `/account/` routes.
+
 ### [2026-02-25T07:20:00+01:00] Revone Theme UI Upgrades
 
 #### Added
@@ -102,6 +213,19 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 
 - **Search Overlay Z-Index (`includes/header.php`):** Set inline `style="z-index:9999"` to guarantee the overlay renders above the hero slider and all other page elements. Tailwind's `z-9999` class was not in the compiled output.
 
+### [2026-02-12T05:30:00+01:00] Security Hardening & Server Configuration
+
+#### Added
+- **Apache Security Configuration (`render-apache.conf`):** Implemented a robust security layer including:
+  - **Security Headers:** Added `X-Frame-Options`, `X-Content-Type-Options`, `X-XSS-Protection`, and `Referrer-Policy`.
+  - **Access Controls:** Restricted access to sensitive file types (`.env`, `.git`, `.log`, `.sql`, etc.) and the `includes/` directory.
+  - **Bot Protection:** Blocked common malicious user agents and suspicious query strings.
+- **Custom Error Handling:** Configured branded `404`, `403`, and `500` error pages.
+
+#### Changed
+- **Clean URLs:** Optimized URL structure by stripping `.php` extensions and forcing HTTPS/trailing slashes.
+- **Performance Optimization:** Enabled GZIP compression and configured browser caching for static assets.
+
 ### [2026-02-22T10:50:00+01:00] Error Pages, Benefits Bar & Footer Refinements
 
 #### Added
@@ -150,6 +274,13 @@ All notable changes to the Krist E-commerce Template will be documented in this 
 - **Product Detail (`product-detail.php`):** Added a thumbnail image gallery, a review modal with interactive stars, and dynamic "Sold Out" badge logic layout.
 - **Checkout & Contact (`checkout.php`, `contact.php`, `footer.php`):** Added embedded Google Map to the contact page, and premium vector payment provider logos to the checkout and footer sections.
 - **Tailwind Refactoring:** Fixed multiple IDE syntax lints including `shrink-0` and `z-100`.
+
+### [2026-02-01T15:00:00+01:00] Homepage Refactoring & Precision Capital LLC Alignment
+
+#### Changed
+- **Hero Section (`index.php`):** Updated the primary background image and refined the call-to-action text. Commented out the video play button for a cleaner visual focus.
+- **About Us Section (`index.php`):** Updated the narrative content to align specifically with Precision Capital LLC branding.
+- **Section Cleanup:** Removed the "benefits" section to reduce homepage clutter and focus on core services.
 
 ### [2026-01-31T00:00:00+00:00] Base Template Changes
 
